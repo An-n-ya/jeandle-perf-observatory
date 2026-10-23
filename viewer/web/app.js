@@ -38,7 +38,7 @@ const profileCache = new Map();
 const staticBase = document.documentElement.dataset.base || '';
 const slug = x => String(x).replace(/[^A-Za-z0-9_.-]/g,'-');
 const pathURL = p => p.split('/').map(encodeURIComponent).join('/');
-const api = (kind,extra={}) => {
+const apiPath = (kind,extra={}) => {
  const entry=datasets.find(d=>d.id===state.dataset)||{};
  if(!staticBase){
    const endpoint={profiles:'profile',artifacts:'raw',records:'record'}[kind]||kind;
@@ -49,6 +49,7 @@ const api = (kind,extra={}) => {
  if(kind==='profiles'||kind==='speedscope')return `${staticBase}/api/${kind}/${slug(`${extra.case}--${extra.mode}--${extra.run}`)}${kind==='profiles'?'.json':'.speedscope.json'}`;
  return `${staticBase}/api/${kind}/${pathURL((kind==='artifacts'?(entry.artifact_prefix||''):'')+extra.file)}`;
 };
+const api = (kind,extra={}) => apiPath(kind,extra)+(staticBase?'?v=context-reuse-20261023':'');
 function recordURL(run,kind){
  if(!staticBase)return api('records',{case:state.case,mode:state.mode,run,kind});
  const archive=loadedProfile.archive_names?.[run] || (run.startsWith('diag:')?'diagnostics/quality/'+run.slice(5)+'/stacks.txt':`${state.case==='cff-cache-reuse'?'l2/':''}profiles/${state.case}/${state.mode}/${run}/stacks.txt`);
