@@ -1,0 +1,40 @@
+{
+  "call_graph": "dwarf,8192",
+  "case": "cff-cache-reuse",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s1/run-01/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(constant-field-folding)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/jeandle/jeandle-llvm/llvm/test/Jeandle/constant-field-folding/Inputs/cache-reuse.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/l2/cff-cache-reuse.ll"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s1/run-01/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(constant-field-folding)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/jeandle/jeandle-llvm/llvm/test/Jeandle/constant-field-folding/Inputs/cache-reuse.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/l2/cff-cache-reuse.ll"
+  },
+  "derived_reports": "deferred",
+  "elapsed_ns": 6800729460,
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "mode": "s1",
+  "perf_data_bytes": 11517616,
+  "perf_data_sha256": "bbaf5cfbf1ec0e2fd60b0666c16dd0184de08910e6659c7705ca04e29ef8fe90",
+  "record_stderr": "[ perf record: Woken up 44 times to write data ]\n[ perf record: Captured and wrote 10.947 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s1/run-01/perf.data (1315 samples) ]\n",
+  "run": 1,
+  "stacks_sha256": "42a12da0feb0d94fea1d365feaab5621ff37015a75db971d9acacb2ec1457747"
+}

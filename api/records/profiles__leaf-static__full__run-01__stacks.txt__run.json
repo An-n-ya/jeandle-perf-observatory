@@ -1,0 +1,41 @@
+{
+  "case": "leaf-static",
+  "mode": "full",
+  "run": 1,
+  "elapsed_ns": 5438724450,
+  "perf_data_bytes": 9112200,
+  "perf_data_sha256": "957979cb6b61c07cb89aa649622c6c05865dedc5e5c93f7546bdeb0b53da344c",
+  "stacks_sha256": "f93c734ce5a487b549d3eb0152df5a3027bb87dc4ca5a25c94f502ddb6006384",
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "call_graph": "dwarf,8192",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/full/run-01/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/leaf-static/leaf-static.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/leaf-static/leaf-static.ll",
+      "-jeandle-java-type-force-full-invalidation"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/full/run-01/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/leaf-static/leaf-static.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/leaf-static/leaf-static.ll -jeandle-java-type-force-full-invalidation"
+  },
+  "record_stderr": "[ perf record: Woken up 35 times to write data ]\n[ perf record: Captured and wrote 8.653 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/full/run-01/perf.data (1041 samples) ]\n",
+  "derived_reports": "deferred"
+}

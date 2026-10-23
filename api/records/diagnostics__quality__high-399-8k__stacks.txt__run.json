@@ -1,0 +1,37 @@
+{
+  "case": "deep-static",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "399",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/high-399-8k/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.ll"
+    ],
+    "shell": "perf record -e cycles:u -F 399 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/high-399-8k/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.ll"
+  },
+  "elapsed_ns": 6273265765,
+  "frequency": 399,
+  "mode": "s1",
+  "perf_data_bytes": 20316944,
+  "perf_data_sha256": "21e9e62fcd424ce8aee9e6b1b57614eed2277a8ac5c7fd3c9d2ffabb0945f8fe",
+  "record_stderr": "[ perf record: Woken up 78 times to write data ]\n[ perf record: Captured and wrote 19.339 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/high-399-8k/perf.data (2359 samples) ]\n",
+  "stack_bytes": 8192,
+  "tag": "high-399-8k"
+}

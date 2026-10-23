@@ -1,0 +1,1260 @@
+
+Sorted summary for file /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt
+----------------------------------------------
+
+   33.36 SmallPtrSet.h:302
+   33.33 DenseMap.h:628
+   33.30 CachedJavaType.cpp:47
+ Percent |	Source code & Disassembly of opt for cpu_atom/cycles/u (3 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3       Disassembly of section .text:
+         :
+         : 5       0000000002c80ae0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)>:
+         :
+         : 7       // TODO:
+         : 8       // (perf)把连续的、中间没有读取的修改操作合并起来一起处理，这样能减少重复遍历
+         : 9       JavaTypeCacheInvalidationInfo
+         : 10      JavaTypeCache::invalidate(ArrayRef<Value *> Changed, bool CFGChanged,
+         : 11      JavaTypeBaseInvalidationMode BaseMode) {
+    0.00 :   2c80ae0:        push   %r15
+         : 13      JavaTypeCacheInvalidationInfo Info;
+    0.00 :   2c80ae2:        pxor   %xmm0,%xmm0
+         : 15      JavaTypeBaseInvalidationMode BaseMode) {
+    0.00 :   2c80ae6:        push   %r14
+    0.00 :   2c80ae8:        push   %r13
+    0.00 :   2c80aea:        mov    %rsi,%r13
+    0.00 :   2c80aed:        push   %r12
+    0.00 :   2c80aef:        push   %rbp
+    0.00 :   2c80af0:        push   %rbx
+    0.00 :   2c80af1:        mov    %rdi,%rbx
+    0.00 :   2c80af4:        sub    $0x288,%rsp
+    0.00 :   2c80afb:        mov    %r8d,0x48(%rsp)
+    0.00 :   2c80b00:        mov    %r9d,0x4c(%rsp)
+    0.00 :   2c80b05:        mov    %fs:0x28,%rax
+    0.00 :   2c80b0e:        mov    %rax,0x278(%rsp)
+    0.00 :   2c80b16:        xor    %eax,%eax
+         : 29      const size_t OldBase = BaseTypes.size();
+   33.30 :   2c80b18:        mov    0x8(%rsi),%eax // CachedJavaType.cpp:47
+         : 31      JavaTypeCacheInvalidationInfo Info;
+    0.00 :   2c80b1b:        movq   $0x0,0x40(%rdi)
+    0.00 :   2c80b23:        movups %xmm0,(%rdi)
+    0.00 :   2c80b26:        movups %xmm0,0x10(%rdi)
+    0.00 :   2c80b2a:        movups %xmm0,0x20(%rdi)
+    0.00 :   2c80b2e:        movups %xmm0,0x30(%rdi)
+         : 37      const size_t OldFacts = PathFacts.size();
+    0.00 :   2c80b32:        mov    0x20(%rsi),%edi
+         : 39      const size_t OldFinal = FinalTypes.size();
+    0.00 :   2c80b35:        mov    0x38(%rsi),%esi
+         : 41      const size_t OldBase = BaseTypes.size();
+    0.00 :   2c80b38:        mov    %rax,0x40(%rsp)
+         : 43      if (OldBase + OldFacts + OldFinal == 0)
+    0.00 :   2c80b3d:        add    %rdi,%rax
+         : 45      const size_t OldFacts = PathFacts.size();
+    0.00 :   2c80b40:        mov    %rdi,0x30(%rsp)
+         : 47      if (OldBase + OldFacts + OldFinal == 0)
+    0.00 :   2c80b45:        add    %rsi,%rax
+         : 49      const size_t OldFinal = FinalTypes.size();
+    0.00 :   2c80b48:        mov    %rsi,0x38(%rsp)
+         : 51      if (OldBase + OldFacts + OldFinal == 0)
+    0.00 :   2c80b4d:        jne    2c80b7b <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x9b>
+         : 53      }
+         : 54      Info.BaseRemoved = OldBase - BaseTypes.size();
+         : 55      Info.FactsRemoved = OldFacts - PathFacts.size();
+         : 56      Info.FinalRemoved = OldFinal - FinalTypes.size();
+         : 57      return Info;
+         : 58      }
+    0.00 :   2c80b4f:        mov    0x278(%rsp),%rax
+    0.00 :   2c80b57:        sub    %fs:0x28,%rax
+    0.00 :   2c80b60:        jne    2c81873 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xd93>
+    0.00 :   2c80b66:        add    $0x288,%rsp
+    0.00 :   2c80b6d:        mov    %rbx,%rax
+    0.00 :   2c80b70:        pop    %rbx
+    0.00 :   2c80b71:        pop    %rbp
+    0.00 :   2c80b72:        pop    %r12
+    0.00 :   2c80b74:        pop    %r13
+    0.00 :   2c80b76:        pop    %r14
+    0.00 :   2c80b78:        pop    %r15
+    0.00 :   2c80b7a:        ret
+         : 71      LLVM_ABI SmallPtrSetImplBase(const void **SmallStorage, unsigned SmallSize,
+         : 72      const void **RHSSmallStorage,
+         : 73      SmallPtrSetImplBase &&that);
+         :
+         : 75      explicit SmallPtrSetImplBase(const void **SmallStorage, unsigned SmallSize)
+         : 76      : CurArray(SmallStorage), CurArraySize(SmallSize), NumEntries(0),
+    0.00 :   2c80b7b:        lea    0x178(%rsp),%rax
+    0.00 :   2c80b83:        mov    %rdx,%r14
+         : 79      /// @}
+         : 80      /// @name Simple Operations
+         : 81      /// @{
+         :
+         : 83      iterator begin() const { return Data; }
+         : 84      iterator end() const { return Data + Length; }
+    0.00 :   2c80b86:        lea    0x0(,%rcx,8),%r15
+    0.00 :   2c80b8e:        movq   $0x20,0x168(%rsp)
+    0.00 :   2c80b9a:        mov    %rax,0x160(%rsp)
+         : 88      return std::numeric_limits<Size_T>::max();
+         : 89      }
+         :
+         : 91      SmallVectorBase() = delete;
+         : 92      SmallVectorBase(void *FirstEl, size_t TotalCapacity)
+         : 93      : BeginX(FirstEl), Capacity(static_cast<Size_T>(TotalCapacity)) {}
+    0.00 :   2c80ba2:        lea    0x50(%rsp),%rax
+         : 95      random_access_iterator_tag)
+         : 96      {
+         : 97      // concept requirements
+         : 98      __glibcxx_function_requires(_RandomAccessIteratorConcept<
+         : 99      _RandomAccessIterator>)
+         : 100     return __last - __first;
+    0.00 :   2c80ba7:        mov    %r15,%rbp
+    0.00 :   2c80baa:        mov    %rax,0x20(%rsp)
+    0.00 :   2c80baf:        lea    0x60(%rsp),%rax
+    0.00 :   2c80bb4:        sar    $0x3,%rbp
+    0.00 :   2c80bb8:        mov    %rax,0x8(%rsp)
+    0.00 :   2c80bbd:        mov    %rax,0x50(%rsp)
+    0.00 :   2c80bc2:        mov    0xa972d7(%rip),%rax        # 3717ea0 <_IO_stdin_used+0xe6ea0>
+         : 108     NumTombstones(0), IsSmall(true) {
+    0.00 :   2c80bc9:        movl   $0x0,0x170(%rsp)
+    0.00 :   2c80bd4:        movb   $0x1,0x174(%rsp)
+    0.00 :   2c80bdc:        mov    %rax,0x58(%rsp)
+         : 112     // N > this->size(). Defer to append.
+         : 113     this->append(N - this->size(), NV);
+         : 114     }
+         :
+         : 116     void reserve(size_type N) {
+         : 117     if (this->capacity() < N)
+    0.00 :   2c80be1:        cmp    $0x100,%r15
+    0.00 :   2c80be8:        ja     2c81417 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x937>
+         : 120     static void uninitialized_copy(It1 I, It1 E, It2 Dest) {
+    0.00 :   2c80bee:        mov    0x8(%rsp),%rdx
+         : 122     if (I != E)
+    0.00 :   2c80bf3:        test   %r15,%r15
+    0.00 :   2c80bf6:        jne    2c80f39 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x459>
+         : 125     bool DropContext = CFGChanged;
+    0.00 :   2c80bfc:        movzbl 0x48(%rsp),%edi
+         : 127     Size = static_cast<Size_T>(N);
+    0.00 :   2c80c01:        mov    %r15d,0x58(%rsp)
+    0.00 :   2c80c06:        mov    %r15d,%eax
+         : 130     while (!Worklist.empty()) {
+    0.00 :   2c80c09:        mov    $0x1,%ebp
+         : 132     unsigned UsesVisited = 0;
+    0.00 :   2c80c0e:        xor    %r15d,%r15d
+         : 134     bool DropContext = CFGChanged;
+    0.00 :   2c80c11:        mov    %dil,0x10(%rsp)
+         : 136     incrementEpoch();
+         : 137     return {CurArray + (NumEntries - 1), true};
+         : 138     }
+         : 139     // Otherwise, hit the big set case, which will call grow.
+         : 140     }
+         : 141     return insert_imp_big(Ptr);
+    0.00 :   2c80c16:        lea    0x160(%rsp),%rdi
+    0.00 :   2c80c1e:        mov    %rdi,0x28(%rsp)
+    0.00 :   2c80c23:        xchg   %ax,%ax
+    0.00 :   2c80c25:        data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2c80c30:        mov    %eax,%ecx
+         : 147     unsigned UsesVisited = 0;
+    0.00 :   2c80c32:        xor    %esi,%esi
+    0.00 :   2c80c34:        lea    (%rdx,%rcx,8),%rdx
+         : 150     while (!Worklist.empty()) {
+    0.00 :   2c80c38:        test   %eax,%eax
+    0.00 :   2c80c3a:        je     2c80f5a <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x47a>
+         : 153     assert(this->size() >= NumItems);
+         : 154     truncate(this->size() - NumItems);
+         : 155     }
+         :
+         : 157     [[nodiscard]] T pop_back_val() {
+         : 158     T Result = ::std::move(this->back());
+    0.00 :   2c80c40:        mov    -0x8(%rdx),%r12
+         : 160     Size = static_cast<Size_T>(N);
+    0.00 :   2c80c44:        sub    $0x1,%eax
+         : 162     if (!V || !Affected.insert(V).second)
+    0.00 :   2c80c47:        sub    $0x8,%rdx
+    0.00 :   2c80c4b:        mov    $0x1,%esi
+    0.00 :   2c80c50:        test   %r12,%r12
+    0.00 :   2c80c53:        je     2c80c38 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x158>
+    0.00 :   2c80c55:        mov    %eax,0x58(%rsp)
+         : 168     if (isSmall()) {
+    0.00 :   2c80c59:        cmpb   $0x0,0x174(%rsp)
+    0.00 :   2c80c61:        je     2c80cb0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x1d0>
+         : 171     return make_range(CurArray, CurArray + NumEntries);
+    0.00 :   2c80c63:        mov    0x16c(%rsp),%edx
+    0.00 :   2c80c6a:        mov    0x160(%rsp),%rax
+    0.00 :   2c80c72:        mov    %rdx,%rcx
+    0.00 :   2c80c75:        lea    (%rax,%rdx,8),%rdx
+         : 176     for (const void *&Bucket : small_buckets()) {
+    0.00 :   2c80c79:        cmp    %rdx,%rax
+    0.00 :   2c80c7c:        jne    2c80c9d <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x1bd>
+    0.00 :   2c80c7e:        jmp    2c80dc8 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x2e8>
+    0.00 :   2c80c83:        xchg   %ax,%ax
+    0.00 :   2c80c85:        data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2c80c90:        add    $0x8,%rax
+    0.00 :   2c80c94:        cmp    %rax,%rdx
+    0.00 :   2c80c97:        je     2c80dc8 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x2e8>
+         : 185     if (Bucket == Ptr)
+    0.00 :   2c80c9d:        cmp    (%rax),%r12
+    0.00 :   2c80ca0:        jne    2c80c90 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x1b0>
+         : 188     iterator begin() { return (iterator)this->BeginX; }
+    0.00 :   2c80ca2:        mov    0x50(%rsp),%rdx
+    0.00 :   2c80ca7:        mov    0x58(%rsp),%eax
+    0.00 :   2c80cab:        jmp    2c80c30 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x150>
+    0.00 :   2c80cad:        nopl   (%rax)
+         : 193     return insert_imp_big(Ptr);
+    0.00 :   2c80cb0:        mov    0x28(%rsp),%rdi
+    0.00 :   2c80cb5:        mov    %r12,%rsi
+    0.00 :   2c80cb8:        call   3565ec0 <llvm::SmallPtrSetImplBase::insert_imp_big(void const*)>
+    0.00 :   2c80cbd:        test   %dl,%dl
+    0.00 :   2c80cbf:        je     2c80ca2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x1c2>
+         : 199     ++Info.ValuesVisited;
+    0.00 :   2c80cc1:        mov    %rbp,0x18(%rbx)
+         : 201     if (Info.ValuesVisited > MaxInvalidationValues ||
+    0.00 :   2c80cc5:        cmp    $0x1001,%rbp
+    0.00 :   2c80ccc:        je     2c80df0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x310>
+         : 204     /// # there is no value with code InstructionVal (no opcode==0).
+         : 205     /// # there are more possible values for the value type than in ValueTy enum.
+         : 206     /// # the InstructionVal enumerator must be the highest valued enumerator in
+         : 207     ///   the ValueTy enum.
+         : 208     unsigned getValueID() const {
+         : 209     return SubclassID;
+    0.00 :   2c80cd2:        movzbl (%r12),%eax
+    0.00 :   2c80cd7:        cmp    $0x1c,%al
+    0.00 :   2c80cd9:        ja     2c80d88 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x2a8>
+         : 213     (!isa<Instruction>(V) && !isa<Argument>(V))) {
+    0.00 :   2c80cdf:        cmp    $0x16,%al
+    0.00 :   2c80ce1:        jne    2c80df0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x310>
+         : 216     return user_iterator(UseList);
+    0.00 :   2c80ce7:        mov    0x10(%r12),%r12
+         : 218     for (User *U : V->users()) {
+    0.00 :   2c80cec:        test   %r12,%r12
+    0.00 :   2c80cef:        jne    2c80d10 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x230>
+    0.00 :   2c80cf1:        jmp    2c80d70 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x290>
+    0.00 :   2c80cf3:        nopl   0x0(%rax,%rax,1)
+         : 223     std::memcpy(reinterpret_cast<void *>(this->end()), EltPtr, sizeof(T));
+    0.00 :   2c80cf8:        mov    0x50(%rsp),%rdx
+    0.00 :   2c80cfd:        mov    %r14,(%rdx,%rax,8)
+         : 226     LLVM_ABI inline const Use &operator=(const Use &RHS);
+         :
+         : 228     Value *operator->() { return Val; }
+         : 229     const Value *operator->() const { return Val; }
+         :
+         : 231     Use *getNext() const { return Next; }
+    0.00 :   2c80d01:        mov    0x8(%r12),%r12
+         : 233     Size = static_cast<Size_T>(N);
+    0.00 :   2c80d06:        addl   $0x1,0x58(%rsp)
+    0.00 :   2c80d0b:        test   %r12,%r12
+    0.00 :   2c80d0e:        je     2c80d70 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x290>
+         : 237     if (++UsesVisited > MaxInvalidationUses) {
+    0.00 :   2c80d10:        add    $0x1,%r15d
+    0.00 :   2c80d14:        cmp    $0x4000,%r15d
+    0.00 :   2c80d1b:        ja     2c80df0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x310>
+         : 241     size_t size() const { return Size; }
+    0.00 :   2c80d21:        mov    0x58(%rsp),%eax
+         : 243     size_t capacity() const { return Capacity; }
+    0.00 :   2c80d25:        mov    0x5c(%rsp),%ecx
+         : 245     User *getUser() const { return Parent; };
+    0.00 :   2c80d29:        mov    0x18(%r12),%r14
+         : 247     size_t NewSize = This->size() + N;
+    0.00 :   2c80d2e:        lea    0x1(%rax),%rdx
+         : 249     if (LLVM_LIKELY(NewSize <= This->capacity()))
+    0.00 :   2c80d32:        cmp    %rdx,%rcx
+    0.00 :   2c80d35:        jae    2c80cf8 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x218>
+         : 252     Base::grow_pod(getFirstEl(), MinSize, TSize);
+    0.00 :   2c80d37:        mov    0x8(%rsp),%rsi
+    0.00 :   2c80d3c:        mov    0x20(%rsp),%rdi
+    0.00 :   2c80d41:        mov    $0x8,%ecx
+    0.00 :   2c80d46:        call   3566b10 <llvm::SmallVectorBase<unsigned int>::grow_pod(void*, unsigned long, unsigned long)>
+         : 257     size_t size() const { return Size; }
+    0.00 :   2c80d4b:        mov    0x58(%rsp),%edx
+         : 259     std::memcpy(reinterpret_cast<void *>(this->end()), EltPtr, sizeof(T));
+    0.00 :   2c80d4f:        mov    0x50(%rsp),%rax
+    0.00 :   2c80d54:        mov    %r14,(%rax,%rdx,8)
+         : 262     Use *getNext() const { return Next; }
+    0.00 :   2c80d58:        mov    0x8(%r12),%r12
+         : 264     Size = static_cast<Size_T>(N);
+    0.00 :   2c80d5d:        addl   $0x1,0x58(%rsp)
+         : 266     for (User *U : V->users()) {
+    0.00 :   2c80d62:        test   %r12,%r12
+    0.00 :   2c80d65:        jne    2c80d10 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x230>
+    0.00 :   2c80d67:        nopw   0x0(%rax,%rax,1)
+         : 270     iterator begin() { return (iterator)this->BeginX; }
+    0.00 :   2c80d70:        mov    0x50(%rsp),%rdx
+    0.00 :   2c80d75:        mov    0x58(%rsp),%eax
+    0.00 :   2c80d79:        add    $0x1,%rbp
+    0.00 :   2c80d7d:        jmp    2c80c30 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x150>
+    0.00 :   2c80d82:        nopw   0x0(%rax,%rax,1)
+         : 276     return SubclassID;
+    0.00 :   2c80d88:        movzbl %al,%edx
+         : 278     LLVM_ABI bool isOnlyUserOfAnyOperand();
+         :
+         : 280     LLVM_ABI static const char *getOpcodeName(unsigned Opcode);
+         :
+         : 282     static inline bool isTerminator(unsigned Opcode) {
+         : 283     return Opcode >= TermOpsBegin && Opcode < TermOpsEnd;
+    0.00 :   2c80d8b:        sub    $0x1e,%edx
+         : 285     I->isTerminator() || isa<CallBase>(I) || I->mayReadOrWriteMemory();
+    0.00 :   2c80d8e:        cmp    $0xa,%edx
+    0.00 :   2c80d91:        jbe    2c80f08 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x428>
+    0.00 :   2c80d97:        sub    $0x22,%eax
+    0.00 :   2c80d9a:        cmp    $0x34,%al
+    0.00 :   2c80d9c:        ja     2c80f18 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x438>
+    0.00 :   2c80da2:        movabs $0x10000000000041,%rdi
+    0.00 :   2c80dac:        bt     %rax,%rdi
+    0.00 :   2c80db0:        setb   %al
+    0.00 :   2c80db3:        test   %al,%al
+    0.00 :   2c80db5:        je     2c80f18 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x438>
+    0.00 :   2c80dbb:        mov    %al,0x10(%rsp)
+    0.00 :   2c80dbf:        jmp    2c80ce7 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x207>
+    0.00 :   2c80dc4:        nopl   0x0(%rax)
+         : 299     if (NumEntries < CurArraySize) {
+    0.00 :   2c80dc8:        cmp    0x168(%rsp),%ecx
+    0.00 :   2c80dcf:        jae    2c80cb0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x1d0>
+         : 302     CurArray[NumEntries++] = Ptr;
+    0.00 :   2c80dd5:        add    $0x1,%ecx
+    0.00 :   2c80dd8:        mov    %ecx,0x16c(%rsp)
+    0.00 :   2c80ddf:        mov    %r12,(%rdx)
+         : 306     enable_if<_PCCP::template
+         : 307     _MoveConstructiblePair<_U1, _U2>()
+         : 308     && _PCCP::template
+         : 309     _ImplicitlyMoveConvertiblePair<_U1, _U2>(),
+         : 310     bool>::type=true>
+         : 311     constexpr pair(_U1&& __x, _U2&& __y)
+    0.00 :   2c80de2:        jmp    2c80cc1 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x1e1>
+    0.00 :   2c80de7:        nopw   0x0(%rax,%rax,1)
+         : 314     Info.BaseSlotsScanned = OldBase;
+    0.00 :   2c80df0:        mov    0x40(%rsp),%rax
+         : 316     std::swap(NumEntries, RHS.NumEntries);
+         : 317     std::swap(NumTombstones, RHS.NumTombstones);
+         : 318     std::swap(NumBuckets, RHS.NumBuckets);
+         : 319     }
+         :
+         : 321     unsigned getNumEntries() const { return NumEntries; }
+    0.00 :   2c80df5:        mov    0x8(%r13),%r14d
+         : 323     Info.UsesVisited = UsesVisited;
+    0.00 :   2c80df9:        mov    %r15d,%r8d
+         : 325     Info.FullClear = true;
+    0.00 :   2c80dfc:        movb   $0x1,0x40(%rbx)
+         : 327     Info.UsesVisited = UsesVisited;
+    0.00 :   2c80e00:        mov    %r8,0x20(%rbx)
+         : 329     Info.BaseSlotsScanned = OldBase;
+    0.00 :   2c80e04:        mov    %rax,0x28(%rbx)
+         : 331     Info.PathFactsSlotsScanned = OldFacts;
+    0.00 :   2c80e08:        mov    0x30(%rsp),%rax
+    0.00 :   2c80e0d:        mov    %rax,0x30(%rbx)
+         : 334     Info.FinalTypesSlotsScanned = OldFinal;
+    0.00 :   2c80e11:        mov    0x38(%rsp),%rax
+    0.00 :   2c80e16:        mov    %rax,0x38(%rbx)
+         : 337     if (getNumEntries() == 0 && getNumTombstones() == 0)
+    0.00 :   2c80e1a:        test   %r14d,%r14d
+    0.00 :   2c80e1d:        jne    2c814f8 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa18>
+    0.00 :   2c80e23:        mov    0xc(%r13),%esi
+    0.00 :   2c80e27:        test   %esi,%esi
+    0.00 :   2c80e29:        je     2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+         :
+         : 344     void setNumTombstones(unsigned Num) { NumTombstones = Num; }
+         :
+         : 346     BucketT *getBuckets() const { return Buckets; }
+         :
+         : 348     unsigned getNumBuckets() const { return NumBuckets; }
+    0.00 :   2c80e2b:        mov    0x10(%r13),%eax
+         : 350     if (getNumEntries() * 4 < getNumBuckets() && getNumBuckets() > 64) {
+    0.00 :   2c80e2f:        test   %eax,%eax
+    0.00 :   2c80e31:        je     2c80e87 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3a7>
+    0.00 :   2c80e33:        cmp    $0x40,%eax
+    0.00 :   2c80e36:        ja     2c8184b <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xd6b>
+    0.00 :   2c80e3c:        mov    0x0(%r13),%rbp
+    0.00 :   2c80e40:        mov    %eax,%ecx
+         : 357     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c80e42:        lea    (%rcx,%rcx,8),%rax
+    0.00 :   2c80e46:        lea    0x0(%rbp,%rax,8),%r14
+         : 360     for (BucketT &B : buckets()) {
+    0.00 :   2c80e4b:        cmp    %r14,%rbp
+    0.00 :   2c80e4e:        je     2c80e87 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3a7>
+         : 363     if (!KeyInfoT::isEqual(B.getFirst(), EmptyKey)) {
+    0.00 :   2c80e50:        mov    0x0(%rbp),%rax
+    0.00 :   2c80e54:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c80e5a:        je     2c80e7e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x39e>
+         : 367     if (!KeyInfoT::isEqual(B.getFirst(), TombstoneKey)) {
+    0.00 :   2c80e5c:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c80e62:        je     2c80e76 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x396>
+         : 370     ///            detail::DenseSetPair<ValueT>>
+         : 371     ///
+         : 372     /// or the equivalent SmallDenseMap type.  ValueInfoT must implement the
+         : 373     /// DenseMapInfo "concept".
+         : 374     template <typename ValueT, typename MapTy, typename ValueInfoT>
+         : 375     class DenseSetImpl {
+    0.00 :   2c80e64:        lea    0x30(%rbp),%rdi
+         : 377     SmallDenseMap(std::initializer_list<typename BaseT::value_type> Vals)
+         : 378     : SmallDenseMap(Vals.begin(), Vals.end()) {}
+         :
+         : 380     ~SmallDenseMap() {
+         : 381     this->destroyAll();
+         : 382     deallocateBuckets();
+    0.00 :   2c80e68:        call   2c80aa0 <llvm::SmallDenseMap<unsigned long, llvm::detail::DenseSetEmpty, 2u, llvm::DenseMapInfo<unsigned long, void>, llvm::detail::DenseSetPair<unsigned long> >::deallocateBuckets()>
+    0.00 :   2c80e6d:        lea    0x10(%rbp),%rdi
+    0.00 :   2c80e71:        call   2c80aa0 <llvm::SmallDenseMap<unsigned long, llvm::detail::DenseSetEmpty, 2u, llvm::DenseMapInfo<unsigned long, void>, llvm::detail::DenseSetPair<unsigned long> >::deallocateBuckets()>
+         : 386     B.getFirst() = EmptyKey;
+    0.00 :   2c80e76:        movq   $0xfffffffffffff000,0x0(%rbp)
+         : 388     for (BucketT &B : buckets()) {
+    0.00 :   2c80e7e:        add    $0x48,%rbp
+    0.00 :   2c80e82:        cmp    %rbp,%r14
+    0.00 :   2c80e85:        jne    2c80e50 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x370>
+         : 392     void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c80e87:        movq   $0x0,0x8(%r13)
+         : 394     PathFacts.clear();
+    0.00 :   2c80e8f:        lea    0x18(%r13),%rdi
+    0.00 :   2c80e93:        call   2c80460 <llvm::DenseMapBase<llvm::DenseMap<std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType, llvm::DenseMapInfo<std::pair<llvm::Value*, llvm::BasicBlock*>, void>, llvm::detail::DenseMapPair<std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType> >, std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType, llvm::DenseMapInfo<std::pair<llvm::Value*, llvm::BasicBlock*>, void>, llvm::detail::DenseMapPair<std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType> >::clear()>
+         : 397     FinalTypes.clear();
+    0.00 :   2c80e98:        lea    0x30(%r13),%rdi
+    0.00 :   2c80e9c:        call   2c80460 <llvm::DenseMapBase<llvm::DenseMap<std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType, llvm::DenseMapInfo<std::pair<llvm::Value*, llvm::BasicBlock*>, void>, llvm::detail::DenseMapPair<std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType> >, std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType, llvm::DenseMapInfo<std::pair<llvm::Value*, llvm::BasicBlock*>, void>, llvm::detail::DenseMapPair<std::pair<llvm::Value*, llvm::BasicBlock*>, llvm::jeandle::JavaType> >::clear()>
+         : 400     Info.BaseRemoved = OldBase - BaseTypes.size();
+    0.00 :   2c80ea1:        mov    0x8(%r13),%edx
+    0.00 :   2c80ea5:        mov    0x40(%rsp),%rax
+         : 403     bool isSmall() const { return this->BeginX == getFirstEl(); }
+    0.00 :   2c80eaa:        mov    0x50(%rsp),%rdi
+    0.00 :   2c80eaf:        sub    %rdx,%rax
+         : 406     Info.FactsRemoved = OldFacts - PathFacts.size();
+    0.00 :   2c80eb2:        mov    0x30(%rsp),%rdx
+         : 408     Info.BaseRemoved = OldBase - BaseTypes.size();
+    0.00 :   2c80eb7:        mov    %rax,(%rbx)
+         : 410     Info.FactsRemoved = OldFacts - PathFacts.size();
+    0.00 :   2c80eba:        mov    0x20(%r13),%eax
+    0.00 :   2c80ebe:        sub    %rax,%rdx
+         : 413     Info.FinalRemoved = OldFinal - FinalTypes.size();
+    0.00 :   2c80ec1:        mov    0x38(%rsp),%rax
+         : 415     Info.FactsRemoved = OldFacts - PathFacts.size();
+    0.00 :   2c80ec6:        mov    %rdx,0x8(%rbx)
+         : 417     Info.FinalRemoved = OldFinal - FinalTypes.size();
+    0.00 :   2c80eca:        mov    0x38(%r13),%edx
+    0.00 :   2c80ece:        sub    %rdx,%rax
+    0.00 :   2c80ed1:        mov    %rax,0x10(%rbx)
+         : 421     if (!this->isSmall())
+    0.00 :   2c80ed5:        cmp    0x8(%rsp),%rdi
+    0.00 :   2c80eda:        je     2c80ee1 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x401>
+         : 424     free(this->begin());
+    0.00 :   2c80edc:        call   40b250 <free@plt>
+         : 426     if (!isSmall())
+    0.00 :   2c80ee1:        cmpb   $0x0,0x174(%rsp)
+    0.00 :   2c80ee9:        jne    2c80b4f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x6f>
+         : 429     free(CurArray);
+    0.00 :   2c80eef:        mov    0x160(%rsp),%rdi
+    0.00 :   2c80ef7:        call   40b250 <free@plt>
+         : 432     /// SmallPtrSet - This class implements a set which is optimized for holding
+         : 433     /// SmallSize or less elements.  This internally rounds up SmallSize to the next
+         : 434     /// power of two if it is not already a power of two.  See the comments above
+         : 435     /// SmallPtrSetImplBase for details of the algorithm.
+         : 436     template <class PtrType, unsigned SmallSize>
+         : 437     class SmallPtrSet : public SmallPtrSetImpl<PtrType> {
+    0.00 :   2c80efc:        jmp    2c80b4f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x6f>
+    0.00 :   2c80f01:        nopl   0x0(%rax)
+    0.00 :   2c80f08:        movb   $0x1,0x10(%rsp)
+    0.00 :   2c80f0d:        jmp    2c80ce7 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x207>
+    0.00 :   2c80f12:        nopw   0x0(%rax,%rax,1)
+         : 443     /// Return true if this instruction may read memory.
+         : 444     LLVM_ABI bool mayReadFromMemory() const LLVM_READONLY;
+         :
+         : 446     /// Return true if this instruction may read or write memory.
+         : 447     bool mayReadOrWriteMemory() const {
+         : 448     return mayReadFromMemory() || mayWriteToMemory();
+    0.00 :   2c80f18:        mov    %r12,%rdi
+    0.00 :   2c80f1b:        call   332f590 <llvm::Instruction::mayReadFromMemory() const>
+    0.00 :   2c80f20:        test   %al,%al
+    0.00 :   2c80f22:        jne    2c80dbb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x2db>
+    0.00 :   2c80f28:        mov    %r12,%rdi
+    0.00 :   2c80f2b:        call   332f610 <llvm::Instruction::mayWriteToMemory() const>
+         : 455     DropContext |=
+    0.00 :   2c80f30:        or     %al,0x10(%rsp)
+    0.00 :   2c80f34:        jmp    2c80ce7 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x207>
+    0.00 :   2c80f39:        mov    %rdx,%rdi
+         : 459     std::memcpy(reinterpret_cast<void *>(Dest), I, (E - I) * sizeof(T));
+    0.00 :   2c80f3c:        mov    %r15,%rdx
+    0.00 :   2c80f3f:        mov    %r14,%rsi
+    0.00 :   2c80f42:        call   40b0c0 <memcpy@plt>
+         : 463     size_t size() const { return Size; }
+    0.00 :   2c80f47:        mov    0x58(%rsp),%r8d
+         : 465     iterator begin() { return (iterator)this->BeginX; }
+    0.00 :   2c80f4c:        mov    0x50(%rsp),%rdx
+         : 467     void append(ItTy in_start, ItTy in_end) {
+         : 468     this->assertSafeToAddRange(in_start, in_end);
+         : 469     size_type NumInputs = std::distance(in_start, in_end);
+         : 470     this->reserve(this->size() + NumInputs);
+         : 471     this->uninitialized_copy(in_start, in_end, this->end());
+         : 472     this->set_size(this->size() + NumInputs);
+    0.00 :   2c80f51:        lea    (%r8,%rbp,1),%r15
+    0.00 :   2c80f55:        jmp    2c80bfc <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x11c>
+    0.00 :   2c80f5a:        test   %sil,%sil
+    0.00 :   2c80f5d:        je     2c80f67 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x487>
+    0.00 :   2c80f5f:        movl   $0x0,0x58(%rsp)
+         : 478     Info.UsesVisited = UsesVisited;
+    0.00 :   2c80f67:        mov    %r15d,%eax
+    0.00 :   2c80f6a:        mov    %rax,0x20(%rbx)
+         : 481     if (!CFGChanged &&
+    0.00 :   2c80f6e:        cmpb   $0x1,0x48(%rsp)
+    0.00 :   2c80f73:        je     2c80ff2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x512>
+    0.00 :   2c80f75:        mov    0x4c(%rsp),%edi
+    0.00 :   2c80f79:        test   %edi,%edi
+    0.00 :   2c80f7b:        jne    2c80ff2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x512>
+         : 487     return makeIterator(CurArray);
+    0.00 :   2c80f7d:        mov    0x160(%rsp),%rax
+         : 489     return isSmall() ? CurArray + NumEntries : CurArray + CurArraySize;
+    0.00 :   2c80f85:        cmpb   $0x0,0x174(%rsp)
+    0.00 :   2c80f8d:        jne    2c81640 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xb60>
+    0.00 :   2c80f93:        mov    0x168(%rsp),%edx
+    0.00 :   2c80f9a:        lea    (%rax,%rdx,8),%rbp
+         : 494     while (Bucket != End &&
+    0.00 :   2c80f9e:        cmp    %rbp,%rax
+    0.00 :   2c80fa1:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+    0.00 :   2c80fa3:        xchg   %ax,%ax
+    0.00 :   2c80fa5:        data16 cs nopw 0x0(%rax,%rax,1)
+         : 499     (*Bucket == SmallPtrSetImplBase::getEmptyMarker() ||
+    0.00 :   2c80fb0:        cmpq   $0xfffffffffffffffd,(%rax)
+    0.00 :   2c80fb4:        jbe    2c81680 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xba0>
+         : 502     ++Bucket;
+    0.00 :   2c80fba:        add    $0x8,%rax
+         : 504     while (Bucket != End &&
+    0.00 :   2c80fbe:        cmp    %rax,%rbp
+    0.00 :   2c80fc1:        jne    2c80fb0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4d0>
+    0.00 :   2c80fc3:        xchg   %ax,%ax
+    0.00 :   2c80fc5:        data16 cs nopw 0x0(%rax,%rax,1)
+         : 509     if (DropContext) {
+    0.00 :   2c80fd0:        cmpb   $0x0,0x10(%rsp)
+    0.00 :   2c80fd5:        je     2c8119c <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x6bc>
+         : 512     Info.PathFactsSlotsScanned = OldFacts;
+    0.00 :   2c80fdb:        mov    0x30(%rsp),%rax
+    0.00 :   2c80fe0:        mov    %rax,0x30(%rbx)
+         : 515     Info.FinalTypesSlotsScanned = OldFinal;
+    0.00 :   2c80fe4:        mov    0x38(%rsp),%rax
+    0.00 :   2c80fe9:        mov    %rax,0x38(%rbx)
+    0.00 :   2c80fed:        jmp    2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+         :
+         : 520     static DenseMapIterator makeBegin(iterator_range<pointer> Buckets,
+         : 521     bool IsEmpty, const DebugEpochBase &Epoch) {
+         : 522     // When the map is empty, avoid the overhead of advancing/retreating past
+         : 523     // empty buckets.
+         : 524     if (IsEmpty)
+    0.00 :   2c80ff2:        mov    0x8(%r13),%ecx
+    0.00 :   2c80ff6:        test   %ecx,%ecx
+    0.00 :   2c80ff8:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+         : 528     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c80ffa:        mov    0x10(%r13),%eax
+         : 530     BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c80ffe:        mov    0x0(%r13),%r9
+         : 532     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c81002:        lea    (%rax,%rax,8),%rax
+    0.00 :   2c81006:        lea    (%r9,%rax,8),%rcx
+         : 535     void AdvancePastEmptyBuckets() {
+         : 536     assert(Ptr <= End);
+         : 537     const KeyT Empty = KeyInfoT::getEmptyKey();
+         : 538     const KeyT Tombstone = KeyInfoT::getTombstoneKey();
+         :
+         : 540     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c8100a:        cmp    %rcx,%r9
+    0.00 :   2c8100d:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+    0.00 :   2c8100f:        nop
+    0.00 :   2c81010:        mov    (%r9),%rax
+    0.00 :   2c81013:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c81019:        je     2c81023 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x543>
+    0.00 :   2c8101b:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c81021:        jne    2c8102e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x54e>
+         : 549     KeyInfoT::isEqual(Ptr->getFirst(), Tombstone)))
+         : 550     ++Ptr;
+    0.00 :   2c81023:        add    $0x48,%r9
+         : 552     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c81027:        cmp    %r9,%rcx
+    0.00 :   2c8102a:        jne    2c81010 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x530>
+    0.00 :   2c8102c:        jmp    2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+         : 556     for (auto It = Map.begin(), End = Map.end(); It != End;) {
+    0.00 :   2c8102e:        cmp    %rcx,%r9
+    0.00 :   2c81031:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+    0.00 :   2c81033:        mov    $0x1,%ebp
+         : 560     void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c81038:        mov    0xa96b01(%rip),%r12        # 3717b40 <_IO_stdin_used+0xe6b40>
+    0.00 :   2c8103f:        mov    %rbx,%r15
+    0.00 :   2c81042:        mov    %r13,%r8
+    0.00 :   2c81045:        mov    %r9,%rbx
+    0.00 :   2c81048:        mov    %rbp,%r13
+    0.00 :   2c8104b:        mov    %rcx,%rbp
+    0.00 :   2c8104e:        xchg   %ax,%ax
+         : 568     ++Ptr;
+    0.00 :   2c81050:        lea    0x48(%rbx),%r14
+         : 570     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c81054:        cmp    %r14,%rbp
+    0.00 :   2c81057:        je     2c8107c <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x59c>
+    0.00 :   2c81059:        nopl   0x0(%rax)
+    0.00 :   2c81060:        mov    (%r14),%rax
+    0.00 :   2c81063:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c81069:        je     2c81073 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x593>
+    0.00 :   2c8106b:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c81071:        jne    2c8107c <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x59c>
+         : 579     ++Ptr;
+    0.00 :   2c81073:        add    $0x48,%r14
+         : 581     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c81077:        cmp    %r14,%rbp
+    0.00 :   2c8107a:        jne    2c81060 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x580>
+         : 584     ++Info.BaseSlotsScanned;
+    0.00 :   2c8107c:        mov    %r13,0x28(%r15)
+         : 586     if (Affected.contains(Entry.first))
+    0.00 :   2c81080:        mov    (%rbx),%rsi
+         : 588     if (isSmall()) {
+    0.00 :   2c81083:        cmpb   $0x0,0x174(%rsp)
+    0.00 :   2c8108b:        je     2c81149 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x669>
+    0.00 :   2c81091:        mov    0x160(%rsp),%rax
+         : 592     return {CurArray, CurArray + NumEntries};
+    0.00 :   2c81099:        mov    0x16c(%rsp),%edx
+    0.00 :   2c810a0:        lea    (%rax,%rdx,8),%rdx
+         : 595     for (const void *const &Bucket : small_buckets())
+    0.00 :   2c810a4:        cmp    %rdx,%rax
+    0.00 :   2c810a7:        jne    2c810bd <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x5dd>
+    0.00 :   2c810a9:        jmp    2c81169 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x689>
+    0.00 :   2c810ae:        xchg   %ax,%ax
+    0.00 :   2c810b0:        add    $0x8,%rax
+    0.00 :   2c810b4:        cmp    %rax,%rdx
+    0.00 :   2c810b7:        je     2c81169 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x689>
+         : 603     if (Bucket == Ptr)
+    0.00 :   2c810bd:        cmp    (%rax),%rsi
+    0.00 :   2c810c0:        jne    2c810b0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x5d0>
+         : 606     if (Small || getLargeRep()->NumBuckets == 0)
+    0.00 :   2c810c2:        testb  $0x1,0x30(%rbx)
+    0.00 :   2c810c6:        jne    2c810ef <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x60f>
+    0.00 :   2c810c8:        mov    0x40(%rbx),%eax
+    0.00 :   2c810cb:        test   %eax,%eax
+    0.00 :   2c810cd:        je     2c810ef <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x60f>
+         : 612     deallocate_buffer(getLargeRep()->Buckets,
+    0.00 :   2c810cf:        mov    0x38(%rbx),%rdi
+    0.00 :   2c810d3:        mov    $0x8,%edx
+    0.00 :   2c810d8:        mov    %r8,0x20(%rsp)
+    0.00 :   2c810dd:        lea    0x0(,%rax,8),%rsi
+    0.00 :   2c810e5:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+    0.00 :   2c810ea:        mov    0x20(%rsp),%r8
+         : 619     if (Small || getLargeRep()->NumBuckets == 0)
+    0.00 :   2c810ef:        testb  $0x1,0x10(%rbx)
+    0.00 :   2c810f3:        jne    2c8111c <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x63c>
+    0.00 :   2c810f5:        mov    0x20(%rbx),%eax
+    0.00 :   2c810f8:        test   %eax,%eax
+    0.00 :   2c810fa:        je     2c8111c <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x63c>
+         : 625     deallocate_buffer(getLargeRep()->Buckets,
+    0.00 :   2c810fc:        mov    0x18(%rbx),%rdi
+    0.00 :   2c81100:        mov    $0x8,%edx
+    0.00 :   2c81105:        mov    %r8,0x20(%rsp)
+    0.00 :   2c8110a:        lea    0x0(,%rax,8),%rsi
+    0.00 :   2c81112:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+    0.00 :   2c81117:        mov    0x20(%rsp),%r8
+         : 632     void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c8111c:        movq   0x8(%r8),%xmm0
+    0.00 :   2c81122:        movq   %r12,%xmm2
+         : 635     TheBucket->getFirst() = KeyInfoT::getTombstoneKey();
+    0.00 :   2c81127:        movq   $0xffffffffffffe000,(%rbx)
+         : 637     void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c8112e:        paddd  %xmm2,%xmm0
+         : 639     void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c81132:        movq   %xmm0,0x8(%r8)
+         : 641     for (auto It = Map.begin(), End = Map.end(); It != End;) {
+    0.00 :   2c81138:        add    $0x1,%r13
+    0.00 :   2c8113c:        cmp    %rbp,%r14
+    0.00 :   2c8113f:        je     2c8118b <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x6ab>
+    0.00 :   2c81141:        mov    %r14,%rbx
+    0.00 :   2c81144:        jmp    2c81050 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x570>
+         : 647     return doFind(Ptr) != nullptr;
+    0.00 :   2c81149:        lea    0x160(%rsp),%rdi
+    0.00 :   2c81151:        mov    %r8,0x20(%rsp)
+    0.00 :   2c81156:        call   3565c80 <llvm::SmallPtrSetImplBase::doFind(void const*) const>
+         : 651     if (Affected.contains(Entry.first))
+    0.00 :   2c8115b:        mov    0x20(%rsp),%r8
+    0.00 :   2c81160:        test   %rax,%rax
+    0.00 :   2c81163:        jne    2c810c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x5e2>
+         : 655     return CFGChanged &&
+    0.00 :   2c81169:        cmpb   $0x0,0x48(%rsp)
+    0.00 :   2c8116e:        je     2c81138 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x658>
+    0.00 :   2c81170:        mov    (%rbx),%rax
+    0.00 :   2c81173:        movzbl (%rax),%eax
+         : 660     ///
+         : 661     ///  if (isa<Type>(myVal)) { ... }
+         : 662     ///  if (isa<Type0, Type1, Type2>(myVal)) { ... }
+         : 663     template <typename... To, typename From>
+         : 664     [[nodiscard]] inline bool isa(const From &Val) {
+         : 665     return (CastInfo<To, const From>::isPossible(Val) || ...);
+    0.00 :   2c81176:        cmp    $0x16,%al
+    0.00 :   2c81178:        je     2c81138 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x658>
+         : 668     return I->getOpcode() == Instruction::Call ||
+         : 669     I->getOpcode() == Instruction::Invoke ||
+         : 670     I->getOpcode() == Instruction::CallBr;
+         : 671     }
+         : 672     static bool classof(const Value *V) {
+         : 673     return isa<Instruction>(V) && classof(cast<Instruction>(V));
+    0.00 :   2c8117a:        cmp    $0x1c,%al
+    0.00 :   2c8117c:        ja     2c813ea <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x90a>
+    0.00 :   2c81182:        cmp    $0x15,%al
+    0.00 :   2c81184:        jbe    2c81138 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x658>
+    0.00 :   2c81186:        jmp    2c810c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x5e2>
+    0.00 :   2c8118b:        mov    %r15,%rbx
+    0.00 :   2c8118e:        mov    %r8,%r13
+         : 681     if (DropContext) {
+    0.00 :   2c81191:        cmpb   $0x0,0x10(%rsp)
+    0.00 :   2c81196:        jne    2c80fdb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4fb>
+         : 684     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c8119c:        mov    0x28(%r13),%eax
+         : 686     BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c811a0:        mov    0x18(%r13),%r15
+         : 688     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c811a4:        lea    (%rax,%rax,4),%rdx
+    0.00 :   2c811a8:        shl    $0x4,%rdx
+    0.00 :   2c811ac:        lea    (%r15,%rdx,1),%r14
+         : 692     if (IsEmpty)
+    0.00 :   2c811b0:        mov    0x20(%r13),%edx
+    0.00 :   2c811b4:        test   %edx,%edx
+    0.00 :   2c811b6:        je     2c814e9 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa09>
+         : 696     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c811bc:        cmp    %r14,%r15
+    0.00 :   2c811bf:        je     2c811eb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x70b>
+         : 699     return detail::combineHashValue(FirstInfo::getHashValue(First),
+         : 700     SecondInfo::getHashValue(Second));
+         : 701     }
+         :
+         : 703     static bool isEqual(const Pair &LHS, const Pair &RHS) {
+         : 704     return FirstInfo::isEqual(LHS.first, RHS.first) &&
+    0.00 :   2c811c1:        mov    (%r15),%rax
+    0.00 :   2c811c4:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c811ca:        je     2c81663 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xb83>
+    0.00 :   2c811d0:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c811d6:        jne    2c811eb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x70b>
+    0.00 :   2c811d8:        cmpq   $0xffffffffffffe000,0x8(%r15)
+    0.00 :   2c811e0:        jne    2c811eb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x70b>
+         : 712     ++Ptr;
+    0.00 :   2c811e2:        add    $0x50,%r15
+         : 714     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c811e6:        cmp    %r15,%r14
+    0.00 :   2c811e9:        jne    2c811c1 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x6e1>
+         : 717     is_move_assignable<_T2>>::value,
+         : 718     pair&&, __nonesuch&&> __p)
+         : 719     noexcept(__and_<is_nothrow_move_assignable<_T1>,
+         : 720     is_nothrow_move_assignable<_T2>>::value)
+         : 721     {
+         : 722     first = std::forward<first_type>(__p.first);
+    0.00 :   2c811eb:        mov    $0xffffffffffffe000,%rax
+    0.00 :   2c811f2:        lea    0x160(%rsp),%rbp
+    0.00 :   2c811fa:        movq   %rax,%xmm7
+    0.00 :   2c811ff:        punpcklqdq %xmm7,%xmm7
+    0.00 :   2c81203:        movaps %xmm7,0x10(%rsp)
+         : 728     for (auto It = Map.begin(), End = Map.end(); It != End;) {
+    0.00 :   2c81208:        cmp    %r15,%r14
+    0.00 :   2c8120b:        je     2c812ce <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7ee>
+    0.00 :   2c81211:        nopl   0x0(%rax)
+    0.00 :   2c81215:        data16 cs nopw 0x0(%rax,%rax,1)
+         : 733     ++Ptr;
+    0.00 :   2c81220:        lea    0x50(%r15),%r12
+         : 735     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c81224:        cmp    %r12,%r14
+    0.00 :   2c81227:        je     2c81245 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x765>
+    0.00 :   2c81229:        mov    (%r12),%rax
+    0.00 :   2c8122d:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c81233:        je     2c81440 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x960>
+    0.00 :   2c81239:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c8123f:        je     2c81480 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x9a0>
+         : 743     ++Info.PathFactsSlotsScanned;
+    0.00 :   2c81245:        addq   $0x1,0x30(%rbx)
+         : 745     return Affected.contains(Entry.first.first);
+    0.00 :   2c8124a:        mov    (%r15),%rsi
+         : 747     if (isSmall()) {
+    0.00 :   2c8124d:        cmpb   $0x0,0x174(%rsp)
+    0.00 :   2c81255:        je     2c81468 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x988>
+    0.00 :   2c8125b:        mov    0x160(%rsp),%rax
+         : 751     return {CurArray, CurArray + NumEntries};
+    0.00 :   2c81263:        mov    0x16c(%rsp),%edx
+    0.00 :   2c8126a:        lea    (%rax,%rdx,8),%rdx
+         : 754     for (const void *const &Bucket : small_buckets())
+    0.00 :   2c8126e:        cmp    %rdx,%rax
+    0.00 :   2c81271:        jne    2c81289 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7a9>
+    0.00 :   2c81273:        jmp    2c812c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7e2>
+    0.00 :   2c81275:        data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2c81280:        add    $0x8,%rax
+    0.00 :   2c81284:        cmp    %rax,%rdx
+    0.00 :   2c81287:        je     2c812c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7e2>
+         : 762     if (Bucket == Ptr)
+    0.00 :   2c81289:        cmp    (%rax),%rsi
+    0.00 :   2c8128c:        jne    2c81280 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7a0>
+    0.00 :   2c8128e:        lea    0x38(%r15),%rdi
+         : 766     deallocateBuckets();
+    0.00 :   2c81292:        call   2c80aa0 <llvm::SmallDenseMap<unsigned long, llvm::detail::DenseSetEmpty, 2u, llvm::DenseMapInfo<unsigned long, void>, llvm::detail::DenseSetPair<unsigned long> >::deallocateBuckets()>
+    0.00 :   2c81297:        lea    0x18(%r15),%rdi
+    0.00 :   2c8129b:        call   2c80aa0 <llvm::SmallDenseMap<unsigned long, llvm::detail::DenseSetEmpty, 2u, llvm::DenseMapInfo<unsigned long, void>, llvm::detail::DenseSetPair<unsigned long> >::deallocateBuckets()>
+    0.00 :   2c812a0:        movdqa 0x10(%rsp),%xmm3
+         : 771     void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c812a6:        movq   0xa96892(%rip),%xmm4        # 3717b40 <_IO_stdin_used+0xe6b40>
+    0.00 :   2c812ae:        movups %xmm3,(%r15)
+    0.00 :   2c812b2:        movq   0x20(%r13),%xmm0
+    0.00 :   2c812b8:        paddd  %xmm4,%xmm0
+         : 776     void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c812bc:        movq   %xmm0,0x20(%r13)
+         : 778     }
+    0.00 :   2c812c2:        mov    %r12,%r15
+         : 780     for (auto It = Map.begin(), End = Map.end(); It != End;) {
+    0.00 :   2c812c5:        cmp    %r15,%r14
+    0.00 :   2c812c8:        jne    2c81220 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x740>
+         : 783     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c812ce:        mov    0x40(%r13),%eax
+         : 785     BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c812d2:        mov    0x30(%r13),%r15
+         : 787     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c812d6:        lea    (%rax,%rax,4),%rdx
+         : 789     if (IsEmpty)
+    0.00 :   2c812da:        mov    0x38(%r13),%eax
+         : 791     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c812de:        shl    $0x4,%rdx
+    0.00 :   2c812e2:        lea    (%r15,%rdx,1),%r14
+         : 794     if (IsEmpty)
+    0.00 :   2c812e6:        test   %eax,%eax
+    0.00 :   2c812e8:        je     2c814e1 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa01>
+         : 797     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c812ee:        cmp    %r14,%r15
+    0.00 :   2c812f1:        je     2c8131d <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x83d>
+    0.00 :   2c812f3:        mov    (%r15),%rax
+    0.00 :   2c812f6:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c812fc:        je     2c81650 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xb70>
+    0.00 :   2c81302:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c81308:        jne    2c8131d <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x83d>
+    0.00 :   2c8130a:        cmpq   $0xffffffffffffe000,0x8(%r15)
+    0.00 :   2c81312:        jne    2c8131d <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x83d>
+         : 807     ++Ptr;
+    0.00 :   2c81314:        add    $0x50,%r15
+         : 809     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c81318:        cmp    %r15,%r14
+    0.00 :   2c8131b:        jne    2c812f3 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x813>
+    0.00 :   2c8131d:        mov    $0xffffffffffffe000,%rax
+         : 813     return doFind(Ptr) != nullptr;
+    0.00 :   2c81324:        lea    0x160(%rsp),%rbp
+    0.00 :   2c8132c:        movq   %rax,%xmm7
+    0.00 :   2c81331:        punpcklqdq %xmm7,%xmm7
+    0.00 :   2c81335:        movaps %xmm7,0x10(%rsp)
+    0.00 :   2c8133a:        nopw   0x0(%rax,%rax,1)
+    0.00 :   2c81340:        cmp    %r14,%r15
+    0.00 :   2c81343:        je     2c80ea1 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3c1>
+         : 821     ++Ptr;
+    0.00 :   2c81349:        lea    0x50(%r15),%r12
+         : 823     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c8134d:        cmp    %r12,%r14
+    0.00 :   2c81350:        je     2c8136e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x88e>
+    0.00 :   2c81352:        mov    (%r12),%rax
+    0.00 :   2c81356:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c8135c:        je     2c81491 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x9b1>
+    0.00 :   2c81362:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c81368:        je     2c814d0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x9f0>
+         : 831     ++Info.FinalTypesSlotsScanned;
+    0.00 :   2c8136e:        addq   $0x1,0x38(%rbx)
+         : 833     return Affected.contains(Entry.first.first);
+    0.00 :   2c81373:        mov    (%r15),%rsi
+         : 835     if (isSmall()) {
+    0.00 :   2c81376:        cmpb   $0x0,0x174(%rsp)
+    0.00 :   2c8137e:        je     2c814b8 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x9d8>
+    0.00 :   2c81384:        mov    0x160(%rsp),%rax
+         : 839     return {CurArray, CurArray + NumEntries};
+    0.00 :   2c8138c:        mov    0x16c(%rsp),%edx
+    0.00 :   2c81393:        lea    (%rax,%rdx,8),%rdx
+         : 842     for (const void *const &Bucket : small_buckets())
+    0.00 :   2c81397:        cmp    %rdx,%rax
+    0.00 :   2c8139a:        jne    2c813a9 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x8c9>
+    0.00 :   2c8139c:        jmp    2c813e2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x902>
+    0.00 :   2c8139e:        xchg   %ax,%ax
+    0.00 :   2c813a0:        add    $0x8,%rax
+    0.00 :   2c813a4:        cmp    %rax,%rdx
+    0.00 :   2c813a7:        je     2c813e2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x902>
+         : 850     if (Bucket == Ptr)
+    0.00 :   2c813a9:        cmp    (%rax),%rsi
+    0.00 :   2c813ac:        jne    2c813a0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x8c0>
+    0.00 :   2c813ae:        lea    0x38(%r15),%rdi
+         : 854     deallocateBuckets();
+    0.00 :   2c813b2:        call   2c80aa0 <llvm::SmallDenseMap<unsigned long, llvm::detail::DenseSetEmpty, 2u, llvm::DenseMapInfo<unsigned long, void>, llvm::detail::DenseSetPair<unsigned long> >::deallocateBuckets()>
+    0.00 :   2c813b7:        lea    0x18(%r15),%rdi
+    0.00 :   2c813bb:        call   2c80aa0 <llvm::SmallDenseMap<unsigned long, llvm::detail::DenseSetEmpty, 2u, llvm::DenseMapInfo<unsigned long, void>, llvm::detail::DenseSetPair<unsigned long> >::deallocateBuckets()>
+    0.00 :   2c813c0:        movdqa 0x10(%rsp),%xmm5
+         : 859     void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c813c6:        movq   0xa96772(%rip),%xmm6        # 3717b40 <_IO_stdin_used+0xe6b40>
+    0.00 :   2c813ce:        movups %xmm5,(%r15)
+    0.00 :   2c813d2:        movq   0x38(%r13),%xmm0
+    0.00 :   2c813d8:        paddd  %xmm6,%xmm0
+         : 864     void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c813dc:        movq   %xmm0,0x38(%r13)
+         : 866     }
+    0.00 :   2c813e2:        mov    %r12,%r15
+    0.00 :   2c813e5:        jmp    2c81340 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x860>
+    0.00 :   2c813ea:        lea    -0x22(%rax),%edx
+    0.00 :   2c813ed:        cmp    $0x34,%dl
+    0.00 :   2c813f0:        ja     2c810c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x5e2>
+    0.00 :   2c813f6:        movabs $0x10000000000041,%rsi
+    0.00 :   2c81400:        bt     %rdx,%rsi
+    0.00 :   2c81404:        jb     2c81138 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x658>
+         : 875     // Methods for support type inquiry through isa, cast, and dyn_cast:
+         : 876     static bool classof(const Instruction *I) {
+         : 877     return I->getOpcode() == Instruction::Load;
+         : 878     }
+         : 879     static bool classof(const Value *V) {
+         : 880     return isa<Instruction>(V) && classof(cast<Instruction>(V));
+    0.00 :   2c8140a:        cmp    $0x3d,%al
+    0.00 :   2c8140c:        je     2c81138 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x658>
+    0.00 :   2c81412:        jmp    2c810c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x5e2>
+         : 884     Base::grow_pod(getFirstEl(), MinSize, TSize);
+    0.00 :   2c81417:        mov    0x20(%rsp),%rdi
+    0.00 :   2c8141c:        mov    0x8(%rsp),%rsi
+    0.00 :   2c81421:        mov    %rbp,%rdx
+    0.00 :   2c81424:        mov    $0x8,%ecx
+    0.00 :   2c81429:        call   3566b10 <llvm::SmallVectorBase<unsigned int>::grow_pod(void*, unsigned long, unsigned long)>
+         : 890     size_t size() const { return Size; }
+    0.00 :   2c8142e:        mov    0x58(%rsp),%edx
+         : 892     iterator end() { return begin() + size(); }
+    0.00 :   2c81432:        mov    0x50(%rsp),%rax
+    0.00 :   2c81437:        lea    (%rax,%rdx,8),%rdi
+         : 895     static void uninitialized_copy(It1 I, It1 E, It2 Dest) {
+    0.00 :   2c8143b:        jmp    2c80f3c <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x45c>
+    0.00 :   2c81440:        cmpq   $0xfffffffffffff000,0x8(%r12)
+    0.00 :   2c81449:        jne    2c81245 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x765>
+         : 899     ++Ptr;
+    0.00 :   2c8144f:        add    $0x50,%r12
+         : 901     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c81453:        cmp    %r12,%r14
+    0.00 :   2c81456:        jne    2c81229 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x749>
+    0.00 :   2c8145c:        jmp    2c81245 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x765>
+    0.00 :   2c81461:        nopl   0x0(%rax)
+         : 906     return doFind(Ptr) != nullptr;
+    0.00 :   2c81468:        mov    %rbp,%rdi
+    0.00 :   2c8146b:        call   3565c80 <llvm::SmallPtrSetImplBase::doFind(void const*) const>
+         : 909     if (Predicate(*Current))
+    0.00 :   2c81470:        test   %rax,%rax
+    0.00 :   2c81473:        je     2c812c2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7e2>
+    0.00 :   2c81479:        jmp    2c8128e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x7ae>
+    0.00 :   2c8147e:        xchg   %ax,%ax
+    0.00 :   2c81480:        cmpq   $0xffffffffffffe000,0x8(%r12)
+    0.00 :   2c81489:        jne    2c81245 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x765>
+    0.00 :   2c8148f:        jmp    2c8144f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x96f>
+    0.00 :   2c81491:        cmpq   $0xfffffffffffff000,0x8(%r12)
+    0.00 :   2c8149a:        jne    2c8136e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x88e>
+         : 919     ++Ptr;
+    0.00 :   2c814a0:        add    $0x50,%r12
+         : 921     while (Ptr != End && (KeyInfoT::isEqual(Ptr->getFirst(), Empty) ||
+    0.00 :   2c814a4:        cmp    %r12,%r14
+    0.00 :   2c814a7:        jne    2c81352 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x872>
+    0.00 :   2c814ad:        jmp    2c8136e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x88e>
+    0.00 :   2c814b2:        nopw   0x0(%rax,%rax,1)
+    0.00 :   2c814b8:        mov    %rbp,%rdi
+    0.00 :   2c814bb:        call   3565c80 <llvm::SmallPtrSetImplBase::doFind(void const*) const>
+    0.00 :   2c814c0:        test   %rax,%rax
+    0.00 :   2c814c3:        je     2c813e2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x902>
+    0.00 :   2c814c9:        jmp    2c813ae <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x8ce>
+    0.00 :   2c814ce:        xchg   %ax,%ax
+    0.00 :   2c814d0:        cmpq   $0xffffffffffffe000,0x8(%r12)
+    0.00 :   2c814d9:        jne    2c8136e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x88e>
+    0.00 :   2c814df:        jmp    2c814a0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x9c0>
+    0.00 :   2c814e1:        mov    %r14,%r15
+    0.00 :   2c814e4:        jmp    2c8131d <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x83d>
+    0.00 :   2c814e9:        mov    %r14,%r15
+    0.00 :   2c814ec:        jmp    2c811eb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x70b>
+    0.00 :   2c814f1:        nopl   0x0(%rax)
+         : 940     if (getNumEntries() * 4 < getNumBuckets() && getNumBuckets() > 64) {
+    0.00 :   2c814f8:        lea    0x0(,%r14,4),%edi
+    0.00 :   2c81500:        mov    $0x40,%r8d
+         : 943     unsigned getNumBuckets() const { return NumBuckets; }
+    0.00 :   2c81506:        mov    0x10(%r13),%ecx
+         : 945     BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c8150a:        mov    0x0(%r13),%rsi
+         : 947     if (getNumEntries() * 4 < getNumBuckets() && getNumBuckets() > 64) {
+    0.00 :   2c8150e:        cmp    %r8d,%edi
+    0.00 :   2c81511:        cmovb  %r8d,%edi
+         : 950     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c81515:        lea    (%rcx,%rcx,8),%rdx
+         : 952     unsigned getNumBuckets() const { return NumBuckets; }
+    0.00 :   2c81519:        mov    %rcx,%rax
+         : 954     BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c8151c:        mov    %rsi,%rbp
+         : 956     BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c8151f:        lea    (%rsi,%rdx,8),%rdx
+         : 958     if (getNumEntries() * 4 < getNumBuckets() && getNumBuckets() > 64) {
+    0.00 :   2c81523:        cmp    %ecx,%edi
+    0.00 :   2c81525:        jae    2c80e42 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x362>
+         : 961     ///
+         : 962     /// Returns std::numeric_limits<T>::digits on an input of 0.
+         : 963     template <typename T> [[nodiscard]] int countl_zero(T Val) {
+         : 964     static_assert(std::is_unsigned_v<T>,
+         : 965     "Only unsigned integral types are allowed.");
+         : 966     if (!Val)
+    0.00 :   2c8152b:        mov    %r14d,%ecx
+    0.00 :   2c8152e:        sub    $0x1,%ecx
+    0.00 :   2c81531:        je     2c81862 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xd82>
+         : 970     NewNumBuckets = std::max(64u, 1u << (Log2_32_Ceil(NumEntries) + 1));
+    0.00 :   2c81537:        bsr    %ecx,%ecx
+    0.00 :   2c8153a:        mov    $0x1,%r14d
+         : 973     return {true, NewNumBuckets}; // Reallocate.
+    0.00 :   2c81540:        mov    $0x1,%r15d
+         : 975     NewNumBuckets = std::max(64u, 1u << (Log2_32_Ceil(NumEntries) + 1));
+    0.00 :   2c81546:        add    $0x2,%ecx
+    0.00 :   2c81549:        shl    %cl,%r14d
+         : 978     max(const _Tp& __a, const _Tp& __b)
+         : 979     {
+         : 980     // concept requirements
+         : 981     __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+         : 982     //return  __a < __b ? __b : __a;
+         : 983     if (__a < __b)
+    0.00 :   2c8154c:        mov    $0x40,%ecx
+    0.00 :   2c81551:        cmp    %ecx,%r14d
+    0.00 :   2c81554:        cmovb  %rcx,%r14
+         : 987     if (NewNumBuckets == NumBuckets)
+    0.00 :   2c81558:        cmp    %eax,%r14d
+    0.00 :   2c8155b:        jne    2c81563 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa83>
+         : 990     return {false, 0};          // Reuse.
+    0.00 :   2c8155d:        xor    %r15d,%r15d
+    0.00 :   2c81560:        xor    %r14d,%r14d
+    0.00 :   2c81563:        mov    %rsi,%rbp
+    0.00 :   2c81566:        mov    %rdx,%r12
+         : 995     if (!KeyInfoT::isEqual(B.getFirst(), EmptyKey) &&
+    0.00 :   2c81569:        mov    0x0(%rbp),%rax
+    0.00 :   2c8156d:        cmp    $0xfffffffffffff000,%rax
+    0.00 :   2c81573:        je     2c815c3 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xae3>
+    0.00 :   2c81575:        cmp    $0xffffffffffffe000,%rax
+    0.00 :   2c8157b:        je     2c815c3 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xae3>
+         : 1001    if (Small || getLargeRep()->NumBuckets == 0)
+    0.00 :   2c8157d:        testb  $0x1,0x30(%rbp)
+    0.00 :   2c81581:        jne    2c815a0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xac0>
+    0.00 :   2c81583:        mov    0x40(%rbp),%eax
+    0.00 :   2c81586:        test   %eax,%eax
+    0.00 :   2c81588:        je     2c815a0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xac0>
+         : 1007    deallocate_buffer(getLargeRep()->Buckets,
+    0.00 :   2c8158a:        mov    0x38(%rbp),%rdi
+    0.00 :   2c8158e:        lea    0x0(,%rax,8),%rsi
+    0.00 :   2c81596:        mov    $0x8,%edx
+    0.00 :   2c8159b:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+         : 1012    if (Small || getLargeRep()->NumBuckets == 0)
+    0.00 :   2c815a0:        testb  $0x1,0x10(%rbp)
+    0.00 :   2c815a4:        jne    2c815c3 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xae3>
+    0.00 :   2c815a6:        mov    0x20(%rbp),%eax
+    0.00 :   2c815a9:        test   %eax,%eax
+    0.00 :   2c815ab:        je     2c815c3 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xae3>
+         : 1018    deallocate_buffer(getLargeRep()->Buckets,
+    0.00 :   2c815ad:        mov    0x18(%rbp),%rdi
+    0.00 :   2c815b1:        lea    0x0(,%rax,8),%rsi
+    0.00 :   2c815b9:        mov    $0x8,%edx
+    0.00 :   2c815be:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+         : 1023    for (BucketT &B : buckets()) {
+    0.00 :   2c815c3:        add    $0x48,%rbp
+    0.00 :   2c815c7:        cmp    %rbp,%r12
+    0.00 :   2c815ca:        jne    2c81569 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa89>
+         : 1027    deallocate_buffer(Buckets, sizeof(BucketT) * NumBuckets, alignof(BucketT));
+    0.00 :   2c815cc:        mov    0x10(%r13),%eax
+    0.00 :   2c815d0:        mov    0x0(%r13),%rdi
+    0.00 :   2c815d4:        lea    (%rax,%rax,8),%rdx
+    0.00 :   2c815d8:        lea    0x0(,%rdx,8),%rsi
+         : 1032    if (!Reallocate) {
+    0.00 :   2c815e0:        test   %r15b,%r15b
+    0.00 :   2c815e3:        jne    2c817ba <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xcda>
+         : 1035    BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c815e9:        lea    (%rdi,%rsi,1),%rdx
+         : 1037    void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c815ed:        movq   $0x0,0x8(%r13)
+         : 1039    for (BucketT &B : buckets())
+    0.00 :   2c815f5:        cmp    %rdi,%rdx
+    0.00 :   2c815f8:        je     2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+    0.00 :   2c815fe:        mov    %rdx,%rcx
+    0.00 :   2c81601:        mov    %rdi,%rax
+    0.00 :   2c81604:        sub    %rdi,%rcx
+    0.00 :   2c81607:        and    $0x8,%ecx
+    0.00 :   2c8160a:        je     2c81620 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xb40>
+    0.00 :   2c8160c:        add    $0x48,%rax
+         : 1048    ::new (&B.getFirst()) KeyT(EmptyKey);
+    0.00 :   2c81610:        movq   $0xfffffffffffff000,(%rdi)
+         : 1050    for (BucketT &B : buckets())
+    0.00 :   2c81617:        cmp    %rax,%rdx
+    0.00 :   2c8161a:        je     2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+         : 1053    ::new (&B.getFirst()) KeyT(EmptyKey);
+    0.00 :   2c81620:        movq   $0xfffffffffffff000,(%rax)
+         : 1055    for (BucketT &B : buckets())
+    0.00 :   2c81627:        add    $0x90,%rax
+         : 1057    ::new (&B.getFirst()) KeyT(EmptyKey);
+    0.00 :   2c8162d:        movq   $0xfffffffffffff000,-0x48(%rax)
+         : 1059    for (BucketT &B : buckets())
+    0.00 :   2c81635:        cmp    %rax,%rdx
+    0.00 :   2c81638:        jne    2c81620 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xb40>
+    0.00 :   2c8163a:        jmp    2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+    0.00 :   2c8163f:        nop
+         : 1064    return isSmall() ? CurArray + NumEntries : CurArray + CurArraySize;
+    0.00 :   2c81640:        mov    0x16c(%rsp),%edx
+    0.00 :   2c81647:        lea    (%rax,%rdx,8),%rbp
+    0.00 :   2c8164b:        jmp    2c80f9e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4be>
+    0.00 :   2c81650:        cmpq   $0xfffffffffffff000,0x8(%r15)
+    0.00 :   2c81658:        jne    2c8131d <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x83d>
+    0.00 :   2c8165e:        jmp    2c81314 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x834>
+    0.00 :   2c81663:        cmpq   $0xfffffffffffff000,0x8(%r15)
+    0.00 :   2c8166b:        jne    2c811eb <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x70b>
+    0.00 :   2c81671:        jmp    2c811e2 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x702>
+    0.00 :   2c81676:        cs nopw 0x0(%rax,%rax,1)
+         : 1075    for (Value *V : Affected)
+    0.00 :   2c81680:        cmp    %rbp,%rax
+    0.00 :   2c81683:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+         : 1078    return const_cast<void *>(*Bucket);
+   33.36 :   2c81689:        mov    (%rax),%rdx // SmallPtrSet.h:302
+         : 1080    void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c8168c:        mov    %rax,%r12
+    0.00 :   2c8168f:        nop
+         : 1083    unsigned getNumBuckets() const { return NumBuckets; }
+    0.00 :   2c81690:        mov    0x10(%r13),%r15d
+         : 1085    if (NumBuckets == 0)
+    0.00 :   2c81694:        test   %r15d,%r15d
+    0.00 :   2c81697:        je     2c81738 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc58>
+         : 1088    return (unsigned((uintptr_t)PtrVal) >> 4) ^
+    0.00 :   2c8169d:        mov    %edx,%eax
+         : 1090    (unsigned((uintptr_t)PtrVal) >> 9);
+    0.00 :   2c8169f:        mov    %edx,%ecx
+         : 1092    unsigned BucketNo = KeyInfoT::getHashValue(Val) & (NumBuckets - 1);
+    0.00 :   2c816a1:        lea    -0x1(%r15),%edi
+         : 1094    BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c816a5:        mov    0x0(%r13),%rsi
+    0.00 :   2c816a9:        shr    $0x9,%ecx
+         : 1097    return (unsigned((uintptr_t)PtrVal) >> 4) ^
+    0.00 :   2c816ac:        shr    $0x4,%eax
+         : 1099    unsigned ProbeAmt = 1;
+    0.00 :   2c816af:        mov    $0x1,%r8d
+         : 1101    (unsigned((uintptr_t)PtrVal) >> 9);
+    0.00 :   2c816b5:        xor    %ecx,%eax
+         : 1103    unsigned BucketNo = KeyInfoT::getHashValue(Val) & (NumBuckets - 1);
+    0.00 :   2c816b7:        and    %edi,%eax
+         : 1105    const BucketT *Bucket = BucketsPtr + BucketNo;
+    0.00 :   2c816b9:        mov    %eax,%ecx
+    0.00 :   2c816bb:        lea    (%rcx,%rcx,8),%rcx
+    0.00 :   2c816bf:        lea    (%rsi,%rcx,8),%r14
+         : 1109    if (LLVM_LIKELY(KeyInfoT::isEqual(Val, Bucket->getFirst())))
+    0.00 :   2c816c3:        mov    (%r14),%rcx
+   33.33 :   2c816c6:        cmp    %rdx,%rcx // DenseMap.h:628
+    0.00 :   2c816c9:        jne    2c81790 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xcb0>
+         : 1113    if (Small || getLargeRep()->NumBuckets == 0)
+    0.00 :   2c816cf:        testb  $0x1,0x30(%r14)
+    0.00 :   2c816d4:        jne    2c816f4 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc14>
+    0.00 :   2c816d6:        mov    0x40(%r14),%eax
+    0.00 :   2c816da:        test   %eax,%eax
+    0.00 :   2c816dc:        je     2c816f4 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc14>
+         : 1119    deallocate_buffer(getLargeRep()->Buckets,
+    0.00 :   2c816de:        mov    0x38(%r14),%rdi
+    0.00 :   2c816e2:        lea    0x0(,%rax,8),%rsi
+    0.00 :   2c816ea:        mov    $0x8,%edx
+    0.00 :   2c816ef:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+         : 1124    if (Small || getLargeRep()->NumBuckets == 0)
+    0.00 :   2c816f4:        testb  $0x1,0x10(%r14)
+    0.00 :   2c816f9:        jne    2c81719 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc39>
+    0.00 :   2c816fb:        mov    0x20(%r14),%eax
+    0.00 :   2c816ff:        test   %eax,%eax
+    0.00 :   2c81701:        je     2c81719 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc39>
+         : 1130    deallocate_buffer(getLargeRep()->Buckets,
+    0.00 :   2c81703:        mov    0x18(%r14),%rdi
+    0.00 :   2c81707:        lea    0x0(,%rax,8),%rsi
+    0.00 :   2c8170f:        mov    $0x8,%edx
+    0.00 :   2c81714:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+         : 1135    void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c81719:        movq   0x8(%r13),%xmm0
+         : 1137    TheBucket->getFirst() = KeyInfoT::getTombstoneKey();
+    0.00 :   2c8171f:        movq   $0xffffffffffffe000,(%r14)
+         : 1139    void decrementNumEntries() { setNumEntries(getNumEntries() - 1); }
+    0.00 :   2c81726:        movq   0xa96412(%rip),%xmm1        # 3717b40 <_IO_stdin_used+0xe6b40>
+    0.00 :   2c8172e:        paddd  %xmm1,%xmm0
+         : 1142    void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c81732:        movq   %xmm0,0x8(%r13)
+         : 1144    ++Bucket;
+    0.00 :   2c81738:        lea    0x8(%r12),%rcx
+         : 1146    while (Bucket != End &&
+    0.00 :   2c8173d:        cmp    %rcx,%rbp
+    0.00 :   2c81740:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+         : 1149    (*Bucket == SmallPtrSetImplBase::getEmptyMarker() ||
+    0.00 :   2c81746:        mov    (%rcx),%rdx
+    0.00 :   2c81749:        mov    %rcx,%r12
+    0.00 :   2c8174c:        cmp    $0xfffffffffffffffd,%rdx
+    0.00 :   2c81750:        jbe    2c81779 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc99>
+    0.00 :   2c81752:        nopl   (%rax)
+    0.00 :   2c81755:        data16 cs nopw 0x0(%rax,%rax,1)
+         : 1156    while (Bucket != End &&
+    0.00 :   2c81760:        add    $0x8,%rcx
+    0.00 :   2c81764:        cmp    %rcx,%rbp
+    0.00 :   2c81767:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+         : 1160    (*Bucket == SmallPtrSetImplBase::getEmptyMarker() ||
+    0.00 :   2c8176d:        mov    (%rcx),%rdx
+    0.00 :   2c81770:        mov    %rcx,%r12
+    0.00 :   2c81773:        cmp    $0xfffffffffffffffd,%rdx
+    0.00 :   2c81777:        ja     2c81760 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc80>
+    0.00 :   2c81779:        cmp    %rbp,%rcx
+    0.00 :   2c8177c:        je     2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+    0.00 :   2c81782:        test   %r15d,%r15d
+    0.00 :   2c81785:        jne    2c81690 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xbb0>
+    0.00 :   2c8178b:        jmp    2c80fd0 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x4f0>
+         : 1170    if (LLVM_LIKELY(KeyInfoT::isEqual(Bucket->getFirst(), EmptyKey)))
+    0.00 :   2c81790:        cmp    $0xfffffffffffff000,%rcx
+    0.00 :   2c81797:        je     2c81738 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xc58>
+         : 1173    BucketNo += ProbeAmt++;
+    0.00 :   2c81799:        add    %r8d,%eax
+         : 1175    BucketNo &= NumBuckets - 1;
+    0.00 :   2c8179c:        and    %edi,%eax
+         : 1177    const BucketT *Bucket = BucketsPtr + BucketNo;
+    0.00 :   2c8179e:        mov    %eax,%ecx
+    0.00 :   2c817a0:        lea    (%rcx,%rcx,8),%rcx
+    0.00 :   2c817a4:        lea    (%rsi,%rcx,8),%r14
+         : 1181    if (LLVM_LIKELY(KeyInfoT::isEqual(Val, Bucket->getFirst())))
+    0.00 :   2c817a8:        mov    (%r14),%rcx
+    0.00 :   2c817ab:        cmp    %rdx,%rcx
+    0.00 :   2c817ae:        je     2c816cf <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xbef>
+    0.00 :   2c817b4:        add    $0x1,%r8d
+    0.00 :   2c817b8:        jmp    2c81790 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xcb0>
+         : 1187    deallocate_buffer(Buckets, sizeof(BucketT) * NumBuckets, alignof(BucketT));
+    0.00 :   2c817ba:        mov    $0x8,%edx
+    0.00 :   2c817bf:        call   3545ab0 <llvm::deallocate_buffer(void*, unsigned long, unsigned long)>
+         : 1190    NumBuckets = Num;
+    0.00 :   2c817c4:        mov    %r14d,0x10(%r13)
+         : 1192    if (NumBuckets == 0) {
+    0.00 :   2c817c8:        test   %r14d,%r14d
+    0.00 :   2c817cb:        je     2c8183e <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xd5e>
+         : 1195    allocate_buffer(sizeof(BucketT) * NumBuckets, alignof(BucketT)));
+    0.00 :   2c817cd:        lea    (%r14,%r14,8),%rdi
+    0.00 :   2c817d1:        mov    $0x8,%esi
+    0.00 :   2c817d6:        shl    $0x3,%rdi
+    0.00 :   2c817da:        call   3545a80 <llvm::allocate_buffer(unsigned long, unsigned long)>
+         : 1200    BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c817df:        mov    0x10(%r13),%edx
+         : 1202    void setNumEntries(unsigned Num) { NumEntries = Num; }
+    0.00 :   2c817e3:        movq   $0x0,0x8(%r13)
+         : 1204    Buckets = static_cast<BucketT *>(
+    0.00 :   2c817eb:        mov    %rax,0x0(%r13)
+         : 1206    BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c817ef:        lea    (%rdx,%rdx,8),%rdx
+    0.00 :   2c817f3:        lea    (%rax,%rdx,8),%rdx
+         : 1209    for (BucketT &B : buckets())
+    0.00 :   2c817f7:        cmp    %rdx,%rax
+    0.00 :   2c817fa:        je     2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+    0.00 :   2c81800:        mov    %rdx,%rcx
+    0.00 :   2c81803:        sub    %rax,%rcx
+    0.00 :   2c81806:        and    $0x8,%ecx
+    0.00 :   2c81809:        je     2c8181f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xd3f>
+         : 1216    ::new (&B.getFirst()) KeyT(EmptyKey);
+    0.00 :   2c8180b:        movq   $0xfffffffffffff000,(%rax)
+         : 1218    for (BucketT &B : buckets())
+    0.00 :   2c81812:        add    $0x48,%rax
+    0.00 :   2c81816:        cmp    %rax,%rdx
+    0.00 :   2c81819:        je     2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+         : 1222    ::new (&B.getFirst()) KeyT(EmptyKey);
+    0.00 :   2c8181f:        movq   $0xfffffffffffff000,(%rax)
+         : 1224    for (BucketT &B : buckets())
+    0.00 :   2c81826:        add    $0x90,%rax
+         : 1226    ::new (&B.getFirst()) KeyT(EmptyKey);
+    0.00 :   2c8182c:        movq   $0xfffffffffffff000,-0x48(%rax)
+         : 1228    for (BucketT &B : buckets())
+    0.00 :   2c81834:        cmp    %rax,%rdx
+    0.00 :   2c81837:        jne    2c8181f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xd3f>
+    0.00 :   2c81839:        jmp    2c80e8f <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3af>
+         : 1232    Buckets = nullptr;
+    0.00 :   2c8183e:        movq   $0x0,0x0(%r13)
+    0.00 :   2c81846:        jmp    2c80e87 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0x3a7>
+         : 1235    BucketT *getBuckets() const { return Buckets; }
+    0.00 :   2c8184b:        mov    0x0(%r13),%rsi
+         : 1237    BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c8184f:        lea    (%rax,%rax,8),%rax
+         : 1239    return {true, NewNumBuckets}; // Reallocate.
+    0.00 :   2c81853:        mov    $0x1,%r15d
+         : 1241    BucketT *getBucketsEnd() { return getBuckets() + getNumBuckets(); }
+    0.00 :   2c81859:        lea    (%rsi,%rax,8),%rdx
+    0.00 :   2c8185d:        jmp    2c81563 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa83>
+         : 1244    return {true, NewNumBuckets}; // Reallocate.
+    0.00 :   2c81862:        mov    $0x1,%r15d
+         : 1246    NewNumBuckets = std::max(64u, 1u << (Log2_32_Ceil(NumEntries) + 1));
+    0.00 :   2c81868:        mov    $0x40,%r14d
+    0.00 :   2c8186e:        jmp    2c81563 <llvm::jeandle::JavaTypeCache::invalidate(llvm::ArrayRef<llvm::Value*>, bool, llvm::jeandle::JavaTypeBaseInvalidationMode)+0xa83>
+         : 1249    }
+    0.00 :   2c81873:        call   40b3d0 <__stack_chk_fail@plt>

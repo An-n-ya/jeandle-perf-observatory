@@ -1,0 +1,18 @@
+{
+  "cff-cache-reuse": {
+    "functions": 8,
+    "ir_sha256": {
+      "full": "f0198096c9a042504153489db0fc6cf16e465f7cb5af1befdc9c09a60368e237",
+      "origin": "f0198096c9a042504153489db0fc6cf16e465f7cb5af1befdc9c09a60368e237",
+      "s0": "f0198096c9a042504153489db0fc6cf16e465f7cb5af1befdc9c09a60368e237",
+      "s1": "f0198096c9a042504153489db0fc6cf16e465f7cb5af1befdc9c09a60368e237"
+    },
+    "java_type_queries": {
+      "full": 48,
+      "origin": 48,
+      "s0": 48,
+      "s1": 48
+    },
+    "status": "pass"
+  }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN" data-base=".">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jeandle · Perf Observatory</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%236171ed'/%3E%3Ctext x='13' y='29' font-size='28' fill='white' font-family='sans-serif'%3EJ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">J</span><div>JEANDLE<small>PERF OBSERVATORY</small></div></div>
+    <div class="side-label">实验数据集</div>
+    <select id="dataset" aria-label="实验数据集"></select>
+    <div class="side-label space">测试场景 <span id="case-count"></span></div>
+    <nav id="cases" aria-label="测试场景"></nav>
+    <div class="side-bottom"><span class="live-dot"></span> 静态站点 · 数据只读<div id="index-status">正在连接数据…</div></div>
+  </aside>
+  <main>
+    <header><div><div class="eyebrow">JAVA TYPE CACHE / CPU PROFILING</div><h1 id="title">性能观察台</h1><p id="subtitle"></p></div><div class="header-badge">REPLAY EXPERIMENT <span>2026.10.23</span></div></header>
+    <div class="controls"><div id="modes" class="mode-switch" role="group" aria-label="缓存策略"></div><label>采样范围 <select id="run" aria-label="采样重复"><option value="all">三份合并</option><option>run-00</option><option>run-01</option><option>run-02</option></select></label><button id="export">↓ Speedscope</button></div>
+    <nav id="tabs" class="tabs" aria-label="分析视图"></nav>
+    <div id="content" aria-live="polite"><div class="empty">正在加载实验数据…</div></div>
+    <footer>CPU 16 · cpu_atom/cycles/u · event period 加权 · LLVM replay 范围</footer>
+  </main>
+  <div id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>

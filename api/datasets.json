@@ -1,0 +1,1 @@
+[{"id":"java-type-perf-2026-10-23","cases":["deep-static","leaf-static","tce-cha","virtual-cfg","wide-static","cff-cache-reuse"],"fingerprint":"dc19adf52f254f62e373c8feed3db1823e1f3543170949eb78a32ce9753b060b"}]

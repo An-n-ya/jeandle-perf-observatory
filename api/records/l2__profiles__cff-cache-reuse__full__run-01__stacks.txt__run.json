@@ -1,0 +1,41 @@
+{
+  "call_graph": "dwarf,8192",
+  "case": "cff-cache-reuse",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/full/run-01/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(constant-field-folding)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/jeandle/jeandle-llvm/llvm/test/Jeandle/constant-field-folding/Inputs/cache-reuse.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/l2/cff-cache-reuse.ll",
+      "-jeandle-java-type-force-full-invalidation"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/full/run-01/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(constant-field-folding)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/jeandle/jeandle-llvm/llvm/test/Jeandle/constant-field-folding/Inputs/cache-reuse.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/l2/cff-cache-reuse.ll -jeandle-java-type-force-full-invalidation"
+  },
+  "derived_reports": "deferred",
+  "elapsed_ns": 6959252056,
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "mode": "full",
+  "perf_data_bytes": 11772872,
+  "perf_data_sha256": "19a56f88e9169987004b6120d336a1278311c1dd8eb704a817a6c1606dff104b",
+  "record_stderr": "[ perf record: Woken up 46 times to write data ]\n[ perf record: Captured and wrote 11.191 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/full/run-01/perf.data (1345 samples) ]\n",
+  "run": 1,
+  "stacks_sha256": "19aa87634e9aff76e21c54ed37387b67ea90c5288b0441869e6cb7c02bf17483"
+}

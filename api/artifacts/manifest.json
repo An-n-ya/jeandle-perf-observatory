@@ -1,0 +1,174 @@
+{
+  "cases": {
+    "deep-static": {
+      "cblog": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.cblog",
+      "cblog_sha256": "d68d00a5577a2077a0a7b8668f3709c5e1aa1b337fbe3bdfd0bca090eac86856",
+      "functions": 8192,
+      "ir": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.ll",
+      "ir_sha256": "1aafe408883d00eac6b3e42135ed93eeb4ce6656feeded11c34b955ef1f0770c",
+      "kind": "static",
+      "passes": "cha-devirtualization",
+      "select_depth": 64,
+      "sites_per_function": 16
+    },
+    "leaf-static": {
+      "cblog": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/leaf-static/leaf-static.cblog",
+      "cblog_sha256": "6740a72b6f9b74cde67762f6ded8905a154a923be8f191bab0231066f3d279f8",
+      "functions": 8192,
+      "ir": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/leaf-static/leaf-static.ll",
+      "ir_sha256": "72ea16d10fef45b33aa373fcdb45b5d00e6175b0a36419dff0c17b487808a60c",
+      "kind": "static",
+      "passes": "cha-devirtualization",
+      "select_depth": 0,
+      "sites_per_function": 32
+    },
+    "tce-cha": {
+      "cblog": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.cblog",
+      "cblog_sha256": "d68d00a5577a2077a0a7b8668f3709c5e1aa1b337fbe3bdfd0bca090eac86856",
+      "functions": 8192,
+      "ir": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.ll",
+      "ir_sha256": "6b254e809ec4d8420248cbe8ef44d47dacaa034acf7f510bcdb7e57d3cd3e7fd",
+      "kind": "tce-cha",
+      "passes": "type-check-elimination,cha-devirtualization",
+      "select_depth": 64,
+      "sites_per_function": 16
+    },
+    "virtual-cfg": {
+      "cblog": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/virtual-cfg/virtual-cfg.cblog",
+      "cblog_sha256": "6740a72b6f9b74cde67762f6ded8905a154a923be8f191bab0231066f3d279f8",
+      "functions": 8192,
+      "ir": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/virtual-cfg/virtual-cfg.ll",
+      "ir_sha256": "b6e97d7bf328ba84daf5abc347edc97de6516e8470583b4c5e511a0d4e97faa9",
+      "kind": "virtual",
+      "passes": "cha-devirtualization",
+      "select_depth": 0,
+      "sites_per_function": 32
+    },
+    "wide-static": {
+      "cblog": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/wide-static/wide-static.cblog",
+      "cblog_sha256": "8e5ed8df4e803f740139667536fc956ea2ac19d01f0fe4a3edb0d3d4a6da6be5",
+      "functions": 8192,
+      "ir": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/wide-static/wide-static.ll",
+      "ir_sha256": "6d1b5ca5340e21d9e3471e5dc2911d6f516735d852d70cde760f75b93b76291e",
+      "kind": "static",
+      "passes": "cha-devirtualization",
+      "select_depth": 16,
+      "sites_per_function": 64
+    }
+  },
+  "cpu": 16,
+  "created_unix": 1792725389.9704528,
+  "environment": {
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "platform": "Linux-7.1.3-arch2-2-x86_64-with-glibc2.43",
+    "python": "3.14.6",
+    "uname": {
+      "machine": "x86_64",
+      "node": "archlinux",
+      "processor": "",
+      "release": "7.1.3-arch2-2",
+      "system": "Linux",
+      "version": "#1 SMP PREEMPT_DYNAMIC Thu, 16 Jul 2026 17:41:28 +0000"
+    }
+  },
+  "functions": 8192,
+  "identity": {
+    "benchmark_sha256": "ec29fc237c887230a9b08d997adc9e28c75788408c19e869a7eced8d8be9afb0",
+    "head": "357604c7724e49eace6fbfa42e4f671b12b5ff98",
+    "opt_sha256": "fcd3fd2fa57c5bef3f1aef5372c936e627b08bc332cc1adabcfb6e5f947e3079",
+    "profiler_sha256": "4890fe08d2d3fc177360b146f405d25e934cce657eaf8e2ec4a62ce581ee9f75",
+    "source_patch_sha256": "d17c2da23a1332ebdba7d9b3ab52fe5f914e0f684607c4ca78f6790e560d0a9d",
+    "status": [
+      " M llvm/benchmarks/CMakeLists.txt",
+      " M llvm/include/llvm/Analysis/Jeandle/CachedJavaType.h",
+      " M llvm/include/llvm/Analysis/Jeandle/JavaTypeAnalysisStats.h",
+      " M llvm/lib/Analysis/Jeandle/CachedJavaType.cpp",
+      " M llvm/lib/Analysis/Jeandle/JavaTypeAnalysis.cpp",
+      " M llvm/lib/Analysis/Jeandle/JavaTypeAnalysisStats.cpp",
+      " M llvm/lib/Transforms/Jeandle/ConstantFieldFolding.cpp",
+      " M llvm/unittests/IR/CMakeLists.txt",
+      " M llvm/unittests/IR/JavaTypeQueryTest.cpp",
+      "?? llvm/benchmarks/JeandleJavaTypeCacheInvalidation.cpp",
+      "?? llvm/utils/jeandle/benchmark-java-type-cache-design.py",
+      "?? llvm/utils/jeandle/profile-java-type-cache.py"
+    ]
+  },
+  "l2": {
+    "cff-cache-reuse": {
+      "cblog": "/home/annya/playground/jeandle/jeandle/jeandle-llvm/llvm/test/Jeandle/constant-field-folding/Inputs/cache-reuse.cblog",
+      "cblog_sha256": "f240fceac2155dad3cb1e31d6c0f2c971ca438335b30c94524f29fa2e5fa8323",
+      "fixture": "/home/annya/playground/jeandle/jeandle/jeandle-llvm/llvm/test/Jeandle/constant-field-folding/cache-reuse.ll",
+      "fixture_sha256": "209ed2e73d0f122b9223e80cbe5ba2597e6579dd36361fcd4e25c8f5ec784db7",
+      "functions": 262144,
+      "ir": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/l2/cff-cache-reuse.ll",
+      "ir_sha256": "0ba19c035bcd704885e370b3e3a827af3826c8aaa2f7d113f5f0741dec4b529a",
+      "passes": "constant-field-folding"
+    }
+  },
+  "modes": {
+    "full": [
+      "-jeandle-java-type-force-full-invalidation"
+    ],
+    "origin": [
+      "-jeandle-disable-java-type-cache"
+    ],
+    "s0": [
+      "-jeandle-java-type-force-base-scan-invalidation"
+    ],
+    "s1": []
+  },
+  "opt": "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+  "schema": 1,
+  "seed": 20261023,
+  "source": {
+    "head": "357604c7724e49eace6fbfa42e4f671b12b5ff98",
+    "root": "/home/annya/playground/jeandle/jeandle/jeandle-llvm",
+    "status": [
+      " M llvm/benchmarks/CMakeLists.txt",
+      " M llvm/include/llvm/Analysis/Jeandle/CachedJavaType.h",
+      " M llvm/include/llvm/Analysis/Jeandle/JavaTypeAnalysisStats.h",
+      " M llvm/lib/Analysis/Jeandle/CachedJavaType.cpp",
+      " M llvm/lib/Analysis/Jeandle/JavaTypeAnalysis.cpp",
+      " M llvm/lib/Analysis/Jeandle/JavaTypeAnalysisStats.cpp",
+      " M llvm/lib/Transforms/Jeandle/ConstantFieldFolding.cpp",
+      " M llvm/unittests/IR/CMakeLists.txt",
+      " M llvm/unittests/IR/JavaTypeQueryTest.cpp",
+      "?? llvm/benchmarks/JeandleJavaTypeCacheInvalidation.cpp",
+      "?? llvm/utils/jeandle/benchmark-java-type-cache-design.py",
+      "?? llvm/utils/jeandle/profile-java-type-cache.py"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case": "deep-static",
+  "mode": "s0",
+  "run": 1,
+  "elapsed_ns": 6236365717,
+  "perf_data_bytes": 10526976,
+  "perf_data_sha256": "936f0d1918a071a4c9caeb8dc86c1a830780ce78c5f0c3c4587557cd98f77c73",
+  "stacks_sha256": "45935b0d9d9ad270fbb34c7e9774822a99948f3495ed5d6e0b432664f7b5e8e4",
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "call_graph": "dwarf,8192",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s0/run-01/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.ll",
+      "-jeandle-java-type-force-base-scan-invalidation"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s0/run-01/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/deep-static/deep-static.ll -jeandle-java-type-force-base-scan-invalidation"
+  },
+  "record_stderr": "[ perf record: Woken up 40 times to write data ]\n[ perf record: Captured and wrote 10.003 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s0/run-01/perf.data (1198 samples) ]\n",
+  "derived_reports": "deferred"
+}

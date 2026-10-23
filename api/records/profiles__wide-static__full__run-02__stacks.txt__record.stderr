@@ -1,0 +1,2 @@
+[ perf record: Woken up 114 times to write data ]
+[ perf record: Captured and wrote 28.475 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/full/run-02/perf.data (3481 samples) ]

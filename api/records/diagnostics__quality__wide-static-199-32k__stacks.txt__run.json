@@ -1,0 +1,36 @@
+{
+  "case": "wide-static",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,32768",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/wide-static-199-32k/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/wide-static/wide-static.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/wide-static/wide-static.ll"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,32768 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/wide-static-199-32k/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/wide-static/wide-static.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/wide-static/wide-static.ll"
+  },
+  "elapsed_ns": 16673939963,
+  "frequency": 199,
+  "mode": "s1",
+  "perf_data_bytes": 108384304,
+  "perf_data_sha256": "2a153aa6d77df476a5e848bbe7c8c083afd7d017ea2492693dc518da33280120",
+  "record_stderr": "[ perf record: Woken up 414 times to write data ]\n[ perf record: Captured and wrote 103.327 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/wide-static-199-32k/perf.data (3267 samples) ]\n",
+  "stack_bytes": 32768
+}

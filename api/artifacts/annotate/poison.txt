@@ -1,0 +1,851 @@
+
+Sorted summary for file /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt
+----------------------------------------------
+
+   25.64 ValueTracking.cpp:8035
+   17.11 ValueTracking.cpp:8014
+   13.80 ilist_node.h:244
+    9.24 ValueTracking.cpp:8362
+    8.56 Value.h:544
+    6.60 ValueTracking.cpp:8304
+    5.92 ValueTracking.cpp:8305
+    5.25 ValueTracking.cpp:8188
+    3.29 ValueTracking.cpp:8021
+    2.61 ilist_node_base.h:28
+    0.67 Instruction.h:312
+    0.66 ValueTracking.cpp:8271
+    0.65 ValueTracking.cpp:8190
+ Percent |	Source code & Disassembly of opt for cpu_atom/cycles/u (152 samples, percent: local period)
+-----------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3       Disassembly of section .text:
+         :
+         : 5       0000000002baf7c0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)>:
+         : 6       return handleGuaranteedNonPoisonOps(
+         : 7       I, [&](const Value *V) { return KnownPoison.count(V); });
+         : 8       }
+         :
+         : 10      static bool programUndefinedIfUndefOrPoison(const Value *V,
+         : 11      bool PoisonOnly) {
+    0.00 :   2baf7c0:        push   %r15
+    0.00 :   2baf7c2:        push   %r14
+    0.00 :   2baf7c4:        push   %r13
+    0.00 :   2baf7c6:        push   %r12
+    0.00 :   2baf7c8:        push   %rbp
+    0.00 :   2baf7c9:        push   %rbx
+    0.66 :   2baf7ca:        sub    $0x108,%rsp // ValueTracking.cpp:8271
+         : 19      /// # there is no value with code InstructionVal (no opcode==0).
+         : 20      /// # there are more possible values for the value type than in ValueTy enum.
+         : 21      /// # the InstructionVal enumerator must be the highest valued enumerator in
+         : 22      ///   the ValueTy enum.
+         : 23      unsigned getValueID() const {
+         : 24      return SubclassID;
+    0.00 :   2baf7d1:        movzbl (%rdi),%eax
+    0.00 :   2baf7d4:        mov    %fs:0x28,%r14
+    0.00 :   2baf7dd:        mov    %r14,0xf8(%rsp)
+    0.00 :   2baf7e5:        mov    %rdi,%r14
+         : 29      // This is largely to support legacy use cases - if you don't want this
+         : 30      // behavior you should specialize CastInfo for your use case.
+         : 31      static inline CastReturnType castFailed() { return CastReturnType(nullptr); }
+         :
+         : 33      static inline CastReturnType doCastIfPossible(const From &f) {
+         : 34      if (!Self::isPossible(f))
+    0.00 :   2baf7e8:        cmp    $0x1c,%al
+    0.00 :   2baf7ea:        jbe    2baff00 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x740>
+         : 37      template <class ParentTy> class node_base_parent {
+         : 38      ParentTy *Parent = nullptr;
+         :
+         : 40      public:
+         : 41      void setNodeBaseParent(ParentTy *Parent) { this->Parent = Parent; }
+         : 42      inline const ParentTy *getNodeBaseParent() const { return Parent; }
+    0.00 :   2baf7f0:        mov    0x28(%r14),%rax
+         : 44      NodeBase *getNext() const { return Next; }
+    0.00 :   2baf7f4:        mov    0x20(%r14),%rbx
+         : 46      inline const ParentTy *getNodeBaseParent() const { return Parent; }
+    0.00 :   2baf7f8:        mov    %rax,0x8(%rsp)
+         : 48      }
+         :
+         : 50      iterator begin() { return ++iterator(Sentinel); }
+         : 51      const_iterator begin() const { return ++const_iterator(Sentinel); }
+         : 52      iterator end() { return iterator(Sentinel); }
+         : 53      const_iterator end() const { return const_iterator(Sentinel); }
+    0.00 :   2baf7fd:        add    $0x30,%rax
+    0.00 :   2baf801:        mov    %rax,(%rsp)
+         : 56      // Limit number of instructions we look at, to avoid scanning through large
+         : 57      // blocks. The current limit is chosen arbitrarily.
+         : 58      unsigned ScanLimit = 32;
+         : 59      BasicBlock::const_iterator End = BB->end();
+         :
+         : 61      if (!PoisonOnly) {
+    0.00 :   2baf805:        test   %sil,%sil
+    0.00 :   2baf808:        jne    2bafa90 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2d0>
+         : 64      // Since undef does not propagate eagerly, be conservative & just check
+         : 65      // whether a value is directly passed to an instruction that must take
+         : 66      // well-defined operands.
+         :
+         : 68      for (const auto &I : make_range(Begin, End)) {
+    0.00 :   2baf80e:        cmp    %rbx,%rax
+    0.00 :   2baf811:        je     2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    0.66 :   2baf813:        mov    $0x20,%r13d // ValueTracking.cpp:8304
+    0.00 :   2baf819:        nopl   0x0(%rax)
+         : 73      }
+         :
+         : 75      template <class OptionsT>
+         : 76      static typename OptionsT::const_pointer
+         : 77      getValuePtr(const ilist_node_impl<OptionsT> *N) {
+         : 78      return static_cast<typename OptionsT::const_pointer>(N);
+    3.96 :   2baf820:        xor    %eax,%eax // ilist_node.h:244
+    2.60 :   2baf822:        lea    -0x18(%rbx),%rcx
+    2.63 :   2baf826:        test   %rbx,%rbx
+    1.98 :   2baf829:        cmovne %rcx,%rax
+    2.64 :   2baf82d:        mov    %rax,%r15
+         : 84      if (--ScanLimit == 0)
+    3.94 :   2baf830:        sub    $0x1,%r13d // ValueTracking.cpp:8305
+    1.98 :   2baf834:        je     2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    2.63 :   2baf836:        movzbl (%rax),%eax // Value.h:544
+    5.92 :   2baf839:        mov    %eax,%edx
+         : 89      //===--------------------------------------------------------------------===//
+         : 90      // Subclass classification.
+         : 91      //===--------------------------------------------------------------------===//
+         :
+         : 93      /// Returns a member of one of the enums like Instruction::Add.
+         : 94      unsigned getOpcode() const { return getValueID() - InstructionVal; }
+    0.67 :   2baf83b:        sub    $0x1d,%eax // Instruction.h:312
+         : 96      switch (I->getOpcode()) {
+    0.66 :   2baf83e:        cmp    $0x39,%eax // ValueTracking.cpp:8188
+    3.93 :   2baf841:        ja     2baf880 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xc0>
+    0.66 :   2baf843:        lea    0xfeeae2(%rip),%rcx        # 3b9e32c <StandardNamesStrTableStorage+0x2a2c>
+    0.00 :   2baf84a:        movslq (%rcx,%rax,4),%rax
+    0.00 :   2baf84e:        add    %rcx,%rax
+    0.00 :   2baf851:        jmp    *%rax
+         : 103     if (I->getFunction()->hasRetAttribute(Attribute::NoUndef) &&
+    0.00 :   2baf853:        mov    %r15,%rdi
+    0.00 :   2baf856:        call   332b3e0 <llvm::Instruction::getFunction() const>
+    0.00 :   2baf85b:        mov    $0x2a,%esi
+    0.00 :   2baf860:        mov    %rax,%rdi
+    0.00 :   2baf863:        call   3302540 <llvm::Function::hasRetAttribute(llvm::Attribute::AttrKind) const>
+    0.00 :   2baf868:        test   %al,%al
+    0.00 :   2baf86a:        jne    2bafe4a <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x68a>
+    0.00 :   2baf870:        movzbl (%r15),%edx
+    0.00 :   2baf874:        nop
+    0.00 :   2baf875:        data16 cs nopw 0x0(%rax,%rax,1)
+         : 114     if (isa<UnreachableInst>(I))
+   12.49 :   2baf880:        cmp    $0x1e,%dl // ValueTracking.cpp:8014
+    1.98 :   2baf883:        je     2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    0.66 :   2baf885:        cmp    $0x24,%dl
+    1.98 :   2baf888:        jne    2baf8bd <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xfd>
+    0.00 :   2baf88a:        nopw   0x0(%rax,%rax,1)
+         : 120     return false;
+    0.00 :   2baf890:        xor    %ebp,%ebp
+         :
+         : 123     Begin = BB->getFirstNonPHIIt();
+         : 124     End = BB->end();
+         : 125     }
+         : 126     return false;
+         : 127     }
+    5.93 :   2baf892:        mov    0xf8(%rsp),%rax // ValueTracking.cpp:8362
+    1.33 :   2baf89a:        sub    %fs:0x28,%rax
+    0.66 :   2baf8a3:        jne    2bb0062 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x8a2>
+    0.66 :   2baf8a9:        add    $0x108,%rsp
+    0.00 :   2baf8b0:        mov    %ebp,%eax
+    0.00 :   2baf8b2:        pop    %rbx
+    0.00 :   2baf8b3:        pop    %rbp
+    0.66 :   2baf8b4:        pop    %r12
+    0.00 :   2baf8b6:        pop    %r13
+    0.00 :   2baf8b8:        pop    %r14
+    0.00 :   2baf8ba:        pop    %r15
+    0.00 :   2baf8bc:        ret
+         : 140     if (isa<CatchPadInst>(I)) {
+    2.63 :   2baf8bd:        cmp    $0x52,%dl // ValueTracking.cpp:8021
+    0.66 :   2baf8c0:        jne    2baf8f9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x139>
+         : 143     switch (classifyEHPersonality(I->getFunction()->getPersonalityFn())) {
+    0.00 :   2baf8c2:        mov    %r15,%rdi
+    0.00 :   2baf8c5:        call   332b3e0 <llvm::Instruction::getFunction() const>
+    0.00 :   2baf8ca:        mov    %rax,%rdi
+    0.00 :   2baf8cd:        call   3303d90 <llvm::Function::getPersonalityFn() const>
+    0.00 :   2baf8d2:        mov    %rax,%rdi
+    0.00 :   2baf8d5:        call   32fdeb0 <llvm::classifyEHPersonality(llvm::Value const*)>
+    0.00 :   2baf8da:        cmp    $0xa,%eax
+    0.00 :   2baf8dd:        jne    2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+         : 152     NodeBase *getNext() const { return Next; }
+    0.00 :   2baf8df:        mov    0x8(%rbx),%rbx
+         : 154     for (const auto &I : make_range(Begin, End)) {
+    0.00 :   2baf8e3:        cmp    %rbx,(%rsp)
+    0.00 :   2baf8e7:        jne    2baf820 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x60>
+    0.00 :   2baf8ed:        jmp    2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+         : 158     if (Handle(cast<StoreInst>(I)->getPointerOperand()))
+    0.00 :   2baf8ef:        cmp    -0x20(%r15),%r14
+    0.65 :   2baf8f3:        je     2bafa64 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2a4> // ValueTracking.cpp:8190
+         : 161     return !I->mayThrow() && I->willReturn();
+    3.95 :   2baf8f9:        xor    %esi,%esi // ValueTracking.cpp:8035
+    0.00 :   2baf8fb:        mov    %r15,%rdi
+    1.32 :   2baf8fe:        call   332f920 <llvm::Instruction::mayThrow(bool) const>
+    5.87 :   2baf903:        test   %al,%al
+    1.32 :   2baf905:        jne    2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    7.25 :   2baf907:        mov    %r15,%rdi
+    2.64 :   2baf90a:        call   332fdd0 <llvm::Instruction::willReturn() const>
+    1.32 :   2baf90f:        test   %al,%al
+    1.98 :   2baf911:        je     2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    1.96 :   2baf917:        mov    0x8(%rbx),%rbx // ilist_node_base.h:28
+         : 172     for (const auto &I : make_range(Begin, End)) {
+    2.63 :   2baf91b:        cmp    %rbx,(%rsp) // ValueTracking.cpp:8304
+    3.31 :   2baf91f:        jne    2baf820 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x60>
+    0.00 :   2baf925:        jmp    2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    0.00 :   2baf92a:        nopw   0x0(%rax,%rax,1)
+         : 177     if (CB->isIndirectCall() && Handle(CB->getCalledOperand()))
+    0.00 :   2baf930:        mov    %r15,%rdi
+    0.00 :   2baf933:        call   3333120 <llvm::CallBase::isIndirectCall() const>
+    0.00 :   2baf938:        test   %al,%al
+    0.00 :   2baf93a:        jne    2bafe7a <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6ba>
+    0.00 :   2baf940:        xor    %ebp,%ebp
+    0.00 :   2baf942:        jmp    2bafa19 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x259>
+    0.00 :   2baf947:        nopw   0x0(%rax,%rax,1)
+         : 185     /// with this OperandBundleUser.
+         : 186     bundle_op_iterator bundle_op_info_end() {
+         : 187     if (!hasDescriptor())
+         : 188     return nullptr;
+         :
+         : 190     uint8_t *BytesEnd = getDescriptor().end();
+    0.00 :   2baf950:        mov    %r15,%rdi
+    0.00 :   2baf953:        call   33ea630 <llvm::User::getDescriptor()>
+         : 193     /*implicit*/ constexpr MutableArrayRef(T (&Arr)[N]) : ArrayRef<T>(Arr) {}
+         :
+         : 195     T *data() const { return const_cast<T*>(ArrayRef<T>::data()); }
+         :
+         : 197     iterator begin() const { return data(); }
+         : 198     iterator end() const { return data() + this->size(); }
+    0.00 :   2baf958:        add    %rdx,%rax
+    0.00 :   2baf95b:        mov    %rax,0x8(%rsp)
+         : 201     if (!hasDescriptor())
+    0.00 :   2baf960:        cmpb   $0x0,0x7(%r15)
+    0.00 :   2baf965:        jns    2bafee6 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x726>
+         : 204     uint8_t *BytesBegin = getDescriptor().begin();
+    0.00 :   2baf96b:        mov    %r15,%rdi
+    0.00 :   2baf96e:        call   33ea630 <llvm::User::getDescriptor()>
+    0.00 :   2baf973:        mov    %rax,%rdx
+         : 208     random_access_iterator_tag)
+         : 209     {
+         : 210     // concept requirements
+         : 211     __glibcxx_function_requires(_RandomAccessIteratorConcept<
+         : 212     _RandomAccessIterator>)
+         : 213     return __last - __first;
+    0.00 :   2baf976:        mov    0x8(%rsp),%rax
+    0.00 :   2baf97b:        sub    %rdx,%rax
+    0.00 :   2baf97e:        sar    $0x4,%rax
+         : 217     if (!hasOperandBundles())
+    0.00 :   2baf982:        test   %eax,%eax
+    0.00 :   2baf984:        je     2bafa41 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x281>
+         : 220     if (!hasDescriptor())
+    0.00 :   2baf98a:        cmpb   $0x0,0x7(%r15)
+    0.00 :   2baf98f:        jns    42b9bb <programUndefinedIfUndefOrPoison(llvm::Value const*, bool) [clone .cold]+0xa>
+         : 223     uint8_t *BytesBegin = getDescriptor().begin();
+    0.00 :   2baf995:        mov    %r15,%rdi
+    0.00 :   2baf998:        call   33ea630 <llvm::User::getDescriptor()>
+         : 226     return bundle_op_info_begin()->Begin;
+    0.00 :   2baf99d:        mov    0x8(%rax),%esi
+         : 228     if (!hasDescriptor())
+    0.00 :   2baf9a0:        cmpb   $0x0,0x7(%r15)
+    0.00 :   2baf9a5:        jns    42b9c4 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool) [clone .cold]+0x13>
+         : 231     uint8_t *BytesEnd = getDescriptor().end();
+    0.00 :   2baf9ab:        mov    %r15,%rdi
+    0.00 :   2baf9ae:        mov    %esi,0x8(%rsp)
+    0.00 :   2baf9b2:        call   33ea630 <llvm::User::getDescriptor()>
+         : 235     return End - Begin;
+    0.00 :   2baf9b7:        mov    -0x4(%rax,%rdx,1),%edx
+         : 237     return data_operands_end() - getNumTotalBundleOperands();
+    0.00 :   2baf9bb:        sub    0x8(%rsp),%edx
+    0.00 :   2baf9bf:        shl    $0x5,%rdx
+         : 240     Use &getOperandUse(unsigned i) {
+         : 241     assert(i < NumUserOperands && "getOperandUse() out of range!");
+         : 242     return getOperandList()[i];
+         : 243     }
+         :
+         : 245     unsigned getNumOperands() const { return NumUserOperands; }
+    0.00 :   2baf9c3:        mov    0x4(%r15),%eax
+         : 247     template <typename SubClass> struct VariadicOperandTraits {
+         : 248     static Use *op_begin(SubClass* U) {
+         : 249     static_assert(
+         : 250     !std::is_polymorphic<SubClass>::value,
+         : 251     "adding virtual methods to subclasses of User breaks use lists");
+         : 252     return reinterpret_cast<Use*>(U) - static_cast<User*>(U)->getNumOperands();
+    0.00 :   2baf9c7:        and    $0x7ffffff,%eax
+         : 254     unsigned arg_size() const { return arg_end() - arg_begin(); }
+    0.00 :   2baf9cc:        sub    $0x1,%rax
+    0.00 :   2baf9d0:        sub    %r12,%rax
+    0.00 :   2baf9d3:        shl    $0x5,%rax
+    0.00 :   2baf9d7:        sub    %rdx,%rax
+    0.00 :   2baf9da:        sar    $0x5,%rax
+         : 260     for (unsigned i = 0; i < CB->arg_size(); ++i)
+    0.00 :   2baf9de:        cmp    %eax,%ebp
+    0.00 :   2baf9e0:        jae    2baf870 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xb0>
+         : 263     if ((CB->paramHasAttr(i, Attribute::NoUndef) ||
+    0.00 :   2baf9e6:        mov    $0x2a,%edx
+    0.00 :   2baf9eb:        mov    %ebp,%esi
+    0.00 :   2baf9ed:        mov    %r15,%rdi
+    0.00 :   2baf9f0:        call   3333dc0 <llvm::CallBase::paramHasAttr(unsigned int, llvm::Attribute::AttrKind) const>
+         : 268     CB->paramHasAttr(i, Attribute::DereferenceableOrNull)) &&
+    0.00 :   2baf9f5:        test   %al,%al
+    0.00 :   2baf9f7:        je     2bafeb3 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6f3>
+    0.00 :   2baf9fd:        mov    0x4(%r15),%edx
+         : 272     };
+         :
+         : 274     template <>
+         : 275     struct OperandTraits<CallBase> : public VariadicOperandTraits<CallBase> {};
+         :
+         : 277     DEFINE_TRANSPARENT_OPERAND_ACCESSORS(CallBase, Value)
+    0.00 :   2bafa01:        mov    %ebp,%eax
+    0.00 :   2bafa03:        and    $0x7ffffff,%edx
+    0.00 :   2bafa09:        sub    %rdx,%rax
+         : 281     public:
+         : 282     friend class Value;
+         : 283     friend class User;
+         :
+         : 285     operator Value *() const { return Val; }
+         : 286     Value *get() const { return Val; }
+    0.00 :   2bafa0c:        shl    $0x5,%rax
+    0.00 :   2bafa10:        cmp    (%r15,%rax,1),%r14
+    0.00 :   2bafa14:        je     2bafa64 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2a4>
+         : 290     for (unsigned i = 0; i < CB->arg_size(); ++i)
+    0.00 :   2bafa16:        add    $0x1,%ebp
+    0.00 :   2bafa19:        movzbl (%r15),%eax
+    0.00 :   2bafa1d:        lea    -0x1d(%rax),%edx
+         : 294     switch (getOpcode()) {
+    0.00 :   2bafa20:        cmp    $0x28,%eax
+    0.00 :   2bafa23:        je     2bafea3 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6e3>
+    0.00 :   2bafa29:        xor    %r12d,%r12d
+    0.00 :   2bafa2c:        cmp    $0x39,%edx
+    0.00 :   2bafa2f:        setne  %r12b
+    0.00 :   2bafa33:        add    %r12,%r12
+         : 301     if (!hasDescriptor())
+    0.00 :   2bafa36:        cmpb   $0x0,0x7(%r15)
+    0.00 :   2bafa3b:        js     2baf950 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x190>
+    0.00 :   2bafa41:        xor    %edx,%edx
+    0.00 :   2bafa43:        jmp    2baf9c3 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x203>
+    0.00 :   2bafa48:        mov    0x4(%r15),%eax
+    0.00 :   2bafa4c:        and    $0x7ffffff,%eax
+         : 308     if (BR->isConditional() && Handle(BR->getCondition()))
+    0.00 :   2bafa51:        cmp    $0x3,%eax
+    0.00 :   2bafa54:        jne    2baf8f9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x139>
+    0.00 :   2bafa5a:        cmp    -0x60(%r15),%r14
+    0.00 :   2bafa5e:        jne    2baf8f9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x139>
+         : 313     return true;
+    0.00 :   2bafa64:        mov    $0x1,%ebp
+    0.00 :   2bafa69:        jmp    2baf892 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd2>
+    0.00 :   2bafa6e:        mov    -0x8(%r15),%rax
+         : 317     if (Handle(cast<SwitchInst>(I)->getCondition()))
+    0.00 :   2bafa72:        cmp    (%rax),%r14
+    0.00 :   2bafa75:        jne    2baf8f9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x139>
+    0.00 :   2bafa7b:        jmp    2bafa64 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2a4>
+         : 321     if (Handle(cast<AtomicRMWInst>(I)->getPointerOperand()))
+    0.00 :   2bafa7d:        cmp    -0x40(%r15),%r14
+    0.00 :   2bafa81:        jne    2baf8f9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x139>
+    0.00 :   2bafa87:        jmp    2bafa64 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2a4>
+    0.00 :   2bafa89:        nopl   0x0(%rax)
+         : 326     LLVM_ABI SmallPtrSetImplBase(const void **SmallStorage, unsigned SmallSize,
+         : 327     const void **RHSSmallStorage,
+         : 328     SmallPtrSetImplBase &&that);
+         :
+         : 330     explicit SmallPtrSetImplBase(const void **SmallStorage, unsigned SmallSize)
+         : 331     : CurArray(SmallStorage), CurArraySize(SmallSize), NumEntries(0),
+    0.00 :   2bafa90:        lea    0x78(%rsp),%rax
+         : 333     NumTombstones(0), IsSmall(true) {
+    0.00 :   2bafa95:        movl   $0x0,0x70(%rsp)
+         : 335     return {&Bucket, false};
+         : 336     }
+         :
+         : 338     // Nope, there isn't.  If we stay small, just 'pushback' now.
+         : 339     if (NumEntries < CurArraySize) {
+         : 340     CurArray[NumEntries++] = Ptr;
+    0.00 :   2bafa9d:        mov    $0x20,%r15d
+         : 342     I, [&](const Value *V) { return KnownPoison.count(V); });
+    0.00 :   2bafaa3:        lea    0x60(%rsp),%r13
+         : 344     : CurArray(SmallStorage), CurArraySize(SmallSize), NumEntries(0),
+    0.00 :   2bafaa8:        mov    %rax,0x60(%rsp)
+    0.00 :   2bafaad:        lea    0x38(%rsp),%rax
+    0.00 :   2bafab2:        mov    %rax,0x20(%rsp)
+    0.00 :   2bafab7:        mov    0xb687a2(%rip),%rax        # 3718260 <_IO_stdin_used+0xe7260>
+         : 349     NumTombstones(0), IsSmall(true) {
+    0.00 :   2bafabe:        movb   $0x1,0x74(%rsp)
+         : 351     : CurArray(SmallStorage), CurArraySize(SmallSize), NumEntries(0),
+    0.00 :   2bafac3:        mov    %rax,0x68(%rsp)
+    0.00 :   2bafac8:        mov    0xb683f1(%rip),%rax        # 3717ec0 <_IO_stdin_used+0xe6ec0>
+         : 354     NumTombstones(0), IsSmall(true) {
+    0.00 :   2bafacf:        movl   $0x0,0x30(%rsp)
+         : 356     : CurArray(SmallStorage), CurArraySize(SmallSize), NumEntries(0),
+    0.00 :   2bafad7:        mov    %rax,0x28(%rsp)
+         : 358     CurArray[NumEntries++] = Ptr;
+    0.00 :   2bafadc:        mov    0x8(%rsp),%rax
+         : 360     NumTombstones(0), IsSmall(true) {
+    0.00 :   2bafae1:        movb   $0x1,0x34(%rsp)
+         : 362     CurArray[NumEntries++] = Ptr;
+    0.00 :   2bafae6:        mov    %r14,0x78(%rsp)
+    0.00 :   2bafaeb:        mov    %rax,0x38(%rsp)
+         : 365     for (const auto &I : make_range(Begin, End)) {
+    0.00 :   2bafaf0:        cmp    (%rsp),%rbx
+    0.00 :   2bafaf4:        je     2baff7c <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x7bc>
+    0.00 :   2bafafa:        xor    %eax,%eax
+    0.00 :   2bafafc:        lea    -0x18(%rbx),%r12
+    0.00 :   2bafb00:        test   %rbx,%rbx
+    0.00 :   2bafb03:        cmove  %rax,%r12
+         : 372     if (--ScanLimit == 0)
+    0.00 :   2bafb07:        sub    $0x1,%r15d
+    0.00 :   2bafb0b:        je     2baffda <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x81a>
+         : 375     return handleGuaranteedNonPoisonOps(
+    0.00 :   2bafb11:        lea    0x18(%rsp),%rsi
+    0.00 :   2bafb16:        mov    %r12,%rdi
+         : 378     I, [&](const Value *V) { return KnownPoison.count(V); });
+    0.00 :   2bafb19:        mov    %r13,0x18(%rsp)
+         : 380     return handleGuaranteedNonPoisonOps(
+    0.00 :   2bafb1e:        call   2ba7310 <bool handleGuaranteedNonPoisonOps<llvm::mustTriggerUB(llvm::Instruction const*, llvm::SmallPtrSetImpl<llvm::Value const*> const&)::{lambda(llvm::Value const*)#1}>(llvm::Instruction const*, llvm::mustTriggerUB(llvm::Instruction const*, llvm::SmallPtrSetImpl<llvm::Value const*> const&)::{lambda(llvm::Value const*)#1} const&)>
+    0.00 :   2bafb23:        mov    %eax,%ebp
+         : 383     if (mustTriggerUB(&I, YieldsPoison))
+    0.00 :   2bafb25:        test   %al,%al
+    0.00 :   2bafb27:        jne    2bafc30 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x470>
+    0.00 :   2bafb2d:        movzbl (%r12),%eax
+         : 387     if (isa<ReturnInst>(I))
+    0.00 :   2bafb32:        cmp    $0x1e,%al
+    0.00 :   2bafb34:        sete   %dl
+         : 390     if (isa<UnreachableInst>(I))
+    0.00 :   2bafb37:        cmp    $0x24,%al
+    0.00 :   2bafb39:        sete   %cl
+    0.00 :   2bafb3c:        or     %cl,%dl
+    0.00 :   2bafb3e:        jne    2bafc30 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x470>
+         : 395     if (isa<CatchPadInst>(I)) {
+    0.00 :   2bafb44:        cmp    $0x52,%al
+    0.00 :   2bafb46:        je     2bafc0b <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x44b>
+         : 398     return !I->mayThrow() && I->willReturn();
+    0.00 :   2bafb4c:        xor    %esi,%esi
+    0.00 :   2bafb4e:        mov    %r12,%rdi
+    0.00 :   2bafb51:        call   332f920 <llvm::Instruction::mayThrow(bool) const>
+    0.00 :   2bafb56:        test   %al,%al
+    0.00 :   2bafb58:        jne    2bafc30 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x470>
+    0.00 :   2bafb5e:        mov    %r12,%rdi
+    0.00 :   2bafb61:        call   332fdd0 <llvm::Instruction::willReturn() const>
+    0.00 :   2bafb66:        test   %al,%al
+    0.00 :   2bafb68:        je     2bafc30 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x470>
+         : 408     return reinterpret_cast<const Use *>(this) - NumUserOperands;
+    0.00 :   2bafb6e:        mov    0x4(%r12),%ebp
+    0.00 :   2bafb73:        and    $0x7ffffff,%ebp
+    0.00 :   2bafb79:        shl    $0x5,%rbp
+         : 412     return HasHungOffUses ? getHungOffOperands() : getIntrusiveOperands();
+    0.00 :   2bafb7d:        testb  $0x40,0x7(%r12)
+    0.00 :   2bafb83:        je     2bafcc7 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x507>
+         : 415     return *(reinterpret_cast<const Use *const *>(this) - 1);
+    0.00 :   2bafb89:        mov    -0x8(%r12),%rcx
+         : 417     const_op_iterator op_begin() const { return getOperandList(); }
+         : 418     op_iterator       op_end()         {
+         : 419     return getOperandList() + NumUserOperands;
+         : 420     }
+         : 421     const_op_iterator op_end()   const {
+         : 422     return getOperandList() + NumUserOperands;
+    0.00 :   2bafb8e:        add    %rcx,%rbp
+         : 424     for (const Use &Op : I.operands()) {
+    0.00 :   2bafb91:        mov    %rcx,%r14
+    0.00 :   2bafb94:        cmp    %rbp,%rcx
+    0.00 :   2bafb97:        je     2bafbf7 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x437>
+    0.00 :   2bafb99:        nopl   0x0(%rax)
+         : 429     operator Value *() const { return Val; }
+    0.00 :   2bafba0:        mov    (%r14),%rsi
+         : 431     return Bucket;
+         : 432     return EndPointer();
+         : 433     }
+         :
+         : 435     bool contains_imp(const void *Ptr) const {
+         : 436     if (isSmall()) {
+    0.00 :   2bafba3:        cmpb   $0x0,0x74(%rsp)
+    0.00 :   2bafba8:        je     2bafc60 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x4a0>
+    0.00 :   2bafbae:        mov    0x60(%rsp),%rax
+         : 440     return {CurArray, CurArray + NumEntries};
+    0.00 :   2bafbb3:        mov    0x6c(%rsp),%edx
+    0.00 :   2bafbb7:        lea    (%rax,%rdx,8),%rdx
+         : 443     // Linear search for the item.
+         : 444     for (const void *const &Bucket : small_buckets())
+    0.00 :   2bafbbb:        cmp    %rdx,%rax
+    0.00 :   2bafbbe:        jne    2bafbd9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x419>
+    0.00 :   2bafbc0:        jmp    2bafbee <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x42e>
+    0.00 :   2bafbc2:        nopl   (%rax)
+    0.00 :   2bafbc5:        data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2bafbd0:        add    $0x8,%rax
+    0.00 :   2bafbd4:        cmp    %rax,%rdx
+    0.00 :   2bafbd7:        je     2bafbee <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x42e>
+         : 453     if (Bucket == Ptr)
+    0.00 :   2bafbd9:        cmp    (%rax),%rsi
+    0.00 :   2bafbdc:        jne    2bafbd0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x410>
+         : 456     if (YieldsPoison.count(Op) && propagatesPoison(Op)) {
+    0.00 :   2bafbde:        mov    %r14,%rdi
+    0.00 :   2bafbe1:        call   2baf700 <llvm::propagatesPoison(llvm::Use const&)>
+    0.00 :   2bafbe6:        test   %al,%al
+    0.00 :   2bafbe8:        jne    2bafc81 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x4c1>
+         : 461     for (const Use &Op : I.operands()) {
+    0.00 :   2bafbee:        add    $0x20,%r14
+    0.00 :   2bafbf2:        cmp    %r14,%rbp
+    0.00 :   2bafbf5:        jne    2bafba0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x3e0>
+         : 465     YieldsPoison.count(I.getOperand(1)) &&
+    0.00 :   2bafbf7:        cmpb   $0x57,(%r12)
+    0.00 :   2bafbfc:        je     2bafcd5 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x515>
+    0.00 :   2bafc02:        mov    0x8(%rbx),%rbx
+    0.00 :   2bafc06:        jmp    2bafaf0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x330>
+         : 470     switch (classifyEHPersonality(I->getFunction()->getPersonalityFn())) {
+    0.00 :   2bafc0b:        mov    %r12,%rdi
+    0.00 :   2bafc0e:        call   332b3e0 <llvm::Instruction::getFunction() const>
+    0.00 :   2bafc13:        mov    %rax,%rdi
+    0.00 :   2bafc16:        call   3303d90 <llvm::Function::getPersonalityFn() const>
+    0.00 :   2bafc1b:        mov    %rax,%rdi
+    0.00 :   2bafc1e:        call   32fdeb0 <llvm::classifyEHPersonality(llvm::Value const*)>
+    0.00 :   2bafc23:        cmp    $0xa,%eax
+    0.00 :   2bafc26:        je     2bafb6e <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x3ae>
+    0.00 :   2bafc2c:        nopl   0x0(%rax)
+         : 480     }
+         :
+         : 482     return doFind(Ptr) != nullptr;
+         : 483     }
+         :
+         : 485     bool isSmall() const { return IsSmall; }
+    0.00 :   2bafc30:        movzbl 0x34(%rsp),%eax
+         : 487     if (!isSmall())
+    0.00 :   2bafc35:        test   %al,%al
+    0.00 :   2bafc37:        je     2baff6d <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x7ad>
+    0.00 :   2bafc3d:        cmpb   $0x0,0x74(%rsp)
+    0.00 :   2bafc42:        jne    2baf892 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd2>
+         : 492     free(CurArray);
+    0.00 :   2bafc48:        mov    0x60(%rsp),%rdi
+    0.00 :   2bafc4d:        call   40b250 <free@plt>
+         : 495     /// SmallPtrSet - This class implements a set which is optimized for holding
+         : 496     /// SmallSize or less elements.  This internally rounds up SmallSize to the next
+         : 497     /// power of two if it is not already a power of two.  See the comments above
+         : 498     /// SmallPtrSetImplBase for details of the algorithm.
+         : 499     template <class PtrType, unsigned SmallSize>
+         : 500     class SmallPtrSet : public SmallPtrSetImpl<PtrType> {
+    0.00 :   2bafc52:        jmp    2baf892 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd2>
+    0.00 :   2bafc57:        nopw   0x0(%rax,%rax,1)
+         : 503     return doFind(Ptr) != nullptr;
+    0.00 :   2bafc60:        mov    %r13,%rdi
+    0.00 :   2bafc63:        call   3565c80 <llvm::SmallPtrSetImplBase::doFind(void const*) const>
+         : 506     if (YieldsPoison.count(Op) && propagatesPoison(Op)) {
+    0.00 :   2bafc68:        test   %rax,%rax
+    0.00 :   2bafc6b:        je     2bafbee <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x42e>
+    0.00 :   2bafc71:        mov    %r14,%rdi
+    0.00 :   2bafc74:        call   2baf700 <llvm::propagatesPoison(llvm::Use const&)>
+    0.00 :   2bafc79:        test   %al,%al
+    0.00 :   2bafc7b:        je     2bafbee <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x42e>
+         : 513     if (isSmall()) {
+    0.00 :   2bafc81:        cmpb   $0x0,0x74(%rsp)
+    0.00 :   2bafc86:        je     2bafe93 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6d3>
+         : 516     return make_range(CurArray, CurArray + NumEntries);
+    0.00 :   2bafc8c:        mov    0x6c(%rsp),%edx
+    0.00 :   2bafc90:        mov    0x60(%rsp),%rax
+    0.00 :   2bafc95:        mov    %rdx,%rcx
+    0.00 :   2bafc98:        lea    (%rax,%rdx,8),%rdx
+         : 521     for (const void *&Bucket : small_buckets()) {
+    0.00 :   2bafc9c:        cmp    %rdx,%rax
+    0.00 :   2bafc9f:        jne    2bafcbd <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x4fd>
+    0.00 :   2bafca1:        jmp    2bafe89 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6c9>
+    0.00 :   2bafca6:        cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2bafcb0:        add    $0x8,%rax
+    0.00 :   2bafcb4:        cmp    %rax,%rdx
+    0.00 :   2bafcb7:        je     2bafe89 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6c9>
+         : 529     if (Bucket == Ptr)
+    0.00 :   2bafcbd:        cmp    (%rax),%r12
+    0.00 :   2bafcc0:        jne    2bafcb0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x4f0>
+    0.00 :   2bafcc2:        jmp    2bafbf7 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x437>
+         : 533     return reinterpret_cast<const Use *>(this) - NumUserOperands;
+    0.00 :   2bafcc7:        mov    %r12,%rcx
+    0.00 :   2bafcca:        sub    %rbp,%rcx
+    0.00 :   2bafccd:        mov    %r12,%rbp
+    0.00 :   2bafcd0:        jmp    2bafb91 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x3d1>
+         : 538     return HasHungOffUses ? getHungOffOperands() : getIntrusiveOperands();
+    0.00 :   2bafcd5:        movzbl 0x7(%r12),%edi
+    0.00 :   2bafcdb:        and    $0x40,%edi
+    0.00 :   2bafcde:        je     2bafdc8 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x608>
+         : 542     return *(reinterpret_cast<const Use *const *>(this) - 1);
+    0.00 :   2bafce4:        mov    -0x8(%r12),%rdx
+    0.00 :   2bafce9:        mov    0x20(%rdx),%rsi
+         : 545     if (isSmall()) {
+    0.00 :   2bafced:        cmpb   $0x0,0x74(%rsp)
+    0.00 :   2bafcf2:        je     2bafdeb <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x62b>
+    0.00 :   2bafcf8:        mov    0x60(%rsp),%rdx
+         : 549     return {CurArray, CurArray + NumEntries};
+    0.00 :   2bafcfd:        mov    0x6c(%rsp),%r8d
+    0.00 :   2bafd02:        lea    (%rdx,%r8,8),%rcx
+         : 552     for (const void *const &Bucket : small_buckets())
+    0.00 :   2bafd06:        cmp    %rcx,%rdx
+    0.00 :   2bafd09:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+    0.00 :   2bafd0f:        mov    %rdx,%rax
+    0.00 :   2bafd12:        jmp    2bafd2d <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x56d>
+    0.00 :   2bafd14:        nop
+    0.00 :   2bafd15:        data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2bafd20:        add    $0x8,%rax
+    0.00 :   2bafd24:        cmp    %rax,%rcx
+    0.00 :   2bafd27:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+         : 562     if (Bucket == Ptr)
+    0.00 :   2bafd2d:        cmp    (%rax),%rsi
+    0.00 :   2bafd30:        jne    2bafd20 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x560>
+         : 565     return HasHungOffUses ? getHungOffOperands() : getIntrusiveOperands();
+    0.00 :   2bafd32:        test   %dil,%dil
+    0.00 :   2bafd35:        jne    2baff47 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x787>
+         : 568     return reinterpret_cast<const Use *>(this) - NumUserOperands;
+    0.00 :   2bafd3b:        mov    0x4(%r12),%eax
+    0.00 :   2bafd40:        mov    %r12,%rcx
+    0.00 :   2bafd43:        and    $0x7ffffff,%eax
+    0.00 :   2bafd48:        shl    $0x5,%rax
+    0.00 :   2bafd4c:        sub    %rax,%rcx
+    0.00 :   2bafd4f:        mov    0x40(%rcx),%rsi
+         : 575     return {CurArray, CurArray + NumEntries};
+    0.00 :   2bafd53:        lea    (%rdx,%r8,8),%rcx
+         : 577     for (const void *const &Bucket : small_buckets())
+    0.00 :   2bafd57:        cmp    %rcx,%rdx
+    0.00 :   2bafd5a:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+    0.00 :   2bafd60:        mov    %rdx,%rax
+    0.00 :   2bafd63:        jmp    2bafd7d <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x5bd>
+    0.00 :   2bafd65:        data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   2bafd70:        add    $0x8,%rax
+    0.00 :   2bafd74:        cmp    %rax,%rcx
+    0.00 :   2bafd77:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+         : 586     if (Bucket == Ptr)
+    0.00 :   2bafd7d:        cmp    (%rax),%rsi
+    0.00 :   2bafd80:        jne    2bafd70 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x5b0>
+         : 589     return make_range(CurArray, CurArray + NumEntries);
+    0.00 :   2bafd82:        mov    0x6c(%rsp),%edx
+    0.00 :   2bafd86:        mov    0x60(%rsp),%rax
+    0.00 :   2bafd8b:        mov    %rdx,%rcx
+    0.00 :   2bafd8e:        lea    (%rax,%rdx,8),%rdx
+         : 594     for (const void *&Bucket : small_buckets()) {
+    0.00 :   2bafd92:        cmp    %rdx,%rax
+    0.00 :   2bafd95:        je     2bafda9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x5e9>
+         : 597     if (Bucket == Ptr)
+    0.00 :   2bafd97:        cmp    (%rax),%r12
+    0.00 :   2bafd9a:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+         : 600     for (const void *&Bucket : small_buckets()) {
+    0.00 :   2bafda0:        add    $0x8,%rax
+    0.00 :   2bafda4:        cmp    %rax,%rdx
+    0.00 :   2bafda7:        jne    2bafd97 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x5d7>
+         : 604     if (NumEntries < CurArraySize) {
+    0.00 :   2bafda9:        cmp    0x68(%rsp),%ecx
+    0.00 :   2bafdad:        jae    2bafe3a <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x67a>
+         : 607     CurArray[NumEntries++] = Ptr;
+    0.00 :   2bafdb3:        add    $0x1,%ecx
+    0.00 :   2bafdb6:        mov    %ecx,0x6c(%rsp)
+    0.00 :   2bafdba:        mov    %r12,(%rdx)
+         : 611     enable_if<_PCCP::template
+         : 612     _MoveConstructiblePair<_U1, _U2>()
+         : 613     && _PCCP::template
+         : 614     _ImplicitlyMoveConvertiblePair<_U1, _U2>(),
+         : 615     bool>::type=true>
+         : 616     constexpr pair(_U1&& __x, _U2&& __y)
+    0.00 :   2bafdbd:        jmp    2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+    0.00 :   2bafdc2:        nopw   0x0(%rax,%rax,1)
+    0.00 :   2bafdc8:        mov    0x4(%r12),%eax
+    0.00 :   2bafdcd:        mov    %r12,%rdx
+    0.00 :   2bafdd0:        and    $0x7ffffff,%eax
+    0.00 :   2bafdd5:        shl    $0x5,%rax
+    0.00 :   2bafdd9:        sub    %rax,%rdx
+    0.00 :   2bafddc:        mov    0x20(%rdx),%rsi
+         : 625     if (isSmall()) {
+    0.00 :   2bafde0:        cmpb   $0x0,0x74(%rsp)
+    0.00 :   2bafde5:        jne    2bafcf8 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x538>
+         : 628     return doFind(Ptr) != nullptr;
+    0.00 :   2bafdeb:        mov    %r13,%rdi
+    0.00 :   2bafdee:        call   3565c80 <llvm::SmallPtrSetImplBase::doFind(void const*) const>
+         : 631     if (I.getOpcode() == Instruction::Select &&
+    0.00 :   2bafdf3:        test   %rax,%rax
+    0.00 :   2bafdf6:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+         : 634     bool isSmall() const { return IsSmall; }
+    0.00 :   2bafdfc:        movzbl 0x74(%rsp),%ecx
+         : 636     return HasHungOffUses ? getHungOffOperands() : getIntrusiveOperands();
+    0.00 :   2bafe01:        testb  $0x40,0x7(%r12)
+    0.00 :   2bafe07:        je     2baffe6 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x826>
+         : 639     return *(reinterpret_cast<const Use *const *>(this) - 1);
+    0.00 :   2bafe0d:        mov    -0x8(%r12),%rdx
+    0.00 :   2bafe12:        mov    0x40(%rdx),%rsi
+         : 642     if (isSmall()) {
+    0.00 :   2bafe16:        test   %cl,%cl
+    0.00 :   2bafe18:        jne    2bb0053 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x893>
+         : 645     return doFind(Ptr) != nullptr;
+    0.00 :   2bafe1e:        mov    %r13,%rdi
+    0.00 :   2bafe21:        call   3565c80 <llvm::SmallPtrSetImplBase::doFind(void const*) const>
+         : 648     YieldsPoison.count(I.getOperand(1)) &&
+    0.00 :   2bafe26:        test   %rax,%rax
+    0.00 :   2bafe29:        je     2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+         : 651     if (isSmall()) {
+    0.00 :   2bafe2f:        cmpb   $0x0,0x74(%rsp)
+    0.00 :   2bafe34:        jne    2bafd82 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x5c2>
+         : 654     return insert_imp_big(Ptr);
+    0.00 :   2bafe3a:        mov    %r12,%rsi
+    0.00 :   2bafe3d:        mov    %r13,%rdi
+    0.00 :   2bafe40:        call   3565ec0 <llvm::SmallPtrSetImplBase::insert_imp_big(void const*)>
+    0.00 :   2bafe45:        jmp    2bafc02 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x442>
+         : 659     return HasHungOffUses ? getHungOffOperands() : getIntrusiveOperands();
+    0.00 :   2bafe4a:        testb  $0x40,0x7(%r15)
+    0.00 :   2bafe4f:        jne    2baff55 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x795>
+         : 662     return reinterpret_cast<const Use *>(this) - NumUserOperands;
+    0.00 :   2bafe55:        mov    0x4(%r15),%eax
+    0.00 :   2bafe59:        mov    %r15,%rdx
+    0.00 :   2bafe5c:        and    $0x7ffffff,%eax
+    0.00 :   2bafe61:        shl    $0x5,%rax
+    0.00 :   2bafe65:        sub    %rax,%rdx
+         : 668     if (I->getFunction()->hasRetAttribute(Attribute::NoUndef) &&
+    0.00 :   2bafe68:        cmp    (%rdx),%r14
+    0.00 :   2bafe6b:        je     2bafa64 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2a4>
+    0.00 :   2bafe71:        movzbl (%r15),%edx
+    0.00 :   2bafe75:        jmp    2baf880 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xc0>
+         : 673     if (CB->isIndirectCall() && Handle(CB->getCalledOperand()))
+    0.00 :   2bafe7a:        cmp    -0x20(%r15),%r14
+    0.00 :   2bafe7e:        jne    2baf940 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x180>
+    0.00 :   2bafe84:        jmp    2bafa64 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x2a4>
+         : 677     if (NumEntries < CurArraySize) {
+    0.00 :   2bafe89:        cmp    0x68(%rsp),%ecx
+    0.00 :   2bafe8d:        jb     2baff5e <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x79e>
+         : 680     return insert_imp_big(Ptr);
+    0.00 :   2bafe93:        mov    %r12,%rsi
+    0.00 :   2bafe96:        mov    %r13,%rdi
+    0.00 :   2bafe99:        call   3565ec0 <llvm::SmallPtrSetImplBase::insert_imp_big(void const*)>
+         : 684     break;
+    0.00 :   2bafe9e:        jmp    2bafbf7 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x437>
+         : 686     return getNumSubclassExtraOperandsDynamic();
+    0.00 :   2bafea3:        mov    %r15,%rdi
+    0.00 :   2bafea6:        call   3333110 <llvm::CallBase::getNumSubclassExtraOperandsDynamic() const>
+         : 689     return op_end() - getNumSubclassExtraOperands() - 1;
+    0.00 :   2bafeab:        mov    %eax,%r12d
+         : 691     return getNumSubclassExtraOperandsDynamic();
+    0.00 :   2bafeae:        jmp    2bafa36 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x276>
+         : 693     CB->paramHasAttr(i, Attribute::Dereferenceable) ||
+    0.00 :   2bafeb3:        mov    $0x5d,%edx
+    0.00 :   2bafeb8:        mov    %ebp,%esi
+    0.00 :   2bafeba:        mov    %r15,%rdi
+    0.00 :   2bafebd:        call   3333dc0 <llvm::CallBase::paramHasAttr(unsigned int, llvm::Attribute::AttrKind) const>
+         : 698     if ((CB->paramHasAttr(i, Attribute::NoUndef) ||
+    0.00 :   2bafec2:        test   %al,%al
+    0.00 :   2bafec4:        jne    2baf9fd <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x23d>
+         : 701     CB->paramHasAttr(i, Attribute::DereferenceableOrNull)) &&
+    0.00 :   2bafeca:        mov    $0x5e,%edx
+    0.00 :   2bafecf:        mov    %ebp,%esi
+    0.00 :   2bafed1:        mov    %r15,%rdi
+    0.00 :   2bafed4:        call   3333dc0 <llvm::CallBase::paramHasAttr(unsigned int, llvm::Attribute::AttrKind) const>
+         : 706     CB->paramHasAttr(i, Attribute::Dereferenceable) ||
+    0.00 :   2bafed9:        test   %al,%al
+    0.00 :   2bafedb:        jne    2baf9fd <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x23d>
+    0.00 :   2bafee1:        jmp    2bafa16 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x256>
+    0.00 :   2bafee6:        sar    $0x4,%rax
+         : 711     if (!hasOperandBundles())
+    0.00 :   2bafeea:        test   %eax,%eax
+    0.00 :   2bafeec:        je     2bafa41 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x281>
+    0.00 :   2bafef2:        jmp    42b9bb <programUndefinedIfUndefOrPoison(llvm::Value const*, bool) [clone .cold]+0xa>
+    0.00 :   2bafef7:        nopw   0x0(%rax,%rax,1)
+    0.00 :   2baff00:        cmp    $0x16,%al
+    0.00 :   2baff02:        jne    2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+         : 718     if (Arg->getParent()->isDeclaration())
+    0.00 :   2baff08:        mov    0x18(%r14),%rdi
+    0.00 :   2baff0c:        mov    %esi,(%rsp)
+    0.00 :   2baff0f:        call   330b5f0 <llvm::GlobalValue::isDeclaration() const>
+    0.00 :   2baff14:        test   %al,%al
+    0.00 :   2baff16:        jne    2baf890 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0xd0>
+    0.00 :   2baff1c:        mov    0x18(%r14),%rax
+    0.00 :   2baff20:        mov    0x50(%rax),%rax
+    0.00 :   2baff24:        test   %rax,%rax
+    0.00 :   2baff27:        je     42b9b1 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool) [clone .cold]>
+    0.00 :   2baff2d:        lea    -0x18(%rax),%rbx
+    0.00 :   2baff31:        mov    (%rsp),%esi
+    0.00 :   2baff34:        mov    %rbx,0x8(%rsp)
+    0.00 :   2baff39:        mov    0x20(%rax),%rbx
+    0.65 :   2baff3d:        mov    0x8(%rsp),%rax // ilist_node_base.h:28
+    0.00 :   2baff42:        jmp    2baf7fd <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x3d>
+    0.00 :   2baff47:        mov    -0x8(%r12),%rax
+    0.00 :   2baff4c:        mov    0x40(%rax),%rsi
+         : 736     bool isSmall() const { return IsSmall; }
+    0.00 :   2baff50:        jmp    2bafd53 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x593>
+         : 738     return *(reinterpret_cast<const Use *const *>(this) - 1);
+    0.00 :   2baff55:        mov    -0x8(%r15),%rdx
+    0.00 :   2baff59:        jmp    2bafe68 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x6a8>
+         : 741     CurArray[NumEntries++] = Ptr;
+    0.00 :   2baff5e:        add    $0x1,%ecx
+    0.00 :   2baff61:        mov    %ecx,0x6c(%rsp)
+    0.00 :   2baff65:        mov    %r12,(%rdx)
+    0.00 :   2baff68:        jmp    2bafbf7 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x437>
+         : 746     free(CurArray);
+    0.00 :   2baff6d:        mov    0x20(%rsp),%rdi
+    0.00 :   2baff72:        call   40b250 <free@plt>
+    0.00 :   2baff77:        jmp    2bafc3d <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x47d>
+         : 750     BB = BB->getSingleSuccessor();
+    0.00 :   2baff7c:        mov    0x8(%rsp),%rdi
+    0.00 :   2baff81:        call   320bd20 <llvm::BasicBlock::getSingleSuccessor() const>
+         : 753     if (!BB || !Visited.insert(BB).second)
+    0.00 :   2baff86:        test   %rax,%rax
+         : 755     BB = BB->getSingleSuccessor();
+    0.00 :   2baff89:        mov    %rax,0x8(%rsp)
+         : 757     bool isSmall() const { return IsSmall; }
+    0.00 :   2baff8e:        movzbl 0x34(%rsp),%eax
+         : 759     if (!BB || !Visited.insert(BB).second)
+    0.00 :   2baff93:        je     2bb004c <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x88c>
+         : 761     if (isSmall()) {
+    0.00 :   2baff99:        test   %al,%al
+    0.00 :   2baff9b:        je     2baffff <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x83f>
+         : 764     return make_range(CurArray, CurArray + NumEntries);
+    0.00 :   2baff9d:        mov    0x2c(%rsp),%ecx
+    0.00 :   2baffa1:        mov    0x20(%rsp),%rax
+    0.00 :   2baffa6:        mov    %rcx,%rdx
+    0.00 :   2baffa9:        lea    (%rax,%rcx,8),%rcx
+         : 769     for (const void *&Bucket : small_buckets()) {
+    0.00 :   2baffad:        cmp    %rcx,%rax
+    0.00 :   2baffb0:        jne    2baffc9 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x809>
+    0.00 :   2baffb2:        jmp    2bb0035 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x875>
+    0.00 :   2baffb7:        nopw   0x0(%rax,%rax,1)
+    0.00 :   2baffc0:        add    $0x8,%rax
+    0.00 :   2baffc4:        cmp    %rax,%rcx
+    0.00 :   2baffc7:        je     2bb0035 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x875>
+         : 777     if (Bucket == Ptr)
+    0.00 :   2baffc9:        mov    0x8(%rsp),%rbx
+    0.00 :   2baffce:        cmp    (%rax),%rbx
+    0.00 :   2baffd1:        jne    2baffc0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x800>
+         : 781     return false;
+    0.00 :   2baffd3:        xor    %ebp,%ebp
+    0.00 :   2baffd5:        jmp    2bafc3d <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x47d>
+         : 784     bool isSmall() const { return IsSmall; }
+    0.00 :   2baffda:        movzbl 0x34(%rsp),%eax
+         : 786     return false;
+    0.00 :   2baffdf:        xor    %ebp,%ebp
+    0.00 :   2baffe1:        jmp    2bafc35 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x475>
+         : 789     return reinterpret_cast<const Use *>(this) - NumUserOperands;
+    0.00 :   2baffe6:        mov    0x4(%r12),%eax
+    0.00 :   2baffeb:        mov    %r12,%rdx
+    0.00 :   2baffee:        and    $0x7ffffff,%eax
+    0.00 :   2bafff3:        shl    $0x5,%rax
+    0.00 :   2bafff7:        sub    %rax,%rdx
+    0.00 :   2bafffa:        jmp    2bafe12 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x652>
+         : 796     return insert_imp_big(Ptr);
+    0.00 :   2baffff:        mov    0x8(%rsp),%rsi
+    0.00 :   2bb0004:        lea    0x20(%rsp),%rdi
+    0.00 :   2bb0009:        call   3565ec0 <llvm::SmallPtrSetImplBase::insert_imp_big(void const*)>
+         : 800     : first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
+    0.00 :   2bb000e:        mov    %edx,%ebp
+         : 802     if (!BB || !Visited.insert(BB).second)
+    0.00 :   2bb0010:        test   %dl,%dl
+    0.00 :   2bb0012:        je     2bafc30 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x470>
+         : 805     Begin = BB->getFirstNonPHIIt();
+    0.00 :   2bb0018:        mov    0x8(%rsp),%r14
+    0.00 :   2bb001d:        mov    %r14,%rdi
+    0.00 :   2bb0020:        call   320b6e0 <llvm::BasicBlock::getFirstNonPHIIt() const>
+    0.00 :   2bb0025:        mov    %rax,%rbx
+    0.00 :   2bb0028:        lea    0x30(%r14),%rax
+    0.00 :   2bb002c:        mov    %rax,(%rsp)
+         : 812     }
+    0.00 :   2bb0030:        jmp    2bafaf0 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x330>
+         : 814     if (NumEntries < CurArraySize) {
+    0.00 :   2bb0035:        cmp    0x28(%rsp),%edx
+    0.00 :   2bb0039:        jae    2baffff <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x83f>
+         : 817     CurArray[NumEntries++] = Ptr;
+    0.00 :   2bb003b:        mov    0x8(%rsp),%rax
+    0.00 :   2bb0040:        add    $0x1,%edx
+    0.00 :   2bb0043:        mov    %edx,0x2c(%rsp)
+    0.00 :   2bb0047:        mov    %rax,(%rcx)
+         : 822     constexpr pair(_U1&& __x, _U2&& __y)
+    0.00 :   2bb004a:        jmp    2bb0018 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x858>
+         : 824     return false;
+    0.00 :   2bb004c:        xor    %ebp,%ebp
+    0.00 :   2bb004e:        jmp    2bafc35 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x475>
+    0.00 :   2bb0053:        mov    0x60(%rsp),%rdx
+    0.00 :   2bb0058:        mov    0x6c(%rsp),%r8d
+    0.00 :   2bb005d:        jmp    2bafd53 <programUndefinedIfUndefOrPoison(llvm::Value const*, bool)+0x593>
+         : 830     }
+    0.00 :   2bb0062:        call   40b3d0 <__stack_chk_fail@plt>

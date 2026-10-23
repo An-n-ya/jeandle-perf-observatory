@@ -1,0 +1,1641 @@
+{
+  "native_stats_profiles": 77,
+  "raw_event_stats": [
+    {
+      "path": "/private/tmp/javatype-progress/diagnostics/quality/deep-199-32k/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/diagnostics/quality/high-399-8k/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/diagnostics/quality/low-49-8k/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/diagnostics/quality/virtual-cfg-199-32k/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/diagnostics/quality/wide-static-199-32k/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/full/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/full/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/full/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/origin/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/origin/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/origin/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/s0/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/s0/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/s0/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/s1/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/s1/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/l2/profiles/cff-cache-reuse/s1/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/full/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/full/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/full/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/origin/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/origin/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/origin/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/s0/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/s0/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/s0/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/s1/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/s1/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/deep-static/s1/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/full/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/full/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/full/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/origin/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/origin/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/origin/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/s0/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/s0/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/s0/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/s1/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/s1/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/leaf-static/s1/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/full/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/full/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/full/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/origin/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/origin/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/origin/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/s0/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/s0/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/s0/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/s1/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/s1/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/tce-cha/s1/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/full/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/full/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/full/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/origin/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/origin/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/origin/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/s0/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/s0/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/s0/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/s1/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/s1/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/virtual-cfg/s1/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/full/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/full/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/full/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/origin/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/origin/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/origin/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/s0/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/s0/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/s0/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/s1/run-00/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/s1/run-01/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    },
+    {
+      "path": "/private/tmp/javatype-progress/profiles/wide-static/s1/run-02/native-stats.txt",
+      "lost_records": 0,
+      "lost_sample_records": 0,
+      "throttle_records": 0,
+      "unthrottle_records": 0
+    }
+  ],
+  "lost_record_count": 0,
+  "lost_sample_record_count": 0,
+  "throttle_record_count": 0,
+  "quality_checks": [
+    {
+      "tag": "deep-199-32k",
+      "case": "deep-static",
+      "samples": 1185,
+      "frequency": 199,
+      "stack_bytes": 32768,
+      "elapsed_s": 6.174847137,
+      "jt_samples": 609,
+      "pct": {
+        "root_complete": 31.247271077112647,
+        "unknown": 8.242027981544828,
+        "jt": 51.80934547714629,
+        "lvi": 47.72685539646914,
+        "jt_lvi": 45.58767447310154
+      },
+      "groups": {
+        "external/other": 14.305274098786601,
+        "external/parse": 25.06218795916945,
+        "external/dt": 1.9087320807464314,
+        "external/unknown": 2.221988845451119,
+        "javatype/query_lvi": 45.58767447310154,
+        "javatype/query_base": 0.7640077405486216,
+        "javatype/query_facts_other": 2.8932660998727795,
+        "external/callback": 2.1263517406277295,
+        "javatype/invalidation": 0.5145107683395956,
+        "javatype/query_other": 1.0234785375017792,
+        "external/lvi": 2.1391809233675976,
+        "javatype/query_container": 0.33846201648077967,
+        "javatype/query_type_operations": 0.17158349992801614,
+        "external/allocation": 0.42693887470478353,
+        "javatype/query_allocation": 0.08566383863341555,
+        "javatype/lifecycle": 0.43069850273975907
+      },
+      "consumer_pct_jt": {
+        "CHA": 98.50372934358526,
+        "unresolved consumer": 0.6649563466639087,
+        "FAM lifecycle": 0.8313143097508252
+      },
+      "native_self_top": [
+        {
+          "symbol": "programUndefinedIfUndefOrPoison(llvm::Value const*, bool)",
+          "pct_process": 13.16805887811503
+        },
+        {
+          "symbol": "[unknown]",
+          "pct_process": 8.242027981544828
+        },
+        {
+          "symbol": "llvm::Instruction::mayThrow(bool) const [clone .localalias]",
+          "pct_process": 5.103842008221142
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solve() [clone .localalias]",
+          "pct_process": 4.944274917021766
+        },
+        {
+          "symbol": "llvm::ValueHandleBase::AddToUseList() [clone .localalias]",
+          "pct_process": 4.173475930178257
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 2.876677400808768
+        },
+        {
+          "symbol": "llvm::Instruction::willReturn() const",
+          "pct_process": 2.810637706809504
+        },
+        {
+          "symbol": "llvm::LLLexer::LexIdentifier() [clone .localalias]",
+          "pct_process": 2.7407122826744437
+        },
+        {
+          "symbol": "bool llvm::DenseMapBase<llvm::DenseMap<std::pair<llvm::BasicBlock*, llvm::Value*>, llvm::detail::DenseSetEmpty, llvm::DenseMapInfo<std::pair<llvm::BasicBlock*, llvm::Value*>, void>, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> > >, std::pair<llvm::BasicBlock*, llvm::Value*>, llvm::detail::DenseSetEmpty, llvm::DenseMapInfo<std::pair<llvm::BasicBlock*, llvm::Value*>, void>, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> > >::LookupBucketFor<std::pair<llvm::BasicBlock*, llvm::Value*> >(std::pair<llvm::BasicBlock*, llvm::Value*> const&, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> >*&) [clone .isra.0]",
+          "pct_process": 2.118974799300149
+        },
+        {
+          "symbol": "llvm::ValueHandleBase::RemoveFromUseList() [clone .localalias]",
+          "pct_process": 1.3673573490623037
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solveBlockValueNonLocal(llvm::Value*, llvm::BasicBlock*) [clone .localalias]",
+          "pct_process": 1.350614644474553
+        },
+        {
+          "symbol": "(anonymous namespace)::LazyValueInfoCache::getOrCreateBlockEntry(llvm::BasicBlock*)",
+          "pct_process": 1.2784157834931411
+        }
+      ]
+    },
+    {
+      "tag": "high-399-8k",
+      "case": "deep-static",
+      "samples": 2359,
+      "frequency": 399,
+      "stack_bytes": 8192,
+      "elapsed_s": 6.273265765,
+      "jt_samples": 1173,
+      "pct": {
+        "unknown": 9.706391419406,
+        "root_complete": 6.632436900608974,
+        "jt": 50.195019831924995,
+        "lvi": 47.373066488413095,
+        "jt_lvi": 45.40773855440073
+      },
+      "groups": {
+        "external/unknown": 2.6297872671441618,
+        "external/other": 14.888327455280619,
+        "external/parse": 24.94190871153877,
+        "external/dt": 2.1239379883451384,
+        "javatype/query_lvi": 45.40773855440073,
+        "external/callback": 2.3975795067884054,
+        "external/lvi": 1.9653279340123615,
+        "javatype/query_base": 0.7268981807720803,
+        "javatype/query_other": 0.5966374596233982,
+        "javatype/query_container": 0.38558536283431566,
+        "external/allocation": 0.8581113049655527,
+        "javatype/query_facts_other": 2.1374259605685553,
+        "javatype/invalidation": 0.4692665203455958,
+        "javatype/query_allocation": 0.29924613947963424,
+        "javatype/lifecycle": 0.1293275831215224,
+        "javatype/query_type_operations": 0.042894070779161755
+      },
+      "consumer_pct_jt": {
+        "CHA": 98.20944145208922,
+        "unresolved consumer": 1.5329083197515512,
+        "FAM lifecycle": 0.25765022815922384
+      },
+      "native_self_top": [
+        {
+          "symbol": "programUndefinedIfUndefOrPoison(llvm::Value const*, bool)",
+          "pct_process": 13.833090011419502
+        },
+        {
+          "symbol": "[unknown]",
+          "pct_process": 9.706391419406
+        },
+        {
+          "symbol": "llvm::Instruction::mayThrow(bool) const [clone .localalias]",
+          "pct_process": 5.134543347232656
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solve() [clone .localalias]",
+          "pct_process": 4.536011612737911
+        },
+        {
+          "symbol": "llvm::ValueHandleBase::AddToUseList() [clone .localalias]",
+          "pct_process": 3.336657262808687
+        },
+        {
+          "symbol": "llvm::LLLexer::LexIdentifier() [clone .localalias]",
+          "pct_process": 3.275785876429671
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 2.8663265536055076
+        },
+        {
+          "symbol": "llvm::Instruction::willReturn() const",
+          "pct_process": 2.395402973835742
+        },
+        {
+          "symbol": "bool llvm::DenseMapBase<llvm::DenseMap<std::pair<llvm::BasicBlock*, llvm::Value*>, llvm::detail::DenseSetEmpty, llvm::DenseMapInfo<std::pair<llvm::BasicBlock*, llvm::Value*>, void>, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> > >, std::pair<llvm::BasicBlock*, llvm::Value*>, llvm::detail::DenseSetEmpty, llvm::DenseMapInfo<std::pair<llvm::BasicBlock*, llvm::Value*>, void>, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> > >::LookupBucketFor<std::pair<llvm::BasicBlock*, llvm::Value*> >(std::pair<llvm::BasicBlock*, llvm::Value*> const&, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> >*&) [clone .isra.0]",
+          "pct_process": 2.2687970481644895
+        },
+        {
+          "symbol": "llvm::ValueHandleBase::RemoveFromUseList() [clone .localalias]",
+          "pct_process": 1.7121186302309739
+        },
+        {
+          "symbol": "llvm::hashing::detail::hash_short(char const*, unsigned long, unsigned long)",
+          "pct_process": 1.546440077749309
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*) [clone .localalias]",
+          "pct_process": 1.5006638093299756
+        }
+      ]
+    },
+    {
+      "tag": "low-49-8k",
+      "case": "deep-static",
+      "samples": 290,
+      "frequency": 49,
+      "stack_bytes": 8192,
+      "elapsed_s": 6.104869786,
+      "jt_samples": 140,
+      "pct": {
+        "root_complete": 6.420959991378853,
+        "unknown": 11.289910096089033,
+        "lvi": 45.711277878457516,
+        "jt": 48.83783916033795,
+        "jt_lvi": 44.31050969108253
+      },
+      "groups": {
+        "external/parse": 24.827664004155334,
+        "external/other": 15.143358714909109,
+        "external/dt": 3.151553522937632,
+        "external/lvi": 1.400768187374981,
+        "javatype/query_lvi": 44.31050969108253,
+        "javatype/query_callback": 0.34998538372882304,
+        "external/callback": 3.1238026968658117,
+        "javatype/query_base": 1.0504187723986893,
+        "external/allocation": 1.4026385591974817,
+        "javatype/invalidation": 0.6998818377173103,
+        "external/unknown": 2.1123751542216977,
+        "javatype/query_container": 0.3462863431456442,
+        "javatype/query_facts_other": 1.730907543551233,
+        "javatype/query_other": 0.34984958871371846
+      },
+      "consumer_pct_jt": {
+        "CHA": 97.849799789616,
+        "unresolved consumer": 2.150200210383994
+      },
+      "native_self_top": [
+        {
+          "symbol": "programUndefinedIfUndefOrPoison(llvm::Value const*, bool)",
+          "pct_process": 13.252718364343055
+        },
+        {
+          "symbol": "[unknown]",
+          "pct_process": 11.289910096089033
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solve() [clone .localalias]",
+          "pct_process": 4.202835220033996
+        },
+        {
+          "symbol": "llvm::ValueHandleBase::AddToUseList() [clone .localalias]",
+          "pct_process": 4.181602754924405
+        },
+        {
+          "symbol": "llvm::Instruction::mayThrow(bool) const [clone .localalias]",
+          "pct_process": 3.823461021018609
+        },
+        {
+          "symbol": "llvm::LLLexer::LexIdentifier() [clone .localalias]",
+          "pct_process": 3.349857134823905
+        },
+        {
+          "symbol": "llvm::Instruction::willReturn() const",
+          "pct_process": 3.1518709770565607
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 3.1312407717519566
+        },
+        {
+          "symbol": "llvm::hashing::detail::hash_short(char const*, unsigned long, unsigned long)",
+          "pct_process": 2.4323521008277282
+        },
+        {
+          "symbol": "llvm::Instruction::getMetadata(unsigned int) const [clone .part.0]",
+          "pct_process": 2.14067808311936
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*) [clone .localalias]",
+          "pct_process": 2.1001299260331816
+        },
+        {
+          "symbol": "llvm::ValueHandleBase::RemoveFromUseList() [clone .localalias]",
+          "pct_process": 1.748944989553956
+        }
+      ]
+    },
+    {
+      "tag": "virtual-cfg-199-32k",
+      "case": "virtual-cfg",
+      "samples": 2269,
+      "frequency": 199,
+      "stack_bytes": 32768,
+      "elapsed_s": 11.692259152,
+      "jt_samples": 964,
+      "pct": {
+        "root_complete": 15.347560755181004,
+        "unknown": 9.564735893301144,
+        "jt": 42.62967702949302,
+        "lvi": 21.892404841322367,
+        "jt_lvi": 19.38311277081817
+      },
+      "groups": {
+        "external/other": 18.013957425624064,
+        "external/parse": 10.536053943830787,
+        "external/unknown": 2.883702202819557,
+        "external/dt": 21.08495038434053,
+        "javatype/query_base": 0.13172233431784505,
+        "javatype/query_facts_other": 10.970239884249015,
+        "javatype/query_container": 3.490281788030176,
+        "javatype/query_lvi": 19.38311277081817,
+        "javatype/query_callback": 6.23167862968479,
+        "external/callback": 1.8959465045916022,
+        "javatype/query_other": 1.1031116976390625,
+        "external/lvi": 2.509292070504199,
+        "external/allocation": 0.4464204387962451,
+        "javatype/query_type_operations": 0.17698663198630238,
+        "javatype/invalidation": 0.7480295893253903,
+        "javatype/query_allocation": 0.3083813683542839,
+        "javatype/lifecycle": 0.08613233508798329
+      },
+      "consumer_pct_jt": {
+        "CHA": 99.79795217536274,
+        "FAM lifecycle": 0.2020478246372669
+      },
+      "native_self_top": [
+        {
+          "symbol": "[unknown]",
+          "pct_process": 9.564735893301144
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solveBlockValueNonLocal(llvm::Value*, llvm::BasicBlock*) [clone .localalias]",
+          "pct_process": 3.8558847362953657
+        },
+        {
+          "symbol": "llvm::hashing::detail::hash_short(char const*, unsigned long, unsigned long)",
+          "pct_process": 3.816738985743571
+        },
+        {
+          "symbol": "llvm::DomTreeBuilder::SemiNCAInfo<llvm::DominatorTreeBase<llvm::BasicBlock, false> >::DeleteReachable(llvm::DominatorTreeBase<llvm::BasicBlock, false>&, llvm::DomTreeBuilder::SemiNCAInfo<llvm::DominatorTreeBase<llvm::BasicBlock, false> >::BatchUpdateInfo*, llvm::DomTreeNodeBase<llvm::BasicBlock>*, llvm::DomTreeNodeBase<llvm::BasicBlock>*) [clone .isra.0]",
+          "pct_process": 3.4918382027739407
+        },
+        {
+          "symbol": "factsAt(llvm::Value*, llvm::BasicBlock*, (anonymous namespace)::CachedJavaTypeQueryContext&)",
+          "pct_process": 2.874759700973458
+        },
+        {
+          "symbol": "llvm::jeandle::JavaType::JavaType(llvm::jeandle::JavaType&&)",
+          "pct_process": 2.873833061433525
+        },
+        {
+          "symbol": "(anonymous namespace)::LazyValueInfoCache::getOrCreateBlockEntry(llvm::BasicBlock*)",
+          "pct_process": 2.8342845518100503
+        },
+        {
+          "symbol": "llvm::DomTreeBuilder::SemiNCAInfo<llvm::DominatorTreeBase<llvm::BasicBlock, false> >::getNodeInfo(llvm::BasicBlock*)",
+          "pct_process": 2.8321079700623026
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getEdgeValueLocal(llvm::Value*, llvm::BasicBlock*, llvm::BasicBlock*, bool) [clone .localalias]",
+          "pct_process": 1.7669355158909017
+        },
+        {
+          "symbol": "llvm::DomTreeBuilder::SemiNCAInfo<llvm::DominatorTreeBase<llvm::BasicBlock, false> >::runSemiNCA()",
+          "pct_process": 1.6393574822474941
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 1.5948894076412803
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getEdgeValue(llvm::Value*, llvm::BasicBlock*, llvm::BasicBlock*, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 1.549340154249202
+        }
+      ]
+    },
+    {
+      "tag": "wide-static-199-32k",
+      "case": "wide-static",
+      "samples": 3267,
+      "frequency": 199,
+      "stack_bytes": 32768,
+      "elapsed_s": 16.673939963,
+      "jt_samples": 1772,
+      "pct": {
+        "root_complete": 22.120504906922708,
+        "unknown": 8.990877397128573,
+        "jt": 54.64914569367421,
+        "lvi": 41.17050952152073,
+        "jt_lvi": 38.30026339226214
+      },
+      "groups": {
+        "external/other": 17.046407472692323,
+        "external/parse": 16.82072158221387,
+        "external/unknown": 2.40233643430878,
+        "external/dt": 1.9519295435318684,
+        "javatype/query_lvi": 38.30026339226214,
+        "javatype/query_facts_other": 10.795521673885068,
+        "javatype/query_other": 1.5747521440975718,
+        "external/callback": 3.6122547764771173,
+        "external/lvi": 2.870246129258588,
+        "external/allocation": 0.6469583678432458,
+        "javatype/invalidation": 1.1404071907040119,
+        "javatype/query_allocation": 0.18379435742479147,
+        "javatype/query_container": 2.4377170344314365,
+        "javatype/query_base": 0.12362281725109514,
+        "javatype/query_type_operations": 0.030934200778687512,
+        "javatype/lifecycle": 0.06213288283940942
+      },
+      "consumer_pct_jt": {
+        "CHA": 99.88630584787605,
+        "FAM lifecycle": 0.11369415212395803
+      },
+      "native_self_top": [
+        {
+          "symbol": "[unknown]",
+          "pct_process": 8.990877397128573
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solveBlockValueNonLocal(llvm::Value*, llvm::BasicBlock*) [clone .localalias]",
+          "pct_process": 5.6126701186540355
+        },
+        {
+          "symbol": "programUndefinedIfUndefOrPoison(llvm::Value const*, bool)",
+          "pct_process": 4.316366684248779
+        },
+        {
+          "symbol": "factsAt(llvm::Value*, llvm::BasicBlock*, (anonymous namespace)::CachedJavaTypeQueryContext&)",
+          "pct_process": 4.133276657849694
+        },
+        {
+          "symbol": "llvm::jeandle::JavaType::JavaType(llvm::jeandle::JavaType&&)",
+          "pct_process": 4.099998491362652
+        },
+        {
+          "symbol": "(anonymous namespace)::LazyValueInfoCache::getOrCreateBlockEntry(llvm::BasicBlock*)",
+          "pct_process": 3.6692809295058315
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 3.642948432208591
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::solve() [clone .localalias]",
+          "pct_process": 3.546911284884933
+        },
+        {
+          "symbol": "llvm::hashing::detail::hash_short(char const*, unsigned long, unsigned long)",
+          "pct_process": 2.5378840420128324
+        },
+        {
+          "symbol": "llvm::LazyValueInfoImpl::intersectAssumeOrGuardBlockValueConstantRange(llvm::Value*, llvm::ValueLatticeElement&, llvm::Instruction*) [clone .localalias]",
+          "pct_process": 2.3404190070203597
+        },
+        {
+          "symbol": "bool llvm::DenseMapBase<llvm::DenseMap<std::pair<llvm::BasicBlock*, llvm::Value*>, llvm::detail::DenseSetEmpty, llvm::DenseMapInfo<std::pair<llvm::BasicBlock*, llvm::Value*>, void>, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> > >, std::pair<llvm::BasicBlock*, llvm::Value*>, llvm::detail::DenseSetEmpty, llvm::DenseMapInfo<std::pair<llvm::BasicBlock*, llvm::Value*>, void>, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> > >::LookupBucketFor<std::pair<llvm::BasicBlock*, llvm::Value*> >(std::pair<llvm::BasicBlock*, llvm::Value*> const&, llvm::detail::DenseSetPair<std::pair<llvm::BasicBlock*, llvm::Value*> >*&) [clone .isra.0]",
+          "pct_process": 2.311896028215702
+        },
+        {
+          "symbol": "llvm::LLLexer::LexIdentifier() [clone .localalias]",
+          "pct_process": 1.4556251432684544
+        }
+      ]
+    }
+  ],
+  "scheduling": [
+    {
+      "case": "cff-cache-reuse",
+      "mode": "full",
+      "repeats": 3,
+      "max_rss_kb_median": 743456,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 89,
+      "user_s_median": 6.5034600000000005,
+      "system_s_median": 0.225273,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6751.74,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 138081.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "cff-cache-reuse",
+      "mode": "origin",
+      "repeats": 3,
+      "max_rss_kb_median": 745820,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 83,
+      "user_s_median": 6.50647,
+      "system_s_median": 0.217381,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6747.61,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 143663.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "cff-cache-reuse",
+      "mode": "s0",
+      "repeats": 3,
+      "max_rss_kb_median": 743324,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 79,
+      "user_s_median": 6.347171,
+      "system_s_median": 0.236229,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6607.46,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 142755.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "cff-cache-reuse",
+      "mode": "s1",
+      "repeats": 3,
+      "max_rss_kb_median": 743052,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 84,
+      "user_s_median": 6.335483,
+      "system_s_median": 0.21931499999999998,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6578.73,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 141820.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "deep-static",
+      "mode": "full",
+      "repeats": 3,
+      "max_rss_kb_median": 555392,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 67,
+      "user_s_median": 6.54716,
+      "system_s_median": 0.171449,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6753.46,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 129848.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "deep-static",
+      "mode": "origin",
+      "repeats": 3,
+      "max_rss_kb_median": 399228,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 57,
+      "user_s_median": 6.541462,
+      "system_s_median": 0.132545,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6712.53,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 90395.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "deep-static",
+      "mode": "s0",
+      "repeats": 3,
+      "max_rss_kb_median": 555592,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 54,
+      "user_s_median": 5.805474,
+      "system_s_median": 0.175427,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6013.94,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 128833.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "deep-static",
+      "mode": "s1",
+      "repeats": 3,
+      "max_rss_kb_median": 555364,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 56,
+      "user_s_median": 5.721315,
+      "system_s_median": 0.177444,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 5938.42,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 128911.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "leaf-static",
+      "mode": "full",
+      "repeats": 3,
+      "max_rss_kb_median": 432364,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 54,
+      "user_s_median": 5.028526,
+      "system_s_median": 0.143559,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 5204.4,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 100158.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "leaf-static",
+      "mode": "origin",
+      "repeats": 3,
+      "max_rss_kb_median": 312688,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 47,
+      "user_s_median": 4.882367,
+      "system_s_median": 0.106649,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 5020.89,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 70032.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "leaf-static",
+      "mode": "s0",
+      "repeats": 3,
+      "max_rss_kb_median": 432364,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 51,
+      "user_s_median": 5.055605,
+      "system_s_median": 0.140569,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 5215.31,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 100862.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "leaf-static",
+      "mode": "s1",
+      "repeats": 3,
+      "max_rss_kb_median": 432124,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 52,
+      "user_s_median": 4.994199,
+      "system_s_median": 0.136575,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 5154.82,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 101374.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "tce-cha",
+      "mode": "full",
+      "repeats": 3,
+      "max_rss_kb_median": 554328,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 73,
+      "user_s_median": 6.607397,
+      "system_s_median": 0.171486,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6807.5,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 129139.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "tce-cha",
+      "mode": "origin",
+      "repeats": 3,
+      "max_rss_kb_median": 398400,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 77,
+      "user_s_median": 6.65111,
+      "system_s_median": 0.11365199999999999,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6815.39,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 90073.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "tce-cha",
+      "mode": "s0",
+      "repeats": 3,
+      "max_rss_kb_median": 554328,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 69,
+      "user_s_median": 5.85194,
+      "system_s_median": 0.16250099999999998,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 6051.06,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 128632.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "tce-cha",
+      "mode": "s1",
+      "repeats": 3,
+      "max_rss_kb_median": 554492,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 68,
+      "user_s_median": 5.78363,
+      "system_s_median": 0.174485,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 5983.55,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 128631.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "virtual-cfg",
+      "mode": "full",
+      "repeats": 3,
+      "max_rss_kb_median": 909116,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 144,
+      "user_s_median": 11.15454,
+      "system_s_median": 0.31699099999999997,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 11486.74,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 210734.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "virtual-cfg",
+      "mode": "origin",
+      "repeats": 3,
+      "max_rss_kb_median": 748372,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 138,
+      "user_s_median": 10.800151,
+      "system_s_median": 0.25723599999999996,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 11090.83,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 168956.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "virtual-cfg",
+      "mode": "s0",
+      "repeats": 3,
+      "max_rss_kb_median": 908880,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 132,
+      "user_s_median": 11.043554,
+      "system_s_median": 0.29409399999999997,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 11365.53,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 211240.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "virtual-cfg",
+      "mode": "s1",
+      "repeats": 3,
+      "max_rss_kb_median": 909168,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 133,
+      "user_s_median": 11.059382,
+      "system_s_median": 0.30202799999999996,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 11391.81,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 211244.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "wide-static",
+      "mode": "full",
+      "repeats": 3,
+      "max_rss_kb_median": 742592,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 222,
+      "user_s_median": 17.071293,
+      "system_s_median": 0.269216,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 17385.92,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 170369.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "wide-static",
+      "mode": "origin",
+      "repeats": 3,
+      "max_rss_kb_median": 581768,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 230,
+      "user_s_median": 16.717979,
+      "system_s_median": 0.195424,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 16979.83,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 129761.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "wide-static",
+      "mode": "s0",
+      "repeats": 3,
+      "max_rss_kb_median": 742476,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 209,
+      "user_s_median": 16.239678,
+      "system_s_median": 0.222328,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 16500.86,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 170881.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    },
+    {
+      "case": "wide-static",
+      "mode": "s1",
+      "repeats": 3,
+      "max_rss_kb_median": 742456,
+      "voluntary_context_switches_median": 0,
+      "involuntary_context_switches_median": 202,
+      "user_s_median": 16.054965,
+      "system_s_median": 0.244274,
+      "task-clock_event_names": [
+        "task-clock:u"
+      ],
+      "task-clock_median": 16353.85,
+      "context-switches_event_names": [
+        "context-switches:u"
+      ],
+      "context-switches_median": 0.0,
+      "cpu-migrations_event_names": [
+        "cpu-migrations:u"
+      ],
+      "cpu-migrations_median": 0.0,
+      "page-faults_event_names": [
+        "page-faults:u"
+      ],
+      "page-faults_median": 170367.0,
+      "switches_source": "opt child wait4, not zero-valued perf :u switch events"
+    }
+  ],
+  "scope_note": "Requested unqualified software events were still reported with :u under perf_event_paranoid=2. Switches and opt RSS use wait4. Affinity is fixed; migrations are not established by zero perf values."
+}

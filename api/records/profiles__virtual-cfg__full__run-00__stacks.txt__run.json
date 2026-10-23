@@ -1,0 +1,41 @@
+{
+  "case": "virtual-cfg",
+  "mode": "full",
+  "run": 0,
+  "elapsed_ns": 11673155106,
+  "perf_data_bytes": 19822080,
+  "perf_data_sha256": "bd2cd2c61441a7f74544e14f7f811a278a6a8114a0d747da6173e6dfd3eb9950",
+  "stacks_sha256": "7c3c128bdf5f663627ef8f208b4b1e81b16169a77e0e0c0abf389227e79de5de",
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "call_graph": "dwarf,8192",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/full/run-00/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/virtual-cfg/virtual-cfg.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/virtual-cfg/virtual-cfg.ll",
+      "-jeandle-java-type-force-full-invalidation"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/full/run-00/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/virtual-cfg/virtual-cfg.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/virtual-cfg/virtual-cfg.ll -jeandle-java-type-force-full-invalidation"
+  },
+  "record_stderr": "[ perf record: Woken up 76 times to write data ]\n[ perf record: Captured and wrote 18.867 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/full/run-00/perf.data (2271 samples) ]\n",
+  "derived_reports": "deferred"
+}

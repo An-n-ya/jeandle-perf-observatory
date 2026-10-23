@@ -1,0 +1,41 @@
+{
+  "case": "tce-cha",
+  "mode": "origin",
+  "run": 2,
+  "elapsed_ns": 7039806920,
+  "perf_data_bytes": 11728888,
+  "perf_data_sha256": "4fc8ccc7f2dfa3d45f8e0a2ea1552a2ad54e4130c3327c1cea57e6939cd7caab",
+  "stacks_sha256": "bd8a038ba4b3a95a64b883e04d2c99250904f7adfae80ca0104ef3bfd19a4de7",
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "call_graph": "dwarf,8192",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/origin/run-02/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(type-check-elimination,cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.ll",
+      "-jeandle-disable-java-type-cache"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/origin/run-02/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(type-check-elimination,cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.ll -jeandle-disable-java-type-cache"
+  },
+  "record_stderr": "[ perf record: Woken up 46 times to write data ]\n[ perf record: Captured and wrote 11.149 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/origin/run-02/perf.data (1355 samples) ]\n",
+  "derived_reports": "deferred"
+}

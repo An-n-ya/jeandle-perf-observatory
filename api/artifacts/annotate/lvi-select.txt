@@ -1,0 +1,646 @@
+
+Sorted summary for file /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt
+----------------------------------------------
+
+   25.14 LazyValueInfo.cpp:873
+   15.09 LazyValueInfo.cpp:939
+   10.07 LazyValueInfo.cpp:952
+   10.04 Use.h:54
+    9.76 ValueLattice.h:93
+    5.03 LazyValueInfo.cpp:872
+    5.03 optional:258
+    5.03 ValueLattice.h:248
+    5.03 optional:337
+    5.02 LazyValueInfo.cpp:869
+    4.77 optional:306
+ Percent |	Source code & Disassembly of opt for cpu_atom/cycles/u (20 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3       Disassembly of section .text:
+         :
+         : 5       00000000029eaf50 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)>:
+         : 6       BBLV = ValueLatticeElement::getNot(ConstantPointerNull::get(PTy));
+         : 7       }
+         : 8       }
+         :
+         : 10      std::optional<ValueLatticeElement>
+         : 11      LazyValueInfoImpl::solveBlockValueSelect(SelectInst *SI, BasicBlock *BB) {
+    0.00 :   29eaf50:        push   %r15
+    0.00 :   29eaf52:        push   %r14
+    0.00 :   29eaf54:        push   %r13
+    0.00 :   29eaf56:        mov    %rdx,%r13
+    0.00 :   29eaf59:        push   %r12
+         : 17      // Recurse on our inputs if needed
+         : 18      std::optional<ValueLatticeElement> OptTrueVal =
+         : 19      getBlockValue(SI->getTrueValue(), BB, SI);
+    5.03 :   29eaf5b:        mov    %r13,%r8 // LazyValueInfo.cpp:872
+         : 21      LazyValueInfoImpl::solveBlockValueSelect(SelectInst *SI, BasicBlock *BB) {
+    0.00 :   29eaf5e:        push   %rbp
+    0.00 :   29eaf5f:        mov    %rsi,%rbp
+    5.02 :   29eaf62:        push   %rbx // LazyValueInfo.cpp:869
+    0.00 :   29eaf63:        mov    %rdi,%rbx
+    0.00 :   29eaf66:        sub    $0x198,%rsp
+         : 27      getBlockValue(SI->getTrueValue(), BB, SI);
+    0.00 :   29eaf6d:        mov    -0x40(%rdx),%rdx
+         : 29      LazyValueInfoImpl::solveBlockValueSelect(SelectInst *SI, BasicBlock *BB) {
+    0.00 :   29eaf71:        mov    %fs:0x28,%r14
+    0.00 :   29eaf7a:        mov    %r14,0x188(%rsp)
+    0.00 :   29eaf82:        mov    %rcx,%r14
+         : 33      getBlockValue(SI->getTrueValue(), BB, SI);
+    0.00 :   29eaf85:        lea    0xf0(%rsp),%r12
+    0.00 :   29eaf8d:        mov    %r12,%rdi
+    0.00 :   29eaf90:        call   29e46d0 <llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*)>
+         : 37      if (!OptTrueVal)
+    5.03 :   29eaf95:        cmpb   $0x0,0x118(%rsp) // LazyValueInfo.cpp:873
+   20.11 :   29eaf9d:        jne    29eafe0 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x90>
+         : 40      return std::nullopt;
+    0.00 :   29eaf9f:        pxor   %xmm0,%xmm0
+    0.00 :   29eafa3:        movups %xmm0,(%rbx)
+    0.00 :   29eafa6:        movups %xmm0,0x10(%rbx)
+    0.00 :   29eafaa:        movups %xmm0,0x20(%rbx)
+         : 45      /*UseBlockValue*/ false));
+         : 46      }
+         :
+         : 48      TrueVal.mergeIn(FalseVal);
+         : 49      return TrueVal;
+         : 50      }
+    0.00 :   29eafae:        mov    0x188(%rsp),%rax
+    0.00 :   29eafb6:        sub    %fs:0x28,%rax
+    0.00 :   29eafbf:        jne    29eb744 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x7f4>
+    0.00 :   29eafc5:        add    $0x198,%rsp
+    0.00 :   29eafcc:        mov    %rbx,%rax
+    0.00 :   29eafcf:        pop    %rbx
+    0.00 :   29eafd0:        pop    %rbp
+    0.00 :   29eafd1:        pop    %r12
+    0.00 :   29eafd3:        pop    %r13
+    0.00 :   29eafd5:        pop    %r14
+    5.04 :   29eafd7:        pop    %r15 // LazyValueInfo.cpp:952
+    5.03 :   29eafd9:        ret
+    0.00 :   29eafda:        nopw   0x0(%rax,%rax,1)
+         : 64      getBlockValue(SI->getFalseValue(), BB, SI);
+    0.00 :   29eafe0:        mov    -0x20(%r13),%rdx
+    0.00 :   29eafe4:        mov    %r13,%r8
+    0.00 :   29eafe7:        mov    %r14,%rcx
+    0.00 :   29eafea:        mov    %rbp,%rsi
+    0.00 :   29eafed:        lea    0x120(%rsp),%rdi
+    0.00 :   29eaff5:        lea    0x120(%rsp),%r15
+    0.00 :   29eaffd:        call   29e46d0 <llvm::LazyValueInfoImpl::getBlockValue(llvm::Value*, llvm::BasicBlock*, llvm::Instruction*)>
+         : 72      if (!OptFalseVal)
+    0.00 :   29eb002:        cmpb   $0x0,0x148(%rsp)
+    0.00 :   29eb00a:        jne    29eb058 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x108>
+         : 75      return std::nullopt;
+    0.00 :   29eb00c:        pxor   %xmm0,%xmm0
+    0.00 :   29eb010:        movups %xmm0,(%rbx)
+    0.00 :   29eb013:        movups %xmm0,0x10(%rbx)
+    0.00 :   29eb017:        movups %xmm0,0x20(%rbx)
+         :
+         : 81      // _M_reset is a 'safe' operation with no precondition.
+         : 82      constexpr void
+         : 83      _M_reset() noexcept
+         : 84      {
+         : 85      if (this->_M_engaged)
+    5.03 :   29eb01b:        cmpb   $0x0,0x118(%rsp) // optional:337
+    0.00 :   29eb023:        je     29eafae <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5e>
+         : 88      ConstantRange Range;
+         : 89      };
+         :
+         : 91      /// Destroy contents of lattice value, without destructing the object.
+         : 92      void destroy() {
+         : 93      switch (Tag) {
+    4.74 :   29eb025:        movzbl 0xf0(%rsp),%eax // ValueLattice.h:93
+         : 95      _M_engaged = false;
+    0.00 :   29eb02d:        movb   $0x0,0x118(%rsp)
+    0.00 :   29eb035:        sub    $0x4,%eax
+    0.00 :   29eb038:        cmp    $0x1,%al
+    0.00 :   29eb03a:        ja     29eafae <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5e>
+         : 100     case constant:
+         : 101     case notconstant:
+         : 102     break;
+         : 103     case constantrange_including_undef:
+         : 104     case constantrange:
+         : 105     Range.~ConstantRange();
+    0.00 :   29eb040:        lea    0xf8(%rsp),%rdi
+    0.00 :   29eb048:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 108     break;
+    0.00 :   29eb04d:        jmp    29eafae <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5e>
+    0.00 :   29eb052:        nopw   0x0(%rax,%rax,1)
+         : 111     /// Returns true if this value is a constant range. Use \p UndefAllowed to
+         : 112     /// exclude non-singleton constant ranges that may also be undef. Note that
+         : 113     /// this function also returns true if the range may include undef, but only
+         : 114     /// contains a single element. In that case, it can be replaced by a constant.
+         : 115     bool isConstantRange(bool UndefAllowed = true) const {
+         : 116     return Tag == constantrange || (Tag == constantrange_including_undef &&
+    0.00 :   29eb058:        movzbl 0xf0(%rsp),%eax
+    0.00 :   29eb060:        sub    $0x4,%eax
+    0.00 :   29eb063:        cmp    $0x1,%al
+    5.03 :   29eb065:        ja     29eb240 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x2f0> // ValueLattice.h:248
+         : 121     return ConstantRange::getFull(BW);
+         : 122     }
+         :
+         : 124     ConstantRange asConstantRange(Type *Ty, bool UndefAllowed = false) const {
+         : 125     assert(Ty->isIntOrIntVectorTy() && "Must be integer type");
+         : 126     return asConstantRange(Ty->getScalarSizeInBits(), UndefAllowed);
+    0.00 :   29eb06b:        mov    0x8(%r13),%rdi
+    0.00 :   29eb06f:        lea    0x60(%rsp),%r14
+    0.00 :   29eb074:        call   33d9510 <llvm::Type::getScalarSizeInBits() const>
+    0.00 :   29eb079:        xor    %ecx,%ecx
+    0.00 :   29eb07b:        lea    0x40(%rsp),%rdi
+    0.00 :   29eb080:        mov    %r12,%rsi
+    0.00 :   29eb083:        mov    %eax,%edx
+    0.00 :   29eb085:        mov    %rdi,(%rsp)
+    0.00 :   29eb089:        call   27672e0 <llvm::ValueLatticeElement::asConstantRange(unsigned int, bool) const>
+    0.00 :   29eb08e:        mov    0x8(%r13),%rdi
+    0.00 :   29eb092:        call   33d9510 <llvm::Type::getScalarSizeInBits() const>
+    0.00 :   29eb097:        xor    %ecx,%ecx
+    0.00 :   29eb099:        mov    %r15,%rsi
+    0.00 :   29eb09c:        mov    %r14,%rdi
+    0.00 :   29eb09f:        mov    %eax,%edx
+    0.00 :   29eb0a1:        call   27672e0 <llvm::ValueLatticeElement::asConstantRange(unsigned int, bool) const>
+         : 143     SelectPatternResult SPR = matchSelectPattern(SI, LHS, RHS);
+    0.00 :   29eb0a6:        xor    %r8d,%r8d
+    0.00 :   29eb0a9:        xor    %ecx,%ecx
+    0.00 :   29eb0ab:        lea    0x28(%rsp),%rdx
+    0.00 :   29eb0b0:        lea    0x20(%rsp),%rsi
+    0.00 :   29eb0b5:        mov    %r13,%rdi
+         : 149     Value *LHS = nullptr;
+    0.00 :   29eb0b8:        movq   $0x0,0x20(%rsp)
+         : 151     Value *RHS = nullptr;
+    0.00 :   29eb0c1:        movq   $0x0,0x28(%rsp)
+         : 153     SelectPatternResult SPR = matchSelectPattern(SI, LHS, RHS);
+    0.00 :   29eb0ca:        call   2bc2fd0 <llvm::matchSelectPattern(llvm::Value*, llvm::Value*&, llvm::Value*&, llvm::Instruction::CastOps*, unsigned int)>
+         : 155     /// fcmp; select, does the fcmp have to be
+         : 156     /// ordered?
+         :
+         : 158     /// Return true if \p SPF is a min or a max pattern.
+         : 159     static bool isMinOrMax(SelectPatternFlavor SPF) {
+         : 160     return SPF != SPF_UNKNOWN && SPF != SPF_ABS && SPF != SPF_NABS;
+    0.00 :   29eb0cf:        cmp    $0x7,%eax
+    0.00 :   29eb0d2:        je     29eb290 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x340>
+    0.00 :   29eb0d8:        test   %eax,%eax
+    0.00 :   29eb0da:        je     29eb280 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x330>
+    0.00 :   29eb0e0:        cmp    $0x8,%eax
+    0.00 :   29eb0e3:        je     29eb1b0 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x260>
+         :
+         : 168     public:
+         : 169     friend class Value;
+         : 170     friend class User;
+         :
+         : 172     operator Value *() const { return Val; }
+    0.00 :   29eb0e9:        mov    -0x40(%r13),%rdx
+         : 174     ((LHS == SI->getTrueValue() && RHS == SI->getFalseValue()) ||
+    0.00 :   29eb0ed:        mov    0x20(%rsp),%rcx
+    0.00 :   29eb0f2:        mov    0x28(%rsp),%rsi
+         : 177     if (SelectPatternResult::isMinOrMax(SPR.Flavor) &&
+    0.00 :   29eb0f7:        cmp    %rdx,%rcx
+    0.00 :   29eb0fa:        je     29eb500 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5b0>
+         : 180     ((LHS == SI->getTrueValue() && RHS == SI->getFalseValue()) ||
+    0.00 :   29eb100:        cmp    %rsi,%rdx
+    0.00 :   29eb103:        je     29eb661 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x711>
+    0.00 :   29eb109:        nopl   0x0(%rax)
+         : 184     }
+    0.00 :   29eb110:        mov    %r14,%rdi
+    0.00 :   29eb113:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb118:        mov    (%rsp),%rdi
+    0.00 :   29eb11c:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    5.02 :   29eb121:        mov    -0x60(%r13),%rax // Use.h:54
+         : 190     if (isGuaranteedNotToBeUndef(Cond, AC)) {
+    5.03 :   29eb125:        mov    0xd8(%rbp),%rsi // LazyValueInfo.cpp:939
+    0.00 :   29eb12c:        xor    %r8d,%r8d
+    0.00 :   29eb12f:        xor    %ecx,%ecx
+    0.00 :   29eb131:        xor    %edx,%edx
+    0.00 :   29eb133:        mov    %rax,%rdi
+    5.02 :   29eb136:        mov    %rax,(%rsp) // Use.h:54
+    0.00 :   29eb13a:        call   2bb0c70 <llvm::isGuaranteedNotToBeUndef(llvm::Value const*, llvm::AssumptionCache*, llvm::Instruction const*, llvm::DominatorTree const*, unsigned int)>
+    5.03 :   29eb13f:        test   %al,%al // LazyValueInfo.cpp:939
+    5.02 :   29eb141:        jne    29eb330 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x3e0>
+         : 200     TrueVal.mergeIn(FalseVal);
+    0.00 :   29eb147:        mov    $0x1,%r8d
+    0.00 :   29eb14d:        xor    %ecx,%ecx
+    0.00 :   29eb14f:        xor    %edx,%edx
+    0.00 :   29eb151:        mov    %r15,%rsi
+    0.00 :   29eb154:        mov    %r12,%rdi
+    0.00 :   29eb157:        call   29dc100 <llvm::ValueLatticeElement::mergeIn(llvm::ValueLatticeElement const&, llvm::ValueLatticeElement::MergeOptions) [clone .isra.0]>
+         : 207     : _M_value(std::forward<_Args>(__args)...)
+    0.00 :   29eb15c:        mov    %r12,%rsi
+    5.03 :   29eb15f:        mov    %rbx,%rdi // optional:258
+    0.00 :   29eb162:        call   27670b0 <llvm::ValueLatticeElement::ValueLatticeElement(llvm::ValueLatticeElement const&)>
+         : 211     _M_engaged(true)
+    0.00 :   29eb167:        movb   $0x1,0x28(%rbx)
+         : 213     if (this->_M_engaged)
+    0.00 :   29eb16b:        cmpb   $0x0,0x148(%rsp)
+    0.00 :   29eb173:        je     29eb01b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0xcb>
+         : 216     switch (Tag) {
+    0.00 :   29eb179:        movzbl 0x120(%rsp),%eax
+         : 218     _M_engaged = false;
+    4.77 :   29eb181:        movb   $0x0,0x148(%rsp) // optional:306
+    5.01 :   29eb189:        sub    $0x4,%eax // ValueLattice.h:93
+    0.00 :   29eb18c:        cmp    $0x1,%al
+    0.00 :   29eb18e:        ja     29eb01b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0xcb>
+         : 223     Range.~ConstantRange();
+    0.00 :   29eb194:        lea    0x128(%rsp),%rdi
+    0.00 :   29eb19c:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 226     break;
+    0.00 :   29eb1a1:        jmp    29eb01b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0xcb>
+    0.00 :   29eb1a6:        cs nopw 0x0(%rax,%rax,1)
+         : 229     /// @}
+         : 230     /// \name Value Characterization Functions
+         : 231     /// @{
+         :
+         : 233     /// Return the number of bits in the APInt.
+         : 234     unsigned getBitWidth() const { return BitWidth; }
+    0.00 :   29eb1b0:        mov    0x48(%rsp),%eax
+         : 236     : BitWidth(numBits) {
+    0.00 :   29eb1b4:        mov    %eax,0x158(%rsp)
+         : 238     if (isSingleWord()) {
+    0.00 :   29eb1bb:        cmp    $0x40,%eax
+    0.00 :   29eb1be:        ja     29eb260 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x310>
+         : 241     U.VAL = val;
+    0.00 :   29eb1c4:        lea    0x150(%rsp),%rax
+    0.00 :   29eb1cc:        movq   $0x0,0x150(%rsp)
+         : 244     if (implicitTrunc || isSigned)
+    0.00 :   29eb1d8:        mov    %rax,0x8(%rsp)
+         : 246     ConstantRange Zero(APInt::getZero(TrueCR.getBitWidth()));
+    0.00 :   29eb1dd:        lea    0x80(%rsp),%rax
+    0.00 :   29eb1e5:        mov    0x8(%rsp),%rsi
+    0.00 :   29eb1ea:        mov    %rax,%rdi
+    0.00 :   29eb1ed:        mov    %rax,0x18(%rsp)
+    0.00 :   29eb1f2:        call   3221390 <llvm::ConstantRange::ConstantRange(llvm::APInt)>
+         : 252     if (needsCleanup())
+    0.00 :   29eb1f7:        cmpl   $0x40,0x158(%rsp)
+    0.00 :   29eb1ff:        jbe    29eb213 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x2c3>
+         : 255     delete[] U.pVal;
+    0.00 :   29eb201:        mov    0x150(%rsp),%rdi
+    0.00 :   29eb209:        test   %rdi,%rdi
+    0.00 :   29eb20c:        je     29eb213 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x2c3>
+    0.00 :   29eb20e:        call   40b4e0 <operator delete[](void*)@plt>
+         : 260     if (LHS == SI->getTrueValue())
+    0.00 :   29eb213:        mov    0x20(%rsp),%rax
+    0.00 :   29eb218:        cmp    -0x40(%r13),%rax
+    0.00 :   29eb21c:        je     29eb640 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x6f0>
+         : 264     if (LHS == SI->getFalseValue())
+    0.00 :   29eb222:        cmp    -0x20(%r13),%rax
+    0.00 :   29eb226:        je     29eb460 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x510>
+         : 267     }
+    0.00 :   29eb22c:        mov    0x18(%rsp),%rdi
+    0.00 :   29eb231:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb236:        jmp    29eb110 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1c0>
+    0.00 :   29eb23b:        nopl   0x0(%rax,%rax,1)
+         : 272     return Tag == constantrange || (Tag == constantrange_including_undef &&
+    0.00 :   29eb240:        movzbl 0x120(%rsp),%eax
+    0.00 :   29eb248:        sub    $0x4,%eax
+    0.00 :   29eb24b:        cmp    $0x1,%al
+    0.00 :   29eb24d:        jbe    29eb06b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x11b>
+    0.00 :   29eb253:        jmp    29eb121 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1d1>
+    0.00 :   29eb258:        nopl   0x0(%rax,%rax,1)
+         : 279     initSlowCase(val, isSigned);
+    0.00 :   29eb260:        lea    0x150(%rsp),%rax
+    0.00 :   29eb268:        xor    %edx,%edx
+    0.00 :   29eb26a:        xor    %esi,%esi
+    0.00 :   29eb26c:        mov    %rax,%rdi
+    0.00 :   29eb26f:        mov    %rax,0x8(%rsp)
+    0.00 :   29eb274:        call   34de610 <llvm::APInt::initSlowCase(unsigned long, bool)>
+    0.00 :   29eb279:        jmp    29eb1dd <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x28d>
+    0.00 :   29eb27e:        xchg   %ax,%ax
+         : 288     if (SPR.Flavor == SPF_ABS) {
+    0.00 :   29eb280:        cmp    $0x7,%eax
+    0.00 :   29eb283:        jne    29eb110 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1c0>
+    0.00 :   29eb289:        nopl   0x0(%rax)
+         : 292     if (LHS == SI->getTrueValue())
+    0.00 :   29eb290:        mov    0x20(%rsp),%rax
+    0.00 :   29eb295:        cmp    -0x40(%r13),%rax
+    0.00 :   29eb299:        je     29eb670 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x720>
+         : 296     if (LHS == SI->getFalseValue())
+    0.00 :   29eb29f:        cmp    -0x20(%r13),%rax
+    0.00 :   29eb2a3:        jne    29eb110 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1c0>
+         : 299     FalseCR.abs(), FalseVal.isConstantRangeIncludingUndef());
+    0.00 :   29eb2a9:        lea    0xc0(%rsp),%r12
+         : 301     return Tag == constantrange_including_undef;
+    0.00 :   29eb2b1:        xor    %ebp,%ebp
+    0.00 :   29eb2b3:        mov    %r14,%rsi
+    0.00 :   29eb2b6:        cmpb   $0x5,0x120(%rsp)
+    0.00 :   29eb2be:        mov    %r12,0x10(%rsp)
+    0.00 :   29eb2c3:        sete   %bpl
+    0.00 :   29eb2c7:        xor    %edx,%edx
+    0.00 :   29eb2c9:        mov    %r12,%rdi
+    0.00 :   29eb2cc:        call   3235a30 <llvm::ConstantRange::abs(bool) const>
+         : 310     return ValueLatticeElement::getRange(
+    0.00 :   29eb2d1:        mov    %ebp,%edx
+    0.00 :   29eb2d3:        lea    0x150(%rsp),%rdi
+    0.00 :   29eb2db:        mov    %r12,%rsi
+    0.00 :   29eb2de:        call   2767180 <llvm::ValueLatticeElement::getRange(llvm::ConstantRange, bool)>
+         : 315     : Tag(Other.Tag), NumRangeExtensions(0) {
+    0.00 :   29eb2e3:        movzbl 0x150(%rsp),%eax
+    0.00 :   29eb2eb:        mov    0x158(%rsp),%rdx
+    0.00 :   29eb2f3:        movb   $0x0,0x1(%rbx)
+    0.00 :   29eb2f7:        mov    %al,(%rbx)
+         : 320     switch (Other.Tag) {
+    0.00 :   29eb2f9:        cmp    $0x3,%al
+    0.00 :   29eb2fb:        ja     29eb696 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x746>
+    0.00 :   29eb301:        cmp    $0x1,%al
+    0.00 :   29eb303:        jbe    29eb309 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x3b9>
+         : 325     ConstVal = Other.ConstVal;
+    0.00 :   29eb305:        mov    %rdx,0x8(%rbx)
+         : 327     _M_engaged(true)
+    0.00 :   29eb309:        movb   $0x1,0x28(%rbx)
+         : 329     FalseCR.abs(), FalseVal.isConstantRangeIncludingUndef());
+    0.00 :   29eb30d:        mov    0x10(%rsp),%rdi
+    0.00 :   29eb312:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 332     }
+    0.00 :   29eb317:        mov    %r14,%rdi
+    0.00 :   29eb31a:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb31f:        mov    (%rsp),%rdi
+    0.00 :   29eb323:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb328:        jmp    29eb16b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x21b>
+    0.00 :   29eb32d:        nopl   (%rax)
+         : 339     TrueVal.intersect(*getValueFromCondition(SI->getTrueValue(), Cond,
+    0.00 :   29eb330:        mov    -0x40(%r13),%rdx
+    0.00 :   29eb334:        xor    %r9d,%r9d
+    0.00 :   29eb337:        mov    $0x1,%r8d
+    0.00 :   29eb33d:        mov    %rbp,%rsi
+    0.00 :   29eb340:        lea    0x150(%rsp),%r14
+    0.00 :   29eb348:        sub    $0x8,%rsp
+    0.00 :   29eb34c:        mov    %r14,0x10(%rsp)
+    0.00 :   29eb351:        mov    %r14,%rdi
+    0.00 :   29eb354:        push   $0x0
+    0.00 :   29eb356:        mov    0x10(%rsp),%rcx
+    0.00 :   29eb35b:        call   29e6cf0 <llvm::LazyValueInfoImpl::getValueFromCondition(llvm::Value*, llvm::Value*, bool, bool, unsigned int)>
+    0.00 :   29eb360:        lea    0xd0(%rsp),%rax
+    0.00 :   29eb368:        mov    %r14,%rdx
+    0.00 :   29eb36b:        mov    %r12,%rsi
+    0.00 :   29eb36e:        mov    %rax,%r14
+    0.00 :   29eb371:        mov    %rax,%rdi
+    0.00 :   29eb374:        mov    %rax,0x20(%rsp)
+    0.00 :   29eb379:        call   2ba41c0 <llvm::ValueLatticeElement::intersect(llvm::ValueLatticeElement const&) const>
+         : 358     /*UseBlockValue*/ false));
+    0.00 :   29eb37e:        mov    %r14,%rsi
+    0.00 :   29eb381:        mov    %r12,%rdi
+    0.00 :   29eb384:        call   29db240 <llvm::ValueLatticeElement::operator=(llvm::ValueLatticeElement&&) [clone .isra.0]>
+         : 362     switch (Tag) {
+    0.00 :   29eb389:        movzbl 0xd0(%rsp),%eax
+    0.00 :   29eb391:        pop    %rsi
+    0.00 :   29eb392:        pop    %rdi
+    0.00 :   29eb393:        sub    $0x4,%eax
+    0.00 :   29eb396:        cmp    $0x1,%al
+    0.00 :   29eb398:        jbe    29eb610 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x6c0>
+         : 369     if (this->_M_engaged)
+    0.00 :   29eb39e:        cmpb   $0x0,0x178(%rsp)
+    0.00 :   29eb3a6:        je     29eb3c3 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x473>
+    0.00 :   29eb3a8:        movzbl 0x150(%rsp),%eax
+         : 373     _M_engaged = false;
+    0.00 :   29eb3b0:        movb   $0x0,0x178(%rsp)
+    0.00 :   29eb3b8:        sub    $0x4,%eax
+    0.00 :   29eb3bb:        cmp    $0x1,%al
+    0.00 :   29eb3bd:        jbe    29eb6d5 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x785>
+         : 378     FalseVal.intersect(*getValueFromCondition(SI->getFalseValue(), Cond,
+    0.00 :   29eb3c3:        sub    $0x8,%rsp
+    0.00 :   29eb3c7:        mov    -0x20(%r13),%rdx
+    0.00 :   29eb3cb:        xor    %r9d,%r9d
+    0.00 :   29eb3ce:        xor    %r8d,%r8d
+    0.00 :   29eb3d1:        push   $0x0
+    0.00 :   29eb3d3:        mov    0x18(%rsp),%r14
+    0.00 :   29eb3d8:        mov    %rbp,%rsi
+    0.00 :   29eb3db:        mov    0x10(%rsp),%rcx
+    0.00 :   29eb3e0:        mov    %r14,%rdi
+    0.00 :   29eb3e3:        call   29e6cf0 <llvm::LazyValueInfoImpl::getValueFromCondition(llvm::Value*, llvm::Value*, bool, bool, unsigned int)>
+    0.00 :   29eb3e8:        mov    %r14,%rdx
+    0.00 :   29eb3eb:        mov    0x20(%rsp),%r14
+    0.00 :   29eb3f0:        mov    %r15,%rsi
+    0.00 :   29eb3f3:        mov    %r14,%rdi
+    0.00 :   29eb3f6:        call   2ba41c0 <llvm::ValueLatticeElement::intersect(llvm::ValueLatticeElement const&) const>
+         : 394     /*UseBlockValue*/ false));
+    0.00 :   29eb3fb:        mov    %r14,%rsi
+    0.00 :   29eb3fe:        mov    %r15,%rdi
+    0.00 :   29eb401:        call   29db240 <llvm::ValueLatticeElement::operator=(llvm::ValueLatticeElement&&) [clone .isra.0]>
+    0.00 :   29eb406:        movzbl 0xd0(%rsp),%eax
+    0.00 :   29eb40e:        pop    %rdx
+    0.00 :   29eb40f:        pop    %rcx
+    0.00 :   29eb410:        sub    $0x4,%eax
+    0.00 :   29eb413:        cmp    $0x1,%al
+    0.00 :   29eb415:        jbe    29eb628 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x6d8>
+         : 404     if (this->_M_engaged)
+    0.00 :   29eb41b:        cmpb   $0x0,0x178(%rsp)
+    0.00 :   29eb423:        je     29eb147 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1f7>
+    0.00 :   29eb429:        movzbl 0x150(%rsp),%eax
+         : 408     _M_engaged = false;
+    0.00 :   29eb431:        movb   $0x0,0x178(%rsp)
+    0.00 :   29eb439:        sub    $0x4,%eax
+    0.00 :   29eb43c:        cmp    $0x1,%al
+    0.00 :   29eb43e:        ja     29eb147 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1f7>
+         : 413     Range.~ConstantRange();
+    0.00 :   29eb444:        lea    0x158(%rsp),%rdi
+    0.00 :   29eb44c:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 416     break;
+    0.00 :   29eb451:        jmp    29eb147 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1f7>
+    0.00 :   29eb456:        cs nopw 0x0(%rax,%rax,1)
+         : 419     return Tag == constantrange_including_undef;
+    0.00 :   29eb460:        xor    %ebp,%ebp
+    0.00 :   29eb462:        cmpb   $0x5,0x120(%rsp)
+         : 422     Zero.sub(FalseCR.abs()), FalseVal.isConstantRangeIncludingUndef());
+    0.00 :   29eb46a:        lea    0xa0(%rsp),%r12
+    0.00 :   29eb472:        mov    %r14,%rsi
+    0.00 :   29eb475:        sete   %bpl
+    0.00 :   29eb479:        xor    %edx,%edx
+    0.00 :   29eb47b:        mov    %r12,%rdi
+    0.00 :   29eb47e:        lea    0xc0(%rsp),%r13
+    0.00 :   29eb486:        call   3235a30 <llvm::ConstantRange::abs(bool) const>
+    0.00 :   29eb48b:        mov    0x18(%rsp),%rsi
+    0.00 :   29eb490:        mov    %r12,%rdx
+    0.00 :   29eb493:        mov    %r13,%rdi
+    0.00 :   29eb496:        mov    %r13,0x10(%rsp)
+    0.00 :   29eb49b:        call   322aca0 <llvm::ConstantRange::sub(llvm::ConstantRange const&) const>
+         : 435     return ValueLatticeElement::getRange(
+    0.00 :   29eb4a0:        mov    0x8(%rsp),%rdi
+    0.00 :   29eb4a5:        mov    %ebp,%edx
+    0.00 :   29eb4a7:        mov    %r13,%rsi
+    0.00 :   29eb4aa:        call   2767180 <llvm::ValueLatticeElement::getRange(llvm::ConstantRange, bool)>
+         : 440     : Tag(Other.Tag), NumRangeExtensions(0) {
+    0.00 :   29eb4af:        movzbl 0x150(%rsp),%eax
+    0.00 :   29eb4b7:        mov    0x158(%rsp),%rdx
+    0.00 :   29eb4bf:        movb   $0x0,0x1(%rbx)
+    0.00 :   29eb4c3:        mov    %al,(%rbx)
+         : 445     switch (Other.Tag) {
+    0.00 :   29eb4c5:        cmp    $0x3,%al
+    0.00 :   29eb4c7:        ja     29eb5c8 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x678>
+    0.00 :   29eb4cd:        cmp    $0x1,%al
+    0.00 :   29eb4cf:        jbe    29eb4d5 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x585>
+         : 450     ConstVal = Other.ConstVal;
+    0.00 :   29eb4d1:        mov    %rdx,0x8(%rbx)
+         : 452     _M_engaged(true)
+    0.00 :   29eb4d5:        movb   $0x1,0x28(%rbx)
+         : 454     Zero.sub(FalseCR.abs()), FalseVal.isConstantRangeIncludingUndef());
+    0.00 :   29eb4d9:        mov    0x10(%rsp),%rdi
+    0.00 :   29eb4de:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb4e3:        mov    %r12,%rdi
+    0.00 :   29eb4e6:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 459     }
+    0.00 :   29eb4eb:        mov    0x18(%rsp),%rdi
+    0.00 :   29eb4f0:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb4f5:        jmp    29eb317 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x3c7>
+    0.00 :   29eb4fa:        nopw   0x0(%rax,%rax,1)
+         : 464     ((LHS == SI->getTrueValue() && RHS == SI->getFalseValue()) ||
+    0.00 :   29eb500:        cmp    %rsi,-0x20(%r13)
+    0.00 :   29eb504:        jne    29eb110 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1c0>
+         : 467     return TrueCR.umin(FalseCR);
+    0.00 :   29eb50a:        lea    0xa0(%rsp),%r12
+    0.00 :   29eb512:        mov    (%rsp),%rsi
+    0.00 :   29eb516:        mov    %r14,%rdx
+    0.00 :   29eb519:        mov    %r12,%rdi
+         : 472     switch (SPR.Flavor) {
+    0.00 :   29eb51c:        cmp    $0x3,%eax
+    0.00 :   29eb51f:        je     29eb726 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x7d6>
+    0.00 :   29eb525:        ja     29eb73a <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x7ea>
+    0.00 :   29eb52b:        cmp    $0x1,%eax
+    0.00 :   29eb52e:        jne    29eb730 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x7e0>
+         : 478     return TrueCR.smin(FalseCR);
+    0.00 :   29eb534:        call   322c9e0 <llvm::ConstantRange::smin(llvm::ConstantRange const&) const>
+         : 480     return Tag == constantrange_including_undef;
+    0.00 :   29eb539:        mov    $0x1,%ebp
+         : 482     ResultCR, TrueVal.isConstantRangeIncludingUndef() ||
+    0.00 :   29eb53e:        cmpb   $0x5,0xf0(%rsp)
+    0.00 :   29eb546:        je     29eb556 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x606>
+    0.00 :   29eb548:        xor    %ebp,%ebp
+    0.00 :   29eb54a:        cmpb   $0x5,0x120(%rsp)
+    0.00 :   29eb552:        sete   %bpl
+         : 488     return ValueLatticeElement::getRange(
+    0.00 :   29eb556:        lea    0xc0(%rsp),%r13
+    0.00 :   29eb55e:        mov    %r12,%rsi
+    0.00 :   29eb561:        mov    %r13,%rdi
+    0.00 :   29eb564:        mov    %r13,0x10(%rsp)
+    0.00 :   29eb569:        call   c81c00 <llvm::ConstantRange::ConstantRange(llvm::ConstantRange const&)>
+    0.00 :   29eb56e:        mov    %ebp,%edx
+    0.00 :   29eb570:        lea    0x150(%rsp),%rdi
+    0.00 :   29eb578:        mov    %r13,%rsi
+    0.00 :   29eb57b:        call   2767180 <llvm::ValueLatticeElement::getRange(llvm::ConstantRange, bool)>
+         : 498     : Tag(Other.Tag), NumRangeExtensions(0) {
+    0.00 :   29eb580:        movzbl 0x150(%rsp),%eax
+    0.00 :   29eb588:        movb   $0x0,0x1(%rbx)
+    0.00 :   29eb58c:        mov    0x158(%rsp),%rdx
+    0.00 :   29eb594:        mov    %al,(%rbx)
+         : 503     switch (Other.Tag) {
+    0.00 :   29eb596:        cmp    $0x3,%al
+    0.00 :   29eb598:        ja     29eb6e7 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x797>
+    0.00 :   29eb59e:        cmp    $0x1,%al
+    0.00 :   29eb5a0:        jbe    29eb5a6 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x656>
+         : 508     ConstVal = Other.ConstVal;
+    0.00 :   29eb5a2:        mov    %rdx,0x8(%rbx)
+    0.00 :   29eb5a6:        movb   $0x1,0x28(%rbx)
+    0.00 :   29eb5aa:        mov    0x10(%rsp),%rdi
+    0.00 :   29eb5af:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 513     }
+    0.00 :   29eb5b4:        mov    %r12,%rdi
+    0.00 :   29eb5b7:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+    0.00 :   29eb5bc:        jmp    29eb317 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x3c7>
+    0.00 :   29eb5c1:        nopl   0x0(%rax)
+         : 518     switch (Other.Tag) {
+    0.00 :   29eb5c8:        sub    $0x4,%eax
+    0.00 :   29eb5cb:        cmp    $0x1,%al
+    0.00 :   29eb5cd:        ja     29eb4d5 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x585>
+         : 522     APInt(APInt &&that) : BitWidth(that.BitWidth) {
+    0.00 :   29eb5d3:        mov    0x160(%rsp),%eax
+         : 524     memcpy(&U, &that.U, sizeof(U));
+    0.00 :   29eb5da:        mov    %rdx,0x8(%rbx)
+         : 526     APInt(APInt &&that) : BitWidth(that.BitWidth) {
+    0.00 :   29eb5de:        mov    %eax,0x10(%rbx)
+    0.00 :   29eb5e1:        mov    0x170(%rsp),%eax
+    0.00 :   29eb5e8:        mov    %eax,0x20(%rbx)
+         : 530     memcpy(&U, &that.U, sizeof(U));
+    0.00 :   29eb5eb:        mov    0x168(%rsp),%rax
+    0.00 :   29eb5f3:        mov    %rax,0x18(%rbx)
+         : 533     NumRangeExtensions = Other.NumRangeExtensions;
+    0.00 :   29eb5f7:        movzbl 0x151(%rsp),%eax
+    0.00 :   29eb5ff:        mov    %al,0x1(%rbx)
+         : 536     break;
+    0.00 :   29eb602:        jmp    29eb4d5 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x585>
+    0.00 :   29eb607:        nopw   0x0(%rax,%rax,1)
+         : 539     Range.~ConstantRange();
+    0.00 :   29eb610:        lea    0xc8(%rsp),%rdi
+    0.00 :   29eb618:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 542     break;
+    0.00 :   29eb61d:        jmp    29eb39e <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x44e>
+    0.00 :   29eb622:        nopw   0x0(%rax,%rax,1)
+         : 545     Range.~ConstantRange();
+    0.00 :   29eb628:        lea    0xc8(%rsp),%rdi
+    0.00 :   29eb630:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 548     break;
+    0.00 :   29eb635:        jmp    29eb41b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x4cb>
+    0.00 :   29eb63a:        nopw   0x0(%rax,%rax,1)
+         : 551     return Tag == constantrange_including_undef;
+    0.00 :   29eb640:        xor    %ebp,%ebp
+    0.00 :   29eb642:        cmpb   $0x5,0x120(%rsp)
+         : 554     Zero.sub(TrueCR.abs()), FalseVal.isConstantRangeIncludingUndef());
+    0.00 :   29eb64a:        mov    (%rsp),%rsi
+    0.00 :   29eb64e:        lea    0xa0(%rsp),%r12
+    0.00 :   29eb656:        sete   %bpl
+    0.00 :   29eb65a:        xor    %edx,%edx
+    0.00 :   29eb65c:        jmp    29eb47b <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x52b>
+         : 560     (RHS == SI->getTrueValue() && LHS == SI->getFalseValue()))) {
+    0.00 :   29eb661:        cmp    -0x20(%r13),%rcx
+    0.00 :   29eb665:        jne    29eb110 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x1c0>
+    0.00 :   29eb66b:        jmp    29eb50a <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5ba>
+    0.00 :   29eb670:        xor    %ebp,%ebp
+         : 565     TrueCR.abs(), TrueVal.isConstantRangeIncludingUndef());
+    0.00 :   29eb672:        lea    0xc0(%rsp),%r12
+    0.00 :   29eb67a:        cmpb   $0x5,0xf0(%rsp)
+    0.00 :   29eb682:        mov    (%rsp),%rsi
+    0.00 :   29eb686:        sete   %bpl
+    0.00 :   29eb68a:        mov    %r12,0x10(%rsp)
+    0.00 :   29eb68f:        xor    %edx,%edx
+    0.00 :   29eb691:        jmp    29eb2c9 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x379>
+         : 573     switch (Other.Tag) {
+    0.00 :   29eb696:        sub    $0x4,%eax
+    0.00 :   29eb699:        cmp    $0x1,%al
+    0.00 :   29eb69b:        ja     29eb309 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x3b9>
+         : 577     APInt(APInt &&that) : BitWidth(that.BitWidth) {
+    0.00 :   29eb6a1:        mov    0x160(%rsp),%eax
+         : 579     memcpy(&U, &that.U, sizeof(U));
+    0.00 :   29eb6a8:        mov    %rdx,0x8(%rbx)
+         : 581     APInt(APInt &&that) : BitWidth(that.BitWidth) {
+    0.00 :   29eb6ac:        mov    %eax,0x10(%rbx)
+    0.00 :   29eb6af:        mov    0x170(%rsp),%eax
+    0.00 :   29eb6b6:        mov    %eax,0x20(%rbx)
+         : 585     memcpy(&U, &that.U, sizeof(U));
+    0.00 :   29eb6b9:        mov    0x168(%rsp),%rax
+    0.00 :   29eb6c1:        mov    %rax,0x18(%rbx)
+         : 588     NumRangeExtensions = Other.NumRangeExtensions;
+    0.00 :   29eb6c5:        movzbl 0x151(%rsp),%eax
+    0.00 :   29eb6cd:        mov    %al,0x1(%rbx)
+         : 591     break;
+    0.00 :   29eb6d0:        jmp    29eb309 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x3b9>
+         : 593     Range.~ConstantRange();
+    0.00 :   29eb6d5:        lea    0x158(%rsp),%rdi
+    0.00 :   29eb6dd:        call   b87190 <llvm::ConstantRange::~ConstantRange()>
+         : 596     break;
+    0.00 :   29eb6e2:        jmp    29eb3c3 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x473>
+         : 598     switch (Other.Tag) {
+    0.00 :   29eb6e7:        sub    $0x4,%eax
+    0.00 :   29eb6ea:        cmp    $0x1,%al
+    0.00 :   29eb6ec:        ja     29eb5a6 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x656>
+         : 602     APInt(APInt &&that) : BitWidth(that.BitWidth) {
+    0.00 :   29eb6f2:        mov    0x160(%rsp),%eax
+         : 604     memcpy(&U, &that.U, sizeof(U));
+    0.00 :   29eb6f9:        mov    %rdx,0x8(%rbx)
+         : 606     APInt(APInt &&that) : BitWidth(that.BitWidth) {
+    0.00 :   29eb6fd:        mov    %eax,0x10(%rbx)
+    0.00 :   29eb700:        mov    0x170(%rsp),%eax
+    0.00 :   29eb707:        mov    %eax,0x20(%rbx)
+         : 610     memcpy(&U, &that.U, sizeof(U));
+    0.00 :   29eb70a:        mov    0x168(%rsp),%rax
+    0.00 :   29eb712:        mov    %rax,0x18(%rbx)
+         : 613     NumRangeExtensions = Other.NumRangeExtensions;
+    0.00 :   29eb716:        movzbl 0x151(%rsp),%eax
+    0.00 :   29eb71e:        mov    %al,0x1(%rbx)
+         : 616     break;
+    0.00 :   29eb721:        jmp    29eb5a6 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x656>
+         : 618     return TrueCR.smax(FalseCR);
+    0.00 :   29eb726:        call   322bfd0 <llvm::ConstantRange::smax(llvm::ConstantRange const&) const>
+    0.00 :   29eb72b:        jmp    29eb539 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5e9>
+         : 621     return TrueCR.umin(FalseCR);
+    0.00 :   29eb730:        call   322cf10 <llvm::ConstantRange::umin(llvm::ConstantRange const&) const>
+    0.00 :   29eb735:        jmp    29eb539 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5e9>
+         : 624     return TrueCR.umax(FalseCR);
+    0.00 :   29eb73a:        call   322c500 <llvm::ConstantRange::umax(llvm::ConstantRange const&) const>
+    0.00 :   29eb73f:        jmp    29eb539 <llvm::LazyValueInfoImpl::solveBlockValueSelect(llvm::SelectInst*, llvm::BasicBlock*)+0x5e9>
+         : 627     }
+    0.00 :   29eb744:        call   40b3d0 <__stack_chk_fail@plt>

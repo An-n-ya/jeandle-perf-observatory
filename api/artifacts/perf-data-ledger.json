@@ -1,0 +1,387 @@
+[
+  {
+    "bytes": 39541016,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/deep-199-32k/perf.data",
+    "sha256": "942606a2125f8ffbfebd40c5e9ff169e96440766feb53c479a9bc3252592baa0"
+  },
+  {
+    "bytes": 20316944,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/high-399-8k/perf.data",
+    "sha256": "21e9e62fcd424ce8aee9e6b1b57614eed2277a8ac5c7fd3c9d2ffabb0945f8fe"
+  },
+  {
+    "bytes": 2870232,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/low-49-8k/perf.data",
+    "sha256": "5c21c9701a90d4c84e5ad32ccc96a1d02ceb8e82edc284805f21d01193f3fce5"
+  },
+  {
+    "bytes": 75569928,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/virtual-cfg-199-32k/perf.data",
+    "sha256": "ba3a80da12f0a75b6c41b06c5ec902f891b54ece7f243e4027507d20c2491182"
+  },
+  {
+    "bytes": 108384304,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/diagnostics/quality/wide-static-199-32k/perf.data",
+    "sha256": "2a153aa6d77df476a5e848bbe7c8c083afd7d017ea2492693dc518da33280120"
+  },
+  {
+    "bytes": 11705408,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/full/run-00/perf.data",
+    "sha256": "ca228709504c2202b6b9354653df4c829202005b99cdd5a972b8c23ca62cdd66"
+  },
+  {
+    "bytes": 11772872,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/full/run-01/perf.data",
+    "sha256": "19a56f88e9169987004b6120d336a1278311c1dd8eb704a817a6c1606dff104b"
+  },
+  {
+    "bytes": 11604280,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/full/run-02/perf.data",
+    "sha256": "98d11d792232f81bf3c09e1c462b63453371bdb135bae06f647fdf2b741dcc99"
+  },
+  {
+    "bytes": 11637944,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/origin/run-00/perf.data",
+    "sha256": "f5a03d6e3dbefde91c1a7872d93871c5ae2611653ce38959aec8f1ced4b81295"
+  },
+  {
+    "bytes": 11632328,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/origin/run-01/perf.data",
+    "sha256": "2e39bbb5be3d7c7b6afa16ac3ebcc187a18c205fbd555cd9b4ef37aecd9199c3"
+  },
+  {
+    "bytes": 11859976,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/origin/run-02/perf.data",
+    "sha256": "575c4df442dfdb96bb3de00fed58ea6396f0014045648a96ecb152a561ddce8f"
+  },
+  {
+    "bytes": 11433360,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s0/run-00/perf.data",
+    "sha256": "77cbb730d7c167e0d44158221f4562ef618ed0141d24a0dcab9e14d0b13d153e"
+  },
+  {
+    "bytes": 11585112,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s0/run-01/perf.data",
+    "sha256": "216d2bcce41fe36998e3c12e8e86cc0334bb089a3bf1a552518da2b689e4ef5c"
+  },
+  {
+    "bytes": 11494672,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s0/run-02/perf.data",
+    "sha256": "c4a2d61e5a6a67ba44bcadce67ad7321deb2860e1a6180115c0d1186b8474799"
+  },
+  {
+    "bytes": 11450200,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s1/run-00/perf.data",
+    "sha256": "c90d671dde55b04f737599ddde2e806b899286d3034131679527b0882d9bcd29"
+  },
+  {
+    "bytes": 11517616,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s1/run-01/perf.data",
+    "sha256": "bbaf5cfbf1ec0e2fd60b0666c16dd0184de08910e6659c7705ca04e29ef8fe90"
+  },
+  {
+    "bytes": 11357464,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/l2/profiles/cff-cache-reuse/s1/run-02/perf.data",
+    "sha256": "d794db83fc1eee68b087551428b635a75c30075989efca17e415a6224792153c"
+  },
+  {
+    "bytes": 11690456,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/full/run-00/perf.data",
+    "sha256": "1ea9dc0791d88fd0935a58d8da5c0627c711f7da0242fe09514ad9b86305161f"
+  },
+  {
+    "bytes": 11749576,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/full/run-01/perf.data",
+    "sha256": "0bd1efb45af2523ce08d8a67f61cff1d946ee4f25991ba2ffe8f60843d675cd3"
+  },
+  {
+    "bytes": 11690560,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/full/run-02/perf.data",
+    "sha256": "46069ee87202e7d69ee4ccf471773d10fc10ae1e738574a21ba77508d5a2d5ed"
+  },
+  {
+    "bytes": 11628080,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/origin/run-00/perf.data",
+    "sha256": "11a78f23312cedfa00c193bac6a4ed1de508a1d8ad23904287b4f3f1edcaaefc"
+  },
+  {
+    "bytes": 11729392,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/origin/run-01/perf.data",
+    "sha256": "9293c86e5163dc16f544d823ffaac4a705cbdfc7506aa1bd5e64c70fd8b2e36e"
+  },
+  {
+    "bytes": 11569064,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/origin/run-02/perf.data",
+    "sha256": "63586e9f70b787d52909e1e66fb46331f11670b4098b98ccbbcf66db885b16e9"
+  },
+  {
+    "bytes": 10552072,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s0/run-00/perf.data",
+    "sha256": "ffcb74badccfdb4869491929a2d311e9ca39c05a91439a82f9a021786c4b462a"
+  },
+  {
+    "bytes": 10526976,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s0/run-01/perf.data",
+    "sha256": "936f0d1918a071a4c9caeb8dc86c1a830780ce78c5f0c3c4587557cd98f77c73"
+  },
+  {
+    "bytes": 10569080,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s0/run-02/perf.data",
+    "sha256": "afe6a62ecef3068d644661f3da0009ea5f102c30eb47e57fa53d32df3e26fa3f"
+  },
+  {
+    "bytes": 10341480,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s1/run-00/perf.data",
+    "sha256": "a7188271eb2f4637b7c202782f1272de5c424442a27467548175bc428c4cbc1a"
+  },
+  {
+    "bytes": 10349912,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s1/run-01/perf.data",
+    "sha256": "2abfb8a39a1388624c48b26aaee52897af521fbb94fc4a2632c59889a8318e3a"
+  },
+  {
+    "bytes": 10392128,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/deep-static/s1/run-02/perf.data",
+    "sha256": "4c1083a381661fd4f89a7eac9838f869b04326f0190c5fdab7dedd689f341039"
+  },
+  {
+    "bytes": 9053176,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/full/run-00/perf.data",
+    "sha256": "da037d4b4550ba628991e57e458adf4fcbcf6782074a66f4e7689a46138adf79"
+  },
+  {
+    "bytes": 9112200,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/full/run-01/perf.data",
+    "sha256": "957979cb6b61c07cb89aa649622c6c05865dedc5e5c93f7546bdeb0b53da344c"
+  },
+  {
+    "bytes": 9095408,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/full/run-02/perf.data",
+    "sha256": "07579e1cda6b2f9133d68510ce85aa16608bfc783c43c5692c21a755a90b1c47"
+  },
+  {
+    "bytes": 8799792,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/origin/run-00/perf.data",
+    "sha256": "ec0bd6c086c93e14af14436e3731d7593b61b5ef649d239bd7e2e4dbd3fa083b"
+  },
+  {
+    "bytes": 8673408,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/origin/run-01/perf.data",
+    "sha256": "6a5bffad589d92992b898a5f6c742a8296e4d18c7a668a5abe8d599e908ca7a9"
+  },
+  {
+    "bytes": 8673232,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/origin/run-02/perf.data",
+    "sha256": "6bdf1ceb9e36e300daec2495f0d64380e6da4f74ac9b2797bbb04ffcec10466b"
+  },
+  {
+    "bytes": 9053184,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/s0/run-00/perf.data",
+    "sha256": "4e7c10397cc62e3c42e372b698e0e8a57f7f85b6183c2b60fe654bb308796065"
+  },
+  {
+    "bytes": 9070080,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/s0/run-01/perf.data",
+    "sha256": "4a841ed26ac1fb945ce0bcf6b3ebe84c75ff13775140119f92f3f3d997ae0ce4"
+  },
+  {
+    "bytes": 9044784,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/s0/run-02/perf.data",
+    "sha256": "095d8f4217f12b54208a682547b7d308d1a9bdab2a34f71f8fd70adcf03ce42a"
+  },
+  {
+    "bytes": 8952016,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/s1/run-00/perf.data",
+    "sha256": "d944fd085592eb3821e164806175e0a3ebb72775e139d373017944a6b921d71b"
+  },
+  {
+    "bytes": 8960416,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/s1/run-01/perf.data",
+    "sha256": "a55a8da60c283dc4f0e03fd5e74a2b7a3c309b7e466483e1640454dce45ee45a"
+  },
+  {
+    "bytes": 8985736,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/leaf-static/s1/run-02/perf.data",
+    "sha256": "df6eac4da4d8e71c63ac2d09510fd81b8fb7ec6789fa113bddb2920afb577f75"
+  },
+  {
+    "bytes": 11867544,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/full/run-00/perf.data",
+    "sha256": "6754d922b0a0218829f0e6ed7e2579f9aab6962b61d96fd10b8953200b10f8a8"
+  },
+  {
+    "bytes": 11943336,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/full/run-01/perf.data",
+    "sha256": "b16df70e30c6187622cf6ad0541f1579d6fd04966e167f72ce8cda35bccfda7d"
+  },
+  {
+    "bytes": 11884272,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/full/run-02/perf.data",
+    "sha256": "8c285a69e7f6c92b4f5f96e6831b48358aa501073235fe6cf9294b9f86ba1602"
+  },
+  {
+    "bytes": 11737352,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/origin/run-00/perf.data",
+    "sha256": "ee213ea83666e7e9eca591f3ae75ccf1a00d7038ace0432c044687b507c873ba"
+  },
+  {
+    "bytes": 11711976,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/origin/run-01/perf.data",
+    "sha256": "6ec65cb403af04ad6883ac9a45bd08bb042054ef448aa6aef7be8bf291a639ba"
+  },
+  {
+    "bytes": 11728888,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/origin/run-02/perf.data",
+    "sha256": "4fc8ccc7f2dfa3d45f8e0a2ea1552a2ad54e4130c3327c1cea57e6939cd7caab"
+  },
+  {
+    "bytes": 10611120,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s0/run-00/perf.data",
+    "sha256": "8015f9d4158a82e68eadb29198500f2f327aaaa82d2fd2a6f4e08a061b4ad9da"
+  },
+  {
+    "bytes": 10568792,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s0/run-01/perf.data",
+    "sha256": "93908045ae13689912ce6f1a7fa5fefca020daa3170077502d256c22b20105bf"
+  },
+  {
+    "bytes": 10636392,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s0/run-02/perf.data",
+    "sha256": "c0e03d50c44fd2ff0db247551ab768b2e1ab15245f3f539222c5ceb3eb20209e"
+  },
+  {
+    "bytes": 10493144,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s1/run-00/perf.data",
+    "sha256": "ec05914cc2a8439e9b74162b340c681a639c0ee87151b0047c054743b57daad1"
+  },
+  {
+    "bytes": 10459272,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s1/run-01/perf.data",
+    "sha256": "ef993a2fd093df02c19b4074ec0303c1ae206d5355d9df0345dcd951a26e29a0"
+  },
+  {
+    "bytes": 10358152,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s1/run-02/perf.data",
+    "sha256": "3eb9ecbe4b96a1a5481c25fa99850ba7eec75fd751f91fc43967f1e23380e557"
+  },
+  {
+    "bytes": 19822080,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/full/run-00/perf.data",
+    "sha256": "bd2cd2c61441a7f74544e14f7f811a278a6a8114a0d747da6173e6dfd3eb9950"
+  },
+  {
+    "bytes": 19889752,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/full/run-01/perf.data",
+    "sha256": "ca418adbcd93662d747b080a1e7a11b712327e120f111266b25424277cb96075"
+  },
+  {
+    "bytes": 19856000,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/full/run-02/perf.data",
+    "sha256": "1d021c21589c9810b9063d0d95cd8fa199dcdbc2c059779cc562ce0429b436e9"
+  },
+  {
+    "bytes": 19073456,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/origin/run-00/perf.data",
+    "sha256": "fcc0f2ed000a6c28acbd6fece52842f8183d8f890660bd11e472888b92ebd722"
+  },
+  {
+    "bytes": 19217040,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/origin/run-01/perf.data",
+    "sha256": "6974c04989552adb68b542e99531b3abee0c5cebf191d8c92e0cf882d7d7fb7c"
+  },
+  {
+    "bytes": 19056664,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/origin/run-02/perf.data",
+    "sha256": "0b9d5d8f6096754ea290ce07c20240058ad8f30e79f1c5050e531651ff0e02aa"
+  },
+  {
+    "bytes": 19805176,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/s0/run-00/perf.data",
+    "sha256": "f28dc3a18a453aba91f3a0bbbdbc0370c85c8c79e590f994572cbcf3074b54be"
+  },
+  {
+    "bytes": 19856064,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/s0/run-01/perf.data",
+    "sha256": "c6aac261a7b0ed1f2d4ffb4349410990bf95cedb6ff1f628d2b983c62ac1db75"
+  },
+  {
+    "bytes": 19678760,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/s0/run-02/perf.data",
+    "sha256": "0171e3fa4b17a41b9e78dbf0fe409f12a0a5183687283a1f489d5082f6a16150"
+  },
+  {
+    "bytes": 19737736,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/s1/run-00/perf.data",
+    "sha256": "071196f66cad8a4b100436afd3db2199bd473a22a105c8b4b3b4acb4240602a8"
+  },
+  {
+    "bytes": 19737784,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/s1/run-01/perf.data",
+    "sha256": "2580a1b12b091015ed40a70cad8193f49f53c0ea057aef7588d32e4adc087dd1"
+  },
+  {
+    "bytes": 19822464,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/virtual-cfg/s1/run-02/perf.data",
+    "sha256": "02ad8e19ec39b13b017ac6548a5554ff14da7a3c4096f8285dbbc72177733612"
+  },
+  {
+    "bytes": 29803832,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/full/run-00/perf.data",
+    "sha256": "ba0e103f55ce14330d9135d8e761ad2c585e045aaae838f4763a75a3f4d73820"
+  },
+  {
+    "bytes": 29660432,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/full/run-01/perf.data",
+    "sha256": "d41847f5b0d9b261902d5485c3827bc962732f710471052f1c1ddcdc0ae1849e"
+  },
+  {
+    "bytes": 29896576,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/full/run-02/perf.data",
+    "sha256": "01d9e258f3df617aa8e0161aaf89838cd11a5d9a06d2f2b4283dbdcab3f40ef2"
+  },
+  {
+    "bytes": 28980656,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/origin/run-00/perf.data",
+    "sha256": "ed3ef76ef9542c5cd6bfe91577a2f518da5fdcf64083a78630ea100374c7c1e1"
+  },
+  {
+    "bytes": 28913312,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/origin/run-01/perf.data",
+    "sha256": "fd20bad62e0c7e3ade6fb9169ac3eb4c6d9d03dc48ef27f57430c498041827c1"
+  },
+  {
+    "bytes": 28879544,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/origin/run-02/perf.data",
+    "sha256": "a84cb163b4e305affa4f9d3110ee032bb5007c49c9814fe6666ece7531d3db53"
+  },
+  {
+    "bytes": 28235448,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/s0/run-00/perf.data",
+    "sha256": "b9301add154a7935ac89c0da751cb7baf42fa5634f246aa0c43a4dd8615a0b7d"
+  },
+  {
+    "bytes": 28285944,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/s0/run-01/perf.data",
+    "sha256": "8b4ad634dee63000c71f6212031b811cfd83f4c885b71fc305c7f308ca6116b0"
+  },
+  {
+    "bytes": 28311352,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/s0/run-02/perf.data",
+    "sha256": "306981cf932fd783b76648e4b56cbe41e3ecea97999faa92710fd6d5d146d55c"
+  },
+  {
+    "bytes": 28100480,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/s1/run-00/perf.data",
+    "sha256": "aa8c111b3805b87f1ee82cc003de767ef3f3217d29141936c10707eda2211a4e"
+  },
+  {
+    "bytes": 28066744,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/s1/run-01/perf.data",
+    "sha256": "de04789223b0bd9f79461204a299953acb3f2b9a714853b180e8006af4ced318"
+  },
+  {
+    "bytes": 28134392,
+    "path": "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/wide-static/s1/run-02/perf.data",
+    "sha256": "0897694cde452daa24ff3f31280e27a698352944dcf024bdf5e47054d79ba62b"
+  }
+]

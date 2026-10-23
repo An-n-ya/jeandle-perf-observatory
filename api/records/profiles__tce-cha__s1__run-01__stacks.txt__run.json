@@ -1,0 +1,40 @@
+{
+  "case": "tce-cha",
+  "mode": "s1",
+  "run": 1,
+  "elapsed_ns": 6197950659,
+  "perf_data_bytes": 10459272,
+  "perf_data_sha256": "ef993a2fd093df02c19b4074ec0303c1ae206d5355d9df0345dcd951a26e29a0",
+  "stacks_sha256": "424e23fef0bd0ceeebab811ec30a584654c32f7da3361e50e83fd00023b70e12",
+  "event": "cycles:u",
+  "frequency_hz": 199,
+  "call_graph": "dwarf,8192",
+  "command": {
+    "argv": [
+      "perf",
+      "record",
+      "-e",
+      "cycles:u",
+      "-F",
+      "199",
+      "--call-graph",
+      "dwarf,8192",
+      "-o",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s1/run-01/perf.data",
+      "--",
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+      "-disable-output",
+      "-passes=function(type-check-elimination,cha-devirtualization)",
+      "-jeandle-java-type-stats=false",
+      "-jeandle-verify-java-type-cache=false",
+      "-jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.cblog",
+      "/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.ll"
+    ],
+    "shell": "perf record -e cycles:u -F 199 --call-graph dwarf,8192 -o /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s1/run-01/perf.data -- taskset -c 16 /home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt -disable-output '-passes=function(type-check-elimination,cha-devirtualization)' -jeandle-java-type-stats=false -jeandle-verify-java-type-cache=false -jeandle-vm-callback-log=/home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.cblog /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/inputs/tce-cha/tce-cha.ll"
+  },
+  "record_stderr": "[ perf record: Woken up 40 times to write data ]\n[ perf record: Captured and wrote 9.938 MB /home/annya/playground/jeandle/perf-results/2026-10-23-javatype-perf/run/profiles/tce-cha/s1/run-01/perf.data (1190 samples) ]\n",
+  "derived_reports": "deferred"
+}
