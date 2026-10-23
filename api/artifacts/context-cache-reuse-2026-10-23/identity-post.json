@@ -1,0 +1,8 @@
+{
+  "branch": "test/javatype-cache-design",
+  "commit": "ea2953f61a852e322848b03354eb97c98ac87bf5",
+  "parent": "8df28fa046fd59251be09a065a468c08628dd397",
+  "status": "",
+  "verified_remote_lvi_ref": "599e47ee8b8096695f6c723202573a5c12899520",
+  "production_lvi_matches_cache_design_base": true
+}

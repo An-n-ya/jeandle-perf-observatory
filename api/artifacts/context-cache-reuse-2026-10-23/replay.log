@@ -1,0 +1,41 @@
+completed round 1
+completed round 2
+completed round 3
+{
+  "final": {
+    "baseline_mode": "cold",
+    "rounds": 3,
+    "baseline_user_median": 0.421713,
+    "cached_user_median": 0.056075,
+    "paired_cpu_reduction_pct_median": 86.70304211632082,
+    "paired_reductions_pct": [
+      84.6112255468393,
+      86.70304211632082,
+      86.94786437445663
+    ]
+  },
+  "prefix": {
+    "baseline_mode": "cold",
+    "rounds": 3,
+    "baseline_user_median": 0.532962,
+    "cached_user_median": 0.098154,
+    "paired_cpu_reduction_pct_median": 81.58330237427809,
+    "paired_reductions_pct": [
+      81.88572844899078,
+      81.58330237427809,
+      81.0208927596043
+    ]
+  },
+  "mutation": {
+    "baseline_mode": "full",
+    "rounds": 3,
+    "baseline_user_median": 0.140325,
+    "cached_user_median": 0.117943,
+    "paired_cpu_reduction_pct_median": 15.950115802601106,
+    "paired_reductions_pct": [
+      15.950115802601106,
+      16.038414681931844,
+      14.667445583971617
+    ]
+  }
+}

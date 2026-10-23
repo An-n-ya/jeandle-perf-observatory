@@ -1,0 +1,362 @@
+[
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "final",
+    "user_s": 0.064324,
+    "wall_s": 0.064780807,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "final",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 0
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cold",
+    "scenario": "final",
+    "user_s": 0.417993,
+    "wall_s": 0.419000481,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "final",
+      "cold",
+      "4096",
+      "timing"
+    ],
+    "round": 0
+  },
+  {
+    "batches": 4096,
+    "checksum": 5046272,
+    "kind": "timing",
+    "mode": "full",
+    "scenario": "mutation",
+    "user_s": 0.140325,
+    "wall_s": 0.140739302,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "mutation",
+      "full",
+      "4096",
+      "timing"
+    ],
+    "round": 0
+  },
+  {
+    "batches": 4096,
+    "checksum": 5046272,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "mutation",
+    "user_s": 0.117943,
+    "wall_s": 0.118253646,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "mutation",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 0
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "prefix",
+    "user_s": 0.09720100000000001,
+    "wall_s": 0.097483367,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "prefix",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 0
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cold",
+    "scenario": "prefix",
+    "user_s": 0.536599,
+    "wall_s": 0.537671683,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "prefix",
+      "cold",
+      "4096",
+      "timing"
+    ],
+    "round": 0
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "final",
+    "user_s": 0.056075,
+    "wall_s": 0.056217123,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "final",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 1
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cold",
+    "scenario": "final",
+    "user_s": 0.421713,
+    "wall_s": 0.422590569,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "final",
+      "cold",
+      "4096",
+      "timing"
+    ],
+    "round": 1
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cold",
+    "scenario": "prefix",
+    "user_s": 0.532962,
+    "wall_s": 0.534111605,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "prefix",
+      "cold",
+      "4096",
+      "timing"
+    ],
+    "round": 1
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "prefix",
+    "user_s": 0.098154,
+    "wall_s": 0.098535437,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "prefix",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 1
+  },
+  {
+    "batches": 4096,
+    "checksum": 5046272,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "mutation",
+    "user_s": 0.117851,
+    "wall_s": 0.118237037,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "mutation",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 1
+  },
+  {
+    "batches": 4096,
+    "checksum": 5046272,
+    "kind": "timing",
+    "mode": "full",
+    "scenario": "mutation",
+    "user_s": 0.140363,
+    "wall_s": 0.140743941,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "mutation",
+      "full",
+      "4096",
+      "timing"
+    ],
+    "round": 1
+  },
+  {
+    "batches": 4096,
+    "checksum": 5046272,
+    "kind": "timing",
+    "mode": "full",
+    "scenario": "mutation",
+    "user_s": 0.138654,
+    "wall_s": 0.139991372,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "mutation",
+      "full",
+      "4096",
+      "timing"
+    ],
+    "round": 2
+  },
+  {
+    "batches": 4096,
+    "checksum": 5046272,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "mutation",
+    "user_s": 0.11831699999999999,
+    "wall_s": 0.118584581,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "mutation",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 2
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cold",
+    "scenario": "final",
+    "user_s": 0.427884,
+    "wall_s": 0.428898204,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "final",
+      "cold",
+      "4096",
+      "timing"
+    ],
+    "round": 2
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "final",
+    "user_s": 0.055848,
+    "wall_s": 0.055980929,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "final",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 2
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cold",
+    "scenario": "prefix",
+    "user_s": 0.527264,
+    "wall_s": 0.528344424,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "prefix",
+      "cold",
+      "4096",
+      "timing"
+    ],
+    "round": 2
+  },
+  {
+    "batches": 4096,
+    "checksum": 1441792,
+    "kind": "timing",
+    "mode": "cached",
+    "scenario": "prefix",
+    "user_s": 0.10007,
+    "wall_s": 0.10036536,
+    "argv": [
+      "taskset",
+      "-c",
+      "16",
+      "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+      "prefix",
+      "cached",
+      "4096",
+      "timing"
+    ],
+    "round": 2
+  }
+]

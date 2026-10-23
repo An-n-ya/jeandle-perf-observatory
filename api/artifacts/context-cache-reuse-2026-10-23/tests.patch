@@ -1,0 +1,518 @@
+commit ea2953f61a852e322848b03354eb97c98ac87bf5
+Author:     Annya <annya.host@gmail.com>
+AuthorDate: Fri Oct 23 21:31:16 2026 +0800
+Commit:     Annya <annya.host@gmail.com>
+CommitDate: Fri Oct 23 21:31:16 2026 +0800
+
+    test(jeandle): cover expensive context cache reuse
+    
+    Exercise same-block FinalTypes reuse, cross-block PathFacts prefix reuse, and query-mutate-query retention against fresh DT/LVI/cache references. Add a bounded native replay with separate diagnostics and configurable paired rounds.
+
+diff --git a/llvm/docs/JeandleJavaTypeCacheReuse.md b/llvm/docs/JeandleJavaTypeCacheReuse.md
+new file mode 100644
+index 000000000..ba925e337
+--- /dev/null
++++ b/llvm/docs/JeandleJavaTypeCacheReuse.md
+@@ -0,0 +1,51 @@
++# JavaType context-cache reuse tests
++
++These are direct query-API mechanism tests, not a JVM or production pass replay.
++The fixture has no java-klass base attribute. A check_instanceof guard supplies
++klass 22, followed by 32 CFG blocks and 16 distinct query contexts. The mutation
++case changes the guard to klass 33. Queries use the real LVINullEdgeOracle.
++
++## Build and run
++
++Using an existing LLVM build directory:
++
++```sh
++ninja -C build/build-ninja-profiling JavaTypeQueryTests JavaTypeCacheReuseReplay
++build/build-ninja-profiling/unittests/IR/JavaTypeQueryTests --gtest_filter='JavaTypeCacheReuseTest.*'
++python3 llvm/utils/jeandle/replay-java-type-context-cache.py \
++  --binary build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay \
++  --out /tmp/java-type-context-reuse --rounds 3 --batches 4096 --cpu 16
++```
++
++Use a new output directory for each run. The runner executes one separate
++correctness diagnostic per variant, followed by exactly the requested number
++of paired timing rounds. There are no adaptive rounds or additional timing
++warmups.
++
++## Cases and comparisons
++
++- **final**: 16 queries of the same value and context block. Cold clears only
++  JavaTypeCache before each query; cached retains it until the next batch.
++  Expected cached final hits/misses: 15/1.
++- **prefix**: the same value at 16 successive blocks. Each batch starts with an
++  empty JavaTypeCache so later batches cannot turn this into a Final-hit test.
++  Expected cached final hits: 0; PathFacts hits: 15.
++- **mutation**: 16 queries, a real unused arithmetic-operand edit, 16 queries,
++  a guard-klass edit, then 16 queries. Both modes cache between queries.
++  Full clears JavaTypeCache at each edit; cached uses selective invalidation.
++  Both notify before mutation and clear LVI after the guard edit.
++  Expected full final hits/misses: 45/3; selective: 46/2.
++
++The unit tests additionally check same-block instruction contexts, retained
++entries after a benign edit, removal after the guard edit, and the new type.
++Diagnostics compare every query with a completely fresh DT, assumption cache,
++LVI and JavaTypeCache. They count calls into the null-edge oracle and cache
++lookups; these are not measurements of internal DT nodes.
++
++Fixture construction is outside the native timer. Timed runs disable oracle
++counting and fresh-reference checks. LVI can stay warm between cold JavaType
++queries: this comparison isolates JavaType cross-query reuse, not rebuilding
++all supporting analyses. Timings include each batch's cache reset, and the
++mutation case includes edits and invalidation. Clearing containers in the cold
++baseline is included in its cost. VM callbacks use a small synthetic hierarchy.
++Three rounds provide diagnostic evidence, not a production speed guarantee.
+diff --git a/llvm/unittests/IR/CMakeLists.txt b/llvm/unittests/IR/CMakeLists.txt
+index 6505297fc..92475949e 100644
+--- a/llvm/unittests/IR/CMakeLists.txt
++++ b/llvm/unittests/IR/CMakeLists.txt
+@@ -74,6 +74,13 @@ target_link_libraries(VMCallbackLogRecordReplayTests PRIVATE LLVMTestingSupport)
+ add_llvm_unittest(JavaTypeQueryTests
+   PARTIAL_SOURCES_INTENDED
+   JavaTypeQueryTest.cpp
++  JavaTypeCacheReuseTest.cpp
+   )
+ 
+ target_link_libraries(JavaTypeQueryTests PRIVATE LLVMJeandleTransforms)
++
++# Native replay keeps IR construction outside the measured query interval.
++add_llvm_executable(JavaTypeCacheReuseReplay
++  JavaTypeCacheReuseReplay.cpp
++  PARTIAL_SOURCES_INTENDED
++  )
+diff --git a/llvm/unittests/IR/JavaTypeCacheReuseReplay.cpp b/llvm/unittests/IR/JavaTypeCacheReuseReplay.cpp
+new file mode 100644
+index 000000000..13952170f
+--- /dev/null
++++ b/llvm/unittests/IR/JavaTypeCacheReuseReplay.cpp
+@@ -0,0 +1,92 @@
++//===- JavaTypeCacheReuseReplay.cpp - Bounded context query replay
++//----------===//
++// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
++// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
++#include "JavaTypeCacheReuseTestSupport.h"
++#include "llvm/Support/ErrorHandling.h"
++#include "llvm/Support/FormatVariadic.h"
++#include "llvm/Support/JSON.h"
++#include <chrono>
++#include <cstdlib>
++#include <sys/resource.h>
++
++using namespace llvm;
++using namespace llvm::jeandle::cache_reuse_test;
++int main(int Argc, char **Argv) {
++  if (Argc != 5) {
++    errs() << "usage: JavaTypeCacheReuseReplay final|prefix|mutation "
++              "cold|cached|full batches diagnostic|timing\n";
++    return 2;
++  }
++  std::string Scenario = Argv[1], Mode = Argv[2], Kind = Argv[4];
++  char *End = nullptr;
++  uint64_t Batches = std::strtoull(Argv[3], &End, 10);
++  if (*End || !Batches || Batches > 1000000 ||
++      (Scenario != "final" && Scenario != "prefix" && Scenario != "mutation") ||
++      (Mode != "cold" && Mode != "cached" && Mode != "full") ||
++      (Kind != "diagnostic" && Kind != "timing"))
++    return 2;
++  bool Diagnostic = Kind == "diagnostic";
++  VMEnvironment Env;
++  Fixture X(Diagnostic);
++  uint64_t Queries = 0, Hits = 0, Misses = 0, FactsHits = 0, FactsMisses = 0;
++  uint64_t Checksum = 0, OracleCalls = 0;
++  auto Query = [&](Instruction *Ctx, unsigned Expected) {
++    if (Mode == "cold")
++      X.Cache.clear(); // JavaType-only cold baseline; LVI may remain warm.
++    auto T = X.query(Ctx);
++    if (T.Klass != Expected || X.Last.SkipVerification)
++      report_fatal_error("incorrect or truncated query");
++    Checksum += T.Klass;
++    if (Diagnostic) {
++      if (T != X.fresh(Ctx))
++        report_fatal_error("fresh DT/LVI/cache reference disagrees");
++      ++Queries;
++      Hits += X.Last.FinalHits;
++      Misses += X.Last.FinalMisses;
++      FactsHits += X.Last.FactsHits;
++      FactsMisses += X.Last.FactsMisses;
++    }
++  };
++  // Fixture construction and parsing are outside the measured interval.
++  rusage Before{}, After{};
++  getrusage(RUSAGE_SELF, &Before);
++  auto Start = std::chrono::steady_clock::now();
++  for (uint64_t B = 0; B != Batches; ++B) {
++    X.reset();
++    auto Batch = [&](unsigned Expected) {
++      for (auto *Ctx : X.Contexts)
++        Query(Scenario == "prefix" ? Ctx : X.Contexts.front(), Expected);
++    };
++    Batch(22);
++    if (Scenario == "mutation") {
++      X.editNoise(Mode == "full");
++      Batch(22);
++      X.editGuard(Mode == "full");
++      Batch(33);
++    }
++    OracleCalls += X.OracleCalls;
++  }
++  double Wall =
++      std::chrono::duration<double>(std::chrono::steady_clock::now() - Start)
++          .count();
++  getrusage(RUSAGE_SELF, &After);
++  auto Seconds = [](timeval T) { return T.tv_sec + T.tv_usec / 1e6; };
++  json::Object O{{"scenario", Scenario},
++                 {"mode", Mode},
++                 {"kind", Kind},
++                 {"batches", int64_t(Batches)},
++                 {"wall_s", Wall},
++                 {"user_s", Seconds(After.ru_utime) - Seconds(Before.ru_utime)},
++                 {"checksum", int64_t(Checksum)}};
++  if (Diagnostic) {
++    O["queries"] = int64_t(Queries);
++    O["final_hits"] = int64_t(Hits);
++    O["final_misses"] = int64_t(Misses);
++    O["facts_hits"] = int64_t(FactsHits);
++    O["facts_misses"] = int64_t(FactsMisses);
++    O["oracle_calls"] = int64_t(OracleCalls);
++    O["fresh_reference_checked"] = true;
++  }
++  outs() << formatv("{0:2}", json::Value(std::move(O))) << "\n";
++}
+diff --git a/llvm/unittests/IR/JavaTypeCacheReuseTest.cpp b/llvm/unittests/IR/JavaTypeCacheReuseTest.cpp
+new file mode 100644
+index 000000000..7380abd7d
+--- /dev/null
++++ b/llvm/unittests/IR/JavaTypeCacheReuseTest.cpp
+@@ -0,0 +1,79 @@
++//===- JavaTypeCacheReuseTest.cpp - Expensive context query reuse tests
++//-----===//
++// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
++// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
++#include "JavaTypeCacheReuseTestSupport.h"
++#include "llvm/IR/Verifier.h"
++#include "gtest/gtest.h"
++
++using namespace llvm;
++using namespace llvm::jeandle::cache_reuse_test;
++
++TEST(JavaTypeCacheReuseTest, DeepSameBlockFinalHitsAvoidOracle) {
++  VMEnvironment Env;
++  Fixture X;
++  ASSERT_FALSE(verifyFunction(*X.F, &errs()));
++  auto *Ctx = X.Contexts.front();
++  auto Cold = X.query(Ctx);
++  ASSERT_EQ(Cold.Klass, 22U);
++  ASSERT_EQ(Cold, X.fresh(Ctx));
++  ASSERT_GT(X.Last.FactsMisses, 32U);
++  ASSERT_GT(X.OracleCalls, 32U);
++  uint64_t Calls = X.OracleCalls;
++  // A different instruction in the same block still has the same context key.
++  for (auto *I : {static_cast<Instruction *>(X.Noise), Ctx}) {
++    EXPECT_EQ(X.query(I), Cold);
++    EXPECT_EQ(X.Last.FinalHits, 1U);
++    EXPECT_EQ(X.Last.FactsMisses, 0U);
++    EXPECT_FALSE(X.Last.SkipVerification);
++    EXPECT_EQ(X.OracleCalls, Calls);
++  }
++}
++
++TEST(JavaTypeCacheReuseTest, DifferentBlocksReuseExpensiveFactsPrefix) {
++  VMEnvironment Env;
++  Fixture X;
++  ASSERT_EQ(X.query(X.Contexts.front()).Klass, 22U);
++  uint64_t ColdMisses = X.Last.FactsMisses;
++  for (unsigned I = 1; I != X.Contexts.size(); ++I) {
++    uint64_t Before = X.OracleCalls;
++    auto T = X.query(X.Contexts[I]);
++    EXPECT_EQ(T, X.fresh(X.Contexts[I]));
++    EXPECT_EQ(T.Klass, 22U);
++    EXPECT_EQ(X.Last.FinalHits, 0U);
++    EXPECT_GT(X.Last.FactsHits, 0U);
++    EXPECT_LT(X.Last.FactsMisses, ColdMisses);
++    EXPECT_EQ(X.OracleCalls - Before, 1U);
++    EXPECT_FALSE(X.Last.SkipVerification);
++  }
++}
++
++TEST(JavaTypeCacheReuseTest, BatchMutationRetainsOrDropsContextCorrectly) {
++  VMEnvironment Env;
++  Fixture X;
++  auto *Ctx = X.Contexts.front();
++  for (unsigned I = 0; I != 16; ++I)
++    ASSERT_EQ(X.query(Ctx).Klass, 22U);
++  ASSERT_GT(X.Cache.finalTypesSize(), 0U);
++  auto Benign = X.editNoise();
++  EXPECT_EQ(Benign.FinalRemoved, 0U);
++  EXPECT_EQ(Benign.FactsRemoved, 0U);
++  uint64_t Calls = X.OracleCalls;
++  for (unsigned I = 0; I != 16; ++I) {
++    EXPECT_EQ(X.query(Ctx), X.fresh(Ctx));
++    EXPECT_EQ(X.Last.FinalHits, 1U);
++    EXPECT_EQ(X.OracleCalls, Calls);
++  }
++  auto Relevant = X.editGuard();
++  EXPECT_GT(Relevant.FinalRemoved, 0U);
++  EXPECT_GT(Relevant.FactsRemoved, 0U);
++  auto After = X.query(Ctx);
++  EXPECT_EQ(After.Klass, 33U);
++  EXPECT_EQ(After, X.fresh(Ctx));
++  EXPECT_EQ(X.Last.FinalHits, 0U);
++  EXPECT_GT(X.Last.FactsMisses, 32U);
++  EXPECT_GT(X.OracleCalls, Calls);
++  EXPECT_EQ(X.query(Ctx), After);
++  EXPECT_EQ(X.Last.FinalHits, 1U);
++  EXPECT_FALSE(verifyFunction(*X.F, &errs()));
++}
+diff --git a/llvm/unittests/IR/JavaTypeCacheReuseTestSupport.h b/llvm/unittests/IR/JavaTypeCacheReuseTestSupport.h
+new file mode 100644
+index 000000000..d8e15d4d6
+--- /dev/null
++++ b/llvm/unittests/IR/JavaTypeCacheReuseTestSupport.h
+@@ -0,0 +1,148 @@
++//===- JavaTypeCacheReuseTestSupport.h - Context reuse fixtures --*- C++
++//-*-===//
++// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
++// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
++#ifndef LLVM_UNITTESTS_IR_JAVATYPECACHEREUSETESTSUPPORT_H
++#define LLVM_UNITTESTS_IR_JAVATYPECACHEREUSETESTSUPPORT_H
++
++#include "llvm/Analysis/AssumptionCache.h"
++#include "llvm/Analysis/Jeandle/CachedJavaType.h"
++#include "llvm/Analysis/Jeandle/LVINullEdgeOracle.h"
++#include "llvm/Analysis/LazyValueInfo.h"
++#include "llvm/IR/Dominators.h"
++#include "llvm/IR/IRBuilder.h"
++#include "llvm/IR/Jeandle/VMCallback.h"
++#include "llvm/IR/Module.h"
++#include <memory>
++#include <string>
++
++namespace llvm::jeandle::cache_reuse_test {
++struct VMEnvironment {
++  VMCallbacks Saved{};
++  VMEnvironment() {
++    if (const auto *Old = getVMCallbacks())
++      Saved = *Old;
++    VMCallbacks CB{};
++    CB.IsSubtype = [](uintptr_t A, uintptr_t B) { return A == B || B == 1; };
++    CB.IsInterface = [](uintptr_t) { return false; };
++    CB.IsEffectivelyFinal = [](uintptr_t) { return false; };
++    CB.GetSecondarySupers = [](uintptr_t) { return std::vector<uintptr_t>{}; };
++    CB.GetCommonSuperKlass = [](uintptr_t A, uintptr_t B) {
++      return A == B ? A : uintptr_t(1);
++    };
++    registerVMCallbacks(CB);
++  }
++  ~VMEnvironment() { registerVMCallbacks(Saved); }
++};
++
++// No java-klass base attribute: a successful query must recover the guard fact.
++struct Fixture {
++  LLVMContext C;
++  std::unique_ptr<Module> M;
++  Function *F = nullptr;
++  Value *Obj = nullptr;
++  CallInst *Guard = nullptr;
++  BinaryOperator *Noise = nullptr;
++  SmallVector<Instruction *, 16> Contexts;
++  DominatorTree DT;
++  std::unique_ptr<AssumptionCache> AC;
++  std::unique_ptr<LazyValueInfo> LVI;
++  JavaTypeCache Cache;
++  CachedJavaTypeQueryInfo Last;
++  uint64_t OracleCalls = 0;
++  bool CountOracle;
++
++  Constant *klass(unsigned K) {
++    return ConstantExpr::getIntToPtr(ConstantInt::get(Type::getInt64Ty(C), K),
++                                     PointerType::get(C, 0));
++  }
++  Fixture(bool Count = true, unsigned Depth = 32, unsigned Width = 16)
++      : M(std::make_unique<Module>("context-reuse", C)), CountOracle(Count) {
++    auto *Ptr = PointerType::get(C, 0);
++    F = Function::Create(FunctionType::get(Type::getVoidTy(C),
++                                           {Ptr, Type::getInt32Ty(C)}, false),
++                         Function::ExternalLinkage, "test", *M);
++    Obj = F->getArg(0);
++    Obj->setName("obj");
++    auto *Check = Function::Create(
++        FunctionType::get(Type::getInt1Ty(C), {Ptr, Ptr}, false),
++        Function::ExternalLinkage, "jeandle.check_instanceof", *M);
++    Check->addParamAttr(1, Attribute::NonNull);
++    auto *Entry = BasicBlock::Create(C, "entry", F);
++    auto *GuardBB = BasicBlock::Create(C, "guard", F);
++    auto *Fail = BasicBlock::Create(C, "fail", F);
++    SmallVector<BasicBlock *, 64> Blocks;
++    for (unsigned I = 0; I != Depth + Width; ++I)
++      Blocks.push_back(BasicBlock::Create(C, "path" + std::to_string(I), F));
++    BranchInst::Create(GuardBB, Entry);
++    IRBuilder<> B(GuardBB);
++    Guard = B.CreateCall(Check, {klass(22), Obj}, "check");
++    B.CreateCondBr(Guard, Blocks.front(), Fail);
++    ReturnInst::Create(C, Fail);
++    for (unsigned I = 0; I != Blocks.size(); ++I) {
++      if (I + 1 != Blocks.size())
++        BranchInst::Create(Blocks[I + 1], Blocks[I]);
++      else
++        ReturnInst::Create(C, Blocks[I]);
++      if (I >= Depth)
++        Contexts.push_back(Blocks[I]->getTerminator());
++    }
++    Noise = BinaryOperator::CreateAdd(
++        F->getArg(1), ConstantInt::get(Type::getInt32Ty(C), 1), "unrelated",
++        Contexts.front()->getIterator());
++    DT.recalculate(*F);
++    AC = std::make_unique<AssumptionCache>(*F);
++    LVI = std::make_unique<LazyValueInfo>(AC.get(), &M->getDataLayout());
++  }
++  JavaType query(Instruction *Ctx) {
++    LVINullEdgeOracle Oracle{*LVI};
++    if (!CountOracle)
++      return getCachedJavaType(Obj, &DT, Ctx, Oracle, Cache, Last);
++    auto Counted = [&](Value *V, BasicBlock *From, BasicBlock *To) {
++      ++OracleCalls;
++      return Oracle(V, From, To);
++    };
++    return getCachedJavaType(Obj, &DT, Ctx, Counted, Cache, Last);
++  }
++  // A completely fresh dependency set, not the query's warmed DT/LVI/cache.
++  JavaType fresh(Instruction *Ctx) {
++    DominatorTree FreshDT(*F);
++    AssumptionCache FreshAC(*F);
++    LazyValueInfo FreshLVI(&FreshAC, &M->getDataLayout());
++    LVINullEdgeOracle Oracle{FreshLVI};
++    JavaTypeCache FreshCache;
++    CachedJavaTypeQueryInfo Info;
++    return getCachedJavaType(Obj, &FreshDT, Ctx, Oracle, FreshCache, Info);
++  }
++  void reset() {
++    Cache.clear();
++    LVI->clear();
++    Guard->setArgOperand(0, klass(22));
++    Noise->setOperand(1, ConstantInt::get(Type::getInt32Ty(C), 1));
++    OracleCalls = 0;
++  }
++  JavaTypeCacheInvalidationInfo notify(Value *V, bool Full) {
++    if (!Full)
++      return Cache.invalidate({V});
++    JavaTypeCacheInvalidationInfo Info;
++    Info.BaseRemoved = Cache.baseSize();
++    Info.FactsRemoved = Cache.pathFactsSize();
++    Info.FinalRemoved = Cache.finalTypesSize();
++    Info.FullClear = true;
++    Cache.clear();
++    return Info;
++  }
++  JavaTypeCacheInvalidationInfo editNoise(bool Full = false) {
++    auto Info = notify(Noise, Full);
++    Noise->setOperand(1, ConstantInt::get(Type::getInt32Ty(C), 2));
++    return Info;
++  }
++  JavaTypeCacheInvalidationInfo editGuard(bool Full = false) {
++    auto Info = notify(Guard, Full); // Notify while the old use graph is live.
++    Guard->setArgOperand(0, klass(33));
++    LVI->clear(); // CFG is unchanged, but the queried analysis must stay fresh.
++    return Info;
++  }
++};
++} // namespace llvm::jeandle::cache_reuse_test
++#endif
+diff --git a/llvm/utils/jeandle/replay-java-type-context-cache.py b/llvm/utils/jeandle/replay-java-type-context-cache.py
+new file mode 100644
+index 000000000..f1ca01cc3
+--- /dev/null
++++ b/llvm/utils/jeandle/replay-java-type-context-cache.py
+@@ -0,0 +1,90 @@
++#!/usr/bin/env python3
++"""Three paired native replays of expensive JavaType context reuse."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import random
++import statistics
++import subprocess
++
++def sha(path):
++    h = hashlib.sha256()
++    with path.open("rb") as f:
++        for block in iter(lambda: f.read(1024 * 1024), b""):
++            h.update(block)
++    return h.hexdigest()
++
++def main():
++    p = argparse.ArgumentParser(description=__doc__)
++    p.add_argument("--binary", type=Path, required=True)
++    p.add_argument("--out", type=Path, required=True)
++    p.add_argument("--rounds", type=int, default=3)
++    p.add_argument("--batches", type=int, default=4096)
++    p.add_argument("--cpu", type=int, default=16)
++    a = p.parse_args()
++    if a.rounds < 1 or a.batches < 1:
++        p.error("rounds and batches must be positive")
++    a.out.mkdir(parents=True, exist_ok=False)
++    binary = a.binary.resolve()
++    identity = {"binary": str(binary), "sha256": sha(binary),
++                "rounds": a.rounds, "batches": a.batches, "cpu": a.cpu,
++                "seed": 20261023,
++                "note": "native timer excludes fixture construction; cold clears JavaType only; mutation/full clears on edits; timed oracle counting and fresh verification are disabled"}
++    (a.out / "identity.json").write_text(json.dumps(identity, indent=2))
++    variants = {"final": ["cold", "cached"], "prefix": ["cold", "cached"],
++                "mutation": ["full", "cached"]}
++    def run(case, mode, batches, kind):
++        cmd = ["taskset", "-c", str(a.cpu), str(binary), case, mode,
++               str(batches), kind]
++        r = subprocess.run(cmd, check=True, capture_output=True, text=True)
++        row = json.loads(r.stdout)
++        row["argv"] = cmd
++        return row
++    diag = {}
++    for case, modes in variants.items():
++        diag[case] = {mode: run(case, mode, 1, "diagnostic") for mode in modes}
++        baseline, cached = (diag[case][mode] for mode in modes)
++        assert baseline["checksum"] == cached["checksum"]
++        assert all(x["fresh_reference_checked"] for x in diag[case].values())
++        assert cached["oracle_calls"] < baseline["oracle_calls"]
++    assert diag["final"]["cached"]["final_hits"] == 15
++    assert diag["prefix"]["cached"]["final_hits"] == 0
++    assert diag["prefix"]["cached"]["facts_hits"] == 15
++    assert diag["mutation"]["cached"]["final_hits"] == 46
++    assert diag["mutation"]["full"]["final_hits"] == 45
++    (a.out / "diagnostics.json").write_text(json.dumps(diag, indent=2))
++    rows = []
++    rng = random.Random(20261023)
++    for round_id in range(a.rounds):
++        cases = list(variants)
++        rng.shuffle(cases)
++        for case in cases:
++            modes = list(variants[case])
++            rng.shuffle(modes)
++            for mode in modes:
++                row = run(case, mode, a.batches, "timing")
++                row["round"] = round_id
++                rows.append(row)
++                (a.out / "timings.json").write_text(json.dumps(rows, indent=2))
++        print("completed round", round_id + 1, flush=True)
++    summary = {}
++    for case, modes in variants.items():
++        rr = [r for r in rows if r["scenario"] == case]
++        paired = []
++        for i in range(a.rounds):
++            pair = {r["mode"]: r for r in rr if r["round"] == i}
++            assert pair[modes[0]]["checksum"] == pair["cached"]["checksum"]
++            paired.append(100 * (1 - pair["cached"]["user_s"] /
++                                 pair[modes[0]]["user_s"]))
++        summary[case] = {"baseline_mode": modes[0], "rounds": a.rounds,
++                        "baseline_user_median": statistics.median(r["user_s"] for r in rr if r["mode"] == modes[0]),
++                        "cached_user_median": statistics.median(r["user_s"] for r in rr if r["mode"] == "cached"),
++                        "paired_cpu_reduction_pct_median": statistics.median(paired),
++                        "paired_reductions_pct": paired}
++    assert sha(binary) == identity["sha256"]
++    (a.out / "summary.json").write_text(json.dumps(summary, indent=2))
++    print(json.dumps(summary, indent=2))
++
++if __name__ == "__main__":
++    main()

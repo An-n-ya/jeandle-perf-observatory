@@ -1,0 +1,164 @@
+{
+  "final": {
+    "cold": {
+      "batches": 1,
+      "checksum": 352,
+      "facts_hits": 0,
+      "facts_misses": 544,
+      "final_hits": 0,
+      "final_misses": 16,
+      "fresh_reference_checked": true,
+      "kind": "diagnostic",
+      "mode": "cold",
+      "oracle_calls": 544,
+      "queries": 16,
+      "scenario": "final",
+      "user_s": 0,
+      "wall_s": 0.000499806,
+      "argv": [
+        "taskset",
+        "-c",
+        "16",
+        "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+        "final",
+        "cold",
+        "1",
+        "diagnostic"
+      ]
+    },
+    "cached": {
+      "batches": 1,
+      "checksum": 352,
+      "facts_hits": 0,
+      "facts_misses": 34,
+      "final_hits": 15,
+      "final_misses": 1,
+      "fresh_reference_checked": true,
+      "kind": "diagnostic",
+      "mode": "cached",
+      "oracle_calls": 34,
+      "queries": 16,
+      "scenario": "final",
+      "user_s": 0.0003880000000000001,
+      "wall_s": 0.000389173,
+      "argv": [
+        "taskset",
+        "-c",
+        "16",
+        "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+        "final",
+        "cached",
+        "1",
+        "diagnostic"
+      ]
+    }
+  },
+  "prefix": {
+    "cold": {
+      "batches": 1,
+      "checksum": 352,
+      "facts_hits": 0,
+      "facts_misses": 664,
+      "final_hits": 0,
+      "final_misses": 16,
+      "fresh_reference_checked": true,
+      "kind": "diagnostic",
+      "mode": "cold",
+      "oracle_calls": 664,
+      "queries": 16,
+      "scenario": "prefix",
+      "user_s": 0.00029600000000000004,
+      "wall_s": 0.000587296,
+      "argv": [
+        "taskset",
+        "-c",
+        "16",
+        "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+        "prefix",
+        "cold",
+        "1",
+        "diagnostic"
+      ]
+    },
+    "cached": {
+      "batches": 1,
+      "checksum": 352,
+      "facts_hits": 15,
+      "facts_misses": 49,
+      "final_hits": 0,
+      "final_misses": 16,
+      "fresh_reference_checked": true,
+      "kind": "diagnostic",
+      "mode": "cached",
+      "oracle_calls": 49,
+      "queries": 16,
+      "scenario": "prefix",
+      "user_s": 0.00023700000000000001,
+      "wall_s": 0.000467899,
+      "argv": [
+        "taskset",
+        "-c",
+        "16",
+        "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+        "prefix",
+        "cached",
+        "1",
+        "diagnostic"
+      ]
+    }
+  },
+  "mutation": {
+    "full": {
+      "batches": 1,
+      "checksum": 1232,
+      "facts_hits": 0,
+      "facts_misses": 102,
+      "final_hits": 45,
+      "final_misses": 3,
+      "fresh_reference_checked": true,
+      "kind": "diagnostic",
+      "mode": "full",
+      "oracle_calls": 102,
+      "queries": 48,
+      "scenario": "mutation",
+      "user_s": 0.0009190000000000001,
+      "wall_s": 0.001002365,
+      "argv": [
+        "taskset",
+        "-c",
+        "16",
+        "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+        "mutation",
+        "full",
+        "1",
+        "diagnostic"
+      ]
+    },
+    "cached": {
+      "batches": 1,
+      "checksum": 1232,
+      "facts_hits": 0,
+      "facts_misses": 68,
+      "final_hits": 46,
+      "final_misses": 2,
+      "fresh_reference_checked": true,
+      "kind": "diagnostic",
+      "mode": "cached",
+      "oracle_calls": 68,
+      "queries": 48,
+      "scenario": "mutation",
+      "user_s": 0.000991,
+      "wall_s": 0.000990968,
+      "argv": [
+        "taskset",
+        "-c",
+        "16",
+        "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+        "mutation",
+        "cached",
+        "1",
+        "diagnostic"
+      ]
+    }
+  }
+}

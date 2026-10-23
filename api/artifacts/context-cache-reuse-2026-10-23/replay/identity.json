@@ -1,0 +1,9 @@
+{
+  "binary": "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/JavaTypeCacheReuseReplay",
+  "sha256": "16d37936b98bbcb5c3f27c8b8cd001fa2bdf4779a6278aab96761df385726db7",
+  "rounds": 3,
+  "batches": 4096,
+  "cpu": 16,
+  "seed": 20261023,
+  "note": "native timer excludes fixture construction; cold clears JavaType only; mutation/full clears on edits; timed oracle counting and fresh verification are disabled"
+}

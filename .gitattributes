@@ -1,0 +1,2 @@
+# Preserve frozen patch artifacts byte-for-byte, including diff context whitespace.
+api/artifacts/**/*.patch -whitespace
