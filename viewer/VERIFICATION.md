@@ -24,3 +24,4 @@
 - 本次没有重新运行 LLVM 性能实验，使用先前完成的三轮与 47/47 单测、96/96 lit 原始记录。
 - 静态版浏览器：九个场景伪代码检查通过；mutation 显示 15.95%；新数据 10 个原始链接全部 HTTP 200；CFF 原始记录五种文件及 Speedscope 全部 HTTP 200；新结果页没有 NaN / undefined / Infinity。
 - 远程核对：`origin/test/javatype-cache-design` 为 `ea2953f61a852e322848b03354eb97c98ac87bf5`。
+- 九入口侧栏：浏览器检查共 9 个按钮，逐一点击跨数据集加载与伪代码均通过；回到 deep-static 后原 S1 user 中位数 5.7674575 秒保留。原 101 profile、385 record、101 export 文件未改动。

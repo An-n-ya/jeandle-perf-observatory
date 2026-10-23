@@ -49,7 +49,7 @@ const apiPath = (kind,extra={}) => {
  if(kind==='profiles'||kind==='speedscope')return `${staticBase}/api/${kind}/${slug(`${extra.case}--${extra.mode}--${extra.run}`)}${kind==='profiles'?'.json':'.speedscope.json'}`;
  return `${staticBase}/api/${kind}/${pathURL((kind==='artifacts'?(entry.artifact_prefix||''):'')+extra.file)}`;
 };
-const api = (kind,extra={}) => apiPath(kind,extra)+(staticBase?'?v=context-reuse-20261023':'');
+const api = (kind,extra={}) => apiPath(kind,extra)+(staticBase?'?v=all-nine-20261023':'');
 function recordURL(run,kind){
  if(!staticBase)return api('records',{case:state.case,mode:state.mode,run,kind});
  const archive=loadedProfile.archive_names?.[run] || (run.startsWith('diag:')?'diagnostics/quality/'+run.slice(5)+'/stacks.txt':`${state.case==='cff-cache-reuse'?'l2/':''}profiles/${state.case}/${state.mode}/${run}/stacks.txt`);
@@ -230,6 +230,11 @@ function renderReplayRaw(){
  card('验证与回放参数','',`<p>JavaType 单元测试 47/47；六组 lit 96/96。CPU ${data.identity.cpu}，seed ${data.identity.seed}，3 轮 × 3 场景 × 2 模式 = 18 个计时进程，每进程 ${data.identity.batches} 批。</p><p>本数据集没有 perf 采样栈、硬件 cycles 或 IPC；它与原四策略实验独立。</p>`)+
  card('原始资料','identity、逐轮计时、单批命中诊断、摘要、测试补丁和验证日志均可查阅。',`<div class="artifact-list">${data.files.map(f=>`<a href="${api('artifacts',{file:f})}" target="_blank" rel="noopener">↗ ${esc(f)}</a>`).join('')}</div>`);
 }
+function renderCaseNavigation(){
+ const names={...CASES,final:'同键 Final 复用',prefix:'不同 BB 的路径前缀复用',mutation:'真实修改与选择性失效'};
+ $('#cases').innerHTML=datasets.map(d=>`<div class="case-group-label">${d.kind==='context-reuse'?'新增 · 缓存复用（3）':'原有 · 性能剖析（6）'}</div>${d.cases.map(c=>`<button data-case="${esc(c)}" data-dataset-id="${esc(d.id)}" class="${d.id===state.dataset&&state.case===c?'active':''}">${esc(c)}<small>${esc(names[c]||'')}</small></button>`).join('')}`).join('');
+ $('#case-count').textContent=datasets.reduce((n,d)=>n+d.cases.length,0);
+}
 function renderReuse(){
  const cases=Object.keys(data.scenarios),tabs={overview:'回放结果',method:'测试说明与伪代码',quality:'原始数据与验证'};
  if(!cases.includes(state.case))state.case=cases[0];
@@ -237,8 +242,7 @@ function renderReuse(){
  syncHash();$('#title').textContent=state.case;
  $('#subtitle').textContent=data.scenarios[state.case].question;
  $('#modes').innerHTML='<span>独立 API 回放 · 基准与 CACHED 并列展示</span>';
- $('#cases').innerHTML=cases.map(c=>`<button data-case="${c}" class="${c===state.case?'active':''}">${c}<small>${esc({final:'同键 Final 复用',prefix:'不同 BB 的路径前缀复用',mutation:'真实修改与选择性失效'}[c])}</small></button>`).join('');
- $('#case-count').textContent=cases.length;
+ renderCaseNavigation();
  $('#tabs').innerHTML=Object.entries(tabs).map(([k,v])=>`<button data-tab="${k}" class="${k===state.tab?'active':''}">${v}</button>`).join('');
  $('#content').innerHTML=({overview:renderReplay,method:renderMethod,quality:renderReplayRaw})[state.tab]();
 }
@@ -253,8 +257,7 @@ function render(){
  $('#subtitle').textContent=`${CASES[state.case]||state.case} · ${fmt(c.functions,0)} functions · ${c.passes||''}`;
  $('#modes').innerHTML=MODES.map(m=>`<button data-mode="${m}" class="${m===state.mode?'active':''}" title="${DESCS[m]}">${modeLabel(m)}</button>`).join('');
  $('#tabs').innerHTML=Object.entries(TABS).map(([k,v])=>`<button data-tab="${k}" class="${k===state.tab?'active':''}">${v}</button>`).join('');
- $('#cases').innerHTML=Object.keys(data.baseline).sort((a,b)=>['deep-static','wide-static','leaf-static','tce-cha','virtual-cfg','cff-cache-reuse'].indexOf(a)-['deep-static','wide-static','leaf-static','tce-cha','virtual-cfg','cff-cache-reuse'].indexOf(b)).map(c=>`<button data-case="${esc(c)}" class="${state.case===c?'active':''}">${esc(c)}<small>${esc(CASES[c]||'')}</small></button>`).join('');
- $('#case-count').textContent=Object.keys(data.baseline).length;
+ renderCaseNavigation();
  $('#run').value=state.run;
  const content=$('#content');content.innerHTML=({overview:renderOverview,compare:renderCompare,source:renderSource,quality:renderQuality,stacks:renderStacks,method:renderMethod})[state.tab]();
  if(state.tab==='source')showSource();if(state.tab==='stacks')loadStacks(token);
@@ -270,7 +273,7 @@ async function pollStatus(){
 }
 document.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
- if(b.dataset.mode){state.mode=b.dataset.mode;state.diagnostic='';render();}else if(b.dataset.case){state.case=b.dataset.case;state.diagnostic='';render();}else if(b.dataset.tab){state.tab=b.dataset.tab;render();}
+ if(b.dataset.mode){state.mode=b.dataset.mode;state.diagnostic='';render();}else if(b.dataset.case){state.case=b.dataset.case;state.diagnostic='';if(b.dataset.datasetId&&b.dataset.datasetId!==state.dataset){$('#dataset').value=b.dataset.datasetId;changeDataset(b.dataset.datasetId).catch(showError);}else render();}else if(b.dataset.tab){state.tab=b.dataset.tab;render();}
  if(b.id==='reset-zoom')refreshStacks();
  if(b.id==='export')window.open(api('speedscope',{case:state.case,mode:state.mode,run:state.tab==='stacks'&&state.diagnostic?state.diagnostic:state.run}),'_blank','noopener');
 });

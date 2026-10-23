@@ -2,7 +2,7 @@
 
 Read-only JavaType cache experiments: https://jeandle.annya.work
 
-The dataset selector provides the original six profiling scenarios and the three context-cache reuse scenarios (`final`, `prefix`, `mutation`). Each scenario includes its motivation, construction, pseudocode, characteristics and interpretation limits. New replay data uses exactly three paired rounds (18 timed processes), with separate cache-hit/correctness diagnostics. No JVM speedup is claimed.
+The sidebar lists all nine tests together, grouped into the original six profiling scenarios and the three context-cache reuse scenarios (`final`, `prefix`, `mutation`). Each scenario includes its motivation, construction, pseudocode, characteristics and interpretation limits. New replay data uses exactly three paired rounds (18 timed processes), with separate cache-hit/correctness diagnostics. No JVM speedup is claimed.
 
 ## Source and evidence
 
