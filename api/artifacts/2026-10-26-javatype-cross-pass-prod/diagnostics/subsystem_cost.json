@@ -1,0 +1,181 @@
+{
+  "pairs": {
+    "original->cross_pass": {
+      "baseline": "original",
+      "candidate": "cross_pass",
+      "combined_subsystem_ns": {
+        "baseline_total_ns": 612436.2,
+        "candidate_total_ns": 672609.3,
+        "delta_ns": -60173.10000000009,
+        "delta_relative": -0.09825203017065304,
+        "per_sample_delta_ci": {
+          "hi": -300.7421875,
+          "lo": -1568.7140625,
+          "mean": -940.2046875000001
+        },
+        "per_sample_delta_mean_ns": -940.2046875000001
+      },
+      "total invalidation time (ns)": {
+        "baseline_total_ns": 1454.7,
+        "candidate_total_ns": 10326.1,
+        "delta_ns": -8871.4,
+        "delta_relative": -6.09843954079879,
+        "per_sample_delta_ci": {
+          "hi": -66.19375,
+          "lo": -224.3234375,
+          "mean": -138.615625
+        },
+        "per_sample_delta_mean_ns": -138.615625
+      },
+      "total query time (ns)": {
+        "baseline_total_ns": 610981.5,
+        "candidate_total_ns": 662283.2,
+        "delta_ns": -51301.69999999995,
+        "delta_relative": -0.08396604479841036,
+        "per_sample_delta_ci": {
+          "hi": -174.0796875,
+          "lo": -1439.3921874999999,
+          "mean": -801.5890625
+        },
+        "per_sample_delta_mean_ns": -801.5890625
+      }
+    },
+    "pass_local->cross_pass": {
+      "baseline": "pass_local",
+      "candidate": "cross_pass",
+      "combined_subsystem_ns": {
+        "baseline_total_ns": 1088984.0,
+        "candidate_total_ns": 672609.3,
+        "delta_ns": 416374.69999999995,
+        "delta_relative": 0.3823515313356302,
+        "per_sample_delta_ci": {
+          "hi": 6953.9453125,
+          "lo": 6054.95,
+          "mean": 6505.8546875
+        },
+        "per_sample_delta_mean_ns": 6505.8546875
+      },
+      "total invalidation time (ns)": {
+        "baseline_total_ns": 335116.0,
+        "candidate_total_ns": 10326.1,
+        "delta_ns": 324789.9,
+        "delta_relative": 0.9691864906480145,
+        "per_sample_delta_ci": {
+          "hi": 5234.3734375,
+          "lo": 4930.940625,
+          "mean": 5074.8421875
+        },
+        "per_sample_delta_mean_ns": 5074.8421875
+      },
+      "total query time (ns)": {
+        "baseline_total_ns": 753868.0,
+        "candidate_total_ns": 662283.2,
+        "delta_ns": 91584.80000000005,
+        "delta_relative": 0.12148652018655792,
+        "per_sample_delta_ci": {
+          "hi": 1831.671875,
+          "lo": 1010.4703125000001,
+          "mean": 1431.0125
+        },
+        "per_sample_delta_mean_ns": 1431.0125
+      }
+    }
+  },
+  "repeat": 10,
+  "samples": 64,
+  "totals": {
+    "cross_pass": {
+      "CFG invalidations": 1.0,
+      "base entries invalidated": 0.0,
+      "base entries retained": 16.0,
+      "base insertions": 100.0,
+      "base-only query hits": 0.0,
+      "base-only query misses": 0.0,
+      "bypasses": 0.0,
+      "clears": 0.0,
+      "final type entries invalidated": 15.0,
+      "final type entries retained": 0.0,
+      "final type hits": 68.0,
+      "final type misses": 110.0,
+      "invalidation base slots scanned": 1.0,
+      "invalidation final-type slots scanned": 15.0,
+      "invalidation path-facts slots scanned": 25.0,
+      "invalidation requests": 32.0,
+      "invalidation uses visited": 44.0,
+      "invalidation values visited": 60.0,
+      "pass-local cache clears": 0.0,
+      "path facts entries invalidated": 25.0,
+      "path facts entries retained": 0.0,
+      "path facts hits": 8.0,
+      "path facts misses": 79.0,
+      "queries": 173.0,
+      "selective invalidations": 32.0,
+      "total invalidation time (ns)": 10326.1,
+      "total query time (ns)": 662283.1999999998,
+      "verification skips": 0.0,
+      "verifications": 0.0
+    },
+    "original": {
+      "CFG invalidations": 1.0,
+      "base entries invalidated": 0.0,
+      "base entries retained": 0.0,
+      "base insertions": 0.0,
+      "base-only query hits": 0.0,
+      "base-only query misses": 0.0,
+      "bypasses": 173.0,
+      "clears": 0.0,
+      "final type entries invalidated": 0.0,
+      "final type entries retained": 0.0,
+      "final type hits": 0.0,
+      "final type misses": 0.0,
+      "invalidation base slots scanned": 0.0,
+      "invalidation final-type slots scanned": 0.0,
+      "invalidation path-facts slots scanned": 0.0,
+      "invalidation requests": 32.0,
+      "invalidation uses visited": 0.0,
+      "invalidation values visited": 0.0,
+      "pass-local cache clears": 0.0,
+      "path facts entries invalidated": 0.0,
+      "path facts entries retained": 0.0,
+      "path facts hits": 0.0,
+      "path facts misses": 0.0,
+      "queries": 173.0,
+      "selective invalidations": 32.0,
+      "total invalidation time (ns)": 1454.6999999999998,
+      "total query time (ns)": 610981.5,
+      "verification skips": 0.0,
+      "verifications": 0.0
+    },
+    "pass_local": {
+      "CFG invalidations": 1.0,
+      "base entries invalidated": 148.0,
+      "base entries retained": 8.0,
+      "base insertions": 168.0,
+      "base-only query hits": 0.0,
+      "base-only query misses": 0.0,
+      "bypasses": 0.0,
+      "clears": 13154.0,
+      "final type entries invalidated": 153.0,
+      "final type entries retained": 0.0,
+      "final type hits": 0.0,
+      "final type misses": 178.0,
+      "invalidation base slots scanned": 1.0,
+      "invalidation final-type slots scanned": 11.0,
+      "invalidation path-facts slots scanned": 25.0,
+      "invalidation requests": 13186.0,
+      "invalidation uses visited": 28.0,
+      "invalidation values visited": 36.0,
+      "pass-local cache clears": 13154.0,
+      "path facts entries invalidated": 36.0,
+      "path facts entries retained": 0.0,
+      "path facts hits": 8.0,
+      "path facts misses": 83.0,
+      "queries": 173.0,
+      "selective invalidations": 32.0,
+      "total invalidation time (ns)": 335115.99999999994,
+      "total query time (ns)": 753868.0,
+      "verification skips": 0.0,
+      "verifications": 0.0
+    }
+  }
+}

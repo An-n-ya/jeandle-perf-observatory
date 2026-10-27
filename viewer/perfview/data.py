@@ -11,6 +11,7 @@ import threading
 
 from .stacks import Symbols, merge, parse
 from .methodology import ORIGINAL
+from .crosspass import CrossPassDataset
 from .reuse import ReplayDataset
 
 CACHE_VERSION = '4'
@@ -207,7 +208,13 @@ class Dataset:
 def discover(paths, cache_root):
     datasets = {}
     for path in paths:
-        dataset = (ReplayDataset if (Path(path) / "replay/timings.json").is_file() else Dataset)(path, cache_root)
+        p = Path(path)
+        if (p / 'replay/timings.json').is_file():
+            dataset = ReplayDataset(p)
+        elif (p / 'timing/analysis.json').is_file():
+            dataset = CrossPassDataset(p)
+        else:
+            dataset = Dataset(p, cache_root)
         if dataset.id in datasets:
             raise ValueError('Dataset names must be unique: ' + dataset.id)
         datasets[dataset.id] = dataset

@@ -106,7 +106,7 @@ def main():
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--cache', type=Path, default=ROOT / '.cache')
     args = parser.parse_args()
-    paths = args.data or sorted((ROOT.parent / 'jeandle-develop-log/artifacts').glob('java-type-perf-*')) + sorted((ROOT.parent / 'jeandle-develop-log/artifacts').glob('context-cache-reuse-*'))
+    paths = args.data or sorted((ROOT.parent / 'jeandle-develop-log/artifacts').glob('java-type-perf-*')) + sorted((ROOT.parent / 'jeandle-develop-log/artifacts').glob('context-cache-reuse-*')) + sorted((ROOT.parent / 'jeandle-develop-log/artifacts').glob('*cross-pass*'))
     if not paths:
         parser.error('No datasets found. Specify --data /path/to/artifacts')
     datasets = discover(paths, args.cache)

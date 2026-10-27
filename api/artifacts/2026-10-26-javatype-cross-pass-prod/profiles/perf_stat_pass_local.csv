@@ -1,0 +1,15 @@
+# started on Mon Oct 26 22:49:27 2026
+
+13659.77,msec,task-clock:u,13659774931,100.00,,
+<not counted>,,cpu_atom/cycles/u,0,0.00,,
+56643698861,,cpu_core/cycles/u,13659774931,100.00,,
+<not counted>,,cpu_atom/instructions/u,0,0.00,,
+72894544320,,cpu_core/instructions/u,13659774931,100.00,,
+<not counted>,,cpu_atom/branches/u,0,0.00,,
+15428208693,,cpu_core/branches/u,13659774931,100.00,,
+<not counted>,,cpu_atom/branch-misses/u,0,0.00,,
+666680303,,cpu_core/branch-misses/u,13659774931,100.00,,
+<not counted>,,cpu_atom/cache-references/u,0,0.00,,
+751246160,,cpu_core/cache-references/u,13659774931,100.00,,
+<not counted>,,cpu_atom/cache-misses/u,0,0.00,,
+37117909,,cpu_core/cache-misses/u,13659774931,100.00,,

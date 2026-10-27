@@ -1,0 +1,48 @@
+{
+  "ab_baseline_note": "the release build was rebuilt twice on 2026-10-27 (git stash for the baseline A/B, then restored); the A/B comparison is in jvm/ab/",
+  "corpus_manifest_sha256": "816673eb1f5757f88d373e4a92fab0fe867eb737468fd9dcfcc96b550233a94a",
+  "cpu_count": 32,
+  "java_sha256": "6f36fa418c336f0f299784f5167edf57cfa6da5908cf8a5cb98f478b0915fad5",
+  "jdk": "/home/annya/playground/jeandle/jeandle/jeandle-jdk/build/linux-x86_64-server-release/images/jdk",
+  "jdk_head": "1d56df159ebb4edbaa4613941dc952ffe0be8c64",
+  "jdk_note": "the JDK was not rebuilt; it loads the release libLLVM dynamically, so the rebuilt library is the one that the JVM used for the phase E measurements",
+  "jdk_status": "?? test/hotspot/jtreg/compiler/jeandle/typeCache/",
+  "jvm_libllvm": "/home/annya/playground/jeandle/jeandle/jeandle-llvm-release/lib/libLLVM.so.22.0git",
+  "jvm_libllvm_mtime": 1793032057.0,
+  "jvm_libllvm_sha256": "e7c9f91de4f88c451697333f0f09d2f8b8572a3147e477b397ef71b60ff617da",
+  "libjvm": "/home/annya/playground/jeandle/jeandle/jeandle-jdk/build/linux-x86_64-server-release/images/jdk/lib/server/libjvm.so",
+  "libjvm_runpath": "/home/annya/playground/jeandle/jeandle/jeandle-llvm-release/lib",
+  "llvm_branch": "test/javatype-cache-design",
+  "llvm_head": "b121fa56710a0265d66ae5fa5c0b1cc0aa10ced6",
+  "llvm_root": "/home/annya/playground/jeandle/jeandle/jeandle-llvm",
+  "llvm_status": "M llvm/include/llvm/Analysis/Jeandle/JavaTypeAnalysis.h\n M llvm/lib/Analysis/Jeandle/JavaTypeAnalysis.cpp\n M llvm/lib/Analysis/Jeandle/JavaTypeAnalysisStats.cpp\n M llvm/lib/Transforms/Jeandle/CHADevirtualization.cpp\n M llvm/lib/Transforms/Jeandle/ConstantFieldFolding.cpp\n M llvm/lib/Transforms/Jeandle/RecoverTypeInfo.cpp\n M llvm/lib/Transforms/Jeandle/TypeCheckElimination.cpp\n?? llvm/test/Jeandle/java-type-cache-reuse/pass-local-production-hook.ll",
+  "llvm_worktree_diff_sha256": "b93b4509cd18a32666d5d2a6a7d87f7a4c144c3b5f87a20f02b6987a20db5fb8",
+  "modes": {
+    "cross_pass": [],
+    "original": [
+      "-jeandle-disable-java-type-cache"
+    ],
+    "pass_local": [
+      "-jeandle-java-type-pass-local"
+    ]
+  },
+  "opt": "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-profiling/bin/opt",
+  "opt_mtime": 1793022297.868225,
+  "opt_sha256": "644ea7272864f86430901db1e387ad9a003c7f0a4b25e35f93821af4c1507f22",
+  "opt_size": 1913807088,
+  "pairs": [
+    [
+      "original",
+      "cross_pass"
+    ],
+    [
+      "pass_local",
+      "cross_pass"
+    ]
+  ],
+  "pipeline": "jeandle<O3>",
+  "release_libllvm_build_dir": "/home/annya/playground/jeandle/jeandle/jeandle-llvm/build/build-ninja-release/lib/libLLVM.so.22.0git",
+  "release_libllvm_build_dir_sha256": "dfcfbc1cb6b00fcf03e4e4145a14d5ff304b24642c234976ea04d3541ac3bede",
+  "release_prefix": "/home/anya/playground/jeandle/jeandle/jeandle-llvm-release",
+  "uname": "Linux archlinux 7.1.3-arch2-2 #1 SMP PREEMPT_DYNAMIC Thu, 16 Jul 2026 17:41:28 +0000 x86_64"
+}

@@ -1,0 +1,1793 @@
+{
+  "corpus": {
+    "accepted": 64,
+    "programs": {
+      "ArrayShapes": {
+        "methods": [
+          "ArrayShapes_arrayLengthLoop",
+          "ArrayShapes_checkedArrayElement",
+          "ArrayShapes_sumArrayElements",
+          "ArrayShapes_sumNestedArrays",
+          "ArrayShapes_sumPrimitiveArray",
+          "ArrayShapes_traverseList"
+        ],
+        "samples": 6
+      },
+      "CollectionShapes": {
+        "methods": [
+          "CollectionShapes$Node_<init>",
+          "CollectionShapes_visitBimorphic",
+          "java_lang_Object_<init>",
+          "java_lang_StringLatin1_charAt",
+          "java_lang_String_checkIndex",
+          "java_lang_String_coder",
+          "java_lang_String_hashCode",
+          "java_lang_String_isLatin1",
+          "java_lang_String_length",
+          "java_util_ArrayList$Itr_checkForComodification",
+          "java_util_ArrayList$Itr_hasNext",
+          "java_util_ArrayList$Itr_next",
+          "java_util_HashMap_hash",
+          "jdk_internal_util_Preconditions_checkIndex"
+        ],
+        "samples": 14
+      },
+      "ConstantShapes": {
+        "methods": [
+          "ConstantShapes_foldWithTypeCheck",
+          "ConstantShapes_readInstanceFinals",
+          "ConstantShapes_readMutableField",
+          "java_lang_String_coder",
+          "java_lang_String_length",
+          "java_util_Objects_requireNonNull"
+        ],
+        "samples": 6
+      },
+      "InlineShapes": {
+        "methods": [
+          "InlineShapes_addBoth",
+          "InlineShapes_addOther",
+          "InlineShapes_addValue",
+          "InlineShapes_inlineChain",
+          "InlineShapes_nestedInline",
+          "InlineShapes_virtualInline"
+        ],
+        "samples": 6
+      },
+      "NegativeShapes": {
+        "methods": [
+          "NegativeShapes_arithmeticOnly",
+          "NegativeShapes_mathOnly",
+          "NegativeShapes_numericArray",
+          "java_lang_AbstractStringBuilder_getValue",
+          "java_lang_AbstractStringBuilder_length",
+          "java_lang_Enum_ordinal",
+          "java_lang_StringLatin1_charAt",
+          "java_lang_String_checkIndex",
+          "java_lang_String_coder",
+          "java_lang_String_isLatin1",
+          "java_lang_String_length",
+          "java_lang_invoke_LambdaForm$BasicType_basicTypeClass",
+          "java_lang_invoke_LambdaForm$Name_index",
+          "java_lang_invoke_MemberName_getDeclaringClass",
+          "java_lang_invoke_MethodTypeForm_parameterSlotCount",
+          "java_lang_invoke_MethodType_form",
+          "java_lang_invoke_MethodType_ptypes",
+          "java_lang_invoke_MethodType_returnType",
+          "jdk_internal_util_Preconditions_checkIndex",
+          "jdk_internal_util_StrongReferenceKey_get",
+          "jdk_internal_util_WeakReferenceKey_hashCode",
+          "sun_invoke_util_Wrapper_basicTypeChar"
+        ],
+        "samples": 22
+      },
+      "TypeShapes": {
+        "methods": [
+          "TypeShapes$Base_<init>",
+          "TypeShapes$Circle_area",
+          "TypeShapes$Square_area",
+          "TypeShapes_guardedFieldLoad",
+          "TypeShapes_instanceofChain",
+          "TypeShapes_monomorphicCall",
+          "TypeShapes_polymorphicCall",
+          "TypeShapes_repeatedFieldLoads",
+          "TypeShapes_twoFieldLoads",
+          "java_lang_Object_<init>"
+        ],
+        "samples": 10
+      }
+    },
+    "recorded": 76,
+    "reject_reasons": {
+      "replay failed in mode original (exit -6)": 12
+    },
+    "rejected": 12,
+    "rejected_samples": [
+      {
+        "method": "CollectionShapes_allocateInLoop",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "CollectionShapes_iterateList",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "CollectionShapes_readMap",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "CollectionShapes_stringWork",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "java_lang_String_charAt",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "java_util_HashMap_getNode",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "java_util_HashMap_get",
+        "program": "CollectionShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "ConstantShapes_readHolderFields",
+        "program": "ConstantShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "ConstantShapes_readStaticFinals",
+        "program": "ConstantShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "NegativeShapes_stringLength",
+        "program": "NegativeShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "java_lang_String_charAt",
+        "program": "NegativeShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      },
+      {
+        "method": "TypeShapes$Mid_<init>",
+        "program": "TypeShapes",
+        "reject_reason": "replay failed in mode original (exit -6)"
+      }
+    ]
+  },
+  "negative_samples": {
+    "original->cross_pass": [
+      {
+        "baseline_cpu_mean_s": 0.023031066666666666,
+        "candidate_cpu_mean_s": 0.0235751,
+        "net_benefit": -0.023621716753602584,
+        "net_benefit_effective": -0.028284883418656426,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_traverseList"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02216058333333333,
+        "candidate_cpu_mean_s": 0.022536233333333332,
+        "net_benefit": -0.016951268581227197,
+        "net_benefit_effective": -0.020489161807017098,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_returnType"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022723,
+        "candidate_cpu_mean_s": 0.0230977,
+        "net_benefit": -0.01648990010121887,
+        "net_benefit_effective": -0.02023436656226374,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addBoth"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023802349999999996,
+        "candidate_cpu_mean_s": 0.024131316666666666,
+        "net_benefit": -0.013820764196252444,
+        "net_benefit_effective": -0.016467394342284614,
+        "queries": 6,
+        "sample": "TypeShapes\tTypeShapes_instanceofChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0221002,
+        "candidate_cpu_mean_s": 0.0224056,
+        "net_benefit": -0.0138188794671541,
+        "net_benefit_effective": -0.016949999167485075,
+        "queries": 2,
+        "sample": "TypeShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02209953333333333,
+        "candidate_cpu_mean_s": 0.022395866666666667,
+        "net_benefit": -0.013409031261595317,
+        "net_benefit_effective": -0.016180228452449263,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022010416666666664,
+        "candidate_cpu_mean_s": 0.02230115,
+        "net_benefit": -0.013208897302413591,
+        "net_benefit_effective": -0.01608045759797938,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_WeakReferenceKey_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022411416666666666,
+        "candidate_cpu_mean_s": 0.022685566666666667,
+        "net_benefit": -0.012232604662058444,
+        "net_benefit_effective": -0.014582511447302382,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022243266666666667,
+        "candidate_cpu_mean_s": 0.022515283333333334,
+        "net_benefit": -0.012229168976978677,
+        "net_benefit_effective": -0.01482075432290908,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022245533333333335,
+        "candidate_cpu_mean_s": 0.022507616666666667,
+        "net_benefit": -0.011781391320504708,
+        "net_benefit_effective": -0.01400613865231115,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_AbstractStringBuilder_getValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02226491666666667,
+        "candidate_cpu_mean_s": 0.022520666666666668,
+        "net_benefit": -0.011486681213718208,
+        "net_benefit_effective": -0.013945372671795297,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_twoFieldLoads"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024176566666666666,
+        "candidate_cpu_mean_s": 0.024454066666666666,
+        "net_benefit": -0.011478056575444207,
+        "net_benefit_effective": -0.013789116784295175,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_numericArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024124016666666668,
+        "candidate_cpu_mean_s": 0.024395049999999998,
+        "net_benefit": -0.011235000252169058,
+        "net_benefit_effective": -0.0132162922375616,
+        "queries": 7,
+        "sample": "ConstantShapes\tConstantShapes_foldWithTypeCheck"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022127266666666666,
+        "candidate_cpu_mean_s": 0.022368600000000002,
+        "net_benefit": -0.010906603918544144,
+        "net_benefit_effective": -0.013072060637028038,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Square_area"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022062833333333334,
+        "candidate_cpu_mean_s": 0.022294133333333334,
+        "net_benefit": -0.010483694297347634,
+        "net_benefit_effective": -0.012762552878425426,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022401566666666664,
+        "candidate_cpu_mean_s": 0.022618816666666666,
+        "net_benefit": -0.009697982432776309,
+        "net_benefit_effective": -0.011579523387350577,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_checkForComodification"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02267561666666667,
+        "candidate_cpu_mean_s": 0.022895433333333333,
+        "net_benefit": -0.009693966426491674,
+        "net_benefit_effective": -0.011531295546169495,
+        "queries": 4,
+        "sample": "TypeShapes\tTypeShapes_monomorphicCall"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02237555,
+        "candidate_cpu_mean_s": 0.02258603333333333,
+        "net_benefit": -0.009406845120380591,
+        "net_benefit_effective": -0.011206323600008172,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02237975,
+        "candidate_cpu_mean_s": 0.022589516666666667,
+        "net_benefit": -0.009373056744006014,
+        "net_benefit_effective": -0.011098031435310629,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_StrongReferenceKey_get"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02377795,
+        "candidate_cpu_mean_s": 0.02399075,
+        "net_benefit": -0.008949467889368234,
+        "net_benefit_effective": -0.010504777254787934,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_arithmeticOnly"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022155683333333336,
+        "candidate_cpu_mean_s": 0.022353833333333333,
+        "net_benefit": -0.008943529162193764,
+        "net_benefit_effective": -0.011074978039144812,
+        "queries": 2,
+        "sample": "CollectionShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022350416666666664,
+        "candidate_cpu_mean_s": 0.022543033333333334,
+        "net_benefit": -0.008618034712253753,
+        "net_benefit_effective": -0.010361351808104047,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_String_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02282451666666667,
+        "candidate_cpu_mean_s": 0.023003683333333334,
+        "net_benefit": -0.007849746361916266,
+        "net_benefit_effective": -0.009594950289231852,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_StringLatin1_charAt"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0229743,
+        "candidate_cpu_mean_s": 0.023153550000000002,
+        "net_benefit": -0.007802196367245218,
+        "net_benefit_effective": -0.009373137138016352,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022322066666666664,
+        "candidate_cpu_mean_s": 0.022486466666666666,
+        "net_benefit": -0.007364909461788249,
+        "net_benefit_effective": -0.00879282311663876,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_Enum_ordinal"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022841300000000002,
+        "candidate_cpu_mean_s": 0.022990116666666668,
+        "net_benefit": -0.006515245045888962,
+        "net_benefit_effective": -0.007972905159127963,
+        "queries": 3,
+        "sample": "NegativeShapes\tjava_lang_StringLatin1_charAt"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0224966,
+        "candidate_cpu_mean_s": 0.022639950000000002,
+        "net_benefit": -0.006372074002293893,
+        "net_benefit_effective": -0.007807904311641023,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_hasNext"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02433075,
+        "candidate_cpu_mean_s": 0.024479416666666667,
+        "net_benefit": -0.006110237730717838,
+        "net_benefit_effective": -0.007286420872491872,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_sumPrimitiveArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022290166666666666,
+        "candidate_cpu_mean_s": 0.022410866666666664,
+        "net_benefit": -0.005414943809302963,
+        "net_benefit_effective": -0.0066754542018860885,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023588233333333333,
+        "candidate_cpu_mean_s": 0.023708783333333334,
+        "net_benefit": -0.005110598928561805,
+        "net_benefit_effective": -0.006100327746075163,
+        "queries": 6,
+        "sample": "ArrayShapes\tArrayShapes_checkedArrayElement"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022777316666666665,
+        "candidate_cpu_mean_s": 0.022885,
+        "net_benefit": -0.0047276566818303944,
+        "net_benefit_effective": -0.005597773020310948,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_virtualInline"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022914633333333333,
+        "candidate_cpu_mean_s": 0.023018066666666667,
+        "net_benefit": -0.0045138550475023465,
+        "net_benefit_effective": -0.0054665506294548916,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022267866666666667,
+        "candidate_cpu_mean_s": 0.022301783333333332,
+        "net_benefit": -0.0015231215084217098,
+        "net_benefit_effective": -0.0018173342430423123,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022201483333333334,
+        "candidate_cpu_mean_s": 0.02222155,
+        "net_benefit": -0.0009038435119574917,
+        "net_benefit_effective": -0.0010746363507347922,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024533000000000003,
+        "candidate_cpu_mean_s": 0.024537883333333333,
+        "net_benefit": -0.00019905161754896206,
+        "net_benefit_effective": -0.00023430253014766755,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_inlineChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022232233333333334,
+        "candidate_cpu_mean_s": 0.02223425,
+        "net_benefit": -9.070913553443916e-05,
+        "net_benefit_effective": -0.00010965369369841937,
+        "queries": 2,
+        "sample": "NegativeShapes\tsun_invoke_util_Wrapper_basicTypeChar"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02230171666666667,
+        "candidate_cpu_mean_s": 0.02230345,
+        "net_benefit": -7.772196908595319e-05,
+        "net_benefit_effective": -9.446876308616403e-05,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_ptypes"
+      }
+    ],
+    "pass_local->cross_pass": [
+      {
+        "baseline_cpu_mean_s": 0.02279001666666667,
+        "candidate_cpu_mean_s": 0.0235751,
+        "net_benefit": -0.034448563369487095,
+        "net_benefit_effective": -0.04133536799929116,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_traverseList"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023615116666666665,
+        "candidate_cpu_mean_s": 0.024395049999999998,
+        "net_benefit": -0.03302686767727159,
+        "net_benefit_effective": -0.03899936412268512,
+        "queries": 7,
+        "sample": "ConstantShapes\tConstantShapes_foldWithTypeCheck"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0244291,
+        "candidate_cpu_mean_s": 0.0249645,
+        "net_benefit": -0.021916484847988693,
+        "net_benefit_effective": -0.025953628612009227,
+        "queries": 4,
+        "sample": "ArrayShapes\tArrayShapes_arrayLengthLoop"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023633416666666667,
+        "candidate_cpu_mean_s": 0.024131316666666666,
+        "net_benefit": -0.021067626700893127,
+        "net_benefit_effective": -0.025136414312459276,
+        "queries": 6,
+        "sample": "TypeShapes\tTypeShapes_instanceofChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022057716666666668,
+        "candidate_cpu_mean_s": 0.022486466666666666,
+        "net_benefit": -0.01943764200434761,
+        "net_benefit_effective": -0.023260271817411526,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_Enum_ordinal"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022702700000000003,
+        "candidate_cpu_mean_s": 0.0230977,
+        "net_benefit": -0.017398811595096486,
+        "net_benefit_effective": -0.021354006173740503,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addBoth"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02203335,
+        "candidate_cpu_mean_s": 0.022410866666666664,
+        "net_benefit": -0.017133875087840256,
+        "net_benefit_effective": -0.02117982796941642,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022304849999999998,
+        "candidate_cpu_mean_s": 0.022685566666666667,
+        "net_benefit": -0.01706878399391476,
+        "net_benefit_effective": -0.020366422640493376,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02229835,
+        "candidate_cpu_mean_s": 0.022639950000000002,
+        "net_benefit": -0.015319519157247052,
+        "net_benefit_effective": -0.018809174428112252,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_hasNext"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02243328333333333,
+        "candidate_cpu_mean_s": 0.022775283333333333,
+        "net_benefit": -0.015245204855582895,
+        "net_benefit_effective": -0.01921479651699043,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_mathOnly"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022818616666666666,
+        "candidate_cpu_mean_s": 0.023153550000000002,
+        "net_benefit": -0.01467807353206485,
+        "net_benefit_effective": -0.01765770103691544,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024151133333333335,
+        "candidate_cpu_mean_s": 0.024479416666666667,
+        "net_benefit": -0.013592874868536109,
+        "net_benefit_effective": -0.0162326584903143,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_sumPrimitiveArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022266766666666667,
+        "candidate_cpu_mean_s": 0.022515283333333334,
+        "net_benefit": -0.01116087802000898,
+        "net_benefit_effective": -0.01352304840400631,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024491033333333335,
+        "candidate_cpu_mean_s": 0.02476235,
+        "net_benefit": -0.011078204131852232,
+        "net_benefit_effective": -0.01312418271145499,
+        "queries": 3,
+        "sample": "ArrayShapes\tArrayShapes_sumArrayElements"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022295333333333334,
+        "candidate_cpu_mean_s": 0.022536233333333332,
+        "net_benefit": -0.010804951708877741,
+        "net_benefit_effective": -0.013043595967981991,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_returnType"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022002883333333334,
+        "candidate_cpu_mean_s": 0.022227183333333334,
+        "net_benefit": -0.01019411849810603,
+        "net_benefit_effective": -0.012295879537291832,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_util_Objects_requireNonNull"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02239468333333333,
+        "candidate_cpu_mean_s": 0.022618816666666666,
+        "net_benefit": -0.01000832786948691,
+        "net_benefit_effective": -0.011950792735325733,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_checkForComodification"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02259091666666667,
+        "candidate_cpu_mean_s": 0.02281445,
+        "net_benefit": -0.009894832362564498,
+        "net_benefit_effective": -0.011850097852545094,
+        "queries": 5,
+        "sample": "CollectionShapes\tCollectionShapes_visitBimorphic"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022368600000000002,
+        "candidate_cpu_mean_s": 0.02258603333333333,
+        "net_benefit": -0.009720471255837637,
+        "net_benefit_effective": -0.01158063302016088,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022213016666666665,
+        "candidate_cpu_mean_s": 0.0224056,
+        "net_benefit": -0.008669841481834029,
+        "net_benefit_effective": -0.010622054344838538,
+        "queries": 2,
+        "sample": "TypeShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02283936666666667,
+        "candidate_cpu_mean_s": 0.023018066666666667,
+        "net_benefit": -0.007824209953282368,
+        "net_benefit_effective": -0.009482185306769253,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0220627,
+        "candidate_cpu_mean_s": 0.02223425,
+        "net_benefit": -0.007775566907042286,
+        "net_benefit_effective": -0.00941459907692499,
+        "queries": 2,
+        "sample": "NegativeShapes\tsun_invoke_util_Wrapper_basicTypeChar"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022370116666666665,
+        "candidate_cpu_mean_s": 0.022543033333333334,
+        "net_benefit": -0.007729806207239287,
+        "net_benefit_effective": -0.00929179089305987,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_String_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022028016666666667,
+        "candidate_cpu_mean_s": 0.022190966666666666,
+        "net_benefit": -0.007397397707918918,
+        "net_benefit_effective": -0.008873089499587428,
+        "queries": 2,
+        "sample": "ConstantShapes\tConstantShapes_readMutableField"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022145833333333333,
+        "candidate_cpu_mean_s": 0.022294133333333334,
+        "net_benefit": -0.006696519285042335,
+        "net_benefit_effective": -0.008145517127739366,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022377516666666666,
+        "candidate_cpu_mean_s": 0.022507616666666667,
+        "net_benefit": -0.005813871214485511,
+        "net_benefit_effective": -0.006904048234585458,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_AbstractStringBuilder_getValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022127216666666668,
+        "candidate_cpu_mean_s": 0.022251983333333333,
+        "net_benefit": -0.005638606452234907,
+        "net_benefit_effective": -0.006730422570920824,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_LambdaForm$Name_index"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022564733333333333,
+        "candidate_cpu_mean_s": 0.02268055,
+        "net_benefit": -0.005132640610273853,
+        "net_benefit_effective": -0.006074279460561494,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_repeatedFieldLoads"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02433276666666667,
+        "candidate_cpu_mean_s": 0.024454066666666666,
+        "net_benefit": -0.004985047596998804,
+        "net_benefit_effective": -0.0059810362198666756,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_numericArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022189283333333334,
+        "candidate_cpu_mean_s": 0.02227893333333333,
+        "net_benefit": -0.004040238643729488,
+        "net_benefit_effective": -0.004814900680924827,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Circle_area"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022219700000000002,
+        "candidate_cpu_mean_s": 0.02230115,
+        "net_benefit": -0.0036656660530969276,
+        "net_benefit_effective": -0.004453447936486832,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_WeakReferenceKey_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022323983333333335,
+        "candidate_cpu_mean_s": 0.022395866666666667,
+        "net_benefit": -0.00322000479305129,
+        "net_benefit_effective": -0.003877415068607837,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022819133333333335,
+        "candidate_cpu_mean_s": 0.022885,
+        "net_benefit": -0.0028864666201169342,
+        "net_benefit_effective": -0.0034165630689588777,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_virtualInline"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022727733333333333,
+        "candidate_cpu_mean_s": 0.022776066666666667,
+        "net_benefit": -0.002126623567095809,
+        "net_benefit_effective": -0.002517789485016353,
+        "queries": 5,
+        "sample": "TypeShapes\tTypeShapes_polymorphicCall"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022547033333333334,
+        "candidate_cpu_mean_s": 0.022589516666666667,
+        "net_benefit": -0.0018842094525368669,
+        "net_benefit_effective": -0.0022279287342497067,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_StrongReferenceKey_get"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022478849999999998,
+        "candidate_cpu_mean_s": 0.022520666666666668,
+        "net_benefit": -0.0018602671696581474,
+        "net_benefit_effective": -0.0022538607133841815,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_twoFieldLoads"
+      }
+    ]
+  },
+  "net_benefit_per_sample": {
+    "original->cross_pass": [
+      {
+        "baseline_cpu_mean_s": 0.023031066666666666,
+        "candidate_cpu_mean_s": 0.0235751,
+        "net_benefit": -0.023621716753602584,
+        "net_benefit_effective": -0.028284883418656426,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_traverseList"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02216058333333333,
+        "candidate_cpu_mean_s": 0.022536233333333332,
+        "net_benefit": -0.016951268581227197,
+        "net_benefit_effective": -0.020489161807017098,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_returnType"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022723,
+        "candidate_cpu_mean_s": 0.0230977,
+        "net_benefit": -0.01648990010121887,
+        "net_benefit_effective": -0.02023436656226374,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addBoth"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023802349999999996,
+        "candidate_cpu_mean_s": 0.024131316666666666,
+        "net_benefit": -0.013820764196252444,
+        "net_benefit_effective": -0.016467394342284614,
+        "queries": 6,
+        "sample": "TypeShapes\tTypeShapes_instanceofChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0221002,
+        "candidate_cpu_mean_s": 0.0224056,
+        "net_benefit": -0.0138188794671541,
+        "net_benefit_effective": -0.016949999167485075,
+        "queries": 2,
+        "sample": "TypeShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02209953333333333,
+        "candidate_cpu_mean_s": 0.022395866666666667,
+        "net_benefit": -0.013409031261595317,
+        "net_benefit_effective": -0.016180228452449263,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022010416666666664,
+        "candidate_cpu_mean_s": 0.02230115,
+        "net_benefit": -0.013208897302413591,
+        "net_benefit_effective": -0.01608045759797938,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_WeakReferenceKey_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022411416666666666,
+        "candidate_cpu_mean_s": 0.022685566666666667,
+        "net_benefit": -0.012232604662058444,
+        "net_benefit_effective": -0.014582511447302382,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022243266666666667,
+        "candidate_cpu_mean_s": 0.022515283333333334,
+        "net_benefit": -0.012229168976978677,
+        "net_benefit_effective": -0.01482075432290908,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022245533333333335,
+        "candidate_cpu_mean_s": 0.022507616666666667,
+        "net_benefit": -0.011781391320504708,
+        "net_benefit_effective": -0.01400613865231115,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_AbstractStringBuilder_getValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02226491666666667,
+        "candidate_cpu_mean_s": 0.022520666666666668,
+        "net_benefit": -0.011486681213718208,
+        "net_benefit_effective": -0.013945372671795297,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_twoFieldLoads"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024176566666666666,
+        "candidate_cpu_mean_s": 0.024454066666666666,
+        "net_benefit": -0.011478056575444207,
+        "net_benefit_effective": -0.013789116784295175,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_numericArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024124016666666668,
+        "candidate_cpu_mean_s": 0.024395049999999998,
+        "net_benefit": -0.011235000252169058,
+        "net_benefit_effective": -0.0132162922375616,
+        "queries": 7,
+        "sample": "ConstantShapes\tConstantShapes_foldWithTypeCheck"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022127266666666666,
+        "candidate_cpu_mean_s": 0.022368600000000002,
+        "net_benefit": -0.010906603918544144,
+        "net_benefit_effective": -0.013072060637028038,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Square_area"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022062833333333334,
+        "candidate_cpu_mean_s": 0.022294133333333334,
+        "net_benefit": -0.010483694297347634,
+        "net_benefit_effective": -0.012762552878425426,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022401566666666664,
+        "candidate_cpu_mean_s": 0.022618816666666666,
+        "net_benefit": -0.009697982432776309,
+        "net_benefit_effective": -0.011579523387350577,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_checkForComodification"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02267561666666667,
+        "candidate_cpu_mean_s": 0.022895433333333333,
+        "net_benefit": -0.009693966426491674,
+        "net_benefit_effective": -0.011531295546169495,
+        "queries": 4,
+        "sample": "TypeShapes\tTypeShapes_monomorphicCall"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02237555,
+        "candidate_cpu_mean_s": 0.02258603333333333,
+        "net_benefit": -0.009406845120380591,
+        "net_benefit_effective": -0.011206323600008172,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02237975,
+        "candidate_cpu_mean_s": 0.022589516666666667,
+        "net_benefit": -0.009373056744006014,
+        "net_benefit_effective": -0.011098031435310629,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_StrongReferenceKey_get"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02377795,
+        "candidate_cpu_mean_s": 0.02399075,
+        "net_benefit": -0.008949467889368234,
+        "net_benefit_effective": -0.010504777254787934,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_arithmeticOnly"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022155683333333336,
+        "candidate_cpu_mean_s": 0.022353833333333333,
+        "net_benefit": -0.008943529162193764,
+        "net_benefit_effective": -0.011074978039144812,
+        "queries": 2,
+        "sample": "CollectionShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022350416666666664,
+        "candidate_cpu_mean_s": 0.022543033333333334,
+        "net_benefit": -0.008618034712253753,
+        "net_benefit_effective": -0.010361351808104047,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_String_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02282451666666667,
+        "candidate_cpu_mean_s": 0.023003683333333334,
+        "net_benefit": -0.007849746361916266,
+        "net_benefit_effective": -0.009594950289231852,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_StringLatin1_charAt"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0229743,
+        "candidate_cpu_mean_s": 0.023153550000000002,
+        "net_benefit": -0.007802196367245218,
+        "net_benefit_effective": -0.009373137138016352,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022322066666666664,
+        "candidate_cpu_mean_s": 0.022486466666666666,
+        "net_benefit": -0.007364909461788249,
+        "net_benefit_effective": -0.00879282311663876,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_Enum_ordinal"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022841300000000002,
+        "candidate_cpu_mean_s": 0.022990116666666668,
+        "net_benefit": -0.006515245045888962,
+        "net_benefit_effective": -0.007972905159127963,
+        "queries": 3,
+        "sample": "NegativeShapes\tjava_lang_StringLatin1_charAt"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0224966,
+        "candidate_cpu_mean_s": 0.022639950000000002,
+        "net_benefit": -0.006372074002293893,
+        "net_benefit_effective": -0.007807904311641023,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_hasNext"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02433075,
+        "candidate_cpu_mean_s": 0.024479416666666667,
+        "net_benefit": -0.006110237730717838,
+        "net_benefit_effective": -0.007286420872491872,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_sumPrimitiveArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022290166666666666,
+        "candidate_cpu_mean_s": 0.022410866666666664,
+        "net_benefit": -0.005414943809302963,
+        "net_benefit_effective": -0.0066754542018860885,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023588233333333333,
+        "candidate_cpu_mean_s": 0.023708783333333334,
+        "net_benefit": -0.005110598928561805,
+        "net_benefit_effective": -0.006100327746075163,
+        "queries": 6,
+        "sample": "ArrayShapes\tArrayShapes_checkedArrayElement"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022777316666666665,
+        "candidate_cpu_mean_s": 0.022885,
+        "net_benefit": -0.0047276566818303944,
+        "net_benefit_effective": -0.005597773020310948,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_virtualInline"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022914633333333333,
+        "candidate_cpu_mean_s": 0.023018066666666667,
+        "net_benefit": -0.0045138550475023465,
+        "net_benefit_effective": -0.0054665506294548916,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022267866666666667,
+        "candidate_cpu_mean_s": 0.022301783333333332,
+        "net_benefit": -0.0015231215084217098,
+        "net_benefit_effective": -0.0018173342430423123,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022201483333333334,
+        "candidate_cpu_mean_s": 0.02222155,
+        "net_benefit": -0.0009038435119574917,
+        "net_benefit_effective": -0.0010746363507347922,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024533000000000003,
+        "candidate_cpu_mean_s": 0.024537883333333333,
+        "net_benefit": -0.00019905161754896206,
+        "net_benefit_effective": -0.00023430253014766755,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_inlineChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022232233333333334,
+        "candidate_cpu_mean_s": 0.02223425,
+        "net_benefit": -9.070913553443916e-05,
+        "net_benefit_effective": -0.00010965369369841937,
+        "queries": 2,
+        "sample": "NegativeShapes\tsun_invoke_util_Wrapper_basicTypeChar"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02230171666666667,
+        "candidate_cpu_mean_s": 0.02230345,
+        "net_benefit": -7.772196908595319e-05,
+        "net_benefit_effective": -9.446876308616403e-05,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_ptypes"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022227566666666664,
+        "candidate_cpu_mean_s": 0.022227183333333334,
+        "net_benefit": 1.7245852372282933e-05,
+        "net_benefit_effective": 2.075823515301778e-05,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_util_Objects_requireNonNull"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02276025,
+        "candidate_cpu_mean_s": 0.022739266666666664,
+        "net_benefit": 0.0009219289477635506,
+        "net_benefit_effective": 0.0010929815651601338,
+        "queries": 2,
+        "sample": "CollectionShapes\tCollectionShapes$Node_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022299866666666668,
+        "candidate_cpu_mean_s": 0.02227893333333333,
+        "net_benefit": 0.0009387201119290811,
+        "net_benefit_effective": 0.0011176445463215723,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Circle_area"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02222215,
+        "candidate_cpu_mean_s": 0.022190966666666666,
+        "net_benefit": 0.0014032545605773272,
+        "net_benefit_effective": 0.0016802587113466938,
+        "queries": 2,
+        "sample": "ConstantShapes\tConstantShapes_readMutableField"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022790316666666664,
+        "candidate_cpu_mean_s": 0.02275655,
+        "net_benefit": 0.0014816234087722258,
+        "net_benefit_effective": 0.001768460819340345,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Base_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022280166666666667,
+        "candidate_cpu_mean_s": 0.022242166666666667,
+        "net_benefit": 0.0017055527711492546,
+        "net_benefit_effective": 0.0020467337540506225,
+        "queries": 3,
+        "sample": "NegativeShapes\tjava_lang_String_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022862283333333334,
+        "candidate_cpu_mean_s": 0.02282225,
+        "net_benefit": 0.0017510645262175384,
+        "net_benefit_effective": 0.002085310196403012,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_nestedInline"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0228288,
+        "candidate_cpu_mean_s": 0.022776066666666667,
+        "net_benefit": 0.0023099476684421694,
+        "net_benefit_effective": 0.002732608552961313,
+        "queries": 5,
+        "sample": "TypeShapes\tTypeShapes_polymorphicCall"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022177783333333333,
+        "candidate_cpu_mean_s": 0.02211456666666667,
+        "net_benefit": 0.002850450187762865,
+        "net_benefit_effective": 0.0034435893222400926,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_AbstractStringBuilder_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0234746,
+        "candidate_cpu_mean_s": 0.02336075,
+        "net_benefit": 0.004849922895384884,
+        "net_benefit_effective": 0.005714328735770602,
+        "queries": 8,
+        "sample": "CollectionShapes\tjava_util_HashMap_hash"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0224283,
+        "candidate_cpu_mean_s": 0.022314533333333334,
+        "net_benefit": 0.005072460537208223,
+        "net_benefit_effective": 0.006430656122877743,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MemberName_getDeclaringClass"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02289745,
+        "candidate_cpu_mean_s": 0.022775283333333333,
+        "net_benefit": 0.005335383052115672,
+        "net_benefit_effective": 0.006689317260719974,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_mathOnly"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022484233333333332,
+        "candidate_cpu_mean_s": 0.022360283333333335,
+        "net_benefit": 0.005512751898737789,
+        "net_benefit_effective": 0.00656107080345536,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_LambdaForm$BasicType_basicTypeClass"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024899866666666666,
+        "candidate_cpu_mean_s": 0.02476235,
+        "net_benefit": 0.005522787270614615,
+        "net_benefit_effective": 0.006522983417028283,
+        "queries": 3,
+        "sample": "ArrayShapes\tArrayShapes_sumArrayElements"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02237685,
+        "candidate_cpu_mean_s": 0.022251983333333333,
+        "net_benefit": 0.005580171769782982,
+        "net_benefit_effective": 0.006646316093896543,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_LambdaForm$Name_index"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0223311,
+        "candidate_cpu_mean_s": 0.022190666666666668,
+        "net_benefit": 0.006288688570349477,
+        "net_benefit_effective": 0.007580705817152533,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodTypeForm_parameterSlotCount"
+      },
+      {
+        "baseline_cpu_mean_s": 0.025146500000000002,
+        "candidate_cpu_mean_s": 0.0249645,
+        "net_benefit": 0.007237587735867912,
+        "net_benefit_effective": 0.008525987866863538,
+        "queries": 4,
+        "sample": "ArrayShapes\tArrayShapes_arrayLengthLoop"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023879516666666666,
+        "candidate_cpu_mean_s": 0.023650216666666668,
+        "net_benefit": 0.009602371907304064,
+        "net_benefit_effective": 0.011506702206580455,
+        "queries": 5,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_next"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0231146,
+        "candidate_cpu_mean_s": 0.022890416666666667,
+        "net_benefit": 0.00969877624243265,
+        "net_benefit_effective": 0.011573978467977142,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022915433333333336,
+        "candidate_cpu_mean_s": 0.022689833333333336,
+        "net_benefit": 0.009844893470630445,
+        "net_benefit_effective": 0.01198569791720161,
+        "queries": 2,
+        "sample": "ConstantShapes\tConstantShapes_readInstanceFinals"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022299933333333334,
+        "candidate_cpu_mean_s": 0.022021333333333334,
+        "net_benefit": 0.012493310891811382,
+        "net_benefit_effective": 0.01485277836519927,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023916483333333335,
+        "candidate_cpu_mean_s": 0.023603533333333333,
+        "net_benefit": 0.013085117725641249,
+        "net_benefit_effective": 0.015916906913601925,
+        "queries": 6,
+        "sample": "TypeShapes\tTypeShapes_guardedFieldLoad"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02655805,
+        "candidate_cpu_mean_s": 0.026162733333333334,
+        "net_benefit": 0.014885003479798598,
+        "net_benefit_effective": 0.01780461092807817,
+        "queries": 3,
+        "sample": "ArrayShapes\tArrayShapes_sumNestedArrays"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02303165,
+        "candidate_cpu_mean_s": 0.02268055,
+        "net_benefit": 0.015244239991489938,
+        "net_benefit_effective": 0.017974111341198418,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_repeatedFieldLoads"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022544683333333333,
+        "candidate_cpu_mean_s": 0.022149699999999998,
+        "net_benefit": 0.017520021350192705,
+        "net_benefit_effective": 0.02098666272301475,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_addOther"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022676416666666664,
+        "candidate_cpu_mean_s": 0.0221962,
+        "net_benefit": 0.021176920221816276,
+        "net_benefit_effective": 0.02507276959557969,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_form"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023364933333333334,
+        "candidate_cpu_mean_s": 0.02281445,
+        "net_benefit": 0.023560235566689736,
+        "net_benefit_effective": 0.028032346386068774,
+        "queries": 5,
+        "sample": "CollectionShapes\tCollectionShapes_visitBimorphic"
+      }
+    ],
+    "pass_local->cross_pass": [
+      {
+        "baseline_cpu_mean_s": 0.02279001666666667,
+        "candidate_cpu_mean_s": 0.0235751,
+        "net_benefit": -0.034448563369487095,
+        "net_benefit_effective": -0.04133536799929116,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_traverseList"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023615116666666665,
+        "candidate_cpu_mean_s": 0.024395049999999998,
+        "net_benefit": -0.03302686767727159,
+        "net_benefit_effective": -0.03899936412268512,
+        "queries": 7,
+        "sample": "ConstantShapes\tConstantShapes_foldWithTypeCheck"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0244291,
+        "candidate_cpu_mean_s": 0.0249645,
+        "net_benefit": -0.021916484847988693,
+        "net_benefit_effective": -0.025953628612009227,
+        "queries": 4,
+        "sample": "ArrayShapes\tArrayShapes_arrayLengthLoop"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023633416666666667,
+        "candidate_cpu_mean_s": 0.024131316666666666,
+        "net_benefit": -0.021067626700893127,
+        "net_benefit_effective": -0.025136414312459276,
+        "queries": 6,
+        "sample": "TypeShapes\tTypeShapes_instanceofChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022057716666666668,
+        "candidate_cpu_mean_s": 0.022486466666666666,
+        "net_benefit": -0.01943764200434761,
+        "net_benefit_effective": -0.023260271817411526,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_Enum_ordinal"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022702700000000003,
+        "candidate_cpu_mean_s": 0.0230977,
+        "net_benefit": -0.017398811595096486,
+        "net_benefit_effective": -0.021354006173740503,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addBoth"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02203335,
+        "candidate_cpu_mean_s": 0.022410866666666664,
+        "net_benefit": -0.017133875087840256,
+        "net_benefit_effective": -0.02117982796941642,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022304849999999998,
+        "candidate_cpu_mean_s": 0.022685566666666667,
+        "net_benefit": -0.01706878399391476,
+        "net_benefit_effective": -0.020366422640493376,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02229835,
+        "candidate_cpu_mean_s": 0.022639950000000002,
+        "net_benefit": -0.015319519157247052,
+        "net_benefit_effective": -0.018809174428112252,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_hasNext"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02243328333333333,
+        "candidate_cpu_mean_s": 0.022775283333333333,
+        "net_benefit": -0.015245204855582895,
+        "net_benefit_effective": -0.01921479651699043,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_mathOnly"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022818616666666666,
+        "candidate_cpu_mean_s": 0.023153550000000002,
+        "net_benefit": -0.01467807353206485,
+        "net_benefit_effective": -0.01765770103691544,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024151133333333335,
+        "candidate_cpu_mean_s": 0.024479416666666667,
+        "net_benefit": -0.013592874868536109,
+        "net_benefit_effective": -0.0162326584903143,
+        "queries": 2,
+        "sample": "ArrayShapes\tArrayShapes_sumPrimitiveArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022266766666666667,
+        "candidate_cpu_mean_s": 0.022515283333333334,
+        "net_benefit": -0.01116087802000898,
+        "net_benefit_effective": -0.01352304840400631,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024491033333333335,
+        "candidate_cpu_mean_s": 0.02476235,
+        "net_benefit": -0.011078204131852232,
+        "net_benefit_effective": -0.01312418271145499,
+        "queries": 3,
+        "sample": "ArrayShapes\tArrayShapes_sumArrayElements"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022295333333333334,
+        "candidate_cpu_mean_s": 0.022536233333333332,
+        "net_benefit": -0.010804951708877741,
+        "net_benefit_effective": -0.013043595967981991,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_returnType"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022002883333333334,
+        "candidate_cpu_mean_s": 0.022227183333333334,
+        "net_benefit": -0.01019411849810603,
+        "net_benefit_effective": -0.012295879537291832,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_util_Objects_requireNonNull"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02239468333333333,
+        "candidate_cpu_mean_s": 0.022618816666666666,
+        "net_benefit": -0.01000832786948691,
+        "net_benefit_effective": -0.011950792735325733,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_checkForComodification"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02259091666666667,
+        "candidate_cpu_mean_s": 0.02281445,
+        "net_benefit": -0.009894832362564498,
+        "net_benefit_effective": -0.011850097852545094,
+        "queries": 5,
+        "sample": "CollectionShapes\tCollectionShapes_visitBimorphic"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022368600000000002,
+        "candidate_cpu_mean_s": 0.02258603333333333,
+        "net_benefit": -0.009720471255837637,
+        "net_benefit_effective": -0.01158063302016088,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_String_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022213016666666665,
+        "candidate_cpu_mean_s": 0.0224056,
+        "net_benefit": -0.008669841481834029,
+        "net_benefit_effective": -0.010622054344838538,
+        "queries": 2,
+        "sample": "TypeShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02283936666666667,
+        "candidate_cpu_mean_s": 0.023018066666666667,
+        "net_benefit": -0.007824209953282368,
+        "net_benefit_effective": -0.009482185306769253,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0220627,
+        "candidate_cpu_mean_s": 0.02223425,
+        "net_benefit": -0.007775566907042286,
+        "net_benefit_effective": -0.00941459907692499,
+        "queries": 2,
+        "sample": "NegativeShapes\tsun_invoke_util_Wrapper_basicTypeChar"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022370116666666665,
+        "candidate_cpu_mean_s": 0.022543033333333334,
+        "net_benefit": -0.007729806207239287,
+        "net_benefit_effective": -0.00929179089305987,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_String_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022028016666666667,
+        "candidate_cpu_mean_s": 0.022190966666666666,
+        "net_benefit": -0.007397397707918918,
+        "net_benefit_effective": -0.008873089499587428,
+        "queries": 2,
+        "sample": "ConstantShapes\tConstantShapes_readMutableField"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022145833333333333,
+        "candidate_cpu_mean_s": 0.022294133333333334,
+        "net_benefit": -0.006696519285042335,
+        "net_benefit_effective": -0.008145517127739366,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_addValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022377516666666666,
+        "candidate_cpu_mean_s": 0.022507616666666667,
+        "net_benefit": -0.005813871214485511,
+        "net_benefit_effective": -0.006904048234585458,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_AbstractStringBuilder_getValue"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022127216666666668,
+        "candidate_cpu_mean_s": 0.022251983333333333,
+        "net_benefit": -0.005638606452234907,
+        "net_benefit_effective": -0.006730422570920824,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_LambdaForm$Name_index"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022564733333333333,
+        "candidate_cpu_mean_s": 0.02268055,
+        "net_benefit": -0.005132640610273853,
+        "net_benefit_effective": -0.006074279460561494,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_repeatedFieldLoads"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02433276666666667,
+        "candidate_cpu_mean_s": 0.024454066666666666,
+        "net_benefit": -0.004985047596998804,
+        "net_benefit_effective": -0.0059810362198666756,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_numericArray"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022189283333333334,
+        "candidate_cpu_mean_s": 0.02227893333333333,
+        "net_benefit": -0.004040238643729488,
+        "net_benefit_effective": -0.004814900680924827,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Circle_area"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022219700000000002,
+        "candidate_cpu_mean_s": 0.02230115,
+        "net_benefit": -0.0036656660530969276,
+        "net_benefit_effective": -0.004453447936486832,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_WeakReferenceKey_hashCode"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022323983333333335,
+        "candidate_cpu_mean_s": 0.022395866666666667,
+        "net_benefit": -0.00322000479305129,
+        "net_benefit_effective": -0.003877415068607837,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022819133333333335,
+        "candidate_cpu_mean_s": 0.022885,
+        "net_benefit": -0.0028864666201169342,
+        "net_benefit_effective": -0.0034165630689588777,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_virtualInline"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022727733333333333,
+        "candidate_cpu_mean_s": 0.022776066666666667,
+        "net_benefit": -0.002126623567095809,
+        "net_benefit_effective": -0.002517789485016353,
+        "queries": 5,
+        "sample": "TypeShapes\tTypeShapes_polymorphicCall"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022547033333333334,
+        "candidate_cpu_mean_s": 0.022589516666666667,
+        "net_benefit": -0.0018842094525368669,
+        "net_benefit_effective": -0.0022279287342497067,
+        "queries": 2,
+        "sample": "NegativeShapes\tjdk_internal_util_StrongReferenceKey_get"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022478849999999998,
+        "candidate_cpu_mean_s": 0.022520666666666668,
+        "net_benefit": -0.0018602671696581474,
+        "net_benefit_effective": -0.0022538607133841815,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes_twoFieldLoads"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02236193333333333,
+        "candidate_cpu_mean_s": 0.022353833333333333,
+        "net_benefit": 0.00036222270584818084,
+        "net_benefit_effective": 0.00044756491533082254,
+        "queries": 2,
+        "sample": "CollectionShapes\tjdk_internal_util_Preconditions_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022031716666666666,
+        "candidate_cpu_mean_s": 0.022021333333333334,
+        "net_benefit": 0.00047129025352077303,
+        "net_benefit_effective": 0.0005615886016443472,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_coder"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024004516666666666,
+        "candidate_cpu_mean_s": 0.02399075,
+        "net_benefit": 0.0005735031809984692,
+        "net_benefit_effective": 0.0006720687104823098,
+        "queries": 2,
+        "sample": "NegativeShapes\tNegativeShapes_arithmeticOnly"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02271291666666667,
+        "candidate_cpu_mean_s": 0.022689833333333336,
+        "net_benefit": 0.0010163086349543882,
+        "net_benefit_effective": 0.0012397119571784243,
+        "queries": 2,
+        "sample": "ConstantShapes\tConstantShapes_readInstanceFinals"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0227727,
+        "candidate_cpu_mean_s": 0.022739266666666664,
+        "net_benefit": 0.0014681321640971357,
+        "net_benefit_effective": 0.0017403495621363119,
+        "queries": 2,
+        "sample": "CollectionShapes\tCollectionShapes$Node_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.024578649999999997,
+        "candidate_cpu_mean_s": 0.024537883333333333,
+        "net_benefit": 0.001658621066114807,
+        "net_benefit_effective": 0.0019517114977828376,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_inlineChain"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022154883333333333,
+        "candidate_cpu_mean_s": 0.02211456666666667,
+        "net_benefit": 0.0018197643408939257,
+        "net_benefit_effective": 0.0021989050016679723,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_AbstractStringBuilder_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02304685,
+        "candidate_cpu_mean_s": 0.022990116666666668,
+        "net_benefit": 0.002461652387781066,
+        "net_benefit_effective": 0.0030064005242653735,
+        "queries": 3,
+        "sample": "NegativeShapes\tjava_lang_StringLatin1_charAt"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0222608,
+        "candidate_cpu_mean_s": 0.0221962,
+        "net_benefit": 0.002901962193631924,
+        "net_benefit_effective": 0.003447668554167671,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_form"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0224344,
+        "candidate_cpu_mean_s": 0.022368600000000002,
+        "net_benefit": 0.002932995756516732,
+        "net_benefit_effective": 0.003505799487450001,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Square_area"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0223836,
+        "candidate_cpu_mean_s": 0.02230345,
+        "net_benefit": 0.003580746618059738,
+        "net_benefit_effective": 0.004348864086467286,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodType_ptypes"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022977933333333332,
+        "candidate_cpu_mean_s": 0.022890416666666667,
+        "net_benefit": 0.003808726633378612,
+        "net_benefit_effective": 0.004550354600095452,
+        "queries": 2,
+        "sample": "ConstantShapes\tjava_lang_String_length"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022925333333333336,
+        "candidate_cpu_mean_s": 0.02282225,
+        "net_benefit": 0.004496481330696911,
+        "net_benefit_effective": 0.005351966425821142,
+        "queries": 2,
+        "sample": "InlineShapes\tInlineShapes_nestedInline"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022346983333333334,
+        "candidate_cpu_mean_s": 0.022242166666666667,
+        "net_benefit": 0.004690416827327182,
+        "net_benefit_effective": 0.005625329277204716,
+        "queries": 3,
+        "sample": "NegativeShapes\tjava_lang_String_checkIndex"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02247881666666667,
+        "candidate_cpu_mean_s": 0.022360283333333335,
+        "net_benefit": 0.005273112686091874,
+        "net_benefit_effective": 0.006276148781437008,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_LambdaForm$BasicType_basicTypeClass"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023850866666666668,
+        "candidate_cpu_mean_s": 0.023708783333333334,
+        "net_benefit": 0.005957155994331442,
+        "net_benefit_effective": 0.007095699132368738,
+        "queries": 6,
+        "sample": "ArrayShapes\tArrayShapes_checkedArrayElement"
+      },
+      {
+        "baseline_cpu_mean_s": 0.026329383333333334,
+        "candidate_cpu_mean_s": 0.026162733333333334,
+        "net_benefit": 0.006329430427222338,
+        "net_benefit_effective": 0.007583830566348704,
+        "queries": 3,
+        "sample": "ArrayShapes\tArrayShapes_sumNestedArrays"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0223432,
+        "candidate_cpu_mean_s": 0.022190666666666668,
+        "net_benefit": 0.0068268347118287664,
+        "net_benefit_effective": 0.008228499090117691,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MethodTypeForm_parameterSlotCount"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023060099999999997,
+        "candidate_cpu_mean_s": 0.022895433333333333,
+        "net_benefit": 0.007140761170448706,
+        "net_benefit_effective": 0.008467415021605418,
+        "queries": 4,
+        "sample": "TypeShapes\tTypeShapes_monomorphicCall"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022922516666666667,
+        "candidate_cpu_mean_s": 0.02275655,
+        "net_benefit": 0.007240333558487966,
+        "net_benefit_effective": 0.008632400020458508,
+        "queries": 2,
+        "sample": "TypeShapes\tTypeShapes$Base_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.023790366666666667,
+        "candidate_cpu_mean_s": 0.023603533333333333,
+        "net_benefit": 0.007853318780290608,
+        "net_benefit_effective": 0.009563850861941225,
+        "queries": 6,
+        "sample": "TypeShapes\tTypeShapes_guardedFieldLoad"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022498983333333333,
+        "candidate_cpu_mean_s": 0.022314533333333334,
+        "net_benefit": 0.00819814821262288,
+        "net_benefit_effective": 0.010384538513435682,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_invoke_MemberName_getDeclaringClass"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02236036666666667,
+        "candidate_cpu_mean_s": 0.022149699999999998,
+        "net_benefit": 0.009421431670023517,
+        "net_benefit_effective": 0.011304063202591474,
+        "queries": 3,
+        "sample": "InlineShapes\tInlineShapes_addOther"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02387895,
+        "candidate_cpu_mean_s": 0.023650216666666668,
+        "net_benefit": 0.009578868975952948,
+        "net_benefit_effective": 0.011478592224767659,
+        "queries": 5,
+        "sample": "CollectionShapes\tjava_util_ArrayList$Itr_next"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022569600000000002,
+        "candidate_cpu_mean_s": 0.022301783333333332,
+        "net_benefit": 0.011866256675646447,
+        "net_benefit_effective": 0.014121925411907599,
+        "queries": 2,
+        "sample": "NegativeShapes\tjava_lang_String_isLatin1"
+      },
+      {
+        "baseline_cpu_mean_s": 0.022665483333333333,
+        "candidate_cpu_mean_s": 0.02222155,
+        "net_benefit": 0.01958631663858923,
+        "net_benefit_effective": 0.023197665253753885,
+        "queries": 2,
+        "sample": "CollectionShapes\tjava_lang_Object_<init>"
+      },
+      {
+        "baseline_cpu_mean_s": 0.02346415,
+        "candidate_cpu_mean_s": 0.023003683333333334,
+        "net_benefit": 0.01962426368168746,
+        "net_benefit_effective": 0.02384274900993233,
+        "queries": 3,
+        "sample": "CollectionShapes\tjava_lang_StringLatin1_charAt"
+      },
+      {
+        "baseline_cpu_mean_s": 0.0238366,
+        "candidate_cpu_mean_s": 0.02336075,
+        "net_benefit": 0.019962998078585037,
+        "net_benefit_effective": 0.023457526521276195,
+        "queries": 8,
+        "sample": "CollectionShapes\tjava_util_HashMap_hash"
+      }
+    ]
+  },
+  "positive_samples_count": {
+    "original->cross_pass": 27,
+    "pass_local->cross_pass": 28
+  },
+  "zero_query_samples": []
+}

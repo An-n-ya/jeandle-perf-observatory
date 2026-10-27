@@ -1,0 +1,162 @@
+{
+  "absolute_per_corpus_round_ns": {
+    "cross_pass": {
+      "jta_base": 66688.8,
+      "jta_facts_lvi": 300099.6,
+      "jta_hook": 600199.2,
+      "jta_maintenance": 166722.0,
+      "jta_other": 400132.8,
+      "pipeline_other": 1185260042.4,
+      "setup": 61753828.8,
+      "total_ns": 1248614402.4,
+      "vm_callback": 66688.8
+    },
+    "original": {
+      "jta_base": 100033.2,
+      "jta_facts_lvi": 500166.0,
+      "jta_hook": 533510.4,
+      "jta_maintenance": 200066.4,
+      "jta_other": 100033.2,
+      "pipeline_other": 1182392424.0,
+      "setup": 60086608.8,
+      "total_ns": 1243912842.0,
+      "vm_callback": 0.0
+    },
+    "pass_local": {
+      "jta_base": 133377.6,
+      "jta_facts_lvi": 100033.2,
+      "jta_hook": 0.0,
+      "jta_maintenance": 1000332.0,
+      "jta_other": 400132.8,
+      "pipeline_other": 1183426100.4,
+      "setup": 61420384.8,
+      "total_ns": 1246480360.8,
+      "vm_callback": 0.0
+    }
+  },
+  "cost_decomposition_svg": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/cost_decomposition.svg",
+  "counter_subsystem_per_corpus_round_ns": {
+    "cross_pass": {
+      "invalidation_ns": 10326.1,
+      "query_ns": 662283.1999999998,
+      "subsystem_ns": 672609.2999999998
+    },
+    "original": {
+      "invalidation_ns": 1454.6999999999998,
+      "query_ns": 610981.5,
+      "subsystem_ns": 612436.2
+    },
+    "pass_local": {
+      "invalidation_ns": 335115.99999999994,
+      "query_ns": 753868.0,
+      "subsystem_ns": 1088984.0
+    }
+  },
+  "cpu": 2,
+  "diff_hf_cross_pass_vs_original": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/diff_hf_cross_pass_vs_original.svg",
+  "diff_hf_cross_pass_vs_pass_local": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/diff_hf_cross_pass_vs_pass_local.svg",
+  "frequency": 2999,
+  "modes": {
+    "cross_pass": {
+      "cost_classes_ns": {
+        "jta_base": 666888,
+        "jta_facts_lvi": 3000996,
+        "jta_hook": 6001992,
+        "jta_maintenance": 1667220,
+        "jta_other": 4001328,
+        "pipeline_other": 11852600424,
+        "setup": 617538288,
+        "vm_callback": 666888
+      },
+      "flame_graph": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/flame_hf_cross_pass.svg",
+      "folded": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/flame_hf_cross_pass.folded",
+      "optimizer_cpu_ns": 12486144024,
+      "optimizer_samples": 37446,
+      "perf_data": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/perf_hf_cross_pass.perf.data",
+      "perf_script": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/perf_hf_cross_pass.perf.script"
+    },
+    "original": {
+      "cost_classes_ns": {
+        "jta_base": 1000332,
+        "jta_facts_lvi": 5001660,
+        "jta_hook": 5335104,
+        "jta_maintenance": 2000664,
+        "jta_other": 1000332,
+        "pipeline_other": 11823924240,
+        "setup": 600866088
+      },
+      "flame_graph": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/flame_hf_original.svg",
+      "folded": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/flame_hf_original.folded",
+      "optimizer_cpu_ns": 12439128420,
+      "optimizer_samples": 37305,
+      "perf_data": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/perf_hf_original.perf.data",
+      "perf_script": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/perf_hf_original.perf.script"
+    },
+    "pass_local": {
+      "cost_classes_ns": {
+        "jta_base": 1333776,
+        "jta_facts_lvi": 1000332,
+        "jta_maintenance": 10003320,
+        "jta_other": 4001328,
+        "pipeline_other": 11834261004,
+        "setup": 614203848
+      },
+      "flame_graph": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/flame_hf_pass_local.svg",
+      "folded": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/flame_hf_pass_local.folded",
+      "optimizer_cpu_ns": 12464803608,
+      "optimizer_samples": 37382,
+      "perf_data": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/perf_hf_pass_local.perf.data",
+      "perf_script": "/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/profiles/perf_hf_pass_local.perf.script"
+    }
+  },
+  "repeat": 10,
+  "targeted_profile": {
+    "cross_pass": {
+      "classes_ns": {
+        "jta_base": 1500150,
+        "jta_facts_lvi": 3200320,
+        "jta_hook": 3600360,
+        "jta_maintenance": 600060,
+        "jta_other": 3000300,
+        "pipeline_other": 6208920830,
+        "setup": 342734270,
+        "vm_callback": 200020
+      },
+      "jta_ns": 12101210,
+      "jta_samples": 121,
+      "optimizer_cpu_ns": 6563756310,
+      "samples": 65631
+    },
+    "original": {
+      "classes_ns": {
+        "jta_base": 1600160,
+        "jta_facts_lvi": 4000400,
+        "jta_hook": 3100310,
+        "jta_maintenance": 800080,
+        "jta_other": 1800180,
+        "pipeline_other": 6209320870,
+        "setup": 340734070,
+        "vm_callback": 200020
+      },
+      "jta_ns": 11501150,
+      "jta_samples": 115,
+      "optimizer_cpu_ns": 6561556090,
+      "samples": 65609
+    },
+    "pass_local": {
+      "classes_ns": {
+        "jta_base": 1000100,
+        "jta_facts_lvi": 3900390,
+        "jta_maintenance": 6800680,
+        "jta_other": 3200320,
+        "pipeline_other": 6262526190,
+        "setup": 343634360,
+        "vm_callback": 200020
+      },
+      "jta_ns": 15101510,
+      "jta_samples": 151,
+      "optimizer_cpu_ns": 6621262060,
+      "samples": 66206
+    }
+  }
+}

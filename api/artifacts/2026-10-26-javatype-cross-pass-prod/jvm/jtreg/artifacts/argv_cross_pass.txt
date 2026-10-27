@@ -1,0 +1,12 @@
+/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg-jdk/bin/java
+-cp
+/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg/work/classes/compiler/jeandle/typeCache/TestJavaTypeCacheModes.d:/home/annya/playground/jeandle/jeandle/jeandle-jdk/test/hotspot/jtreg/compiler/jeandle/typeCache:/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg/work/classes/test/lib:/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg/work/classes:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/javatest.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/jtreg.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/junit-platform-console-standalone.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/testng.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/guice.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/jcommander.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/slf4j-simple.jar:/home/annya/playground/jeandle/jeandle/tools/jtreg-extract/usr/share/jtreg/lib/slf4j-api.jar
+-Xbatch
+-XX:-TieredCompilation
+-XX:+UseJeandleCompiler
+-XX:CICompilerCount=1
+-XX:+CITime
+-XX:JeandleLLVMOptions=-jeandle-java-type-stats=true -jeandle-java-type-query-trace=true
+-XX:CompileCommand=compileonly,TestJavaTypeCacheModes::typeCheckHeavy
+TestJavaTypeCacheModes
+cross_pass

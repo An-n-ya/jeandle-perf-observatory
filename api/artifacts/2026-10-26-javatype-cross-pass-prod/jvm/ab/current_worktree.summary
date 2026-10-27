@@ -1,0 +1,4 @@
+label=current_worktree
+rounds=8
+javac_failures=2
+jimage_failures=3

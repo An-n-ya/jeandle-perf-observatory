@@ -1,0 +1,4 @@
+label=baseline_head
+rounds=8
+javac_failures=2
+jimage_failures=2

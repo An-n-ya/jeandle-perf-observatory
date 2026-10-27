@@ -1,0 +1,14 @@
+-agentvm
+-verbose:summary
+-retain:all
+-concurrency:1
+-timeoutFactor:4
+-vmoption:-XX:MaxRAMPercentage=1.5625
+-nativepath:/home/annya/playground/jeandle/jeandle/jeandle-jdk/build/linux-x86_64-server-release/images/test/hotspot/jtreg/native
+-e:TEST_IMAGE_DIR=/home/annya/playground/jeandle/jeandle/jeandle-jdk/build/linux-x86_64-server-release/images/test
+-testjdk:/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg-jdk
+-dir:/home/annya/playground/jeandle/jeandle/jeandle-jdk
+-reportDir:/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg/report
+-workDir:/home/annya/playground/jeandle/perf-results/2026-10-26-javatype-cross-pass-prod/jvm/jtreg/work
+-report:files
+test/hotspot/jtreg/compiler/jeandle/typeCache/TestJavaTypeCacheModes.java

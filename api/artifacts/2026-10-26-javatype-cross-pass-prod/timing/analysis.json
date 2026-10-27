@@ -1,0 +1,2120 @@
+{
+  "baseline_samples": 128,
+  "blocks": 60,
+  "pairs": {
+    "original->cross_pass": {
+      "baseline": "original",
+      "candidate": "cross_pass",
+      "cpu": {
+        "block_net_mean": -0.0019725911729815415,
+        "block_net_sd": 0.01107899678691692,
+        "bootstrap_ci": {
+          "hi": 0.0008881448459966412,
+          "lo": -0.004699735565174112,
+          "mean": -0.0018774812072259223,
+          "median": -0.00186660835893937
+        },
+        "net_benefit": -0.001870992568738572,
+        "per_round_baseline_s": 1.4633854666666666,
+        "per_round_candidate_s": 1.46612345,
+        "per_sample": {
+          "max": 0.023560235566689736,
+          "mean": -0.0019769065614756425,
+          "min": -0.023621716753602584,
+          "negative_share": 0.578125,
+          "p05": -0.013820764196252444,
+          "p50": -0.003018488277962028,
+          "p95": 0.015244239991489938
+        },
+        "total_baseline_s": 87.803128,
+        "total_candidate_s": 87.967407
+      },
+      "cpu_eff": {
+        "block_net_mean": -0.002441328297193514,
+        "block_net_sd": 0.013379128912080691,
+        "bootstrap_ci": {
+          "hi": 0.0011594744872770457,
+          "lo": -0.0055574248605094745,
+          "mean": -0.0022273459712144695,
+          "median": -0.0022323516728699477
+        },
+        "net_benefit": -0.0022463707791271492,
+        "per_round_baseline_s": 1.2188474666666667,
+        "per_round_candidate_s": 1.2215854499999999,
+        "per_sample": {
+          "max": 0.028032346386068774,
+          "mean": -0.0024042177726715953,
+          "min": -0.028284883418656426,
+          "negative_share": 0.578125,
+          "p05": -0.016949999167485075,
+          "p50": -0.003641942436248602,
+          "p95": 0.017974111341198418
+        },
+        "total_baseline_s": 73.130848,
+        "total_candidate_s": 73.295127
+      },
+      "paired_cpu_difference_s": {
+        "ci": {
+          "hi": 1.4295572916666905e-05,
+          "lo": -9.767317708333302e-05,
+          "mean": -4.2780989583333375e-05
+        },
+        "mean": -4.2780989583333375e-05,
+        "sd": 0.0002287527514229489
+      },
+      "wall": {
+        "block_net_mean": -0.001840787630719191,
+        "block_net_sd": 0.010952076727959186,
+        "bootstrap_ci": {
+          "hi": 0.0010505993686640291,
+          "lo": -0.004529598031858484,
+          "mean": -0.0017509867880883198,
+          "median": -0.0017584971283861606
+        },
+        "net_benefit": -0.0017426317131983282,
+        "per_round_baseline_s": 1.4919745503166666,
+        "per_round_candidate_s": 1.4945745124833332,
+        "per_sample": {
+          "max": 0.022794664503679396,
+          "mean": -0.0018467877926391374,
+          "min": -0.02332478434202212,
+          "negative_share": 0.546875,
+          "p05": -0.015097943164080974,
+          "p50": -0.003069147883505652,
+          "p95": 0.015641511002916997
+        },
+        "total_baseline_s": 89.518473019,
+        "total_candidate_s": 89.674470749
+      },
+      "wall_eff": {
+        "block_net_mean": -0.0022705424915958135,
+        "block_net_sd": 0.01316698848670703,
+        "bootstrap_ci": {
+          "hi": 0.0012163974262303645,
+          "lo": -0.0053379888668005915,
+          "mean": -0.002066780773406177,
+          "median": -0.0020787323525803814
+        },
+        "net_benefit": -0.0020842440170656396,
+        "per_round_baseline_s": 1.2474365503166667,
+        "per_round_candidate_s": 1.2500365124833333,
+        "per_sample": {
+          "max": 0.02702190969951901,
+          "mean": -0.0022378149025205005,
+          "min": -0.027824579117057047,
+          "negative_share": 0.546875,
+          "p05": -0.017924514497431376,
+          "p50": -0.0036289309864241392,
+          "p95": 0.018379076768705205
+        },
+        "total_baseline_s": 74.846193019,
+        "total_candidate_s": 75.002190749
+      }
+    },
+    "pass_local->cross_pass": {
+      "baseline": "pass_local",
+      "candidate": "cross_pass",
+      "cpu": {
+        "block_net_mean": -0.0035222264987877063,
+        "block_net_sd": 0.010353015807771903,
+        "bootstrap_ci": {
+          "hi": -0.0008326163549736698,
+          "lo": -0.006074880975278418,
+          "mean": -0.003448839734936364,
+          "median": -0.0034391552792785163
+        },
+        "net_benefit": -0.0034467363852093147,
+        "per_round_baseline_s": 1.4610874666666664,
+        "per_round_candidate_s": 1.46612345,
+        "per_sample": {
+          "max": 0.019962998078585037,
+          "mean": -0.003491266248390832,
+          "min": -0.034448563369487095,
+          "negative_share": 0.5625,
+          "p05": -0.021067626700893127,
+          "p50": -0.003053235706584112,
+          "p95": 0.011866256675646447
+        },
+        "total_baseline_s": 87.66524799999999,
+        "total_candidate_s": 87.967407
+      },
+      "cpu_eff": {
+        "block_net_mean": -0.004295261667272363,
+        "block_net_sd": 0.012446129619049492,
+        "bootstrap_ci": {
+          "hi": -0.0009961338208899218,
+          "lo": -0.00734697469710488,
+          "mean": -0.004127304225637885,
+          "median": -0.004127083967390144
+        },
+        "net_benefit": -0.004139563142575353,
+        "per_round_baseline_s": 1.2165494666666667,
+        "per_round_candidate_s": 1.2215854499999999,
+        "per_sample": {
+          "max": 0.02384274900993233,
+          "mean": -0.004213525093085181,
+          "min": -0.04133536799929116,
+          "negative_share": 0.5625,
+          "p05": -0.025136414312459276,
+          "p50": -0.0036469890687833573,
+          "p95": 0.014121925411907599
+        },
+        "total_baseline_s": 72.992968,
+        "total_candidate_s": 73.295127
+      },
+      "paired_cpu_difference_s": {
+        "ci": {
+          "hi": -1.493437499999967e-05,
+          "lo": -0.00014184843749999964,
+          "mean": -7.868723958333302e-05
+        },
+        "mean": -7.868723958333302e-05,
+        "sd": 0.0002552018354911261
+      },
+      "wall": {
+        "block_net_mean": -0.0034754753385632426,
+        "block_net_sd": 0.010354014071220418,
+        "bootstrap_ci": {
+          "hi": -0.0007597314089942131,
+          "lo": -0.006045207780434936,
+          "mean": -0.0033844064516315607,
+          "median": -0.003374552999714231
+        },
+        "net_benefit": -0.0033999397617534566,
+        "per_round_baseline_s": 1.4895102672999998,
+        "per_round_candidate_s": 1.4945745124833332,
+        "per_sample": {
+          "max": 0.02132790509384641,
+          "mean": -0.003448765772554558,
+          "min": -0.034389118159097176,
+          "negative_share": 0.5625,
+          "p05": -0.021556094639011203,
+          "p50": -0.0034425147529395517,
+          "p95": 0.011265325885016608
+        },
+        "total_baseline_s": 89.370616038,
+        "total_candidate_s": 89.674470749
+      },
+      "wall_eff": {
+        "block_net_mean": -0.004221399011139488,
+        "block_net_sd": 0.012401151900890903,
+        "bootstrap_ci": {
+          "hi": -0.0009011377553249655,
+          "lo": -0.007263542542731871,
+          "mean": -0.004067387482907644,
+          "median": -0.004046867342240246
+        },
+        "net_benefit": -0.004067757424280671,
+        "per_round_baseline_s": 1.2449722673,
+        "per_round_candidate_s": 1.2500365124833333,
+        "per_sample": {
+          "max": 0.02580011820095507,
+          "mean": -0.0041457722038538425,
+          "min": -0.041109181816024076,
+          "negative_share": 0.5625,
+          "p05": -0.025442529975512773,
+          "p50": -0.004114743368597851,
+          "p95": 0.013358143931920696
+        },
+        "total_baseline_s": 74.69833603800001,
+        "total_candidate_s": 75.002190749
+      }
+    }
+  },
+  "per_sample": {
+    "ArrayShapes\tArrayShapes_arrayLengthLoop": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.0211645,
+        "cpu_mean": 0.0249645,
+        "cpu_median": 0.024393,
+        "cpu_sd": 0.0015546822880147144,
+        "n": 60,
+        "wall_eff_mean": 0.021612925566666667,
+        "wall_mean": 0.025412925566666668
+      },
+      "original": {
+        "cpu_eff_mean": 0.0213465,
+        "cpu_mean": 0.025146500000000002,
+        "cpu_median": 0.024466500000000002,
+        "cpu_sd": 0.0016965866958887383,
+        "n": 60,
+        "wall_eff_mean": 0.02180582905,
+        "wall_mean": 0.025605829049999997
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0206291,
+        "cpu_mean": 0.0244291,
+        "cpu_median": 0.024115499999999998,
+        "cpu_sd": 0.0008767731310512047,
+        "n": 60,
+        "wall_eff_mean": 0.021076681466666667,
+        "wall_mean": 0.024876681466666665
+      }
+    },
+    "ArrayShapes\tArrayShapes_checkedArrayElement": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019881783333333333,
+        "cpu_mean": 0.023708783333333334,
+        "cpu_median": 0.023188,
+        "cpu_sd": 0.0011731506310169871,
+        "n": 60,
+        "wall_eff_mean": 0.0203310085,
+        "wall_mean": 0.024158008499999998
+      },
+      "original": {
+        "cpu_eff_mean": 0.019761233333333336,
+        "cpu_mean": 0.023588233333333333,
+        "cpu_median": 0.023193,
+        "cpu_sd": 0.0010470252681870776,
+        "n": 60,
+        "wall_eff_mean": 0.020203535800000002,
+        "wall_mean": 0.0240305358
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.020023866666666668,
+        "cpu_mean": 0.023850866666666668,
+        "cpu_median": 0.0230875,
+        "cpu_sd": 0.001450028855651577,
+        "n": 60,
+        "wall_eff_mean": 0.020480471183333335,
+        "wall_mean": 0.024307471183333332
+      }
+    },
+    "ArrayShapes\tArrayShapes_sumArrayElements": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.02094435,
+        "cpu_mean": 0.02476235,
+        "cpu_median": 0.024348500000000002,
+        "cpu_sd": 0.0012896012410172895,
+        "n": 60,
+        "wall_eff_mean": 0.021395267766666667,
+        "wall_mean": 0.025213267766666665
+      },
+      "original": {
+        "cpu_eff_mean": 0.021081866666666668,
+        "cpu_mean": 0.024899866666666666,
+        "cpu_median": 0.024065999999999997,
+        "cpu_sd": 0.0018101559828429766,
+        "n": 60,
+        "wall_eff_mean": 0.021544571949999997,
+        "wall_mean": 0.025362571950000003
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.020673033333333334,
+        "cpu_mean": 0.024491033333333335,
+        "cpu_median": 0.0237885,
+        "cpu_sd": 0.0015584660724214977,
+        "n": 60,
+        "wall_eff_mean": 0.021119574116666665,
+        "wall_mean": 0.02493757411666667
+      }
+    },
+    "ArrayShapes\tArrayShapes_sumNestedArrays": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.021807733333333336,
+        "cpu_mean": 0.026162733333333334,
+        "cpu_median": 0.025579499999999998,
+        "cpu_sd": 0.0013648686855844002,
+        "n": 60,
+        "wall_eff_mean": 0.02227652555,
+        "wall_mean": 0.02663152555
+      },
+      "original": {
+        "cpu_eff_mean": 0.022203050000000002,
+        "cpu_mean": 0.02655805,
+        "cpu_median": 0.026162,
+        "cpu_sd": 0.0013986737339946964,
+        "n": 60,
+        "wall_eff_mean": 0.022674222116666667,
+        "wall_mean": 0.027029222116666664
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.021974383333333333,
+        "cpu_mean": 0.026329383333333334,
+        "cpu_median": 0.0257485,
+        "cpu_sd": 0.0013886118379118366,
+        "n": 60,
+        "wall_eff_mean": 0.02244333745,
+        "wall_mean": 0.026798337449999998
+      }
+    },
+    "ArrayShapes\tArrayShapes_sumPrimitiveArray": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.020551916666666666,
+        "cpu_mean": 0.024479416666666667,
+        "cpu_median": 0.0239145,
+        "cpu_sd": 0.00145245166634059,
+        "n": 60,
+        "wall_eff_mean": 0.020999769366666664,
+        "wall_mean": 0.024927269366666668
+      },
+      "original": {
+        "cpu_eff_mean": 0.020403249999999998,
+        "cpu_mean": 0.02433075,
+        "cpu_median": 0.0237645,
+        "cpu_sd": 0.0014029789808950573,
+        "n": 60,
+        "wall_eff_mean": 0.020856542966666666,
+        "wall_mean": 0.024784042966666666
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.02022363333333333,
+        "cpu_mean": 0.024151133333333335,
+        "cpu_median": 0.023585000000000002,
+        "cpu_sd": 0.0012898397247548068,
+        "n": 60,
+        "wall_eff_mean": 0.020673179766666668,
+        "wall_mean": 0.024600679766666668
+      }
+    },
+    "ArrayShapes\tArrayShapes_traverseList": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.0197781,
+        "cpu_mean": 0.0235751,
+        "cpu_median": 0.0232865,
+        "cpu_sd": 0.00146308853343421,
+        "n": 60,
+        "wall_eff_mean": 0.020229471,
+        "wall_mean": 0.024026471
+      },
+      "original": {
+        "cpu_eff_mean": 0.019234066666666667,
+        "cpu_mean": 0.023031066666666666,
+        "cpu_median": 0.022665,
+        "cpu_sd": 0.001077358480523338,
+        "n": 60,
+        "wall_eff_mean": 0.0196818323,
+        "wall_mean": 0.0234788323
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018993016666666664,
+        "cpu_mean": 0.02279001666666667,
+        "cpu_median": 0.0223905,
+        "cpu_sd": 0.0010289035019810599,
+        "n": 60,
+        "wall_eff_mean": 0.019430691183333335,
+        "wall_mean": 0.023227691183333333
+      }
+    },
+    "CollectionShapes\tCollectionShapes$Node_<init>": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019177266666666668,
+        "cpu_mean": 0.022739266666666664,
+        "cpu_median": 0.0222315,
+        "cpu_sd": 0.0012197520221567807,
+        "n": 60,
+        "wall_eff_mean": 0.0196142772,
+        "wall_mean": 0.023176277199999998
+      },
+      "original": {
+        "cpu_eff_mean": 0.019198250000000004,
+        "cpu_mean": 0.02276025,
+        "cpu_median": 0.0220775,
+        "cpu_sd": 0.0014055122153506885,
+        "n": 60,
+        "wall_eff_mean": 0.0196378063,
+        "wall_mean": 0.0231998063
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0192107,
+        "cpu_mean": 0.0227727,
+        "cpu_median": 0.02229,
+        "cpu_sd": 0.0010827282099708433,
+        "n": 60,
+        "wall_eff_mean": 0.0196630028,
+        "wall_mean": 0.023225002800000002
+      }
+    },
+    "CollectionShapes\tCollectionShapes_visitBimorphic": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01908695,
+        "cpu_mean": 0.02281445,
+        "cpu_median": 0.022301500000000002,
+        "cpu_sd": 0.0011438059629296107,
+        "n": 60,
+        "wall_eff_mean": 0.019556740733333335,
+        "wall_mean": 0.023284240733333336
+      },
+      "original": {
+        "cpu_eff_mean": 0.019637433333333332,
+        "cpu_mean": 0.023364933333333334,
+        "cpu_median": 0.0228605,
+        "cpu_sd": 0.0015199003790453578,
+        "n": 60,
+        "wall_eff_mean": 0.020099877816666667,
+        "wall_mean": 0.023827377816666665
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018863416666666667,
+        "cpu_mean": 0.02259091666666667,
+        "cpu_median": 0.022142,
+        "cpu_sd": 0.0010085804593861392,
+        "n": 60,
+        "wall_eff_mean": 0.01930032425,
+        "wall_mean": 0.02302782425
+      }
+    },
+    "CollectionShapes\tjava_lang_Object_<init>": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01869305,
+        "cpu_mean": 0.02222155,
+        "cpu_median": 0.0215925,
+        "cpu_sd": 0.0012838266812541324,
+        "n": 60,
+        "wall_eff_mean": 0.0191304514,
+        "wall_mean": 0.022658951400000002
+      },
+      "original": {
+        "cpu_eff_mean": 0.018672983333333334,
+        "cpu_mean": 0.022201483333333334,
+        "cpu_median": 0.021525000000000002,
+        "cpu_sd": 0.0013087039325437805,
+        "n": 60,
+        "wall_eff_mean": 0.019112152916666666,
+        "wall_mean": 0.022640652916666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019136983333333333,
+        "cpu_mean": 0.022665483333333333,
+        "cpu_median": 0.0223845,
+        "cpu_sd": 0.001584378863484222,
+        "n": 60,
+        "wall_eff_mean": 0.019575858733333333,
+        "wall_mean": 0.023104358733333333
+      }
+    },
+    "CollectionShapes\tjava_lang_StringLatin1_charAt": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01885218333333333,
+        "cpu_mean": 0.023003683333333334,
+        "cpu_median": 0.022427,
+        "cpu_sd": 0.0012871265606208097,
+        "n": 60,
+        "wall_eff_mean": 0.019287628133333335,
+        "wall_mean": 0.023439128133333334
+      },
+      "original": {
+        "cpu_eff_mean": 0.018673016666666667,
+        "cpu_mean": 0.02282451666666667,
+        "cpu_median": 0.022347,
+        "cpu_sd": 0.001332256825736773,
+        "n": 60,
+        "wall_eff_mean": 0.019131550950000003,
+        "wall_mean": 0.02328305095
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01931265,
+        "cpu_mean": 0.02346415,
+        "cpu_median": 0.022799,
+        "cpu_sd": 0.0015594426549785877,
+        "n": 60,
+        "wall_eff_mean": 0.019798429966666666,
+        "wall_mean": 0.02394992996666667
+      }
+    },
+    "CollectionShapes\tjava_lang_String_checkIndex": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018782533333333334,
+        "cpu_mean": 0.022543033333333334,
+        "cpu_median": 0.0218625,
+        "cpu_sd": 0.001498262593435773,
+        "n": 60,
+        "wall_eff_mean": 0.019229310283333335,
+        "wall_mean": 0.022989810283333335
+      },
+      "original": {
+        "cpu_eff_mean": 0.018589916666666664,
+        "cpu_mean": 0.022350416666666664,
+        "cpu_median": 0.021713000000000003,
+        "cpu_sd": 0.001302354154235919,
+        "n": 60,
+        "wall_eff_mean": 0.01903157156666667,
+        "wall_mean": 0.02279207156666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018609616666666665,
+        "cpu_mean": 0.022370116666666665,
+        "cpu_median": 0.021692,
+        "cpu_sd": 0.0014654815260028205,
+        "n": 60,
+        "wall_eff_mean": 0.019040577733333335,
+        "wall_mean": 0.022801077733333334
+      }
+    },
+    "CollectionShapes\tjava_lang_String_coder": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018201866666666667,
+        "cpu_mean": 0.022410866666666664,
+        "cpu_median": 0.0218545,
+        "cpu_sd": 0.0012264443793158968,
+        "n": 60,
+        "wall_eff_mean": 0.018640660516666668,
+        "wall_mean": 0.022849660516666665
+      },
+      "original": {
+        "cpu_eff_mean": 0.018081166666666666,
+        "cpu_mean": 0.022290166666666666,
+        "cpu_median": 0.0217345,
+        "cpu_sd": 0.0012125058098371687,
+        "n": 60,
+        "wall_eff_mean": 0.018520442233333333,
+        "wall_mean": 0.022729442233333334
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01782435,
+        "cpu_mean": 0.02203335,
+        "cpu_median": 0.021586,
+        "cpu_sd": 0.0011191472918402356,
+        "n": 60,
+        "wall_eff_mean": 0.018260810366666665,
+        "wall_mean": 0.02246981036666667
+      }
+    },
+    "CollectionShapes\tjava_lang_String_hashCode": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018993033333333333,
+        "cpu_mean": 0.02258603333333333,
+        "cpu_median": 0.021999499999999998,
+        "cpu_sd": 0.0013934023344158554,
+        "n": 60,
+        "wall_eff_mean": 0.0194393631,
+        "wall_mean": 0.0230323631
+      },
+      "original": {
+        "cpu_eff_mean": 0.01878255,
+        "cpu_mean": 0.02237555,
+        "cpu_median": 0.0217855,
+        "cpu_sd": 0.0013349232365570687,
+        "n": 60,
+        "wall_eff_mean": 0.019226735266666666,
+        "wall_mean": 0.022819735266666665
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0187756,
+        "cpu_mean": 0.022368600000000002,
+        "cpu_median": 0.0217315,
+        "cpu_sd": 0.0014298849627388443,
+        "n": 60,
+        "wall_eff_mean": 0.019233898116666665,
+        "wall_mean": 0.022826898116666668
+      }
+    },
+    "CollectionShapes\tjava_lang_String_isLatin1": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019074066666666667,
+        "cpu_mean": 0.022685566666666667,
+        "cpu_median": 0.022393,
+        "cpu_sd": 0.0012443272796531018,
+        "n": 60,
+        "wall_eff_mean": 0.019510900016666666,
+        "wall_mean": 0.023122400016666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.01879991666666667,
+        "cpu_mean": 0.022411416666666666,
+        "cpu_median": 0.0217245,
+        "cpu_sd": 0.0012516839496143676,
+        "n": 60,
+        "wall_eff_mean": 0.019230361416666668,
+        "wall_mean": 0.022841861416666668
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01869335,
+        "cpu_mean": 0.022304849999999998,
+        "cpu_median": 0.021720999999999997,
+        "cpu_sd": 0.0013879071513733664,
+        "n": 60,
+        "wall_eff_mean": 0.019120461333333335,
+        "wall_mean": 0.02273196133333333
+      }
+    },
+    "CollectionShapes\tjava_lang_String_length": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01930305,
+        "cpu_mean": 0.023153550000000002,
+        "cpu_median": 0.022511,
+        "cpu_sd": 0.0014518548185568235,
+        "n": 60,
+        "wall_eff_mean": 0.01975217395,
+        "wall_mean": 0.02360267395
+      },
+      "original": {
+        "cpu_eff_mean": 0.0191238,
+        "cpu_mean": 0.0229743,
+        "cpu_median": 0.0222125,
+        "cpu_sd": 0.0015510857304911721,
+        "n": 60,
+        "wall_eff_mean": 0.01964470373333333,
+        "wall_mean": 0.023495203733333334
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018968116666666666,
+        "cpu_mean": 0.022818616666666666,
+        "cpu_median": 0.022203,
+        "cpu_sd": 0.001279523779792918,
+        "n": 60,
+        "wall_eff_mean": 0.01940387248333333,
+        "wall_mean": 0.023254372483333334
+      }
+    },
+    "CollectionShapes\tjava_util_ArrayList$Itr_checkForComodification": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01897881666666667,
+        "cpu_mean": 0.022618816666666666,
+        "cpu_median": 0.021884,
+        "cpu_sd": 0.0014098987728635777,
+        "n": 60,
+        "wall_eff_mean": 0.019412017283333336,
+        "wall_mean": 0.023052017283333334
+      },
+      "original": {
+        "cpu_eff_mean": 0.018761566666666667,
+        "cpu_mean": 0.022401566666666664,
+        "cpu_median": 0.021782,
+        "cpu_sd": 0.0012107106641234405,
+        "n": 60,
+        "wall_eff_mean": 0.01919788735,
+        "wall_mean": 0.02283788735
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018754683333333334,
+        "cpu_mean": 0.02239468333333333,
+        "cpu_median": 0.021941500000000003,
+        "cpu_sd": 0.0011641678070860556,
+        "n": 60,
+        "wall_eff_mean": 0.0191949273,
+        "wall_mean": 0.0228349273
+      }
+    },
+    "CollectionShapes\tjava_util_ArrayList$Itr_hasNext": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01850295,
+        "cpu_mean": 0.022639950000000002,
+        "cpu_median": 0.022184000000000002,
+        "cpu_sd": 0.0013230897730312934,
+        "n": 60,
+        "wall_eff_mean": 0.018935928683333332,
+        "wall_mean": 0.023072928683333334
+      },
+      "original": {
+        "cpu_eff_mean": 0.018359599999999997,
+        "cpu_mean": 0.0224966,
+        "cpu_median": 0.0218665,
+        "cpu_sd": 0.0013555198535371343,
+        "n": 60,
+        "wall_eff_mean": 0.0188046866,
+        "wall_mean": 0.0229416866
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018161350000000003,
+        "cpu_mean": 0.02229835,
+        "cpu_median": 0.0218195,
+        "cpu_sd": 0.0012051661963535707,
+        "n": 60,
+        "wall_eff_mean": 0.018595063233333334,
+        "wall_mean": 0.022732063233333332
+      }
+    },
+    "CollectionShapes\tjava_util_ArrayList$Itr_next": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019698216666666664,
+        "cpu_mean": 0.023650216666666668,
+        "cpu_median": 0.0231255,
+        "cpu_sd": 0.001257065353533998,
+        "n": 60,
+        "wall_eff_mean": 0.020164834783333332,
+        "wall_mean": 0.024116834783333332
+      },
+      "original": {
+        "cpu_eff_mean": 0.019927516666666666,
+        "cpu_mean": 0.023879516666666666,
+        "cpu_median": 0.02309,
+        "cpu_sd": 0.0015063870849559959,
+        "n": 60,
+        "wall_eff_mean": 0.020387882283333332,
+        "wall_mean": 0.024339882283333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01992695,
+        "cpu_mean": 0.02387895,
+        "cpu_median": 0.023289999999999998,
+        "cpu_sd": 0.001388144402010588,
+        "n": 60,
+        "wall_eff_mean": 0.020383345,
+        "wall_mean": 0.024335345
+      }
+    },
+    "CollectionShapes\tjava_util_HashMap_hash": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01980975,
+        "cpu_mean": 0.02336075,
+        "cpu_median": 0.0227225,
+        "cpu_sd": 0.0015006734446574312,
+        "n": 60,
+        "wall_eff_mean": 0.020244399266666664,
+        "wall_mean": 0.023795399266666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.0199236,
+        "cpu_mean": 0.0234746,
+        "cpu_median": 0.022792,
+        "cpu_sd": 0.0013042033737113243,
+        "n": 60,
+        "wall_eff_mean": 0.020373902,
+        "wall_mean": 0.023924902
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0202856,
+        "cpu_mean": 0.0238366,
+        "cpu_median": 0.023013,
+        "cpu_sd": 0.0023251572505961827,
+        "n": 60,
+        "wall_eff_mean": 0.020731814233333333,
+        "wall_mean": 0.024282814233333335
+      }
+    },
+    "CollectionShapes\tjdk_internal_util_Preconditions_checkIndex": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018089833333333336,
+        "cpu_mean": 0.022353833333333333,
+        "cpu_median": 0.021862,
+        "cpu_sd": 0.001329723507183187,
+        "n": 60,
+        "wall_eff_mean": 0.018538565683333334,
+        "wall_mean": 0.022802565683333335
+      },
+      "original": {
+        "cpu_eff_mean": 0.017891683333333335,
+        "cpu_mean": 0.022155683333333336,
+        "cpu_median": 0.0217195,
+        "cpu_sd": 0.0012141058780252882,
+        "n": 60,
+        "wall_eff_mean": 0.018336331116666667,
+        "wall_mean": 0.022600331116666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018097933333333333,
+        "cpu_mean": 0.02236193333333333,
+        "cpu_median": 0.021892000000000002,
+        "cpu_sd": 0.0012943810086506813,
+        "n": 60,
+        "wall_eff_mean": 0.018548136733333335,
+        "wall_mean": 0.022812136733333332
+      }
+    },
+    "ConstantShapes\tConstantShapes_foldWithTypeCheck": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.02077855,
+        "cpu_mean": 0.024395049999999998,
+        "cpu_median": 0.0239125,
+        "cpu_sd": 0.00179917625989414,
+        "n": 60,
+        "wall_eff_mean": 0.021232958816666665,
+        "wall_mean": 0.024849458816666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.020507516666666666,
+        "cpu_mean": 0.024124016666666668,
+        "cpu_median": 0.0237125,
+        "cpu_sd": 0.0013315827110581186,
+        "n": 60,
+        "wall_eff_mean": 0.020958808,
+        "wall_mean": 0.024575308
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019998616666666667,
+        "cpu_mean": 0.023615116666666665,
+        "cpu_median": 0.023197,
+        "cpu_sd": 0.00102918054929908,
+        "n": 60,
+        "wall_eff_mean": 0.020478715433333333,
+        "wall_mean": 0.02409521543333333
+      }
+    },
+    "ConstantShapes\tConstantShapes_readInstanceFinals": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018596833333333333,
+        "cpu_mean": 0.022689833333333336,
+        "cpu_median": 0.022044,
+        "cpu_sd": 0.0014300046056646887,
+        "n": 60,
+        "wall_eff_mean": 0.019035459833333334,
+        "wall_mean": 0.023128459833333333
+      },
+      "original": {
+        "cpu_eff_mean": 0.018822433333333333,
+        "cpu_mean": 0.022915433333333336,
+        "cpu_median": 0.0229585,
+        "cpu_sd": 0.0013143773857694837,
+        "n": 60,
+        "wall_eff_mean": 0.019274064083333334,
+        "wall_mean": 0.023367064083333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018619916666666667,
+        "cpu_mean": 0.02271291666666667,
+        "cpu_median": 0.021959,
+        "cpu_sd": 0.0015383722164641718,
+        "n": 60,
+        "wall_eff_mean": 0.01906446461666667,
+        "wall_mean": 0.023157464616666668
+      }
+    },
+    "ConstantShapes\tConstantShapes_readMutableField": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018527466666666666,
+        "cpu_mean": 0.022190966666666666,
+        "cpu_median": 0.021461,
+        "cpu_sd": 0.001394197690031399,
+        "n": 60,
+        "wall_eff_mean": 0.018958085866666665,
+        "wall_mean": 0.02262158586666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.01855865,
+        "cpu_mean": 0.02222215,
+        "cpu_median": 0.021506499999999998,
+        "cpu_sd": 0.0014660700509070725,
+        "n": 60,
+        "wall_eff_mean": 0.018991184966666668,
+        "wall_mean": 0.022654684966666668
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018364516666666667,
+        "cpu_mean": 0.022028016666666667,
+        "cpu_median": 0.021402,
+        "cpu_sd": 0.0012326361113708926,
+        "n": 60,
+        "wall_eff_mean": 0.018792133633333333,
+        "wall_mean": 0.022455633633333336
+      }
+    },
+    "ConstantShapes\tjava_lang_String_coder": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018610866666666667,
+        "cpu_mean": 0.022395866666666667,
+        "cpu_median": 0.021968,
+        "cpu_sd": 0.0012607119346711294,
+        "n": 60,
+        "wall_eff_mean": 0.0190542628,
+        "wall_mean": 0.0228392628
+      },
+      "original": {
+        "cpu_eff_mean": 0.018314533333333334,
+        "cpu_mean": 0.02209953333333333,
+        "cpu_median": 0.021641,
+        "cpu_sd": 0.0011211213503551799,
+        "n": 60,
+        "wall_eff_mean": 0.01874070816666667,
+        "wall_mean": 0.022525708166666665
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01853898333333333,
+        "cpu_mean": 0.022323983333333335,
+        "cpu_median": 0.022108000000000003,
+        "cpu_sd": 0.0011896801179542152,
+        "n": 60,
+        "wall_eff_mean": 0.018979173133333336,
+        "wall_mean": 0.022764173133333333
+      }
+    },
+    "ConstantShapes\tjava_lang_String_length": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019145416666666668,
+        "cpu_mean": 0.022890416666666667,
+        "cpu_median": 0.0222095,
+        "cpu_sd": 0.0013588359269569262,
+        "n": 60,
+        "wall_eff_mean": 0.01959649955,
+        "wall_mean": 0.02334149955
+      },
+      "original": {
+        "cpu_eff_mean": 0.019369599999999997,
+        "cpu_mean": 0.0231146,
+        "cpu_median": 0.0223195,
+        "cpu_sd": 0.0015125953655885634,
+        "n": 60,
+        "wall_eff_mean": 0.019817695266666668,
+        "wall_mean": 0.023562695266666666
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01923293333333333,
+        "cpu_mean": 0.022977933333333332,
+        "cpu_median": 0.022253500000000002,
+        "cpu_sd": 0.0014250108638962102,
+        "n": 60,
+        "wall_eff_mean": 0.019692628166666667,
+        "wall_mean": 0.023437628166666665
+      }
+    },
+    "ConstantShapes\tjava_util_Objects_requireNonNull": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018466183333333334,
+        "cpu_mean": 0.022227183333333334,
+        "cpu_median": 0.0216025,
+        "cpu_sd": 0.0013401782405295531,
+        "n": 60,
+        "wall_eff_mean": 0.01889848685,
+        "wall_mean": 0.02265948685
+      },
+      "original": {
+        "cpu_eff_mean": 0.01846656666666667,
+        "cpu_mean": 0.022227566666666664,
+        "cpu_median": 0.0216125,
+        "cpu_sd": 0.0013186537878541974,
+        "n": 60,
+        "wall_eff_mean": 0.018909688533333337,
+        "wall_mean": 0.022670688533333334
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018241883333333334,
+        "cpu_mean": 0.022002883333333334,
+        "cpu_median": 0.021497500000000003,
+        "cpu_sd": 0.0012061540682636233,
+        "n": 60,
+        "wall_eff_mean": 0.018676200283333333,
+        "wall_mean": 0.022437200283333333
+      }
+    },
+    "InlineShapes\tInlineShapes_addBoth": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.0188927,
+        "cpu_mean": 0.0230977,
+        "cpu_median": 0.022783,
+        "cpu_sd": 0.0012916451434765923,
+        "n": 60,
+        "wall_eff_mean": 0.019332032983333334,
+        "wall_mean": 0.02353703298333333
+      },
+      "original": {
+        "cpu_eff_mean": 0.018518,
+        "cpu_mean": 0.022723,
+        "cpu_median": 0.0221485,
+        "cpu_sd": 0.0012774302329285933,
+        "n": 60,
+        "wall_eff_mean": 0.018962279933333333,
+        "wall_mean": 0.023167279933333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0184977,
+        "cpu_mean": 0.022702700000000003,
+        "cpu_median": 0.0222775,
+        "cpu_sd": 0.0013177905283718906,
+        "n": 60,
+        "wall_eff_mean": 0.01894383643333333,
+        "wall_mean": 0.023148836433333334
+      }
+    },
+    "InlineShapes\tInlineShapes_addOther": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.0184257,
+        "cpu_mean": 0.022149699999999998,
+        "cpu_median": 0.021829,
+        "cpu_sd": 0.0012025297543096388,
+        "n": 60,
+        "wall_eff_mean": 0.018864881216666667,
+        "wall_mean": 0.02258888121666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.01882068333333333,
+        "cpu_mean": 0.022544683333333333,
+        "cpu_median": 0.0220355,
+        "cpu_sd": 0.0013154295558443596,
+        "n": 60,
+        "wall_eff_mean": 0.0192597297,
+        "wall_mean": 0.0229837297
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018636366666666668,
+        "cpu_mean": 0.02236036666666667,
+        "cpu_median": 0.021702,
+        "cpu_sd": 0.001431302914208667,
+        "n": 60,
+        "wall_eff_mean": 0.019077957583333336,
+        "wall_mean": 0.02280195758333333
+      }
+    },
+    "InlineShapes\tInlineShapes_addValue": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018354633333333332,
+        "cpu_mean": 0.022294133333333334,
+        "cpu_median": 0.021609499999999997,
+        "cpu_sd": 0.0012423974735253699,
+        "n": 60,
+        "wall_eff_mean": 0.01879578605,
+        "wall_mean": 0.02273528605
+      },
+      "original": {
+        "cpu_eff_mean": 0.018123333333333335,
+        "cpu_mean": 0.022062833333333334,
+        "cpu_median": 0.021462500000000002,
+        "cpu_sd": 0.0013043115446685102,
+        "n": 60,
+        "wall_eff_mean": 0.018561439316666668,
+        "wall_mean": 0.02250093931666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018206333333333335,
+        "cpu_mean": 0.022145833333333333,
+        "cpu_median": 0.021506499999999998,
+        "cpu_sd": 0.0012124970950709761,
+        "n": 60,
+        "wall_eff_mean": 0.018638283233333334,
+        "wall_mean": 0.022577783233333332
+      }
+    },
+    "InlineShapes\tInlineShapes_inlineChain": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.020846883333333333,
+        "cpu_mean": 0.024537883333333333,
+        "cpu_median": 0.024008500000000002,
+        "cpu_sd": 0.0012332102563589425,
+        "n": 60,
+        "wall_eff_mean": 0.021288756316666664,
+        "wall_mean": 0.024979756316666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.020841999999999996,
+        "cpu_mean": 0.024533000000000003,
+        "cpu_median": 0.0238125,
+        "cpu_sd": 0.0015454641913246216,
+        "n": 60,
+        "wall_eff_mean": 0.021291560233333333,
+        "wall_mean": 0.024982560233333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.020887649999999997,
+        "cpu_mean": 0.024578649999999997,
+        "cpu_median": 0.024100999999999997,
+        "cpu_sd": 0.0012466193728774366,
+        "n": 60,
+        "wall_eff_mean": 0.021359427016666665,
+        "wall_mean": 0.025050427016666665
+      }
+    },
+    "InlineShapes\tInlineShapes_nestedInline": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019157749999999998,
+        "cpu_mean": 0.02282225,
+        "cpu_median": 0.022151499999999998,
+        "cpu_sd": 0.001280563933390286,
+        "n": 60,
+        "wall_eff_mean": 0.0195948258,
+        "wall_mean": 0.0232593258
+      },
+      "original": {
+        "cpu_eff_mean": 0.019197783333333333,
+        "cpu_mean": 0.022862283333333334,
+        "cpu_median": 0.0222305,
+        "cpu_sd": 0.0013461123045232478,
+        "n": 60,
+        "wall_eff_mean": 0.0196362209,
+        "wall_mean": 0.023300720900000002
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019260833333333335,
+        "cpu_mean": 0.022925333333333336,
+        "cpu_median": 0.0223975,
+        "cpu_sd": 0.0013800051771239443,
+        "n": 60,
+        "wall_eff_mean": 0.0197003133,
+        "wall_mean": 0.023364813300000002
+      }
+    },
+    "InlineShapes\tInlineShapes_virtualInline": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.0193445,
+        "cpu_mean": 0.022885,
+        "cpu_median": 0.02228,
+        "cpu_sd": 0.0012277449789485331,
+        "n": 60,
+        "wall_eff_mean": 0.019802485766666666,
+        "wall_mean": 0.023342985766666664
+      },
+      "original": {
+        "cpu_eff_mean": 0.019236816666666667,
+        "cpu_mean": 0.022777316666666665,
+        "cpu_median": 0.0221675,
+        "cpu_sd": 0.0012452885273658025,
+        "n": 60,
+        "wall_eff_mean": 0.019702476916666666,
+        "wall_mean": 0.023242976916666665
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019278633333333333,
+        "cpu_mean": 0.022819133333333335,
+        "cpu_median": 0.0223765,
+        "cpu_sd": 0.00125627290647994,
+        "n": 60,
+        "wall_eff_mean": 0.01971822855,
+        "wall_mean": 0.02325872855
+      }
+    },
+    "NegativeShapes\tNegativeShapes_arithmeticOnly": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.020470250000000002,
+        "cpu_mean": 0.02399075,
+        "cpu_median": 0.023349,
+        "cpu_sd": 0.0014931130301599183,
+        "n": 60,
+        "wall_eff_mean": 0.020915844416666666,
+        "wall_mean": 0.024436344416666665
+      },
+      "original": {
+        "cpu_eff_mean": 0.02025745,
+        "cpu_mean": 0.02377795,
+        "cpu_median": 0.023291,
+        "cpu_sd": 0.0014143174964743005,
+        "n": 60,
+        "wall_eff_mean": 0.02069761226666667,
+        "wall_mean": 0.024218112266666664
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.020484016666666667,
+        "cpu_mean": 0.024004516666666666,
+        "cpu_median": 0.023164999999999998,
+        "cpu_sd": 0.0017858776319750716,
+        "n": 60,
+        "wall_eff_mean": 0.020944546566666666,
+        "wall_mean": 0.024465046566666666
+      }
+    },
+    "NegativeShapes\tNegativeShapes_mathOnly": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018140783333333334,
+        "cpu_mean": 0.022775283333333333,
+        "cpu_median": 0.0220185,
+        "cpu_sd": 0.001421674706014784,
+        "n": 60,
+        "wall_eff_mean": 0.018587711466666667,
+        "wall_mean": 0.023222211466666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.01826295,
+        "cpu_mean": 0.02289745,
+        "cpu_median": 0.022789999999999998,
+        "cpu_sd": 0.001239155753258376,
+        "n": 60,
+        "wall_eff_mean": 0.018732888016666668,
+        "wall_mean": 0.023367388016666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.017798783333333332,
+        "cpu_mean": 0.02243328333333333,
+        "cpu_median": 0.022025999999999997,
+        "cpu_sd": 0.0012133148133888784,
+        "n": 60,
+        "wall_eff_mean": 0.018241546516666665,
+        "wall_mean": 0.02287604651666667
+      }
+    },
+    "NegativeShapes\tNegativeShapes_numericArray": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.020402066666666666,
+        "cpu_mean": 0.024454066666666666,
+        "cpu_median": 0.0238755,
+        "cpu_sd": 0.0012294005296168626,
+        "n": 60,
+        "wall_eff_mean": 0.020854849266666666,
+        "wall_mean": 0.024906849266666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.020124566666666666,
+        "cpu_mean": 0.024176566666666666,
+        "cpu_median": 0.023582,
+        "cpu_sd": 0.0013380199346629913,
+        "n": 60,
+        "wall_eff_mean": 0.02057342541666667,
+        "wall_mean": 0.02462542541666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.02028076666666667,
+        "cpu_mean": 0.02433276666666667,
+        "cpu_median": 0.0236025,
+        "cpu_sd": 0.0013491200757860247,
+        "n": 60,
+        "wall_eff_mean": 0.020743291633333334,
+        "wall_mean": 0.024795291633333334
+      }
+    },
+    "NegativeShapes\tjava_lang_AbstractStringBuilder_getValue": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018974116666666666,
+        "cpu_mean": 0.022507616666666667,
+        "cpu_median": 0.0221385,
+        "cpu_sd": 0.001403697463744315,
+        "n": 60,
+        "wall_eff_mean": 0.019434529816666667,
+        "wall_mean": 0.022968029816666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.018712033333333333,
+        "cpu_mean": 0.022245533333333335,
+        "cpu_median": 0.0216715,
+        "cpu_sd": 0.0013518879942099082,
+        "n": 60,
+        "wall_eff_mean": 0.019157281216666665,
+        "wall_mean": 0.022690781216666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018844016666666668,
+        "cpu_mean": 0.022377516666666666,
+        "cpu_median": 0.02178,
+        "cpu_sd": 0.0013391377635337681,
+        "n": 60,
+        "wall_eff_mean": 0.019293122233333335,
+        "wall_mean": 0.022826622233333333
+      }
+    },
+    "NegativeShapes\tjava_lang_AbstractStringBuilder_length": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018294566666666668,
+        "cpu_mean": 0.02211456666666667,
+        "cpu_median": 0.021554,
+        "cpu_sd": 0.0011060027782765988,
+        "n": 60,
+        "wall_eff_mean": 0.01873697541666667,
+        "wall_mean": 0.022556975416666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.018357783333333332,
+        "cpu_mean": 0.022177783333333333,
+        "cpu_median": 0.021649500000000002,
+        "cpu_sd": 0.001381711584613647,
+        "n": 60,
+        "wall_eff_mean": 0.0188021064,
+        "wall_mean": 0.0226221064
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018334883333333333,
+        "cpu_mean": 0.022154883333333333,
+        "cpu_median": 0.021609,
+        "cpu_sd": 0.0013057886645199863,
+        "n": 60,
+        "wall_eff_mean": 0.018767039316666668,
+        "wall_mean": 0.02258703931666667
+      }
+    },
+    "NegativeShapes\tjava_lang_Enum_ordinal": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018861466666666667,
+        "cpu_mean": 0.022486466666666666,
+        "cpu_median": 0.021799,
+        "cpu_sd": 0.0016136301255932919,
+        "n": 60,
+        "wall_eff_mean": 0.019301237316666667,
+        "wall_mean": 0.022926237316666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.018697066666666665,
+        "cpu_mean": 0.022322066666666664,
+        "cpu_median": 0.0216475,
+        "cpu_sd": 0.0013816572641417104,
+        "n": 60,
+        "wall_eff_mean": 0.0191492509,
+        "wall_mean": 0.0227742509
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018432716666666668,
+        "cpu_mean": 0.022057716666666668,
+        "cpu_median": 0.021587000000000002,
+        "cpu_sd": 0.0012664381560327199,
+        "n": 60,
+        "wall_eff_mean": 0.01886203685,
+        "wall_mean": 0.02248703685
+      }
+    },
+    "NegativeShapes\tjava_lang_StringLatin1_charAt": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01881411666666667,
+        "cpu_mean": 0.022990116666666668,
+        "cpu_median": 0.022559000000000003,
+        "cpu_sd": 0.0012086858716758829,
+        "n": 60,
+        "wall_eff_mean": 0.01925048705,
+        "wall_mean": 0.02342648705
+      },
+      "original": {
+        "cpu_eff_mean": 0.0186653,
+        "cpu_mean": 0.022841300000000002,
+        "cpu_median": 0.0223595,
+        "cpu_sd": 0.0012910645904317365,
+        "n": 60,
+        "wall_eff_mean": 0.01911434756666667,
+        "wall_mean": 0.023290347566666664
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01887085,
+        "cpu_mean": 0.02304685,
+        "cpu_median": 0.022428999999999998,
+        "cpu_sd": 0.0013093969963943962,
+        "n": 60,
+        "wall_eff_mean": 0.019320737316666666,
+        "wall_mean": 0.02349673731666667
+      }
+    },
+    "NegativeShapes\tjava_lang_String_checkIndex": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01852816666666667,
+        "cpu_mean": 0.022242166666666667,
+        "cpu_median": 0.021881499999999998,
+        "cpu_sd": 0.0010010838820443014,
+        "n": 60,
+        "wall_eff_mean": 0.018977475416666667,
+        "wall_mean": 0.022691475416666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.018566166666666665,
+        "cpu_mean": 0.022280166666666667,
+        "cpu_median": 0.021703,
+        "cpu_sd": 0.0013246229421570838,
+        "n": 60,
+        "wall_eff_mean": 0.019000632416666666,
+        "wall_mean": 0.022714632416666665
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018632983333333335,
+        "cpu_mean": 0.022346983333333334,
+        "cpu_median": 0.021927000000000002,
+        "cpu_sd": 0.0012369579417757994,
+        "n": 60,
+        "wall_eff_mean": 0.01906686865,
+        "wall_mean": 0.02278086865
+      }
+    },
+    "NegativeShapes\tjava_lang_String_coder": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018478833333333333,
+        "cpu_mean": 0.022021333333333334,
+        "cpu_median": 0.021627,
+        "cpu_sd": 0.0010442067749679125,
+        "n": 60,
+        "wall_eff_mean": 0.01890498125,
+        "wall_mean": 0.02244748125
+      },
+      "original": {
+        "cpu_eff_mean": 0.018757433333333334,
+        "cpu_mean": 0.022299933333333334,
+        "cpu_median": 0.021799,
+        "cpu_sd": 0.0012770366722307633,
+        "n": 60,
+        "wall_eff_mean": 0.019214823083333332,
+        "wall_mean": 0.022757323083333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018489216666666666,
+        "cpu_mean": 0.022031716666666666,
+        "cpu_median": 0.021559000000000002,
+        "cpu_sd": 0.001186461645561663,
+        "n": 60,
+        "wall_eff_mean": 0.018923440433333334,
+        "wall_mean": 0.022465940433333335
+      }
+    },
+    "NegativeShapes\tjava_lang_String_isLatin1": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018696783333333335,
+        "cpu_mean": 0.022301783333333332,
+        "cpu_median": 0.021871500000000002,
+        "cpu_sd": 0.0012003636406198843,
+        "n": 60,
+        "wall_eff_mean": 0.01914595758333333,
+        "wall_mean": 0.022750957583333335
+      },
+      "original": {
+        "cpu_eff_mean": 0.018662866666666666,
+        "cpu_mean": 0.022267866666666667,
+        "cpu_median": 0.021866,
+        "cpu_sd": 0.0012300251822173758,
+        "n": 60,
+        "wall_eff_mean": 0.019104273800000002,
+        "wall_mean": 0.0227092738
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018964599999999998,
+        "cpu_mean": 0.022569600000000002,
+        "cpu_median": 0.0218965,
+        "cpu_sd": 0.0014732972567227116,
+        "n": 60,
+        "wall_eff_mean": 0.019405174699999996,
+        "wall_mean": 0.0230101747
+      }
+    },
+    "NegativeShapes\tjava_lang_String_length": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019024566666666666,
+        "cpu_mean": 0.023018066666666667,
+        "cpu_median": 0.022337999999999997,
+        "cpu_sd": 0.0013358555044947372,
+        "n": 60,
+        "wall_eff_mean": 0.01947343978333333,
+        "wall_mean": 0.02346693978333333
+      },
+      "original": {
+        "cpu_eff_mean": 0.018921133333333333,
+        "cpu_mean": 0.022914633333333333,
+        "cpu_median": 0.0222505,
+        "cpu_sd": 0.0012791508246576015,
+        "n": 60,
+        "wall_eff_mean": 0.019363091816666667,
+        "wall_mean": 0.023356591816666668
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018845866666666666,
+        "cpu_mean": 0.02283936666666667,
+        "cpu_median": 0.022332499999999998,
+        "cpu_sd": 0.0013058047322968658,
+        "n": 60,
+        "wall_eff_mean": 0.01928485955,
+        "wall_mean": 0.023278359550000002
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_LambdaForm$BasicType_basicTypeClass": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018767783333333336,
+        "cpu_mean": 0.022360283333333335,
+        "cpu_median": 0.02157,
+        "cpu_sd": 0.0015336572856157343,
+        "n": 60,
+        "wall_eff_mean": 0.019197967716666667,
+        "wall_mean": 0.022790467716666665
+      },
+      "original": {
+        "cpu_eff_mean": 0.018891733333333334,
+        "cpu_mean": 0.022484233333333332,
+        "cpu_median": 0.0217095,
+        "cpu_sd": 0.001615895266476829,
+        "n": 60,
+        "wall_eff_mean": 0.01933450931666667,
+        "wall_mean": 0.022927009316666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01888631666666667,
+        "cpu_mean": 0.02247881666666667,
+        "cpu_median": 0.021911,
+        "cpu_sd": 0.0013335231093069048,
+        "n": 60,
+        "wall_eff_mean": 0.019327550516666667,
+        "wall_mean": 0.02292005051666667
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_LambdaForm$Name_index": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018662483333333334,
+        "cpu_mean": 0.022251983333333333,
+        "cpu_median": 0.0217265,
+        "cpu_sd": 0.0011673342921897831,
+        "n": 60,
+        "wall_eff_mean": 0.019105532350000003,
+        "wall_mean": 0.022695032349999998
+      },
+      "original": {
+        "cpu_eff_mean": 0.01878735,
+        "cpu_mean": 0.02237685,
+        "cpu_median": 0.021836,
+        "cpu_sd": 0.0013056672090672008,
+        "n": 60,
+        "wall_eff_mean": 0.019235289983333334,
+        "wall_mean": 0.022824789983333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018537716666666666,
+        "cpu_mean": 0.022127216666666668,
+        "cpu_median": 0.021721499999999998,
+        "cpu_sd": 0.0010618171388656753,
+        "n": 60,
+        "wall_eff_mean": 0.0189653384,
+        "wall_mean": 0.0225548384
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_MemberName_getDeclaringClass": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.017577533333333333,
+        "cpu_mean": 0.022314533333333334,
+        "cpu_median": 0.0218275,
+        "cpu_sd": 0.0011824314986031488,
+        "n": 60,
+        "wall_eff_mean": 0.0180244479,
+        "wall_mean": 0.022761447900000002
+      },
+      "original": {
+        "cpu_eff_mean": 0.0176913,
+        "cpu_mean": 0.0224283,
+        "cpu_median": 0.021847,
+        "cpu_sd": 0.0012753257270203564,
+        "n": 60,
+        "wall_eff_mean": 0.018126699783333332,
+        "wall_mean": 0.022863699783333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.017761983333333335,
+        "cpu_mean": 0.022498983333333333,
+        "cpu_median": 0.02184,
+        "cpu_sd": 0.0014353220253270306,
+        "n": 60,
+        "wall_eff_mean": 0.018225528766666665,
+        "wall_mean": 0.022962528766666667
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_MethodTypeForm_parameterSlotCount": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018384666666666667,
+        "cpu_mean": 0.022190666666666668,
+        "cpu_median": 0.021721,
+        "cpu_sd": 0.001208584566985511,
+        "n": 60,
+        "wall_eff_mean": 0.018818570783333332,
+        "wall_mean": 0.022624570783333336
+      },
+      "original": {
+        "cpu_eff_mean": 0.0185251,
+        "cpu_mean": 0.0223311,
+        "cpu_median": 0.021670000000000002,
+        "cpu_sd": 0.0013290203873530307,
+        "n": 60,
+        "wall_eff_mean": 0.018973177466666664,
+        "wall_mean": 0.022779177466666668
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018537199999999997,
+        "cpu_mean": 0.0223432,
+        "cpu_median": 0.021656,
+        "cpu_sd": 0.001202253520130703,
+        "n": 60,
+        "wall_eff_mean": 0.01897397855,
+        "wall_mean": 0.02277997855
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_MethodType_form": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018672699999999997,
+        "cpu_mean": 0.0221962,
+        "cpu_median": 0.0217,
+        "cpu_sd": 0.0013041236751167428,
+        "n": 60,
+        "wall_eff_mean": 0.019111454366666666,
+        "wall_mean": 0.022634954366666668
+      },
+      "original": {
+        "cpu_eff_mean": 0.01915291666666667,
+        "cpu_mean": 0.022676416666666664,
+        "cpu_median": 0.0227505,
+        "cpu_sd": 0.0013768247442535629,
+        "n": 60,
+        "wall_eff_mean": 0.01959990955,
+        "wall_mean": 0.023123409549999998
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018737300000000002,
+        "cpu_mean": 0.0222608,
+        "cpu_median": 0.021807,
+        "cpu_sd": 0.0011552984434047046,
+        "n": 60,
+        "wall_eff_mean": 0.019164972716666666,
+        "wall_mean": 0.022688472716666668
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_MethodType_ptypes": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01834995,
+        "cpu_mean": 0.02230345,
+        "cpu_median": 0.021737,
+        "cpu_sd": 0.001418603426202451,
+        "n": 60,
+        "wall_eff_mean": 0.018790179266666665,
+        "wall_mean": 0.022743679266666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.018348216666666663,
+        "cpu_mean": 0.02230171666666667,
+        "cpu_median": 0.021745,
+        "cpu_sd": 0.0012751267661382621,
+        "n": 60,
+        "wall_eff_mean": 0.018789588816666664,
+        "wall_mean": 0.022743088816666666
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0184301,
+        "cpu_mean": 0.0223836,
+        "cpu_median": 0.0217065,
+        "cpu_sd": 0.0014368426172224526,
+        "n": 60,
+        "wall_eff_mean": 0.018875619183333334,
+        "wall_mean": 0.022829119183333337
+      }
+    },
+    "NegativeShapes\tjava_lang_invoke_MethodType_returnType": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018709733333333332,
+        "cpu_mean": 0.022536233333333332,
+        "cpu_median": 0.021809500000000002,
+        "cpu_sd": 0.0015496226139146124,
+        "n": 60,
+        "wall_eff_mean": 0.019168060966666668,
+        "wall_mean": 0.022994560966666668
+      },
+      "original": {
+        "cpu_eff_mean": 0.01833408333333333,
+        "cpu_mean": 0.02216058333333333,
+        "cpu_median": 0.02173,
+        "cpu_sd": 0.0011850081615987105,
+        "n": 60,
+        "wall_eff_mean": 0.018786599683333335,
+        "wall_mean": 0.022613099683333335
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018468833333333334,
+        "cpu_mean": 0.022295333333333334,
+        "cpu_median": 0.0216925,
+        "cpu_sd": 0.001312211297348445,
+        "n": 60,
+        "wall_eff_mean": 0.018900926983333333,
+        "wall_mean": 0.022727426983333333
+      }
+    },
+    "NegativeShapes\tjdk_internal_util_Preconditions_checkIndex": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018625783333333333,
+        "cpu_mean": 0.022515283333333334,
+        "cpu_median": 0.02175,
+        "cpu_sd": 0.0014326985504246486,
+        "n": 60,
+        "wall_eff_mean": 0.019066387683333335,
+        "wall_mean": 0.022955887683333336
+      },
+      "original": {
+        "cpu_eff_mean": 0.018353766666666667,
+        "cpu_mean": 0.022243266666666667,
+        "cpu_median": 0.0217275,
+        "cpu_sd": 0.0012255209622396871,
+        "n": 60,
+        "wall_eff_mean": 0.018794491383333334,
+        "wall_mean": 0.022683991383333334
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018377266666666666,
+        "cpu_mean": 0.022266766666666667,
+        "cpu_median": 0.021651,
+        "cpu_sd": 0.0012759109081576017,
+        "n": 60,
+        "wall_eff_mean": 0.01881370395,
+        "wall_mean": 0.022703203949999997
+      }
+    },
+    "NegativeShapes\tjdk_internal_util_StrongReferenceKey_get": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019111016666666668,
+        "cpu_mean": 0.022589516666666667,
+        "cpu_median": 0.0227365,
+        "cpu_sd": 0.0013449428921168199,
+        "n": 60,
+        "wall_eff_mean": 0.019550217616666667,
+        "wall_mean": 0.02302871761666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.01890125,
+        "cpu_mean": 0.02237975,
+        "cpu_median": 0.021626,
+        "cpu_sd": 0.0016020755040987717,
+        "n": 60,
+        "wall_eff_mean": 0.019337417233333334,
+        "wall_mean": 0.022815917233333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019068533333333335,
+        "cpu_mean": 0.022547033333333334,
+        "cpu_median": 0.0217545,
+        "cpu_sd": 0.0016479377310916683,
+        "n": 60,
+        "wall_eff_mean": 0.019506357266666666,
+        "wall_mean": 0.022984857266666665
+      }
+    },
+    "NegativeShapes\tjdk_internal_util_WeakReferenceKey_hashCode": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01837065,
+        "cpu_mean": 0.02230115,
+        "cpu_median": 0.0217665,
+        "cpu_sd": 0.0012376634817940887,
+        "n": 60,
+        "wall_eff_mean": 0.018810626100000002,
+        "wall_mean": 0.0227411261
+      },
+      "original": {
+        "cpu_eff_mean": 0.018079916666666664,
+        "cpu_mean": 0.022010416666666664,
+        "cpu_median": 0.0214465,
+        "cpu_sd": 0.0012019043263597241,
+        "n": 60,
+        "wall_eff_mean": 0.018515114666666665,
+        "wall_mean": 0.022445614666666665
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018289200000000002,
+        "cpu_mean": 0.022219700000000002,
+        "cpu_median": 0.021727,
+        "cpu_sd": 0.0012333912504419134,
+        "n": 60,
+        "wall_eff_mean": 0.018729357883333336,
+        "wall_mean": 0.022659857883333336
+      }
+    },
+    "NegativeShapes\tsun_invoke_util_Wrapper_basicTypeChar": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018393250000000003,
+        "cpu_mean": 0.02223425,
+        "cpu_median": 0.0215885,
+        "cpu_sd": 0.0014054964677413222,
+        "n": 60,
+        "wall_eff_mean": 0.01881852621666667,
+        "wall_mean": 0.022659526216666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.018391233333333333,
+        "cpu_mean": 0.022232233333333334,
+        "cpu_median": 0.021643500000000003,
+        "cpu_sd": 0.0014363792833216287,
+        "n": 60,
+        "wall_eff_mean": 0.018828326733333334,
+        "wall_mean": 0.02266932673333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0182217,
+        "cpu_mean": 0.0220627,
+        "cpu_median": 0.0214605,
+        "cpu_sd": 0.0012856444207737484,
+        "n": 60,
+        "wall_eff_mean": 0.018643659583333336,
+        "wall_mean": 0.022484659583333334
+      }
+    },
+    "TypeShapes\tTypeShapes$Base_<init>": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01906005,
+        "cpu_mean": 0.02275655,
+        "cpu_median": 0.022067499999999997,
+        "cpu_sd": 0.001460473649482706,
+        "n": 60,
+        "wall_eff_mean": 0.01950339393333333,
+        "wall_mean": 0.023199893933333333
+      },
+      "original": {
+        "cpu_eff_mean": 0.019093816666666666,
+        "cpu_mean": 0.022790316666666664,
+        "cpu_median": 0.0221845,
+        "cpu_sd": 0.00128475764889293,
+        "n": 60,
+        "wall_eff_mean": 0.019529429716666664,
+        "wall_mean": 0.023225929716666666
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01922601666666667,
+        "cpu_mean": 0.022922516666666667,
+        "cpu_median": 0.022299,
+        "cpu_sd": 0.0014197521555030497,
+        "n": 60,
+        "wall_eff_mean": 0.019676319499999997,
+        "wall_mean": 0.0233728195
+      }
+    },
+    "TypeShapes\tTypeShapes$Circle_area": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018708933333333334,
+        "cpu_mean": 0.02227893333333333,
+        "cpu_median": 0.021618,
+        "cpu_sd": 0.0013890824533562512,
+        "n": 60,
+        "wall_eff_mean": 0.019138050483333332,
+        "wall_mean": 0.022708050483333336
+      },
+      "original": {
+        "cpu_eff_mean": 0.018729866666666664,
+        "cpu_mean": 0.022299866666666668,
+        "cpu_median": 0.021691000000000002,
+        "cpu_sd": 0.0012011388272061738,
+        "n": 60,
+        "wall_eff_mean": 0.019160638033333333,
+        "wall_mean": 0.02273063803333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018619283333333334,
+        "cpu_mean": 0.022189283333333334,
+        "cpu_median": 0.0216365,
+        "cpu_sd": 0.0011694659192934562,
+        "n": 60,
+        "wall_eff_mean": 0.019088776433333333,
+        "wall_mean": 0.022658776433333336
+      }
+    },
+    "TypeShapes\tTypeShapes$Square_area": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018703099999999997,
+        "cpu_mean": 0.022368600000000002,
+        "cpu_median": 0.0215915,
+        "cpu_sd": 0.0015596869472215677,
+        "n": 60,
+        "wall_eff_mean": 0.01913745975,
+        "wall_mean": 0.02280295975
+      },
+      "original": {
+        "cpu_eff_mean": 0.018461766666666667,
+        "cpu_mean": 0.022127266666666666,
+        "cpu_median": 0.021542,
+        "cpu_sd": 0.001239510506432098,
+        "n": 60,
+        "wall_eff_mean": 0.01889258735,
+        "wall_mean": 0.02255808735
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018768899999999998,
+        "cpu_mean": 0.0224344,
+        "cpu_median": 0.0220025,
+        "cpu_sd": 0.0012145938031567043,
+        "n": 60,
+        "wall_eff_mean": 0.019208050816666666,
+        "wall_mean": 0.022873550816666664
+      }
+    },
+    "TypeShapes\tTypeShapes_guardedFieldLoad": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.01934853333333333,
+        "cpu_mean": 0.023603533333333333,
+        "cpu_median": 0.02296,
+        "cpu_sd": 0.0015166753494256955,
+        "n": 60,
+        "wall_eff_mean": 0.019803991416666666,
+        "wall_mean": 0.024058991416666668
+      },
+      "original": {
+        "cpu_eff_mean": 0.019661483333333334,
+        "cpu_mean": 0.023916483333333335,
+        "cpu_median": 0.023299,
+        "cpu_sd": 0.001559079926234986,
+        "n": 60,
+        "wall_eff_mean": 0.020109545299999997,
+        "wall_mean": 0.0243645453
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019535366666666668,
+        "cpu_mean": 0.023790366666666667,
+        "cpu_median": 0.023275999999999998,
+        "cpu_sd": 0.0014272035123119463,
+        "n": 60,
+        "wall_eff_mean": 0.019991915866666665,
+        "wall_mean": 0.024246915866666666
+      }
+    },
+    "TypeShapes\tTypeShapes_instanceofChain": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.020305816666666664,
+        "cpu_mean": 0.024131316666666666,
+        "cpu_median": 0.0240905,
+        "cpu_sd": 0.001345848462144069,
+        "n": 60,
+        "wall_eff_mean": 0.020799917666666667,
+        "wall_mean": 0.024625417666666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.019976849999999997,
+        "cpu_mean": 0.023802349999999996,
+        "cpu_median": 0.0232485,
+        "cpu_sd": 0.0013566692402719241,
+        "n": 60,
+        "wall_eff_mean": 0.020433654333333332,
+        "wall_mean": 0.02425915433333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019807916666666665,
+        "cpu_mean": 0.023633416666666667,
+        "cpu_median": 0.0231185,
+        "cpu_sd": 0.0011932881782657904,
+        "n": 60,
+        "wall_eff_mean": 0.0202503179,
+        "wall_mean": 0.0240758179
+      }
+    },
+    "TypeShapes\tTypeShapes_monomorphicCall": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019282433333333335,
+        "cpu_mean": 0.022895433333333333,
+        "cpu_median": 0.022449,
+        "cpu_sd": 0.0013464054164907225,
+        "n": 60,
+        "wall_eff_mean": 0.019718309816666668,
+        "wall_mean": 0.023331309816666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.019062616666666664,
+        "cpu_mean": 0.02267561666666667,
+        "cpu_median": 0.022373,
+        "cpu_sd": 0.0010529818942993383,
+        "n": 60,
+        "wall_eff_mean": 0.019507122233333334,
+        "wall_mean": 0.02312012223333333
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.0194471,
+        "cpu_mean": 0.023060099999999997,
+        "cpu_median": 0.0224415,
+        "cpu_sd": 0.0014320962106879086,
+        "n": 60,
+        "wall_eff_mean": 0.019895985366666664,
+        "wall_mean": 0.02350898536666667
+      }
+    },
+    "TypeShapes\tTypeShapes_polymorphicCall": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019245066666666664,
+        "cpu_mean": 0.022776066666666667,
+        "cpu_median": 0.0222685,
+        "cpu_sd": 0.001198100466942939,
+        "n": 60,
+        "wall_eff_mean": 0.019720003483333335,
+        "wall_mean": 0.02325100348333333
+      },
+      "original": {
+        "cpu_eff_mean": 0.0192978,
+        "cpu_mean": 0.0228288,
+        "cpu_median": 0.022276999999999998,
+        "cpu_sd": 0.0012010234774280366,
+        "n": 60,
+        "wall_eff_mean": 0.0197551802,
+        "wall_mean": 0.0232861802
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019196733333333334,
+        "cpu_mean": 0.022727733333333333,
+        "cpu_median": 0.022293,
+        "cpu_sd": 0.0012220418005216606,
+        "n": 60,
+        "wall_eff_mean": 0.019632255683333332,
+        "wall_mean": 0.02316325568333333
+      }
+    },
+    "TypeShapes\tTypeShapes_repeatedFieldLoads": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.019182550000000003,
+        "cpu_mean": 0.02268055,
+        "cpu_median": 0.022103499999999998,
+        "cpu_sd": 0.0013717438466540805,
+        "n": 60,
+        "wall_eff_mean": 0.019619040116666667,
+        "wall_mean": 0.023117040116666664
+      },
+      "original": {
+        "cpu_eff_mean": 0.019533650000000003,
+        "cpu_mean": 0.02303165,
+        "cpu_median": 0.022241,
+        "cpu_sd": 0.0017196862487577978,
+        "n": 60,
+        "wall_eff_mean": 0.01998637116666667,
+        "wall_mean": 0.023484371166666667
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.019066733333333332,
+        "cpu_mean": 0.022564733333333333,
+        "cpu_median": 0.0220845,
+        "cpu_sd": 0.0012536345143444143,
+        "n": 60,
+        "wall_eff_mean": 0.019506446666666667,
+        "wall_mean": 0.023004446666666668
+      }
+    },
+    "TypeShapes\tTypeShapes_twoFieldLoads": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.018595166666666666,
+        "cpu_mean": 0.022520666666666668,
+        "cpu_median": 0.0219405,
+        "cpu_sd": 0.0014009584893525178,
+        "n": 60,
+        "wall_eff_mean": 0.019032442566666665,
+        "wall_mean": 0.022957942566666667
+      },
+      "original": {
+        "cpu_eff_mean": 0.018339416666666667,
+        "cpu_mean": 0.02226491666666667,
+        "cpu_median": 0.021787,
+        "cpu_sd": 0.0013354646169238464,
+        "n": 60,
+        "wall_eff_mean": 0.018778582966666665,
+        "wall_mean": 0.022704082966666664
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.01855335,
+        "cpu_mean": 0.022478849999999998,
+        "cpu_median": 0.021706,
+        "cpu_sd": 0.0013871441264338758,
+        "n": 60,
+        "wall_eff_mean": 0.0189879919,
+        "wall_mean": 0.022913491900000003
+      }
+    },
+    "TypeShapes\tjava_lang_Object_<init>": {
+      "cross_pass": {
+        "cpu_eff_mean": 0.0183231,
+        "cpu_mean": 0.0224056,
+        "cpu_median": 0.021738,
+        "cpu_sd": 0.0013752712362778963,
+        "n": 60,
+        "wall_eff_mean": 0.018761702866666667,
+        "wall_mean": 0.022844202866666666
+      },
+      "original": {
+        "cpu_eff_mean": 0.0180177,
+        "cpu_mean": 0.0221002,
+        "cpu_median": 0.021675,
+        "cpu_sd": 0.0010419034952112087,
+        "n": 60,
+        "wall_eff_mean": 0.01844429975,
+        "wall_mean": 0.02252679975
+      },
+      "pass_local": {
+        "cpu_eff_mean": 0.018130516666666666,
+        "cpu_mean": 0.022213016666666665,
+        "cpu_median": 0.021581,
+        "cpu_sd": 0.0013323278186650944,
+        "n": 60,
+        "wall_eff_mean": 0.018558730766666663,
+        "wall_mean": 0.02264123076666667
+      }
+    }
+  },
+  "raw_rows": 11520,
+  "samples": 64,
+  "sessions": [
+    0,
+    1
+  ],
+  "verdicts": {
+    "original->cross_pass": {
+      "ci": [
+        -0.004699735565174112,
+        0.0008881448459966412
+      ],
+      "ci_crosses_zero": true,
+      "effective_ci": [
+        -0.0055574248605094745,
+        0.0011594744872770457
+      ],
+      "effective_ci_crosses_zero": true,
+      "effective_net_benefit": -0.0022463707791271492,
+      "net_benefit": -0.001870992568738572,
+      "statement": "\u5c1a\u672a\u6d4b\u51fa\u7a33\u5b9a\u51c0\u6536\u76ca\uff08\u7f6e\u4fe1\u533a\u95f4\u8de8\u96f6\uff09"
+    },
+    "pass_local->cross_pass": {
+      "ci": [
+        -0.006074880975278418,
+        -0.0008326163549736698
+      ],
+      "ci_crosses_zero": false,
+      "effective_ci": [
+        -0.00734697469710488,
+        -0.0009961338208899218
+      ],
+      "effective_ci_crosses_zero": false,
+      "effective_net_benefit": -0.004139563142575353,
+      "net_benefit": -0.0034467363852093147,
+      "statement": "\u6d4b\u51fa\u7a33\u5b9a\u51c0\u6536\u76ca"
+    }
+  }
+}
